@@ -18,14 +18,16 @@ public class Main {
 			if (session.getState() == State.DONE) {
 				final String xml = res.toString();
 				System.out.println(xml);
-			}
 
-			final Parser parser = new Parser(url);
+				System.out.println("XML Parsed!!!");
+				//			final Parser parser = new Parser(url);
+				final Parser parser = Parser.createParser(xml, null);
 
-			for (final NodeIterator nodeIterator = parser.elements(); nodeIterator.hasMoreNodes();) {
-				final Node node = nodeIterator.nextNode();
+				for (final NodeIterator nodeIterator = parser.elements(); nodeIterator.hasMoreNodes();) {
+					final Node node = nodeIterator.nextNode();
 
-				System.out.println(node.getText());
+					System.out.println(node.getText());
+				}
 			}
 		} catch (final Exception e1) {
 			e1.printStackTrace();
