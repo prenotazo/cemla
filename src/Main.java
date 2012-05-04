@@ -1,3 +1,6 @@
+import org.htmlparser.Node;
+import org.htmlparser.Parser;
+import org.htmlparser.util.NodeIterator;
 import org.jdesktop.http.Response;
 import org.jdesktop.http.Session;
 import org.jdesktop.http.State;
@@ -15,6 +18,14 @@ public class Main {
 			if (session.getState() == State.DONE) {
 				final String xml = res.toString();
 				System.out.println(xml);
+			}
+
+			final Parser parser = new Parser(url);
+
+			for (final NodeIterator nodeIterator = parser.elements(); nodeIterator.hasMoreNodes();) {
+				final Node node = nodeIterator.nextNode();
+
+				System.out.println(node.getText());
 			}
 		} catch (final Exception e1) {
 			e1.printStackTrace();
