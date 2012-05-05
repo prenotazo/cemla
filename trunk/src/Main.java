@@ -14,12 +14,11 @@ public class Main {
 			final String url="http://www.cemla.com/busqueda/buscador_action.php?Apellido=crudo&Nombre=&d-dia=01&d-mes=05&d-anio=1923&h-dia=01&h-mes=05&h-anio=1923";
 			final Response res = session.get(url);
 
-			System.out.print(session.getState().toString());
+//			System.out.print(session.getState().toString());
 			if (session.getState() == State.DONE) {
 				final String xml = res.toString();
 //				System.out.println(xml);
 
-				System.out.println("XML Parsed!!!");
 				//			final Parser parser = new Parser(url);
 				final Parser parser = Parser.createParser(xml, null);
 
