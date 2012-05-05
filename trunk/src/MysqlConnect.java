@@ -66,9 +66,9 @@ public class MysqlConnect {
 
 	private boolean checkAlreadyCompleted(final BigDecimal urlId, final Integer totalRecords) throws SQLException {
 		final Statement st = this.conn.createStatement();
-		final ResultSet res = st.executeQuery("SELECT count(*) FROM PassengerRecord P WHERE P.urlId = " + urlId);
+		final ResultSet res = st.executeQuery("SELECT count(*) c FROM PassengerRecord P WHERE P.urlId = " + urlId);
 		if (res.next()) {
-			final Integer count = res.getInt("count");
+			final Integer count = res.getInt("c");
 			return count.equals(totalRecords);
 		}
 
