@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
-	<classpathentry kind="lib" path="lib/swingx-ws-1.0.jar" sourcepath="/home/ricardocastiglione/.m2/repository/org/swinglabs/swingx-ws/1.0/swingx-ws-1.0-sources.jar"/>
-	<classpathentry kind="lib" path="lib/swingx-common-1.6.3.jar"/>
-	<classpathentry kind="lib" path="lib/filterbuilder.jar"/>
-	<classpathentry kind="lib" path="lib/htmllexer.jar"/>
-	<classpathentry kind="lib" path="lib/htmlparser.jar" sourcepath="lib/htmlparser-sources.zip"/>
-	<classpathentry kind="lib" path="lib/junit.jar"/>
-	<classpathentry kind="lib" path="lib/sax2.jar"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
+	<classpathentry exported="true" kind="lib" path="lib/swingx-ws-1.0.jar" sourcepath="/home/ricardocastiglione/.m2/repository/org/swinglabs/swingx-ws/1.0/swingx-ws-1.0-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/swingx-common-1.6.3.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/filterbuilder.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/htmllexer.jar" sourcepath="lib/htmlparser-sources.zip"/>
+	<classpathentry exported="true" kind="lib" path="lib/htmlparser.jar" sourcepath="lib/htmlparser-sources.zip"/>
+	<classpathentry exported="true" kind="lib" path="lib/junit.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/sax2.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
