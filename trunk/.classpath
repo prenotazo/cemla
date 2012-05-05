@@ -9,5 +9,6 @@
 	<classpathentry exported="true" kind="lib" path="lib/htmlparser.jar" sourcepath="lib/htmlparser-sources.zip"/>
 	<classpathentry exported="true" kind="lib" path="lib/junit.jar"/>
 	<classpathentry exported="true" kind="lib" path="lib/sax2.jar"/>
+	<classpathentry kind="lib" path="lib/mysql-connector-java-5.1.20-bin.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
