@@ -17,7 +17,7 @@ public class Main {
 			System.out.print(session.getState().toString());
 			if (session.getState() == State.DONE) {
 				final String xml = res.toString();
-				System.out.println(xml);
+//				System.out.println(xml);
 
 				System.out.println("XML Parsed!!!");
 				//			final Parser parser = new Parser(url);
