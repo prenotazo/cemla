@@ -55,13 +55,13 @@ public class Main {
 							do {
 								// 0 resultados
 								// final String
-								url = "http://www.cemla.com/busqueda/buscador_action.php?Apellido=c&Nombre=&d-dia=01&d-mes=05&d-anio=1923&h-dia=30&h-mes=02&h-anio=1923";
+								// url =
+								// "http://www.cemla.com/busqueda/buscador_action.php?Apellido=c&Nombre=&d-dia=01&d-mes=05&d-anio=1923&h-dia=30&h-mes=02&h-anio=1923";
 								// 2 resultados
 								// final String
 								// url="http://www.cemla.com/busqueda/buscador_action.php?Apellido=cru&Nombre=&d-dia=01&d-mes=05&d-anio=1923&h-dia=01&h-mes=05&h-anio=1923";
 								// 1 resultados
-								// final String url =
-								// "http://www.cemla.com/busqueda/buscador_action.php?Apellido=crudo&Nombre=&d-dia=01&d-mes=05&d-anio=1923&h-dia=01&h-mes=05&h-anio=1923";
+								url = "http://www.cemla.com/busqueda/buscador_action.php?Apellido=crudo&Nombre=&d-dia=01&d-mes=05&d-anio=1923&h-dia=01&h-mes=05&h-anio=1923";
 								// 8 resultados
 								// final String
 								// url="http://www.cemla.com/busqueda/buscador_action.php?Apellido=V&Nombre=&d-dia=20&d-mes=06&d-anio=1938&h-dia=20&h-mes=06&h-anio=1938";
@@ -71,6 +71,7 @@ public class Main {
 
 								Response res = null;
 								if (!mysql.checkAlreadyProcessed(url)) {
+									Thread.sleep(10000);
 									res = session.get(url);
 									System.out.println("Processing... " + url);
 								}
@@ -140,6 +141,7 @@ public class Main {
 														String arrivalDate = null;
 														String arrivalPort = null;
 														String placeOfBirth = null;
+														final definir la coleccion
 														for (final SimpleNodeIterator simpleNodeIterator4 = children4.elements(); simpleNodeIterator4.hasMoreNodes();) {
 															final Node nextNode4 = simpleNodeIterator4.nextNode();
 
@@ -217,7 +219,7 @@ public class Main {
 																}
 															}
 														}
-														mysql.insertPassengerRecord(surname, name, age, civilStatus, profession, religion, nationality, ship, departure, arrivalDate, arrivalPort, placeOfBirth, url, Integer.valueOf(totalRecords));
+														final agregar a coleccion
 														System.out.println();
 													}
 												}
@@ -265,6 +267,9 @@ public class Main {
 
 																System.out.println(fromRecord + " to " + toRecord + " of " + totalRecords);
 																mysql.insertUrl(url, Integer.valueOf(totalRecords));
+																
+																final user la coleccion
+																mysql.insertPassengerRecord(surname, name, age, civilStatus, profession, religion, nationality, ship, departure, arrivalDate, arrivalPort, placeOfBirth, url, Integer.valueOf(totalRecords));
 															}
 														}
 													}
