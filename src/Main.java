@@ -1,3 +1,6 @@
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.List;
 import java.util.StringTokenizer;
 
 import org.htmlparser.Node;
@@ -11,207 +14,282 @@ import org.jdesktop.http.State;
 
 public class Main {
 
+	public static final Integer MAX_RECORDS_PER_PAGE = 10;
+
+	public static final List<String> ABC = Arrays.asList("C");
+	public static final List<String> DAYS = Arrays.asList("01");
+	public static final List<String> MONTHS = Arrays.asList("05");
+	public static List<String> YEARS = Arrays.asList("1923");
+
+	/*
+	 * public static final List<String> ABC = Arrays.asList("A", "B", "C", "D",
+	 * "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "Ñ", "O", "P", "Q",
+	 * "R", "S", "T", "U", "V", "W", "X", "Y", "Z"); public static final
+	 * List<String> DAYS = Arrays.asList("01", "02", "03", "04", "05", "06",
+	 * "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18",
+	 * "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30",
+	 * "31"); public static final List<String> MONTHS = Arrays.asList("01",
+	 * "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"); public
+	 * static List<String> YEARS = new ArrayList<String>();
+	 * 
+	 * static { for (int i = 1882; i <= 1960; i++) { YEARS.add((new
+	 * Integer(i)).toString()); } }
+	 */
+
 	public static void main(final String[] args) {
 		try {
 			final Session session = new Session();
+			final MysqlConnect mysql = new MysqlConnect();
 
-			// 0 resultados
-//			final String url="http://www.cemla.com/busqueda/buscador_action.php?Apellido=c&Nombre=&d-dia=01&d-mes=05&d-anio=1923&h-dia=30&h-mes=02&h-anio=1923";
-			// 2 resultados
-//			final String url="http://www.cemla.com/busqueda/buscador_action.php?Apellido=cru&Nombre=&d-dia=01&d-mes=05&d-anio=1923&h-dia=01&h-mes=05&h-anio=1923";
-			// 1 resultados
-//			final String url="http://www.cemla.com/busqueda/buscador_action.php?Apellido=crudo&Nombre=&d-dia=01&d-mes=05&d-anio=1923&h-dia=01&h-mes=05&h-anio=1923";
-			// 8 resultados
-//			final String url="http://www.cemla.com/busqueda/buscador_action.php?Apellido=V&Nombre=&d-dia=20&d-mes=06&d-anio=1938&h-dia=20&h-mes=06&h-anio=1938";
-			// 4 resultados con algunos campos vacios -> ver este caso q no esta funcionando...
-			final String url="http://www.cemla.com/busqueda/buscador_action.php?Apellido=ZYLBERMANN&Nombre=&d-dia=01&d-mes=05&d-anio=1923&h-dia=30&h-mes=02&h-anio=1923";
-			final Response res = session.get(url);
+			mysql.cleanNotCompleted();
 
-//			System.out.print(session.getState().toString());
-			if (session.getState() == State.DONE) {
-				final String xml = res.toString();
-//				System.out.println(xml);
+			for (final String year : YEARS) {
+				for (final String month : MONTHS) {
+					for (final String day : DAYS) {
+						for (final String lastNameInitial : ABC) {
+							String url = URLGenerator.generateFirstPageUrl(lastNameInitial, day, month, year);
+							List<String> nPageUrls = null;
+							Iterator<String> nPageUrlsIterator = null;
+							boolean hasNext = false;
+							String totalRecords = "0";
+							do {
+								// 0 resultados
+								// final String
+								url = "http://www.cemla.com/busqueda/buscador_action.php?Apellido=c&Nombre=&d-dia=01&d-mes=05&d-anio=1923&h-dia=30&h-mes=02&h-anio=1923";
+								// 2 resultados
+								// final String
+								// url="http://www.cemla.com/busqueda/buscador_action.php?Apellido=cru&Nombre=&d-dia=01&d-mes=05&d-anio=1923&h-dia=01&h-mes=05&h-anio=1923";
+								// 1 resultados
+								// final String url =
+								// "http://www.cemla.com/busqueda/buscador_action.php?Apellido=crudo&Nombre=&d-dia=01&d-mes=05&d-anio=1923&h-dia=01&h-mes=05&h-anio=1923";
+								// 8 resultados
+								// final String
+								// url="http://www.cemla.com/busqueda/buscador_action.php?Apellido=V&Nombre=&d-dia=20&d-mes=06&d-anio=1938&h-dia=20&h-mes=06&h-anio=1938";
+								// 4 resultados con algunos campos vacios
+								// final String
+								// url="http://www.cemla.com/busqueda/buscador_action.php?Apellido=ZYLBERMANN&Nombre=&d-dia=01&d-mes=05&d-anio=1923&h-dia=01&h-mes=05&h-anio=1923";
 
-				final Parser parser = Parser.createParser(xml, null);
-
-				for (final NodeIterator nodeIterator = parser.elements(); nodeIterator.hasMoreNodes();) {
-					final Node node = nodeIterator.nextNode();
-
-					if (!node.getText().startsWith("html")) {
-						continue;
-					}
-					
-					NodeList children = node.getChildren();
-					if (children == null) {
-						continue;
-					}
-					for (SimpleNodeIterator simpleNodeIterator = children.elements(); simpleNodeIterator.hasMoreNodes();) {
-						Node nextNode = simpleNodeIterator.nextNode();
-						
-						if (!nextNode.getText().startsWith("body")) {
-							continue;
-						}
-						
-						NodeList children2 = nextNode.getChildren();
-						if (children2 == null) {
-							continue;
-						}
-						for (SimpleNodeIterator simpleNodeIterator2 = children2.elements(); simpleNodeIterator2.hasMoreNodes();) {
-							Node nextNode2 = simpleNodeIterator2.nextNode();							
-    
-							if (!nextNode2.getText().startsWith("table")) {
-								continue;
-							}
-							
-							if (nextNode2.getText().contains("results-table")) {
-								NodeList children3 = nextNode2.getChildren();
-								if (children3 == null) {
-									continue;
+								Response res = null;
+								if (!mysql.checkAlreadyProcessed(url)) {
+									res = session.get(url);
+									System.out.println("Processing... " + url);
 								}
-								for (SimpleNodeIterator simpleNodeIterator3 = children3.elements(); simpleNodeIterator3.hasMoreNodes();) {
-									Node nextNode3 = simpleNodeIterator3.nextNode();
-									
-									if (!nextNode3.getText().contains("tr valign='top' class='txt'")) {
-										continue;
-									}
-									
-									NodeList children4 = nextNode3.getChildren();
-									if (children4 == null) {
-										continue;
-									}
-									PassengerRecordField currentPassengerRecordField = PassengerRecordField.getByColumnPosition(1);
-									for (SimpleNodeIterator simpleNodeIterator4 = children4.elements(); simpleNodeIterator4.hasMoreNodes();) {
-										Node nextNode4 = simpleNodeIterator4.nextNode();
-										
-										if (!nextNode4.getText().contains("td")) {
+
+								// System.out.print(session.getState().toString());
+								if ((res != null) && (session.getState() == State.DONE)) {
+									final String xml = res.toString();
+									// System.out.println(xml);
+
+									final Parser parser = Parser.createParser(xml, null);
+
+									for (final NodeIterator nodeIterator = parser.elements(); nodeIterator.hasMoreNodes();) {
+										final Node node = nodeIterator.nextNode();
+
+										if (!node.getText().startsWith("html")) {
 											continue;
 										}
-										
-										NodeList children5 = nextNode4.getChildren();
-										if (children5 == null) {
+
+										final NodeList children = node.getChildren();
+										if (children == null) {
 											continue;
 										}
-										for (SimpleNodeIterator simpleNodeIterator5 = children5.elements(); simpleNodeIterator5.hasMoreNodes();) {
-											Node nextNode5 = simpleNodeIterator5.nextNode();
-											
-											if (nextNode5.getText().contains("strong")) {
+										for (final SimpleNodeIterator simpleNodeIterator = children.elements(); simpleNodeIterator.hasMoreNodes();) {
+											final Node nextNode = simpleNodeIterator.nextNode();
+
+											if (!nextNode.getText().startsWith("body")) {
 												continue;
 											}
-											
-											switch (currentPassengerRecordField) {
-												case SURNAME:												
-													String surname = nextNode5.getText();
-													System.out.println("surname = " + surname);
-													currentPassengerRecordField = currentPassengerRecordField.getNext();
-													break;
-												case NAME:													
-													String name = nextNode5.getText().replace(", ", "");												
-													System.out.println("name = " + name);
-													currentPassengerRecordField = currentPassengerRecordField.getNext();
-													break;
-												case AGE:
-													String age = nextNode5.getText();
-													System.out.println("age = " + age);
-													currentPassengerRecordField = currentPassengerRecordField.getNext();													
-													break;
-												case CIVIL_STATUS:
-													String civilStatus = nextNode5.getText();
-													System.out.println("civilStatus = " + civilStatus);
-													currentPassengerRecordField = currentPassengerRecordField.getNext();													
-													break;
-												case PROFESSION:
-													String profession = nextNode5.getText();
-													System.out.println("profession = " + profession);
-													currentPassengerRecordField = currentPassengerRecordField.getNext();													
-													break;
-												case RELIGION:
-													String religion = nextNode5.getText();
-													System.out.println("religion = " + religion);
-													currentPassengerRecordField = currentPassengerRecordField.getNext();													
-													break;
-												case NATIONALITY:
-													String nationality = nextNode5.getText();
-													System.out.println("nationality = " + nationality);
-													currentPassengerRecordField = currentPassengerRecordField.getNext();													
-													break;
-												case SHIP:
-													String ship = nextNode5.getText();
-													System.out.println("ship = " + ship);
-													currentPassengerRecordField = currentPassengerRecordField.getNext();													
-													break;
-												case DEPARTURE:
-													String departure = nextNode5.getText();
-													System.out.println("departure = " + departure);
-													currentPassengerRecordField = currentPassengerRecordField.getNext();													
-													break;
-												case ARRIVAL_DATE:
-												case ARRIVAL_PORT:
-													String arrivalDateAndPort = nextNode5.getText();
-													
-													String arrivalDate = arrivalDateAndPort.substring(0, 10);
-													String arrivalPort = arrivalDateAndPort.substring(13);
-													
-													System.out.println("arrivalDate = " + arrivalDate);
-													System.out.println("arrivalPort = " + arrivalPort);
-													currentPassengerRecordField = currentPassengerRecordField.getNext();													
-													break;
-												case PLACE_OF_BIRTH:
-													String placeOfBirth = nextNode5.getText();
-													System.out.println("placeOfBirth = " + placeOfBirth);
-													currentPassengerRecordField = currentPassengerRecordField.getNext();													
-													break;
+
+											final NodeList children2 = nextNode.getChildren();
+											if (children2 == null) {
+												continue;
+											}
+											for (final SimpleNodeIterator simpleNodeIterator2 = children2.elements(); simpleNodeIterator2.hasMoreNodes();) {
+												final Node nextNode2 = simpleNodeIterator2.nextNode();
+
+												if (!nextNode2.getText().startsWith("table")) {
+													continue;
+												}
+
+												if (nextNode2.getText().contains("results-table")) {
+													final NodeList children3 = nextNode2.getChildren();
+													if (children3 == null) {
+														continue;
+													}
+													for (final SimpleNodeIterator simpleNodeIterator3 = children3.elements(); simpleNodeIterator3.hasMoreNodes();) {
+														final Node nextNode3 = simpleNodeIterator3.nextNode();
+
+														if (!nextNode3.getText().contains("tr valign='top' class='txt'")) {
+															continue;
+														}
+
+														final NodeList children4 = nextNode3.getChildren();
+														if (children4 == null) {
+															continue;
+														}
+														PassengerRecordField currentPassengerRecordField = PassengerRecordField.getByColumnPosition(1);
+														String surname = null;
+														String name = null;
+														String age = null;
+														String civilStatus = null;
+														String profession = null;
+														String religion = null;
+														String nationality = null;
+														String ship = null;
+														String departure = null;
+														String arrivalDate = null;
+														String arrivalPort = null;
+														String placeOfBirth = null;
+														for (final SimpleNodeIterator simpleNodeIterator4 = children4.elements(); simpleNodeIterator4.hasMoreNodes();) {
+															final Node nextNode4 = simpleNodeIterator4.nextNode();
+
+															if (!nextNode4.getText().contains("td")) {
+																continue;
+															}
+
+															if (!currentPassengerRecordField.getColumnPosition().equals(1)) {
+																currentPassengerRecordField = currentPassengerRecordField.getNext();
+															}
+
+															final NodeList children5 = nextNode4.getChildren();
+															if (children5 == null) {
+																continue;
+															}
+															for (final SimpleNodeIterator simpleNodeIterator5 = children5.elements(); simpleNodeIterator5.hasMoreNodes();) {
+																final Node nextNode5 = simpleNodeIterator5.nextNode();
+
+																if (nextNode5.getText().contains("strong")) {
+																	continue;
+																}
+
+																switch (currentPassengerRecordField) {
+																case SURNAME:
+																	surname = trim(nextNode5.getText());
+																	System.out.println("surname = " + surname);
+																	currentPassengerRecordField = currentPassengerRecordField.getNext();
+																	break;
+																case NAME:
+																	name = trim(nextNode5.getText().replace(", ", ""));
+																	System.out.println("name = " + name);
+																	break;
+																case AGE:
+																	age = trim(nextNode5.getText());
+																	System.out.println("age = " + age);
+																	break;
+																case CIVIL_STATUS:
+																	civilStatus = trim(nextNode5.getText());
+																	System.out.println("civilStatus = " + civilStatus);
+																	break;
+																case PROFESSION:
+																	profession = trim(nextNode5.getText());
+																	System.out.println("profession = " + profession);
+																	break;
+																case RELIGION:
+																	religion = trim(nextNode5.getText());
+																	System.out.println("religion = " + religion);
+																	break;
+																case NATIONALITY:
+																	nationality = trim(nextNode5.getText());
+																	System.out.println("nationality = " + nationality);
+																	break;
+																case SHIP:
+																	ship = trim(nextNode5.getText());
+																	System.out.println("ship = " + ship);
+																	break;
+																case DEPARTURE:
+																	departure = trim(nextNode5.getText());
+																	System.out.println("departure = " + departure);
+																	break;
+																case ARRIVAL_DATE:
+																case ARRIVAL_PORT:
+																	final String arrivalDateAndPort = trim(nextNode5.getText());
+
+																	arrivalDate = arrivalDateAndPort.substring(0, 10);
+																	arrivalPort = arrivalDateAndPort.substring(13);
+
+																	System.out.println("arrivalDate = " + arrivalDate);
+																	System.out.println("arrivalPort = " + arrivalPort);
+																	break;
+																case PLACE_OF_BIRTH:
+																	placeOfBirth = trim(nextNode5.getText());
+																	System.out.println("placeOfBirth = " + placeOfBirth);
+																	break;
+																}
+															}
+														}
+														mysql.insertPassengerRecord(surname, name, age, civilStatus, profession, religion, nationality, ship, departure, arrivalDate, arrivalPort, placeOfBirth, url, Integer.valueOf(totalRecords));
+														System.out.println();
+													}
+												}
+
+												if (nextNode2.getText().contains("navigation")) {
+													final NodeList children3 = nextNode2.getChildren();
+													if (children3 == null) {
+														continue;
+													}
+													for (final SimpleNodeIterator simpleNodeIterator3 = children3.elements(); simpleNodeIterator3.hasMoreNodes();) {
+														final Node nextNode3 = simpleNodeIterator3.nextNode();
+
+														if (!nextNode3.getText().contains("tr class=")) {
+															continue;
+														}
+
+														final NodeList children4 = nextNode3.getChildren();
+														if (children4 == null) {
+															continue;
+														}
+														for (final SimpleNodeIterator simpleNodeIterator4 = children4.elements(); simpleNodeIterator4.hasMoreNodes();) {
+															final Node nextNode4 = simpleNodeIterator4.nextNode();
+
+															if (!nextNode4.getText().contains("td")) {
+																continue;
+															}
+
+															final NodeList children5 = nextNode4.getChildren();
+															if (children5 == null) {
+																continue;
+															}
+															for (final SimpleNodeIterator simpleNodeIterator5 = children5.elements(); simpleNodeIterator5.hasMoreNodes();) {
+																final Node nextNode5 = simpleNodeIterator5.nextNode();
+
+																final String footer = nextNode5.getText();
+
+																final StringTokenizer stringTokenizer = new StringTokenizer(footer, " ");
+
+																stringTokenizer.nextToken();
+																final String fromRecord = stringTokenizer.nextToken();
+																stringTokenizer.nextToken();
+																final String toRecord = stringTokenizer.nextToken();
+																stringTokenizer.nextToken();
+																totalRecords = stringTokenizer.nextToken();
+
+																System.out.println(fromRecord + " to " + toRecord + " of " + totalRecords);
+																mysql.insertUrl(url, Integer.valueOf(totalRecords));
+															}
+														}
+													}
+												}
 											}
 										}
 									}
-								}
-							}
 
-							if (nextNode2.getText().contains("navigation")) {
-								NodeList children3 = nextNode2.getChildren();
-								if (children3 == null) {
-									continue;
-								}
-								for (SimpleNodeIterator simpleNodeIterator3 = children3.elements(); simpleNodeIterator3.hasMoreNodes();) {
-									Node nextNode3 = simpleNodeIterator3.nextNode();
-									
-									if (!nextNode3.getText().contains("tr class=")) {
-										continue;
+									if (!mysql.checkAlreadyProcessed(url)) {
+										mysql.insertUrl(url, 0);
 									}
-									
-									NodeList children4 = nextNode3.getChildren();
-									if (children4 == null) {
-										continue;
-									}
-									for (SimpleNodeIterator simpleNodeIterator4 = children4.elements(); simpleNodeIterator4.hasMoreNodes();) {
-										Node nextNode4 = simpleNodeIterator4.nextNode();
-										
-										if (!nextNode4.getText().contains("td")) {
-											continue;
-										}
-										
-										NodeList children5 = nextNode4.getChildren();
-										if (children5 == null) {
-											continue;
-										}
-										for (SimpleNodeIterator simpleNodeIterator5 = children5.elements(); simpleNodeIterator5.hasMoreNodes();) {
-											Node nextNode5 = simpleNodeIterator5.nextNode();
 
-											String footer = nextNode5.getText();
-											
-											StringTokenizer stringTokenizer = new StringTokenizer(footer, " ");
-											
-											stringTokenizer.nextToken();
-											String fromRecord = stringTokenizer.nextToken();
-											stringTokenizer.nextToken();
-											String toRecord = stringTokenizer.nextToken();
-											stringTokenizer.nextToken();
-											String totalRecords = stringTokenizer.nextToken();
-											
-											System.out.println(fromRecord + " to " + toRecord + " of " + totalRecords);
-										}
+									if ((nPageUrls == null) || !nPageUrls.contains(url)) {
+										nPageUrls = URLGenerator.generateNPageUrls(lastNameInitial, day, month, year, totalRecords);
+										nPageUrlsIterator = nPageUrls.iterator();
 									}
 								}
-							}							
+
+								if (nPageUrlsIterator != null) {
+									hasNext = nPageUrlsIterator.hasNext();
+									if (hasNext) {
+										url = nPageUrlsIterator.next();
+									}
+								}
+							} while ((nPageUrlsIterator != null) && hasNext);
 						}
 					}
 				}
@@ -219,5 +297,13 @@ public class Main {
 		} catch (final Exception e1) {
 			e1.printStackTrace();
 		}
+	}
+
+	public static String trim(final String s) {
+		if (s == null) {
+			return null;
+		}
+
+		return s.trim();
 	}
 }
