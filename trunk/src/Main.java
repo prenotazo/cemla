@@ -16,12 +16,13 @@ import org.jdesktop.http.State;
 public class Main {
 	public static final Integer MAX_RECORDS_PER_PAGE = 10;
 
-	// public static final List<String> ABC = Arrays.asList("C");
+	// public static final List<String> ABC = Arrays.asList("D");
 	// public static final List<String> DAYS = Arrays.asList("01");
 	// public static final List<String> MONTHS = Arrays.asList("05");
 	// public static List<String> YEARS = Arrays.asList("1923");
 
 	public static final List<String> ABC = Arrays.asList("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "Ñ", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z");
+
 	public static final List<String> DAYS = Arrays.asList("01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31");
 	public static final List<String> MONTHS = Arrays.asList("01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12");
 	public static List<String> YEARS = new ArrayList<String>();
@@ -68,13 +69,15 @@ public class Main {
 
 								// with error
 								// url =
-								// "http://www.cemla.com/busqueda/buscador_action.php?pageNum_Recordset1=37&totalRows_Recordset1=604&Apellido=C&Nombre=&d-dia=01&d-mes=05&d-anio=1923&h-dia=01&h-mes=05&h-anio=1923";
+								// "http://www.cemla.com/busqueda/buscador_action.php?pageNum_Recordset1=81&totalRows_Recordset1=810&Apellido=D&Nombre=&d-dia=01&d-mes=05&d-anio=1923&h-dia=01&h-mes=05&h-anio=1923";
 
 								Response res = null;
 								if (!mysql.checkAlreadyProcessed(url)) {
 									Thread.sleep(10000);
 									res = session.get(url);
-									System.out.println("Processing... " + url);
+									System.out.println("Processing: " + url);
+								} else {
+									System.out.println("Already Processed: " + url);
 								}
 
 								// System.out.print(session.getState().toString());
@@ -222,8 +225,13 @@ public class Main {
 																case ARRIVAL_PORT:
 																	final String arrivalDateAndPort = trim(nextNode5.getText());
 
-																	arrivalDate = arrivalDateAndPort.substring(0, 10);
-																	arrivalPort = arrivalDateAndPort.substring(13);
+																	if ((arrivalDateAndPort != null) && (arrivalDateAndPort.length() > 12)) {
+																		arrivalDate = arrivalDateAndPort.substring(0, 10);
+																		arrivalPort = arrivalDateAndPort.substring(13);
+																	} else {
+																		arrivalDate = arrivalDateAndPort;
+																		arrivalPort = arrivalDateAndPort;
+																	}
 
 																	// System.out.println("arrivalDate = "
 																	// +
