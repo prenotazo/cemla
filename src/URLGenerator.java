@@ -50,7 +50,7 @@ public class URLGenerator {
 							// do things: begin
 
 							final String totalRecords = "604";
-							mysql.insertUrl(firstPageUrl, Integer.valueOf(totalRecords), lastNameInitial, day, month, year);
+							mysql.getInsertUrl(firstPageUrl, Integer.valueOf(totalRecords), lastNameInitial, day, month, year);
 							// String toRecord = Integer.valueOf(totalRecords) <
 							// MAX_RECORDS_PER_PAGE ? totalRecords :
 							// String.valueOf(MAX_RECORDS_PER_PAGE);
