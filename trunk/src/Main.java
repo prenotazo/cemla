@@ -16,29 +16,35 @@ import org.jdesktop.http.State;
 public class Main {
 	public static final Integer MAX_RECORDS_PER_PAGE = 10;
 
-	// public static final List<String> ABC = Arrays.asList("D");
-	// public static final List<String> DAYS = Arrays.asList("01");
-	// public static final List<String> MONTHS = Arrays.asList("05");
-	// public static List<String> YEARS = Arrays.asList("1923");
+	public static final List<String> ABC = Arrays.asList("A", "G");
+	public static final List<String> DAYS = Arrays.asList("02");
+	public static final List<String> MONTHS = Arrays.asList("01");
+	public static List<String> YEARS = Arrays.asList("1882");
 
-	public static final List<String> ABC = Arrays.asList("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "Ñ", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z");
-
-	public static final List<String> DAYS = Arrays.asList("01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31");
-	public static final List<String> MONTHS = Arrays.asList("01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12");
-	public static List<String> YEARS = new ArrayList<String>();
-
-	static {
-		for (int i = 1882; i <= 1960; i++) {
-			YEARS.add((new Integer(i)).toString());
-		}
-	}
+	// public static final List<String> ABC = Arrays.asList("A", "B", "C", "D",
+	// "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "Ñ", "O", "P", "Q",
+	// "R", "S", "T", "U", "V", "W", "X", "Y", "Z");
+	//
+	// public static final List<String> DAYS = Arrays.asList("01", "02", "03",
+	// "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15",
+	// "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27",
+	// "28", "29", "30", "31");
+	// public static final List<String> MONTHS = Arrays.asList("01", "02", "03",
+	// "04", "05", "06", "07", "08", "09", "10", "11", "12");
+	// public static List<String> YEARS = new ArrayList<String>();
+	//
+	// static {
+	// for (int i = 1882; i <= 1960; i++) {
+	// YEARS.add((new Integer(i)).toString());
+	// }
+	// }
 
 	public static void main(final String[] args) {
 		try {
 			final Session session = new Session();
 			final MysqlConnect mysql = new MysqlConnect();
 
-			mysql.cleanNotCompleted();
+			// mysql.cleanNotCompleted();
 
 			for (final String year : YEARS) {
 				for (final String month : MONTHS) {
@@ -51,7 +57,6 @@ public class Main {
 							String totalRecords = "0";
 							do {
 								// 0 resultados
-								// final String
 								// url =
 								// "http://www.cemla.com/busqueda/buscador_action.php?Apellido=c&Nombre=&d-dia=01&d-mes=05&d-anio=1923&h-dia=30&h-mes=02&h-anio=1923";
 								// 2 resultados
@@ -70,14 +75,16 @@ public class Main {
 								// with error
 								// url =
 								// "http://www.cemla.com/busqueda/buscador_action.php?pageNum_Recordset1=81&totalRows_Recordset1=810&Apellido=D&Nombre=&d-dia=01&d-mes=05&d-anio=1923&h-dia=01&h-mes=05&h-anio=1923";
+								// url =
+								// "http://www.cemla.com/busqueda/buscador_action.php?pageNum_Recordset1=13&totalRows_Recordset1=184&Apellido=A&Nombre=&d-dia=02&d-mes=01&d-anio=1882&h-dia=02&h-mes=01&h-anio=1882";
 
 								Response res = null;
-								if (!mysql.checkAlreadyProcessed(url)) {
-									Thread.sleep(10000);
+								if (!mysql.checkAlreadyCompleted(url)) {
+									// Thread.sleep(10000);
 									res = session.get(url);
 									System.out.println("Processing: " + url);
 								} else {
-									System.out.println("Already Processed: " + url);
+									System.out.println("Already Completed: " + url);
 								}
 
 								// System.out.print(session.getState().toString());
@@ -300,10 +307,10 @@ public class Main {
 																// toRecord +
 																// " of " +
 																// totalRecords);
-																mysql.insertUrl(url, Integer.valueOf(totalRecords), lastNameInitial, day, month, year);
+																mysql.getInsertUrl(url, Integer.valueOf(totalRecords), lastNameInitial, day, month, year);
 
 																for (final PassengerRecord pr : passengerRecords) {
-																	mysql.insertPassengerRecord(pr.getSurname(), pr.getName(), pr.getAge(), pr.getCivilStatus(), pr.getProfession(), pr.getReligion(), pr.getNationality(), pr.getShip(), pr.getDeparture(), pr.getArrivalDate(), pr.getArrivalPort(), pr.getPlaceOfBirth(), url, Integer.valueOf(totalRecords), lastNameInitial, day, month, year);
+																	mysql.getInsertPassengerRecord(pr.getSurname(), pr.getName(), pr.getAge(), pr.getCivilStatus(), pr.getProfession(), pr.getReligion(), pr.getNationality(), pr.getShip(), pr.getDeparture(), pr.getArrivalDate(), pr.getArrivalPort(), pr.getPlaceOfBirth(), url, Integer.valueOf(totalRecords), lastNameInitial, day, month, year);
 																}
 															}
 														}
@@ -314,7 +321,7 @@ public class Main {
 									}
 
 									if (!mysql.checkAlreadyProcessed(url)) {
-										mysql.insertUrl(url, 0, lastNameInitial, day, month, year);
+										mysql.getInsertUrl(url, 0, lastNameInitial, day, month, year);
 									}
 
 									if ((nPageUrls == null) || !nPageUrls.contains(url)) {
