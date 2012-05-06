@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
@@ -13,28 +14,23 @@ import org.jdesktop.http.Session;
 import org.jdesktop.http.State;
 
 public class Main {
-
 	public static final Integer MAX_RECORDS_PER_PAGE = 10;
 
-	public static final List<String> ABC = Arrays.asList("C");
-	public static final List<String> DAYS = Arrays.asList("01");
-	public static final List<String> MONTHS = Arrays.asList("05");
-	public static List<String> YEARS = Arrays.asList("1923");
+	// public static final List<String> ABC = Arrays.asList("C");
+	// public static final List<String> DAYS = Arrays.asList("01");
+	// public static final List<String> MONTHS = Arrays.asList("05");
+	// public static List<String> YEARS = Arrays.asList("1923");
 
-	/*
-	 * public static final List<String> ABC = Arrays.asList("A", "B", "C", "D",
-	 * "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "Ñ", "O", "P", "Q",
-	 * "R", "S", "T", "U", "V", "W", "X", "Y", "Z"); public static final
-	 * List<String> DAYS = Arrays.asList("01", "02", "03", "04", "05", "06",
-	 * "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18",
-	 * "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30",
-	 * "31"); public static final List<String> MONTHS = Arrays.asList("01",
-	 * "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"); public
-	 * static List<String> YEARS = new ArrayList<String>();
-	 * 
-	 * static { for (int i = 1882; i <= 1960; i++) { YEARS.add((new
-	 * Integer(i)).toString()); } }
-	 */
+	public static final List<String> ABC = Arrays.asList("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "Ñ", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z");
+	public static final List<String> DAYS = Arrays.asList("01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31");
+	public static final List<String> MONTHS = Arrays.asList("01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12");
+	public static List<String> YEARS = new ArrayList<String>();
+
+	static {
+		for (int i = 1882; i <= 1960; i++) {
+			YEARS.add((new Integer(i)).toString());
+		}
+	}
 
 	public static void main(final String[] args) {
 		try {
@@ -61,13 +57,18 @@ public class Main {
 								// final String
 								// url="http://www.cemla.com/busqueda/buscador_action.php?Apellido=cru&Nombre=&d-dia=01&d-mes=05&d-anio=1923&h-dia=01&h-mes=05&h-anio=1923";
 								// 1 resultados
-								url = "http://www.cemla.com/busqueda/buscador_action.php?Apellido=crudo&Nombre=&d-dia=01&d-mes=05&d-anio=1923&h-dia=01&h-mes=05&h-anio=1923";
+								// url =
+								// "http://www.cemla.com/busqueda/buscador_action.php?Apellido=crudo&Nombre=&d-dia=01&d-mes=05&d-anio=1923&h-dia=01&h-mes=05&h-anio=1923";
 								// 8 resultados
-								// final String
-								// url="http://www.cemla.com/busqueda/buscador_action.php?Apellido=V&Nombre=&d-dia=20&d-mes=06&d-anio=1938&h-dia=20&h-mes=06&h-anio=1938";
+								// url =
+								// "http://www.cemla.com/busqueda/buscador_action.php?Apellido=V&Nombre=&d-dia=20&d-mes=06&d-anio=1938&h-dia=20&h-mes=06&h-anio=1938";
 								// 4 resultados con algunos campos vacios
 								// final String
 								// url="http://www.cemla.com/busqueda/buscador_action.php?Apellido=ZYLBERMANN&Nombre=&d-dia=01&d-mes=05&d-anio=1923&h-dia=01&h-mes=05&h-anio=1923";
+
+								// with error
+								// url =
+								// "http://www.cemla.com/busqueda/buscador_action.php?pageNum_Recordset1=37&totalRows_Recordset1=604&Apellido=C&Nombre=&d-dia=01&d-mes=05&d-anio=1923&h-dia=01&h-mes=05&h-anio=1923";
 
 								Response res = null;
 								if (!mysql.checkAlreadyProcessed(url)) {
@@ -105,6 +106,7 @@ public class Main {
 											if (children2 == null) {
 												continue;
 											}
+											final List<PassengerRecord> passengerRecords = new ArrayList<PassengerRecord>();
 											for (final SimpleNodeIterator simpleNodeIterator2 = children2.elements(); simpleNodeIterator2.hasMoreNodes();) {
 												final Node nextNode2 = simpleNodeIterator2.nextNode();
 
@@ -141,7 +143,6 @@ public class Main {
 														String arrivalDate = null;
 														String arrivalPort = null;
 														String placeOfBirth = null;
-														final definir la coleccion
 														for (final SimpleNodeIterator simpleNodeIterator4 = children4.elements(); simpleNodeIterator4.hasMoreNodes();) {
 															final Node nextNode4 = simpleNodeIterator4.nextNode();
 
@@ -167,40 +168,55 @@ public class Main {
 																switch (currentPassengerRecordField) {
 																case SURNAME:
 																	surname = trim(nextNode5.getText());
-																	System.out.println("surname = " + surname);
+																	// System.out.println("surname = "
+																	// +
+																	// surname);
 																	currentPassengerRecordField = currentPassengerRecordField.getNext();
 																	break;
 																case NAME:
 																	name = trim(nextNode5.getText().replace(", ", ""));
-																	System.out.println("name = " + name);
+																	// System.out.println("name = "
+																	// + name);
 																	break;
 																case AGE:
 																	age = trim(nextNode5.getText());
-																	System.out.println("age = " + age);
+																	// System.out.println("age = "
+																	// + age);
 																	break;
 																case CIVIL_STATUS:
 																	civilStatus = trim(nextNode5.getText());
-																	System.out.println("civilStatus = " + civilStatus);
+																	// System.out.println("civilStatus = "
+																	// +
+																	// civilStatus);
 																	break;
 																case PROFESSION:
 																	profession = trim(nextNode5.getText());
-																	System.out.println("profession = " + profession);
+																	// System.out.println("profession = "
+																	// +
+																	// profession);
 																	break;
 																case RELIGION:
 																	religion = trim(nextNode5.getText());
-																	System.out.println("religion = " + religion);
+																	// System.out.println("religion = "
+																	// +
+																	// religion);
 																	break;
 																case NATIONALITY:
 																	nationality = trim(nextNode5.getText());
-																	System.out.println("nationality = " + nationality);
+																	// System.out.println("nationality = "
+																	// +
+																	// nationality);
 																	break;
 																case SHIP:
 																	ship = trim(nextNode5.getText());
-																	System.out.println("ship = " + ship);
+																	// System.out.println("ship = "
+																	// + ship);
 																	break;
 																case DEPARTURE:
 																	departure = trim(nextNode5.getText());
-																	System.out.println("departure = " + departure);
+																	// System.out.println("departure = "
+																	// +
+																	// departure);
 																	break;
 																case ARRIVAL_DATE:
 																case ARRIVAL_PORT:
@@ -209,18 +225,24 @@ public class Main {
 																	arrivalDate = arrivalDateAndPort.substring(0, 10);
 																	arrivalPort = arrivalDateAndPort.substring(13);
 
-																	System.out.println("arrivalDate = " + arrivalDate);
-																	System.out.println("arrivalPort = " + arrivalPort);
+																	// System.out.println("arrivalDate = "
+																	// +
+																	// arrivalDate);
+																	// System.out.println("arrivalPort = "
+																	// +
+																	// arrivalPort);
 																	break;
 																case PLACE_OF_BIRTH:
 																	placeOfBirth = trim(nextNode5.getText());
-																	System.out.println("placeOfBirth = " + placeOfBirth);
+																	// System.out.println("placeOfBirth = "
+																	// +
+																	// placeOfBirth);
 																	break;
 																}
 															}
 														}
-														final agregar a coleccion
-														System.out.println();
+														passengerRecords.add(new PassengerRecord(surname, name, age, civilStatus, profession, religion, nationality, ship, departure, arrivalDate, arrivalPort, placeOfBirth));
+														// System.out.println();
 													}
 												}
 
@@ -265,11 +287,16 @@ public class Main {
 																stringTokenizer.nextToken();
 																totalRecords = stringTokenizer.nextToken();
 
-																System.out.println(fromRecord + " to " + toRecord + " of " + totalRecords);
-																mysql.insertUrl(url, Integer.valueOf(totalRecords));
-																
-																final user la coleccion
-																mysql.insertPassengerRecord(surname, name, age, civilStatus, profession, religion, nationality, ship, departure, arrivalDate, arrivalPort, placeOfBirth, url, Integer.valueOf(totalRecords));
+																// System.out.println(fromRecord
+																// + " to " +
+																// toRecord +
+																// " of " +
+																// totalRecords);
+																mysql.insertUrl(url, Integer.valueOf(totalRecords), lastNameInitial, day, month, year);
+
+																for (final PassengerRecord pr : passengerRecords) {
+																	mysql.insertPassengerRecord(pr.getSurname(), pr.getName(), pr.getAge(), pr.getCivilStatus(), pr.getProfession(), pr.getReligion(), pr.getNationality(), pr.getShip(), pr.getDeparture(), pr.getArrivalDate(), pr.getArrivalPort(), pr.getPlaceOfBirth(), url, Integer.valueOf(totalRecords), lastNameInitial, day, month, year);
+																}
 															}
 														}
 													}
@@ -279,7 +306,7 @@ public class Main {
 									}
 
 									if (!mysql.checkAlreadyProcessed(url)) {
-										mysql.insertUrl(url, 0);
+										mysql.insertUrl(url, 0, lastNameInitial, day, month, year);
 									}
 
 									if ((nPageUrls == null) || !nPageUrls.contains(url)) {

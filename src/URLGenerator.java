@@ -45,23 +45,19 @@ public class URLGenerator {
 				for (final String month : MONTHS) {
 					for (final String day : DAYS) {
 						for (final String lastNameInitial : ABC) {
-							final String firstPageUrl = generateFirstPageUrl(
-									lastNameInitial, day, month, year);
+							final String firstPageUrl = generateFirstPageUrl(lastNameInitial, day, month, year);
 
 							// do things: begin
 
 							final String totalRecords = "604";
-							mysql.insertUrl(firstPageUrl,
-									Integer.valueOf(totalRecords));
+							mysql.insertUrl(firstPageUrl, Integer.valueOf(totalRecords), lastNameInitial, day, month, year);
 							// String toRecord = Integer.valueOf(totalRecords) <
 							// MAX_RECORDS_PER_PAGE ? totalRecords :
 							// String.valueOf(MAX_RECORDS_PER_PAGE);
 
 							// do things: end
 
-							for (final String s : generateNPageUrls(
-									lastNameInitial, day, month, year,
-									totalRecords)) {
+							for (final String s : generateNPageUrls(lastNameInitial, day, month, year, totalRecords)) {
 								System.out.println(s);
 							}
 						}
@@ -76,8 +72,7 @@ public class URLGenerator {
 	// Case -> 01/05/1923 c -> 604 resultados
 	// Page 0
 	// http://www.cemla.com/busqueda/buscador_action.php?Apellido=c&Nombre=&d-dia=01&d-mes=05&d-anio=1923&h-dia=01&h-mes=05&h-anio=1923
-	public static String generateFirstPageUrl(final String lastNameInitial,
-			final String day, final String month, final String year) {
+	public static String generateFirstPageUrl(final String lastNameInitial, final String day, final String month, final String year) {
 		final StringBuilder builder = new StringBuilder();
 
 		builder.append("http://www.cemla.com/busqueda/buscador_action.php?Apellido=");
@@ -107,9 +102,7 @@ public class URLGenerator {
 
 	// Page 1
 	// http://www.cemla.com/busqueda/buscador_action.php?pageNum_Recordset1=1&totalRows_Recordset1=604&Apellido=c&Nombre=&d-dia=01&d-mes=05&d-anio=1923&h-dia=01&h-mes=05&h-anio=1923
-	public static String generateNPageUrl(final String lastNameInitial,
-			final String day, final String month, final String year,
-			final Integer pageNumber, final String totalRecords) {
+	public static String generateNPageUrl(final String lastNameInitial, final String day, final String month, final String year, final Integer pageNumber, final String totalRecords) {
 		final StringBuilder builder = new StringBuilder();
 
 		builder.append("http://www.cemla.com/busqueda/buscador_action.php?pageNum_Recordset1=");
@@ -143,21 +136,17 @@ public class URLGenerator {
 		return builder.toString();
 	}
 
-	public static List<String> generateNPageUrls(final String lastNameInitial,
-			final String day, final String month, final String year,
-			final String totalRecords) {
+	public static List<String> generateNPageUrls(final String lastNameInitial, final String day, final String month, final String year, final String totalRecords) {
 		final List<String> nPages = new ArrayList<String>();
 
 		if (Integer.valueOf(totalRecords) < MAX_RECORDS_PER_PAGE) {
 			return nPages;
 		}
 
-		final Integer amountOfPages = new Double(Math.ceil(Integer
-				.valueOf(totalRecords) / MAX_RECORDS_PER_PAGE)).intValue();
+		final Integer amountOfPages = new Double(Math.ceil(Integer.valueOf(totalRecords) / MAX_RECORDS_PER_PAGE)).intValue();
 
 		for (int pageNumber = 1; pageNumber <= amountOfPages; pageNumber++) {
-			nPages.add(generateNPageUrl(lastNameInitial, day, month, year,
-					pageNumber, totalRecords));
+			nPages.add(generateNPageUrl(lastNameInitial, day, month, year, pageNumber, totalRecords));
 		}
 
 		return nPages;
