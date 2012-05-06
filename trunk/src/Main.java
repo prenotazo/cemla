@@ -44,7 +44,7 @@ public class Main {
 			final Session session = new Session();
 			final MysqlConnect mysql = new MysqlConnect();
 
-			// mysql.cleanNotCompleted();
+			mysql.cleanNotCompleted();
 
 			for (final String year : YEARS) {
 				for (final String month : MONTHS) {
