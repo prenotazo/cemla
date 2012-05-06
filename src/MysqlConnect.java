@@ -53,6 +53,10 @@ public class MysqlConnect {
 	}
 
 	public BigDecimal getInsertPassengerRecord(final String surname, final String name, final String age, final String civilStatus, final String profession, final String religion, final String nationality, final String ship, final String departure, final String arrivalDate, final String arrivalPort, final String placeOfBirth, final String url, final Integer totalRecords, final String lastNameInitial, final String day, final String month, final String year) throws SQLException {
+		if (surname.equals(",")) {
+			return null;
+		}
+
 		// Passenger Record
 		BigDecimal prId = null;
 
