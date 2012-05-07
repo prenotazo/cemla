@@ -52,6 +52,7 @@ public class Main {
 					for (final String day : DAYS) {
 						for (final String lastNameInitial : ABC) {
 							String url = URLGenerator.generateFirstPageUrl(lastNameInitial, day, month, year);
+							Boolean isFirstPageUrl = true;
 							List<String> nPageUrls = null;
 							Iterator<String> nPageUrlsIterator = null;
 							boolean hasNext = false;
@@ -86,9 +87,19 @@ public class Main {
 								if (!mysql.checkAlreadyCompleted(url)) {
 									Thread.sleep(10000);
 									res = session.get(url);
-									System.out.println("Processing -> " + progress + ": " + url);
+									if (isFirstPageUrl) {
+										System.out.println("Processing First Page -> " + progress + ": " + url);
+										isFirstPageUrl = false;
+									} else {
+										System.out.println("Processing N Page : " + url);
+									}
 								} else {
-									System.out.println("Already Completed -> " + progress + ": " + url);
+									if (isFirstPageUrl) {
+										System.out.println("Already Completed First Page -> " + progress + ": " + url);
+										isFirstPageUrl = false;
+									} else {
+										System.out.println("Already Completed N Page : " + url);
+									}
 								}
 
 								// System.out.print(session.getState().toString());
