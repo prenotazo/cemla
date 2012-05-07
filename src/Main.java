@@ -17,30 +17,39 @@ import org.jdesktop.http.State;
 public class Main {
 	public static final Integer MAX_RECORDS_PER_PAGE = 10;
 
-	// public static final List<String> ABC = Arrays.asList("A", "G");
-	// public static final List<String> DAYS = Arrays.asList("02");
-	// public static final List<String> MONTHS = Arrays.asList("01");
-	// public static List<String> YEARS = Arrays.asList("1882");
-
 	public static final List<String> ABC = Arrays.asList("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "Ñ", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z");
-	public static final List<String> DAYS = Arrays.asList("01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31");
-	public static final List<String> MONTHS = Arrays.asList("01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12");
-	public static List<String> YEARS = new ArrayList<String>();
+	public static final List<String> DAYS = Arrays.asList("01");
+	public static final List<String> MONTHS = Arrays.asList("05");
+	public static List<String> YEARS = Arrays.asList("1923");
 
-	static {
-		for (int i = 1882; i <= 1960; i++) {
-			YEARS.add((new Integer(i)).toString());
-		}
-	}
+	// public static final List<String> ABC = Arrays.asList("A", "B", "C", "D",
+	// "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "Ñ", "O", "P", "Q",
+	// "R", "S", "T", "U", "V", "W", "X", "Y", "Z");
+	// public static final List<String> DAYS = Arrays.asList("01", "02", "03",
+	// "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15",
+	// "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27",
+	// "28", "29", "30", "31");
+	// public static final List<String> MONTHS = Arrays.asList("01", "02", "03",
+	// "04", "05", "06", "07", "08", "09", "10", "11", "12");
+	// public static List<String> YEARS = new ArrayList<String>();
+	//
+	// static {
+	// for (int i = 1882; i <= 1960; i++) {
+	// YEARS.add((new Integer(i)).toString());
+	// }
+	// }
 
 	public static void main(final String[] args) {
 		try {
-			BigDecimal currentUrl = new BigDecimal(0);
+			BigDecimal currentFirstUrl = BigDecimal.ZERO;
 			final BigDecimal amountOfLetters = new BigDecimal(ABC.size());
 			final BigDecimal amountOfDays = new BigDecimal(DAYS.size());
 			final BigDecimal amountOfMonths = new BigDecimal(MONTHS.size());
 			final BigDecimal amountOfYears = new BigDecimal(YEARS.size());
-			final BigDecimal totalUrls = amountOfLetters.multiply(amountOfDays).multiply(amountOfMonths).multiply(amountOfYears);
+			final BigDecimal totalFirstUrls = amountOfLetters.multiply(amountOfDays).multiply(amountOfMonths).multiply(amountOfYears);
+
+			BigDecimal currentNUrl = BigDecimal.ZERO;
+			BigDecimal totalNUrls = BigDecimal.ZERO;
 
 			final Session session = new Session();
 			final MysqlConnect mysql = new MysqlConnect();
@@ -57,6 +66,7 @@ public class Main {
 							Iterator<String> nPageUrlsIterator = null;
 							boolean hasNext = false;
 							String totalRecords = "0";
+							Boolean alreadyCompleted = false;
 							do {
 								// 0 resultados
 								// url =
@@ -80,25 +90,36 @@ public class Main {
 								// url =
 								// "http://www.cemla.com/busqueda/buscador_action.php?pageNum_Recordset1=13&totalRows_Recordset1=184&Apellido=A&Nombre=&d-dia=02&d-mes=01&d-anio=1882&h-dia=02&h-mes=01&h-anio=1882";
 
-								currentUrl = currentUrl.add(BigDecimal.ONE);
-								final BigDecimal percentage = currentUrl.multiply(new BigDecimal(100)).divide(totalUrls, BigDecimal.ROUND_FLOOR);
-								final String progress = currentUrl + " of " + totalUrls + " (" + percentage + "%)";
 								Response res = null;
 								if (!mysql.checkAlreadyCompleted(url)) {
+									alreadyCompleted = false;
 									Thread.sleep(2000);
 									res = session.get(url);
 									if (isFirstPageUrl) {
-										System.out.println("Processing First Page -> " + progress + ": " + url);
+										currentFirstUrl = currentFirstUrl.add(BigDecimal.ONE);
+										final BigDecimal percentageFirstPage = currentFirstUrl.multiply(new BigDecimal(100)).divide(totalFirstUrls, BigDecimal.ROUND_FLOOR);
+										final String progressFirstPage = currentFirstUrl + " of " + totalFirstUrls + " (" + percentageFirstPage + "%)";
+										System.out.println("Processing First Page -> " + progressFirstPage + ": " + url);
 										isFirstPageUrl = false;
 									} else {
-										System.out.println("Processing N Page : " + url);
+										currentNUrl = currentNUrl.add(BigDecimal.ONE);
+										final BigDecimal percentageNPage = !totalNUrls.equals(BigDecimal.ZERO) ? currentNUrl.multiply(new BigDecimal(100)).divide(totalNUrls, BigDecimal.ROUND_FLOOR) : BigDecimal.ZERO;
+										final String progressNPage = currentNUrl + " of " + totalNUrls + " (" + percentageNPage + "%)";
+										System.out.println("Processing N Page -> " + progressNPage + ": " + url);
 									}
 								} else {
+									alreadyCompleted = true;
 									if (isFirstPageUrl) {
-										System.out.println("Already Completed First Page -> " + progress + ": " + url);
+										currentFirstUrl = currentFirstUrl.add(BigDecimal.ONE);
+										final BigDecimal percentageFirstPage = currentFirstUrl.multiply(new BigDecimal(100)).divide(totalFirstUrls, BigDecimal.ROUND_FLOOR);
+										final String progressFirstPage = currentFirstUrl + " of " + totalFirstUrls + " (" + percentageFirstPage + "%)";
+										System.out.println("Already Completed First Page -> " + progressFirstPage + ": " + url);
 										isFirstPageUrl = false;
 									} else {
-										System.out.println("Already Completed N Page : " + url);
+										currentNUrl = currentNUrl.add(BigDecimal.ONE);
+										final BigDecimal percentageNPage = !totalNUrls.equals(BigDecimal.ZERO) ? currentNUrl.multiply(new BigDecimal(100)).divide(totalNUrls, BigDecimal.ROUND_FLOOR) : BigDecimal.ZERO;
+										final String progressNPage = currentNUrl + " of " + totalNUrls + " (" + percentageNPage + "%)";
+										System.out.println("Already Completed N Page -> " + progressNPage + ": " + url);
 									}
 								}
 
@@ -315,7 +336,7 @@ public class Main {
 																stringTokenizer.nextToken();
 																final String toRecord = stringTokenizer.nextToken();
 																stringTokenizer.nextToken();
-																totalRecords = stringTokenizer.nextToken();
+																totalRecords = GroupUrlDuplicatedPassenger.getTotalRecords(lastNameInitial + day + month + year, stringTokenizer.nextToken());
 
 																// System.out.println(fromRecord
 																// + " to " +
@@ -341,6 +362,8 @@ public class Main {
 
 									if ((nPageUrls == null) || !nPageUrls.contains(url)) {
 										nPageUrls = URLGenerator.generateNPageUrls(lastNameInitial, day, month, year, totalRecords);
+										currentNUrl = BigDecimal.ZERO;
+										totalNUrls = new BigDecimal(nPageUrls.size());
 										nPageUrlsIterator = nPageUrls.iterator();
 									}
 								}
@@ -352,6 +375,11 @@ public class Main {
 									}
 								}
 							} while ((nPageUrlsIterator != null) && hasNext);
+
+							if (!alreadyCompleted) {
+								final String groupUrl = lastNameInitial + day + month + year;
+								System.out.println("FINISHED -> groupUrl = " + groupUrl + " expected records = " + totalRecords + " inserted records = " + mysql.getInsertedRecords(groupUrl));
+							}
 						}
 					}
 				}
