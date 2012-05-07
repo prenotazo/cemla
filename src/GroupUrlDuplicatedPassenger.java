@@ -1,6 +1,6 @@
 public enum GroupUrlDuplicatedPassenger {
 
-	GUDP("A01051923", 728);
+	GUDP_001("A01051923", 728), GUDP_002("B01051923", 579), GUDP_003("C01051923", 603), GUDP_004("D01051923", 803), GUDP_005("F01051923", 564);
 
 	private String groupUrl;
 	private Integer totalRecords;
