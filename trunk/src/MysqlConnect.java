@@ -174,4 +174,14 @@ public class MysqlConnect {
 
 		return false;
 	}
+
+	public Integer getInsertedRecords(final String groupUrl) throws SQLException {
+		final Statement st = this.conn.createStatement();
+		final ResultSet res = st.executeQuery("SELECT COUNT(1) AS amount FROM PassengerRecord_Url PRU1 WHERE PRU1.groupUrl = " + this.adaptDB(groupUrl));
+		if (res.next()) {
+			return res.getInt("amount");
+		}
+
+		return 0;
+	}
 }
