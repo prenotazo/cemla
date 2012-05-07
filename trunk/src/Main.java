@@ -106,7 +106,7 @@ public class Main {
 										currentNUrl = currentNUrl.add(BigDecimal.ONE);
 										final BigDecimal percentageNPage = !totalNUrls.equals(BigDecimal.ZERO) ? currentNUrl.multiply(new BigDecimal(100)).divide(totalNUrls, BigDecimal.ROUND_FLOOR) : BigDecimal.ZERO;
 										final String progressNPage = currentNUrl + " of " + totalNUrls + " (" + percentageNPage + "%)";
-										System.out.println("Processing N Page " + groupUrl + " -> " + progressNPage + ": " + url);
+										System.out.println("Processing N Page (" + groupUrl + ") -> " + progressNPage + ": " + url);
 									}
 								} else {
 									alreadyCompleted = true;
