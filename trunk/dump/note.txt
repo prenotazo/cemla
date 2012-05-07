@@ -1,0 +1,1 @@
+MySQL Administrator was used to create the dump.
