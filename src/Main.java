@@ -91,6 +91,7 @@ public class Main {
 								// "http://www.cemla.com/busqueda/buscador_action.php?pageNum_Recordset1=13&totalRows_Recordset1=184&Apellido=A&Nombre=&d-dia=02&d-mes=01&d-anio=1882&h-dia=02&h-mes=01&h-anio=1882";
 
 								Response res = null;
+								final String groupUrl = lastNameInitial + day + month + year;
 								if (!mysql.checkAlreadyCompleted(url)) {
 									alreadyCompleted = false;
 									Thread.sleep(2000);
@@ -99,13 +100,13 @@ public class Main {
 										currentFirstUrl = currentFirstUrl.add(BigDecimal.ONE);
 										final BigDecimal percentageFirstPage = currentFirstUrl.multiply(new BigDecimal(100)).divide(totalFirstUrls, BigDecimal.ROUND_FLOOR);
 										final String progressFirstPage = currentFirstUrl + " of " + totalFirstUrls + " (" + percentageFirstPage + "%)";
-										System.out.println("Processing First Page -> " + progressFirstPage + ": " + url);
+										System.out.println("Processing First Page (" + groupUrl + ") -> " + progressFirstPage + ": " + url);
 										isFirstPageUrl = false;
 									} else {
 										currentNUrl = currentNUrl.add(BigDecimal.ONE);
 										final BigDecimal percentageNPage = !totalNUrls.equals(BigDecimal.ZERO) ? currentNUrl.multiply(new BigDecimal(100)).divide(totalNUrls, BigDecimal.ROUND_FLOOR) : BigDecimal.ZERO;
 										final String progressNPage = currentNUrl + " of " + totalNUrls + " (" + percentageNPage + "%)";
-										System.out.println("Processing N Page -> " + progressNPage + ": " + url);
+										System.out.println("Processing N Page " + groupUrl + " -> " + progressNPage + ": " + url);
 									}
 								} else {
 									alreadyCompleted = true;
@@ -113,13 +114,13 @@ public class Main {
 										currentFirstUrl = currentFirstUrl.add(BigDecimal.ONE);
 										final BigDecimal percentageFirstPage = currentFirstUrl.multiply(new BigDecimal(100)).divide(totalFirstUrls, BigDecimal.ROUND_FLOOR);
 										final String progressFirstPage = currentFirstUrl + " of " + totalFirstUrls + " (" + percentageFirstPage + "%)";
-										System.out.println("Already Completed First Page -> " + progressFirstPage + ": " + url);
+										System.out.println("Already Completed First Page (" + groupUrl + ") -> " + progressFirstPage + ": " + url);
 										isFirstPageUrl = false;
 									} else {
 										currentNUrl = currentNUrl.add(BigDecimal.ONE);
 										final BigDecimal percentageNPage = !totalNUrls.equals(BigDecimal.ZERO) ? currentNUrl.multiply(new BigDecimal(100)).divide(totalNUrls, BigDecimal.ROUND_FLOOR) : BigDecimal.ZERO;
 										final String progressNPage = currentNUrl + " of " + totalNUrls + " (" + percentageNPage + "%)";
-										System.out.println("Already Completed N Page -> " + progressNPage + ": " + url);
+										System.out.println("Already Completed N Page (" + groupUrl + ") -> " + progressNPage + ": " + url);
 									}
 								}
 
