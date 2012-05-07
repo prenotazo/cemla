@@ -4,6 +4,8 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class MysqlConnect {
 
@@ -45,7 +47,7 @@ public class MysqlConnect {
 		// Insert
 		if (urlId == null) {
 			st = this.conn.createStatement();
-			st.executeUpdate("INSERT Url (url, groupUrl, totalRecords) VALUES (" + this.adaptDB(url) + ", " + this.adaptDB(lastNameInitial + day + month + year) + ", " + totalRecords + ")");
+			st.executeUpdate("INSERT Url (url, groupUrl, totalRecords, dateInsert) VALUES (" + this.adaptDB(url) + ", " + this.adaptDB(lastNameInitial + day + month + year) + ", " + totalRecords + ", " + this.stringDateDB() + ")");
 			urlId = this.getInsertUrl(url, totalRecords, lastNameInitial, day, month, year);
 		}
 
@@ -71,7 +73,7 @@ public class MysqlConnect {
 		if (prId == null) {
 			// Insert
 			st = this.conn.createStatement();
-			st.executeUpdate("INSERT PassengerRecord (surname, name, age, civilStatus, profession, religion, nationality, ship, departure, arrivalDate, arrivalPort, placeOfBirth) VALUES (" + this.adaptDB(surname) + ", " + this.adaptDB(name) + ", " + this.adaptDB(age) + ", " + this.adaptDB(civilStatus) + ", " + this.adaptDB(profession) + ", " + this.adaptDB(religion) + ", " + this.adaptDB(nationality) + ", " + this.adaptDB(ship) + ", " + this.adaptDB(departure) + ", " + this.adaptDB(arrivalDate) + ", " + this.adaptDB(arrivalPort) + ", " + this.adaptDB(placeOfBirth) + ")");
+			st.executeUpdate("INSERT PassengerRecord (surname, name, age, civilStatus, profession, religion, nationality, ship, departure, arrivalDate, arrivalPort, placeOfBirth, dateInsert) VALUES (" + this.adaptDB(surname) + ", " + this.adaptDB(name) + ", " + this.adaptDB(age) + ", " + this.adaptDB(civilStatus) + ", " + this.adaptDB(profession) + ", " + this.adaptDB(religion) + ", " + this.adaptDB(nationality) + ", " + this.adaptDB(ship) + ", " + this.adaptDB(departure) + ", " + this.adaptDB(arrivalDate) + ", " + this.adaptDB(arrivalPort) + ", " + this.adaptDB(placeOfBirth) + ", " + this.stringDateDB() + ")");
 			prId = this.getInsertPassengerRecord(surname, name, age, civilStatus, profession, religion, nationality, ship, departure, arrivalDate, arrivalPort, placeOfBirth, url, totalRecords, lastNameInitial, day, month, year);
 		}
 
@@ -97,11 +99,17 @@ public class MysqlConnect {
 		// Insert
 		if (pruId == null) {
 			st = this.conn.createStatement();
-			st.executeUpdate("INSERT PassengerRecord_Url (passengerRecordId, urlId, groupUrl) VALUES (" + this.adaptDB(prId) + ", " + this.adaptDB(urlId) + ", " + this.adaptDB(groupUrl) + ")");
+			st.executeUpdate("INSERT PassengerRecord_Url (passengerRecordId, urlId, groupUrl, dateInsert) VALUES (" + this.adaptDB(prId) + ", " + this.adaptDB(urlId) + ", " + this.adaptDB(groupUrl) + ", " + this.stringDateDB() + ")");
 			pruId = this.getInsertPassengerRecordUrl(prId, urlId, groupUrl);
 		}
 
 		return pruId;
+	}
+
+	private String stringDateDB() {
+		final SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss aaa");
+
+		return this.adaptDB(sdf.format(new Date()));
 	}
 
 	private String adaptDB(final String s) {
