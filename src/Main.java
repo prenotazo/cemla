@@ -85,7 +85,7 @@ public class Main {
 								final String progress = currentUrl + " of " + totalUrls + " (" + percentage + "%)";
 								Response res = null;
 								if (!mysql.checkAlreadyCompleted(url)) {
-									Thread.sleep(10000);
+									Thread.sleep(2000);
 									res = session.get(url);
 									if (isFirstPageUrl) {
 										System.out.println("Processing First Page -> " + progress + ": " + url);
