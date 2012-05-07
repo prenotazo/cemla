@@ -337,7 +337,7 @@ public class Main {
 																stringTokenizer.nextToken();
 																final String toRecord = stringTokenizer.nextToken();
 																stringTokenizer.nextToken();
-																totalRecords = GroupUrlDuplicatedPassenger.getTotalRecords(lastNameInitial + day + month + year, stringTokenizer.nextToken());
+																totalRecords = stringTokenizer.nextToken();
 
 																// System.out.println(fromRecord
 																// + " to " +
@@ -379,7 +379,11 @@ public class Main {
 
 							if (!alreadyCompleted) {
 								final String groupUrl = lastNameInitial + day + month + year;
-								System.out.println("FINISHED -> groupUrl = " + groupUrl + " expected records = " + totalRecords + " inserted records = " + mysql.getInsertedRecords(groupUrl));
+								final Integer insertedRecords = mysql.getInsertedRecords(groupUrl);
+								if (Integer.valueOf(totalRecords) > insertedRecords) {
+									System.out.println("Changed " + groupUrl + " from " + totalRecords + " to " + insertedRecords + "");
+									mysql.updateUrlTotalRecordsByGroupUrl(groupUrl, insertedRecords);
+								}
 							}
 						}
 					}
