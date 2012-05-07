@@ -16,28 +16,21 @@ import org.jdesktop.http.State;
 public class Main {
 	public static final Integer MAX_RECORDS_PER_PAGE = 10;
 
-	public static final List<String> ABC = Arrays.asList("A", "G");
-	public static final List<String> DAYS = Arrays.asList("02");
-	public static final List<String> MONTHS = Arrays.asList("01");
-	public static List<String> YEARS = Arrays.asList("1882");
+	// public static final List<String> ABC = Arrays.asList("A", "G");
+	// public static final List<String> DAYS = Arrays.asList("02");
+	// public static final List<String> MONTHS = Arrays.asList("01");
+	// public static List<String> YEARS = Arrays.asList("1882");
 
-	// public static final List<String> ABC = Arrays.asList("A", "B", "C", "D",
-	// "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "Ñ", "O", "P", "Q",
-	// "R", "S", "T", "U", "V", "W", "X", "Y", "Z");
-	//
-	// public static final List<String> DAYS = Arrays.asList("01", "02", "03",
-	// "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15",
-	// "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27",
-	// "28", "29", "30", "31");
-	// public static final List<String> MONTHS = Arrays.asList("01", "02", "03",
-	// "04", "05", "06", "07", "08", "09", "10", "11", "12");
-	// public static List<String> YEARS = new ArrayList<String>();
-	//
-	// static {
-	// for (int i = 1882; i <= 1960; i++) {
-	// YEARS.add((new Integer(i)).toString());
-	// }
-	// }
+	public static final List<String> ABC = Arrays.asList("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "Ñ", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z");
+	public static final List<String> DAYS = Arrays.asList("01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31");
+	public static final List<String> MONTHS = Arrays.asList("01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12");
+	public static List<String> YEARS = new ArrayList<String>();
+
+	static {
+		for (int i = 1882; i <= 1960; i++) {
+			YEARS.add((new Integer(i)).toString());
+		}
+	}
 
 	public static void main(final String[] args) {
 		try {
@@ -80,7 +73,7 @@ public class Main {
 
 								Response res = null;
 								if (!mysql.checkAlreadyCompleted(url)) {
-									// Thread.sleep(10000);
+									Thread.sleep(10000);
 									res = session.get(url);
 									System.out.println("Processing: " + url);
 								} else {
