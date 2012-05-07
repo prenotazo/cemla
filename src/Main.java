@@ -1,3 +1,4 @@
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
@@ -34,6 +35,13 @@ public class Main {
 
 	public static void main(final String[] args) {
 		try {
+			BigDecimal currentUrl = new BigDecimal(0);
+			final BigDecimal amountOfLetters = new BigDecimal(ABC.size());
+			final BigDecimal amountOfDays = new BigDecimal(DAYS.size());
+			final BigDecimal amountOfMonths = new BigDecimal(MONTHS.size());
+			final BigDecimal amountOfYears = new BigDecimal(YEARS.size());
+			final BigDecimal totalUrls = amountOfLetters.multiply(amountOfDays).multiply(amountOfMonths).multiply(amountOfYears);
+
 			final Session session = new Session();
 			final MysqlConnect mysql = new MysqlConnect();
 
@@ -71,13 +79,16 @@ public class Main {
 								// url =
 								// "http://www.cemla.com/busqueda/buscador_action.php?pageNum_Recordset1=13&totalRows_Recordset1=184&Apellido=A&Nombre=&d-dia=02&d-mes=01&d-anio=1882&h-dia=02&h-mes=01&h-anio=1882";
 
+								currentUrl = currentUrl.add(BigDecimal.ONE);
+								final BigDecimal percentage = currentUrl.multiply(new BigDecimal(100)).divide(totalUrls, BigDecimal.ROUND_FLOOR);
+								final String progress = currentUrl + " of " + totalUrls + " (" + percentage + "%)";
 								Response res = null;
 								if (!mysql.checkAlreadyCompleted(url)) {
 									Thread.sleep(10000);
 									res = session.get(url);
-									System.out.println("Processing: " + url);
+									System.out.println("Processing -> " + progress + ": " + url);
 								} else {
-									System.out.println("Already Completed: " + url);
+									System.out.println("Already Completed -> " + progress + ": " + url);
 								}
 
 								// System.out.print(session.getState().toString());
