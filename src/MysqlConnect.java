@@ -184,4 +184,9 @@ public class MysqlConnect {
 
 		return 0;
 	}
+
+	public void updateUrlTotalRecordsByGroupUrl(final String groupUrl, final Integer insertedRecords) throws SQLException {
+		final Statement st = this.conn.createStatement();
+		st.executeUpdate("UPDATE Url SET totalRecords = " + insertedRecords + " WHERE groupUrl = " + this.adaptDB(groupUrl));
+	}
 }
