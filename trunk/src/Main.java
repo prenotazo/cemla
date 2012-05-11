@@ -90,7 +90,7 @@ public class Main {
 								final String groupUrl = lastNameInitial + day + month + year;
 								if (!mysql.checkAlreadyCompleted(url)) {
 									alreadyCompleted = false;
-									Thread.sleep(2000);
+									Thread.sleep(10000);
 									res = session.get(url);
 									if (isFirstPageUrl) {
 										currentFirstUrl = currentFirstUrl.add(BigDecimal.ONE);
