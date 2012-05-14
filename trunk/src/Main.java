@@ -30,7 +30,10 @@ public class Main {
 	public static List<String> YEARS = new ArrayList<String>();
 
 	static {
-		for (int i = 1882; i <= 1960; i++) {
+		// for (int i = 1882; i <= 1960; i++) {
+		// YEARS.add((new Integer(i)).toString());
+		// }
+		for (int i = 1918; i >= 1888; i--) {
 			YEARS.add((new Integer(i)).toString());
 		}
 	}
@@ -90,7 +93,7 @@ public class Main {
 								final String groupUrl = lastNameInitial + day + month + year;
 								if (!mysql.checkAlreadyCompleted(url)) {
 									alreadyCompleted = false;
-									Thread.sleep(10000);
+									Thread.sleep(2000);
 									res = session.get(url);
 									if (isFirstPageUrl) {
 										currentFirstUrl = currentFirstUrl.add(BigDecimal.ONE);
