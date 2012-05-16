@@ -1,3 +1,4 @@
+package com.cemla;
 
 public enum PassengerRecordField {
 	SURNAME(1),
