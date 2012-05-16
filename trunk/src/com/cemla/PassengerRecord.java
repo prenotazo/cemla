@@ -1,3 +1,4 @@
+package com.cemla;
 import java.io.Serializable;
 
 public class PassengerRecord implements Serializable {
