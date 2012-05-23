@@ -24,7 +24,6 @@ public class Main {
 	public static final List<String> DAYS = Arrays.asList("01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31");
 	public static final List<String> MONTHS = Arrays.asList("01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12");
 	public static List<String> YEARS = new ArrayList<String>();
-	public static List<String> YEARS_COMPLETED = Arrays.asList();
 
 	static {
 		// for (int i = 1882; i <= 1960; i++) {
@@ -33,8 +32,6 @@ public class Main {
 		for (int i = 1918; i >= 1888; i--) {
 			YEARS.add((new Integer(i)).toString());
 		}
-
-		YEARS.removeAll(YEARS_COMPLETED);
 	}
 
 	public static void main(final String[] args) {
