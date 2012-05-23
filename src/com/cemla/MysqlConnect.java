@@ -48,8 +48,8 @@ public class MysqlConnect {
 		// Insert
 		if (urlId == null) {
 			st = this.conn.createStatement();
-			st.executeUpdate("INSERT Url (url, groupUrl, totalRecords, dateInsert) VALUES (" + this.adaptDB(url) + ", " + this.adaptDB(lastNameInitial + day + month + year) + ", " + totalRecords + ", " + this.stringDateDB() + ")");
-			urlId = this.getInsertUrl(url, totalRecords, lastNameInitial, day, month, year);
+			st.executeUpdate("INSERT Url (url, groupUrl, totalRecords, dateInsert) VALUES (" + this.adaptDB(url) + ", " + this.adaptDB(lastNameInitial + day + month + year) + ", " + totalRecords + ", " + stringDateDB() + ")");
+			urlId = getInsertUrl(url, totalRecords, lastNameInitial, day, month, year);
 		}
 
 		return urlId;
@@ -74,15 +74,15 @@ public class MysqlConnect {
 		if (prId == null) {
 			// Insert
 			st = this.conn.createStatement();
-			st.executeUpdate("INSERT PassengerRecord (surname, name, age, civilStatus, profession, religion, nationality, ship, departure, arrivalDate, arrivalPort, placeOfBirth, dateInsert) VALUES (" + this.adaptDB(surname) + ", " + this.adaptDB(name) + ", " + this.adaptDB(age) + ", " + this.adaptDB(civilStatus) + ", " + this.adaptDB(profession) + ", " + this.adaptDB(religion) + ", " + this.adaptDB(nationality) + ", " + this.adaptDB(ship) + ", " + this.adaptDB(departure) + ", " + this.adaptDB(arrivalDate) + ", " + this.adaptDB(arrivalPort) + ", " + this.adaptDB(placeOfBirth) + ", " + this.stringDateDB() + ")");
-			prId = this.getInsertPassengerRecord(surname, name, age, civilStatus, profession, religion, nationality, ship, departure, arrivalDate, arrivalPort, placeOfBirth, url, totalRecords, lastNameInitial, day, month, year);
+			st.executeUpdate("INSERT PassengerRecord (surname, name, age, civilStatus, profession, religion, nationality, ship, departure, arrivalDate, arrivalPort, placeOfBirth, dateInsert) VALUES (" + this.adaptDB(surname) + ", " + this.adaptDB(name) + ", " + this.adaptDB(age) + ", " + this.adaptDB(civilStatus) + ", " + this.adaptDB(profession) + ", " + this.adaptDB(religion) + ", " + this.adaptDB(nationality) + ", " + this.adaptDB(ship) + ", " + this.adaptDB(departure) + ", " + this.adaptDB(arrivalDate) + ", " + this.adaptDB(arrivalPort) + ", " + this.adaptDB(placeOfBirth) + ", " + stringDateDB() + ")");
+			prId = getInsertPassengerRecord(surname, name, age, civilStatus, profession, religion, nationality, ship, departure, arrivalDate, arrivalPort, placeOfBirth, url, totalRecords, lastNameInitial, day, month, year);
 		}
 
 		// Url
-		final BigDecimal urlId = this.getInsertUrl(url, totalRecords, lastNameInitial, day, month, year);
+		final BigDecimal urlId = getInsertUrl(url, totalRecords, lastNameInitial, day, month, year);
 
 		// Passenger Record - Url
-		this.getInsertPassengerRecordUrl(prId, urlId, lastNameInitial + day + month + year);
+		getInsertPassengerRecordUrl(prId, urlId, lastNameInitial + day + month + year);
 
 		return prId;
 	}
@@ -100,8 +100,8 @@ public class MysqlConnect {
 		// Insert
 		if (pruId == null) {
 			st = this.conn.createStatement();
-			st.executeUpdate("INSERT PassengerRecord_Url (passengerRecordId, urlId, groupUrl, dateInsert) VALUES (" + this.adaptDB(prId) + ", " + this.adaptDB(urlId) + ", " + this.adaptDB(groupUrl) + ", " + this.stringDateDB() + ")");
-			pruId = this.getInsertPassengerRecordUrl(prId, urlId, groupUrl);
+			st.executeUpdate("INSERT PassengerRecord_Url (passengerRecordId, urlId, groupUrl, dateInsert) VALUES (" + this.adaptDB(prId) + ", " + this.adaptDB(urlId) + ", " + this.adaptDB(groupUrl) + ", " + stringDateDB() + ")");
+			pruId = getInsertPassengerRecordUrl(prId, urlId, groupUrl);
 		}
 
 		return pruId;
@@ -141,17 +141,23 @@ public class MysqlConnect {
 	}
 
 	public void cleanNotCompleted() throws SQLException {
+		System.out.println(new Date() + " cleanNotCompleted started");
 		// Delete Unlinked Passenger Record
+		System.out.println(new Date() + " Delete Unlinked Passenger Record started");
 		Statement st = this.conn.createStatement();
 		st.executeUpdate("DELETE FROM PassengerRecord WHERE id NOT IN (SELECT DISTINCT PRU.passengerRecordId FROM PassengerRecord_Url PRU)");
+		System.out.println(new Date() + " Delete Unlinked Passenger Record finished");
 
 		// Delete Unlinked Url
+		System.out.println(new Date() + " Delete Unlinked Url started");
 		st = this.conn.createStatement();
 		st.executeUpdate("DELETE FROM Url WHERE id NOT IN (SELECT DISTINCT PRU.urlId FROM PassengerRecord_Url PRU) AND totalRecords <> 0");
+		System.out.println(new Date() + " Delete Unlinked Url finished");
 
 		// Delete non completed final URLs and all final the related final data.
 		final ResultSet res = st.executeQuery("SELECT DISTINCT PRU.passengerRecordId AS passengerRecordId, PRU.urlId AS urlId FROM PassengerRecord_Url PRU, Url U WHERE PRU.urlId = U.id AND U.totalRecords <> (SELECT COUNT(1) FROM PassengerRecord_Url PRU1 WHERE PRU1.groupUrl = U.groupUrl)");
 		while (res.next()) {
+			System.out.println(new Date() + " cleanNotCompleted cleaning started");
 			final BigDecimal passengerRecordId = res.getBigDecimal("passengerRecordId");
 			final BigDecimal urlId = res.getBigDecimal("urlId");
 
@@ -163,7 +169,9 @@ public class MysqlConnect {
 
 			st = this.conn.createStatement();
 			st.executeUpdate("DELETE FROM Url WHERE id = " + this.adaptDB(urlId) + " AND id NOT IN (SELECT DISTINCT PRU.urlId FROM PassengerRecord_Url PRU)");
+			System.out.println(new Date() + " cleanNotCompleted cleaning finished");
 		}
+		System.out.println(new Date() + " cleanNotCompleted finished");
 	}
 
 	public boolean checkAlreadyProcessed(final String url) throws SQLException {
