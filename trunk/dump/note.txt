@@ -1,1 +1,1 @@
-MySQL Administrator was used to create these dumps.
+MySQL Administrator / MySQL Workbench was used to create these dumps.
