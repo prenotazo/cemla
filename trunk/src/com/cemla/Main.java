@@ -26,10 +26,7 @@ public class Main {
 	public static List<String> YEARS = new ArrayList<String>();
 
 	static {
-		// for (int i = 1882; i <= 1960; i++) {
-		// YEARS.add((new Integer(i)).toString());
-		// }
-		for (int i = 1912; i >= 1888; i--) {
+		for (int i = 1882; i <= 1960; i++) {
 			YEARS.add((new Integer(i)).toString());
 		}
 	}
