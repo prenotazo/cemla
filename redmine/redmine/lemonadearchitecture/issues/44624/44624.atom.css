@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title></title>
+  <link href="http://redmine.teracode.com/issues/44624.atom?key=4aa574c9e059cb38d85a8c5ac783b54345358b7b" rel="self"/>
+  <link href="http://redmine.teracode.com/" rel="alternate"/>
+  <id>http://redmine.teracode.com/</id>
+  <updated>2010-11-15T10:34:09-03:00</updated>
+  <author>
+    <name>TeraCode Project Management Tool</name>
+  </author>
+  <entry>
+    <title>Architecture - Issue #44624: ESB and load balancing</title>
+    <link href="http://redmine.teracode.com/issues/44624" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/44624?journal_id=172244</id>
+    <updated>2010-11-15T10:34:09-03:00</updated>
+    <author>
+      <name>Jorge Santoro</name>
+      <email>jorge.santoro@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;Probably we need to implement a solution which communicates all the instances of one projects and determines which instance is the one that will consumes the messages.&lt;br /&gt;Is there any restriction? &lt;br /&gt;Right now if two or more instances consume the same message, does it cause an error?&lt;br /&gt;Do we need to replicate the result of the message in the different instances? or the consumer should consume the message and update the db state?&lt;br /&gt;If we are using 2nd level cache in any project we need to take into account that, because we need to refresh the cache of the not consuming instances.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Architecture - Issue #44624: ESB and load balancing</title>
+    <link href="http://redmine.teracode.com/issues/44624" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/44624?journal_id=172667</id>
+    <updated>2010-11-16T04:26:24-03:00</updated>
+    <author>
+      <name>Michael De Groeve</name>
+      <email>michaeldegroeve@lemonade.be</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;good questions, check with the app team leaders to understand the messages and what they do, then we can discuss this on our friday meeting&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Architecture - Issue #44624: ESB and load balancing</title>
+    <link href="http://redmine.teracode.com/issues/44624" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/44624?journal_id=173180</id>
+    <updated>2010-11-17T14:20:43-03:00</updated>
+    <author>
+      <name>Javier Posado</name>
+      <email>javier.posado@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;&lt;a class="external" href="http://activemq.apache.org/exclusive-consumer.html"&gt;http://activemq.apache.org/exclusive-consumer.html&lt;/a&gt; can help to this issue&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Architecture - Issue #44624: ESB and load balancing</title>
+    <link href="http://redmine.teracode.com/issues/44624" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/44624?journal_id=173674</id>
+    <updated>2010-11-19T06:30:15-03:00</updated>
+    <author>
+      <name>Michael De Groeve</name>
+      <email>michaeldegroeve@lemonade.be</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;ah, but if i understand it correctly (ordering is less important for us) we can have multiple JMS sessions listening to the same QUEUE, the one that gets the message first will process it, the other not? In that case, we can just configure both instances to listen to the same queue of the virtual topic? (they used to each be subscribed to the same topic, resulting in double message receives)&lt;/p&gt;
+
+
+	&lt;p&gt;in any case, your suggestion is a good one&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Architecture - Issue #44624: ESB and load balancing</title>
+    <link href="http://redmine.teracode.com/issues/44624" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/44624?journal_id=173692</id>
+    <updated>2010-11-19T10:46:10-03:00</updated>
+    <author>
+      <name>Jorge Santoro</name>
+      <email>jorge.santoro@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;We need to test it.&lt;br /&gt;Michael, when do you want us to start doing this?&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Architecture - Issue #44624: ESB and load balancing</title>
+    <link href="http://redmine.teracode.com/issues/44624" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/44624?journal_id=173976</id>
+    <updated>2010-11-22T13:48:44-03:00</updated>
+    <author>
+      <name>Michael De Groeve</name>
+      <email>michaeldegroeve@lemonade.be</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;i'm deploying all in test tomorrow, i hope to go to production (where we loadbalance) during this week. I will test my solution (2 instances listening to the same virtual topic = queue) there, i'll keep you posted&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Architecture - Issue #44624: ESB and load balancing</title>
+    <link href="http://redmine.teracode.com/issues/44624" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/44624?journal_id=173981</id>
+    <updated>2010-11-22T15:18:47-03:00</updated>
+    <author>
+      <name>Javier Posado</name>
+      <email>javier.posado@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;Producer need to be tested too with loadbalance. The embedded broker is using db persistence and it has the property useDatabaseLock in false so more than one broker can use the same db but I am not sure if it works fine. &lt;a class="external" href="http://activemq.apache.org/can-two-brokers-share-the-same-database.html"&gt;http://activemq.apache.org/can-two-brokers-share-the-same-database.html&lt;/a&gt;&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Architecture - Issue #44624: ESB and load balancing</title>
+    <link href="http://redmine.teracode.com/issues/44624" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/44624?journal_id=180485</id>
+    <updated>2010-12-15T10:18:41-03:00</updated>
+    <author>
+      <name>Michael De Groeve</name>
+      <email>michaeldegroeve@lemonade.be</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;just tested, this idd doesn't work (3 instances opening a network connector to the central broker blocks all)&lt;/p&gt;
+
+
+	&lt;p&gt;2 options i guess (from dimi):&lt;br /&gt;1/ use local file storage instead of DB persistence: &lt;br /&gt; - pro: simple to configure&lt;br /&gt; - con: difficult to browse in queues, no backup on disk craches, ...&lt;br /&gt;2/ use seperate activeMQ table names per tomcat&lt;br /&gt; - pro: easy to browse queues, use DB backup systems that are already in place, ...&lt;br /&gt; - con: i'm not sure you can do this... is this configurable somewhere?&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Architecture - Issue #44624: ESB and load balancing</title>
+    <link href="http://redmine.teracode.com/issues/44624" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/44624?journal_id=180598</id>
+    <updated>2010-12-15T12:24:20-03:00</updated>
+    <author>
+      <name>Javier Posado</name>
+      <email>javier.posado@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;Option 2 works fine. We have to set the "statements" in persistenceAdapter. We can use a prefix for the 3 created tables  or set the names for them.&lt;br /&gt;&lt;pre&gt;
+BrokerService broker = new BrokerService();
+broker.setBrokerName("EmbeddedBroker");
+JDBCPersistenceAdapter jdbc = new JDBCPersistenceAdapter();
+broker.setPersistenceAdapter(jdbc);
+
+// Set table prefix
+Statements statement = new Statements();
+statement.setTablePrefix("Brkr1");
+jdbc.setStatements(statement);
+
+&lt;/pre&gt;&lt;/p&gt;
+
+
+	&lt;p&gt;or&lt;/p&gt;
+
+
+&lt;pre&gt;
+BrokerService broker = new BrokerService();
+broker.setBrokerName("EmbeddedBroker");
+JDBCPersistenceAdapter jdbc = new JDBCPersistenceAdapter();
+broker.setPersistenceAdapter(jdbc);
+
+// Set name of tables
+Statements statement = new Statements();
+statement.setMessageTableName("ACTIVEMQ_MSGS_1");
+statement.setLockTableName("ACTIVEMQ_LOCK_1");
+statement.setDurableSubAcksTableName("ACTIVEMQ_ACKS_1");
+jdbc.setStatements(statement);
+&lt;/pre&gt;
+
+	&lt;p&gt;for Spring:&lt;br /&gt;&lt;pre&gt;
+    &amp;lt;bean id="statements" class="org.apache.activemq.store.jdbc.Statements"&amp;gt;
+        &amp;lt;property name="tablePrefix"  value="{brokerService.tablePrefix}"/&amp;gt;
+    &amp;lt;/bean&amp;gt;
+
+    &amp;lt;bean id="brokerService" class="be.b3s.core.broker.BrokerService" init-method="start" destroy-method="stop"&amp;gt;
+         &amp;lt;property name="persistenceAdapter"&amp;gt;
+               &amp;lt;bean class="org.apache.activemq.store.jdbc.JDBCPersistenceAdapter"&amp;gt;
+                 &amp;lt;property name="dataSource"  ref="dataSource"/&amp;gt;
+                 &amp;lt;property name="createTablesOnStartup" value="true" /&amp;gt;
+                &amp;lt;property name="useDatabaseLock" value="false" /&amp;gt;
+                &amp;lt;property name="statements" ref="statements" /&amp;gt;
+               &amp;lt;/bean&amp;gt;
+         &amp;lt;/property&amp;gt;
+        &amp;lt;property name="useJmx" value="${brokerService.useJmx}" /&amp;gt;
+        &amp;lt;property name="dataDirectory" value="${brokerService.dataDirectory}" /&amp;gt;
+        &amp;lt;property name="brokerName" value="${brokerService.brokerName}" /&amp;gt;
+        &amp;lt;property name="centralBroker" value="${brokerService.centralBroker}"/&amp;gt;
+    &amp;lt;/bean&amp;gt;
+
+&lt;/pre&gt;&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Architecture - Issue #44624: ESB and load balancing</title>
+    <link href="http://redmine.teracode.com/issues/44624" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/44624?journal_id=180600</id>
+    <updated>2010-12-15T12:25:38-03:00</updated>
+    <author>
+      <name>Javier Posado</name>
+      <email>javier.posado@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;File&lt;/strong&gt; &lt;a href="/attachments/15133/EmbeddedBrokers.java"&gt;EmbeddedBrokers.java&lt;/a&gt; added&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>Architecture - Issue #44624: ESB and load balancing</title>
+    <link href="http://redmine.teracode.com/issues/44624" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/44624?journal_id=180625</id>
+    <updated>2010-12-15T13:01:19-03:00</updated>
+    <author>
+      <name>Michael De Groeve</name>
+      <email>michaeldegroeve@lemonade.be</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;ok i'll try&lt;/p&gt;
+
+
+	&lt;p&gt;i'll set useDatabaseLock = true again, no?&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Architecture - Issue #44624: ESB and load balancing</title>
+    <link href="http://redmine.teracode.com/issues/44624" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/44624?journal_id=180632</id>
+    <updated>2010-12-15T13:49:33-03:00</updated>
+    <author>
+      <name>Javier Posado</name>
+      <email>javier.posado@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;useDatabaseLock = true means that a broker try an acquire an exclusive lock on ACTIVEMQ_LOCK table and any other brokers can't use that shared table, so they can't start (JDBC Master Slave). If we use different names in the lock table per broker, useDatabaseLock is not important.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Architecture - Issue #44624: ESB and load balancing</title>
+    <link href="http://redmine.teracode.com/issues/44624" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/44624?journal_id=180695</id>
+    <updated>2010-12-15T14:58:22-03:00</updated>
+    <author>
+      <name>Jorge Santoro</name>
+      <email>jorge.santoro@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Assigned to&lt;/strong&gt; changed from &lt;i&gt;Jorge Santoro&lt;/i&gt; to &lt;i&gt;Javier Posado&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>Architecture - Issue #44624: ESB and load balancing</title>
+    <link href="http://redmine.teracode.com/issues/44624" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/44624?journal_id=183715</id>
+    <updated>2010-12-27T04:15:15-03:00</updated>
+    <author>
+      <name>Michael De Groeve</name>
+      <email>michaeldegroeve@lemonade.be</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;after installing this version in production, we get (for mysql databases) exhausted connection pools. It seems ActiveMQ is using connections and not giving them back to the pool&lt;/p&gt;
+
+
+	&lt;p&gt;eg. all threads in the tomcat are locked:&lt;/p&gt;
+
+
+	&lt;p&gt;"http-80-Processor6" - Thread t@64&lt;br /&gt;   java.lang.Thread.State: RUNNABLE&lt;br /&gt;    at java.net.SocketInputStream.socketRead0(Native Method)&lt;br /&gt;    at java.net.SocketInputStream.read(SocketInputStream.java:129)&lt;br /&gt;    at com.mysql.jdbc.util.ReadAheadInputStream.fill(ReadAheadInputStream.java:113)&lt;br /&gt;    at com.mysql.jdbc.util.ReadAheadInputStream.readFromUnderlyingStreamIfNecessary(ReadAheadInputStream.java:160)&lt;br /&gt;    at com.mysql.jdbc.util.ReadAheadInputStream.read(ReadAheadInputStream.java:188)&lt;br /&gt;    - locked com.mysql.jdbc.util.ReadAheadInputStream@1d80c71&lt;br /&gt;    at com.mysql.jdbc.MysqlIO.readFully(MysqlIO.java:1960)&lt;br /&gt;    at com.mysql.jdbc.MysqlIO.reuseAndReadPacket(MysqlIO.java:2375)&lt;br /&gt;    at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:2874)&lt;br /&gt;    at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1623)&lt;br /&gt;    at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:1715)&lt;br /&gt;    at com.mysql.jdbc.Connection.execSQL(Connection.java:3249)&lt;br /&gt;    - locked java.lang.Object@118d7dd&lt;br /&gt;    at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1268)&lt;br /&gt;    at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:1541)&lt;br /&gt;    - locked java.lang.Object@118d7dd&lt;br /&gt;    at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:1455)&lt;br /&gt;    at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:1440)&lt;br /&gt;    at org.apache.commons.dbcp.DelegatingPreparedStatement.executeUpdate(DelegatingPreparedStatement.java:101)&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Architecture - Issue #44624: ESB and load balancing</title>
+    <link href="http://redmine.teracode.com/issues/44624" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/44624?journal_id=183857</id>
+    <updated>2010-12-27T12:06:08-03:00</updated>
+    <author>
+      <name>Javier Posado</name>
+      <email>javier.posado@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;there is an issue about "Connection pool exhausted in JDBC master-slave when slave tries to acquire lock &lt;a class="external" href="https://issues.apache.org/jira/browse/AMQ-2296"&gt;https://issues.apache.org/jira/browse/AMQ-2296&lt;/a&gt;" and pupils/plato is using 5.3.0.4-fuse that doesn't have the patch for it in the DefaultDatabaseLocker class. we need to change the version of activemq in the pom to 5.3.1 or higher or change useDatabaseLock = false.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Architecture - Issue #44624: ESB and load balancing</title>
+    <link href="http://redmine.teracode.com/issues/44624" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/44624?journal_id=184096</id>
+    <updated>2010-12-28T06:49:18-03:00</updated>
+    <author>
+      <name>Michael De Groeve</name>
+      <email>michaeldegroeve@lemonade.be</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;ok, i already set the useDatabaseLock = false yesterday, and idd it's no longer a problem, luckily.&lt;/p&gt;
+
+
+	&lt;p&gt;can you tell the team leads to move to 5.3.2 anyway in the next sprint (or 5.4.2), it's probably better not to use a x.x.0 version if i see how many bugs are solved in the .1 and the .2 versions.&lt;/p&gt;
+
+
+	&lt;p&gt;thx&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Architecture - Issue #44624: ESB and load balancing</title>
+    <link href="http://redmine.teracode.com/issues/44624" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/44624?journal_id=280624</id>
+    <updated>2011-09-23T12:27:09-03:00</updated>
+    <author>
+      <name>Javier Posado</name>
+      <email>javier.posado@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;New&lt;/i&gt; to &lt;i&gt;Closed&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;% Done&lt;/strong&gt; changed from &lt;i&gt;0&lt;/i&gt; to &lt;i&gt;100&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;The activemq in the applications was updated to 5.3.2&lt;/p&gt;    </content>
+  </entry>
+</feed>

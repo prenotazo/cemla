@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title></title>
+  <link href="http://redmine.teracode.com/issues/52893.atom?key=4aa574c9e059cb38d85a8c5ac783b54345358b7b" rel="self"/>
+  <link href="http://redmine.teracode.com/" rel="alternate"/>
+  <id>http://redmine.teracode.com/</id>
+  <updated>2011-03-04T11:37:29-03:00</updated>
+  <author>
+    <name>TeraCode Project Management Tool</name>
+  </author>
+  <entry>
+    <title>Architecture - Task #52893: session expired: warning</title>
+    <link href="http://redmine.teracode.com/issues/52893" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/52893?journal_id=208739</id>
+    <updated>2011-03-04T11:37:29-03:00</updated>
+    <author>
+      <name>Javier Posado</name>
+      <email>javier.posado@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;I'm not sure if it is possible in all projects. e.g In Seam the data is lost when the conversation expire.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Architecture - Task #52893: session expired: warning</title>
+    <link href="http://redmine.teracode.com/issues/52893" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/52893?journal_id=209123</id>
+    <updated>2011-03-07T04:38:59-03:00</updated>
+    <author>
+      <name>Michael De Groeve</name>
+      <email>michaeldegroeve@lemonade.be</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;i'm not sure, but the idea is to have the popup &lt;strong&gt;before&lt;/strong&gt; the conversation is expired&lt;/p&gt;
+
+
+	&lt;p&gt;check with eze, i think we have an autosave there already for the regitems&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Architecture - Task #52893: session expired: warning</title>
+    <link href="http://redmine.teracode.com/issues/52893" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/52893?journal_id=209428</id>
+    <updated>2011-03-09T11:25:06-03:00</updated>
+    <author>
+      <name>Jorge Santoro</name>
+      <email>jorge.santoro@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;The conversation expires because the session expiries.&lt;br /&gt;We need to investigate if there is any way to handle the session expiration and show the popup in the UI.&lt;br /&gt;The requirement is to show a popup in the UI? If not we can investigate some other ways to keep the session available until the browser is closed or the user logout from the application.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Architecture - Task #52893: session expired: warning</title>
+    <link href="http://redmine.teracode.com/issues/52893" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/52893?journal_id=209833</id>
+    <updated>2011-03-10T04:54:09-03:00</updated>
+    <author>
+      <name>Michael De Groeve</name>
+      <email>michaeldegroeve@lemonade.be</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;it's important that the session is not kept available unless the user agrees. otherwise it's too dangerous (user leaving his desk for lunch, another user can take over)&lt;/p&gt;    </content>
+  </entry>
+</feed>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title></title>
+  <link href="http://redmine.teracode.com/issues/63128.atom?key=4aa574c9e059cb38d85a8c5ac783b54345358b7b" rel="self"/>
+  <link href="http://redmine.teracode.com/" rel="alternate"/>
+  <id>http://redmine.teracode.com/</id>
+  <updated>2011-06-27T10:40:28-03:00</updated>
+  <author>
+    <name>TeraCode Project Management Tool</name>
+  </author>
+  <entry>
+    <title>Architecture - Issue #63128: ESB messages</title>
+    <link href="http://redmine.teracode.com/issues/63128" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/63128?journal_id=247447</id>
+    <updated>2011-06-27T10:40:28-03:00</updated>
+    <author>
+      <name>Javier Posado</name>
+      <email>javier.posado@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;Hi Ken, can you give me more details about this error. Where does it happen (Plato embedded Broker or Central Broker)? Which version of Plato did you test? How can I reproduce it?&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Architecture - Issue #63128: ESB messages</title>
+    <link href="http://redmine.teracode.com/issues/63128" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/63128?journal_id=247519</id>
+    <updated>2011-06-27T11:21:26-03:00</updated>
+    <author>
+      <name>Javier Posado</name>
+      <email>javier.posado@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;Can you check the values of "Store percent used", "Memory percent used" and "Temp percent used" in the activemq web console of the central broker to see which value need to be incremented. It is &lt;a class="external" href="http://0.0.0.0:8161/admin/index.jsp"&gt;http://0.0.0.0:8161/admin/index.jsp&lt;/a&gt;  &lt;br /&gt;Do you know if there are queues without consumers that are growing up? Can you check the column "Number Of Pending Messages" in the queue &lt;a class="external" href="http://0.0.0.0:8161/admin/queues.jsp"&gt;http://0.0.0.0:8161/admin/queues.jsp&lt;/a&gt;&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Architecture - Issue #63128: ESB messages</title>
+    <link href="http://redmine.teracode.com/issues/63128" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/63128?journal_id=247747</id>
+    <updated>2011-06-27T16:17:35-03:00</updated>
+    <author>
+      <name>Ken Van de Poel</name>
+      <email>ken@kvdp.be</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;File&lt;/strong&gt; &lt;a href="/attachments/20243/activemq.xml"&gt;activemq.xml&lt;/a&gt; added&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>Architecture - Issue #63128: ESB messages</title>
+    <link href="http://redmine.teracode.com/issues/63128" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/63128?journal_id=247901</id>
+    <updated>2011-06-28T00:49:52-03:00</updated>
+    <author>
+      <name>Javier Posado</name>
+      <email>javier.posado@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;File&lt;/strong&gt; &lt;a href="/attachments/20275/activemq.xml"&gt;activemq.xml&lt;/a&gt; added&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>Architecture - Issue #63128: ESB messages</title>
+    <link href="http://redmine.teracode.com/issues/63128" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/63128?journal_id=247902</id>
+    <updated>2011-06-28T01:21:44-03:00</updated>
+    <author>
+      <name>Javier Posado</name>
+      <email>javier.posado@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;I've updated activemq.xml removing two policy entries, &amp;lt;policyEntry topic="&amp;gt;" and &amp;lt;policyEntry queue="&amp;gt;".  &amp;lt;policyEntry queue="&amp;gt;" cause that the policy "policyEntry queue="*.Jobsite.*.*" not be considered. &lt;br /&gt;"&gt;" means all queues and has more precedence than "*.Jobsite.*.*"&lt;/p&gt;
+
+
+	&lt;p&gt;I've put &amp;lt;systemUsage&amp;gt; with memoryUsage=128mb but the problems with memory seems to occur in the embedded broker. To set it we have to add more settings in applicationcontext-broker.xml but i would prefer to understand the cause of the problem. By default, memoryUsage is 64mb and seems enough.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Architecture - Issue #63128: ESB messages</title>
+    <link href="http://redmine.teracode.com/issues/63128" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/63128?journal_id=247903</id>
+    <updated>2011-06-28T03:59:07-03:00</updated>
+    <author>
+      <name>Ken Van de Poel</name>
+      <email>ken@kvdp.be</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;go to &lt;a class="external" href="http://plato-personeel.vsko.be/"&gt;http://plato-personeel.vsko.be/&lt;/a&gt; (versio 1.53.4 on production)&lt;br /&gt;login in with user administrator and pass plato103 and slect profile School&lt;br /&gt;Go to groups --&gt; Functionele groepen --&gt; School Applicaties --&gt; VSKO Administratie --&gt; Jobsite --&gt; Admin --&gt; add members&lt;br /&gt;Select checkbox All Domains and search for user kim.maesen, select the user and save.&lt;br /&gt;Plato send all the messages for this user for all the domains, you can check all the messages and the error on the log, you can download the log at &lt;a class="external" href="http://www.kvdp.be/logsplatoservers.rar"&gt;http://www.kvdp.be/logsplatoservers.rar&lt;/a&gt;&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Architecture - Issue #63128: ESB messages</title>
+    <link href="http://redmine.teracode.com/issues/63128" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/63128?journal_id=280625</id>
+    <updated>2011-09-23T12:30:05-03:00</updated>
+    <author>
+      <name>Javier Posado</name>
+      <email>javier.posado@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;New&lt;/i&gt; to &lt;i&gt;Closed&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;% Done&lt;/strong&gt; changed from &lt;i&gt;0&lt;/i&gt; to &lt;i&gt;100&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;This was resolved with the upgrade of the central broker to 5.4.2&lt;/p&gt;    </content>
+  </entry>
+</feed>
