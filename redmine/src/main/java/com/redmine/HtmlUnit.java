@@ -38,7 +38,7 @@ public class HtmlUnit {
 	private static final String MAIN_URL = "http://redmine.teracode.com";
 
 	private static final String MAIN_FOLDER = "redmine";
-	private static final String PROJECT_FOLDER = MAIN_FOLDER + "/" + "personnel";
+	private static final String PROJECT_FOLDER = MAIN_FOLDER + "/" + "lemonadearchitecture";
 	private static final String ISSUES_FOLDER = PROJECT_FOLDER + "/" + "issues";
 
 	public static void main(final String[] args) throws Exception {
@@ -88,7 +88,7 @@ public class HtmlUnit {
 			issueNumbers.add(issueNumber);
 		}
 
-		//		issueNumbers.clear();
+		//				issueNumbers.clear();
 		//		issueNumbers.add("87799");
 		//		issueNumbers.add("87770");
 		//		issueNumbers.add("87421");
@@ -98,6 +98,8 @@ public class HtmlUnit {
 		//		issueNumbers.add("88068");
 		//		issueNumbers.add("87011");
 		//		issueNumbers.add("84768");
+		//		issueNumbers.add("61328");
+		//				issueNumbers.add("61314");
 
 		return issueNumbers;
 	}
@@ -108,13 +110,12 @@ public class HtmlUnit {
 		for (final String issueNumber : issueNumbers) {
 			System.out.println("Issue " + ++counter + " of " + total + " -> " + issueNumber);
 
-			// Ticket
-			final HtmlPage issuePage = webClient.getPage(MAIN_URL + "/issues/" + issueNumber);
-
 			final File issuePageFile = new File(ISSUES_FOLDER + "/" + issueNumber + ".html");
 			if (issuePageFile.exists()) {
+				//				continue;
 				issuePageFile.delete();
 			}
+			final HtmlPage issuePage = webClient.getPage(MAIN_URL + "/issues/" + issueNumber);
 			issuePage.save(issuePageFile);
 
 			// Attachments
@@ -135,6 +136,7 @@ public class HtmlUnit {
 
 						final File attachmentFile = new File(ISSUES_FOLDER + href);
 						if (attachmentFile.exists()) {
+							//							continue;
 							attachmentFile.delete();
 						} else {
 							attachmentFile.getParentFile().mkdirs();
