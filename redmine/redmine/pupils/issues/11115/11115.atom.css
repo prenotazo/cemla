@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title></title>
+  <link href="http://redmine.teracode.com/issues/11115.atom?key=4aa574c9e059cb38d85a8c5ac783b54345358b7b" rel="self"/>
+  <link href="http://redmine.teracode.com/" rel="alternate"/>
+  <id>http://redmine.teracode.com/</id>
+  <updated>2009-09-23T06:40:01-03:00</updated>
+  <author>
+    <name>TeraCode Project Management Tool</name>
+  </author>
+  <entry>
+    <title>Pupils - Feature #11115: Edison message &#8220;presence small children&#8221;</title>
+    <link href="http://redmine.teracode.com/issues/11115" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/11115?journal_id=47515</id>
+    <updated>2009-09-23T06:40:01-03:00</updated>
+    <author>
+      <name>Kim Maesen</name>
+      <email>Kim.Maesen@vsko.be</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;Students added to the list are the same students you would show on the presence tab on 30/06 of the selected school year. So same sorting, same amount of students, same rule.&lt;/p&gt;
+
+
+	&lt;p&gt;It's possible a student has been subscribed in 1A during 01/09 untill 31/12 and subscribed in 1B from 01/01 untill 30/06. You will show the student 2 times. Off course the amount filled in must be the same two times, so link them (when filling in 1 time, it's filled in for both).&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Feature #11115: Edison message &#8220;presence small children&#8221;</title>
+    <link href="http://redmine.teracode.com/issues/11115" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/11115?journal_id=113921</id>
+    <updated>2010-05-31T11:14:56-03:00</updated>
+    <author>
+      <name>Raul Cardozo</name>
+      <email>raul.guillermo.cardozo@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Category&lt;/strong&gt; set to &lt;i&gt;Development&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;New&lt;/i&gt; to &lt;i&gt;Assigned&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Assigned to&lt;/strong&gt; changed from &lt;i&gt;Lionel Ferder&lt;/i&gt; to &lt;i&gt;Ezequiel Bertran&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Target version&lt;/strong&gt; set to &lt;i&gt;1.27.1&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Feature #11115: Edison message &#8220;presence small children&#8221;</title>
+    <link href="http://redmine.teracode.com/issues/11115" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/11115?journal_id=114901</id>
+    <updated>2010-06-02T11:19:46-03:00</updated>
+    <author>
+      <name>Ezequiel Bertran</name>
+      <email>ezequiel.bertran@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;Kim,&lt;/p&gt;
+
+
+	&lt;p&gt;A doubt about this issue..&lt;/p&gt;
+
+
+	&lt;p&gt;Right now the edison message for 'presence small childrens' is receiving the amount of &lt;strong&gt;half days&lt;/strong&gt; the student is present.., so the question is, the value filled in this new input field will represent the amount of half days presence or the amount of entire day presence? &lt;br /&gt;if it is the last option we will have to find a solution to identify &lt;strong&gt;wednesdays&lt;/strong&gt; since those days always are counted as only one half day..&lt;/p&gt;
+
+
+	&lt;p&gt;it is clear? let me know.&lt;/p&gt;
+
+
+	&lt;p&gt;thanks,&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Feature #11115: Edison message &#8220;presence small children&#8221;</title>
+    <link href="http://redmine.teracode.com/issues/11115" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/11115?journal_id=115007</id>
+    <updated>2010-06-02T13:58:20-03:00</updated>
+    <author>
+      <name>Andr&#233;s Ferrari</name>
+      <email>andres.ferrari@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;Assigned&lt;/i&gt; to &lt;i&gt;Feedback&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Feature #11115: Edison message &#8220;presence small children&#8221;</title>
+    <link href="http://redmine.teracode.com/issues/11115" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/11115?journal_id=115207</id>
+    <updated>2010-06-03T04:18:09-03:00</updated>
+    <author>
+      <name>Kim Maesen</name>
+      <email>Kim.Maesen@vsko.be</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;It are half days present. If possible put somewhere a title (to be translated) that says clearly: HALF days present.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Feature #11115: Edison message &#8220;presence small children&#8221;</title>
+    <link href="http://redmine.teracode.com/issues/11115" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/11115?journal_id=115461</id>
+    <updated>2010-06-03T14:51:04-03:00</updated>
+    <author>
+      <name>Ezequiel Bertran</name>
+      <email>ezequiel.bertran@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;Ok,&lt;/p&gt;
+
+
+	&lt;p&gt;Other question, if the edison message is being created with the manually filled presences, all the data will be retrieved from that new page.., &lt;br /&gt;so the doubt is, should the student have by default the presences for all the days of the subscription ? or should be always filled by the user ? (keep in mind that if the user doesn't fill anything the 'presences' value will be 0 in the message)&lt;/p&gt;
+
+
+	&lt;p&gt;thanks,&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Feature #11115: Edison message &#8220;presence small children&#8221;</title>
+    <link href="http://redmine.teracode.com/issues/11115" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/11115?journal_id=115675</id>
+    <updated>2010-06-04T06:44:16-03:00</updated>
+    <author>
+      <name>Kim Maesen</name>
+      <email>Kim.Maesen@vsko.be</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;Ezequiel Bertran wrote:&lt;/p&gt;
+
+
+&lt;blockquote&gt;
+
+	&lt;p&gt;Ok,&lt;/p&gt;
+
+
+	&lt;p&gt;Other question, if the edison message is being created with the manually filled presences, all the data will be retrieved from that new page.., 
+so the doubt is, should the student have by default the presences for all the days of the subscription ? or should be always filled by the user ? (keep in mind that if the user doesn't fill anything the 'presences' value will be 0 in the message)&lt;/p&gt;
+
+
+	&lt;p&gt;thanks,&lt;/p&gt;
+
+
+&lt;/blockquote&gt;
+
+	&lt;p&gt;I would fill in nothing, leave blanc. But if possible, when the user wants to create the message from the new page and there are student who have a "0" days present, you give a warning saying: pay attention students &lt;&amp;lt;last name&amp;gt;&gt; &lt;&amp;lt;first name&amp;gt;&gt; &lt;&amp;lt;class&amp;gt;&gt; (e.g. Jan Jansen 3KA)have 0 days present, are you sure it's correct? (if possible sorted by class in alfabetical order but not really neccessary) So the user is informed he/she maybe has made a mistake.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Feature #11115: Edison message &#8220;presence small children&#8221;</title>
+    <link href="http://redmine.teracode.com/issues/11115" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/11115?journal_id=115831</id>
+    <updated>2010-06-04T12:54:12-03:00</updated>
+    <author>
+      <name>Ezequiel Bertran</name>
+      <email>ezequiel.bertran@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;Feedback&lt;/i&gt; to &lt;i&gt;Resolved&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;% Done&lt;/strong&gt; changed from &lt;i&gt;0&lt;/i&gt; to &lt;i&gt;100&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Applied in changeset &lt;a href="http://redmine.teracode.com/projects/pupils/repository/revisions/41778" class="changeset" title="fixes #11115, added new page to enter small children presences manually, then the edison message ..."&gt;r41778&lt;/a&gt;.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Feature #11115: Edison message &#8220;presence small children&#8221;</title>
+    <link href="http://redmine.teracode.com/issues/11115" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/11115?journal_id=115839</id>
+    <updated>2010-06-04T12:56:04-03:00</updated>
+    <author>
+      <name>Ezequiel Bertran</name>
+      <email>ezequiel.bertran@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;need to run 'upgrade-1.27.0-002-bug11115.sql'&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Feature #11115: Edison message &#8220;presence small children&#8221;</title>
+    <link href="http://redmine.teracode.com/issues/11115" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/11115?journal_id=116164</id>
+    <updated>2010-06-07T06:36:49-03:00</updated>
+    <author>
+      <name>Kim Maesen</name>
+      <email>Kim.Maesen@vsko.be</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;Resolved&lt;/i&gt; to &lt;i&gt;ReOpen&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Eze,&lt;/p&gt;
+
+
+	&lt;ul&gt;
+	&lt;li&gt;I saw the user has to ill in the month, but that's not neccessary. Can you delete that part. The user has to fill in a global amount for the selected school year and that's the amount you use in the edison message. So you don't have to calculate anything, only check for "zero's".&lt;/li&gt;
+	&lt;/ul&gt;
+
+
+	&lt;ul&gt;
+	&lt;li&gt;See image: In the warning about the "zero's" when creating the message the OK and Cancel buttons are not visible enough.&lt;/li&gt;
+	&lt;/ul&gt;
+
+
+	&lt;ul&gt;
+	&lt;li&gt;Can you align the titles of the columns at the left. The column registration number can be a lot smaller, also the next one "sequencenumber"&lt;/li&gt;
+	&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Feature #11115: Edison message &#8220;presence small children&#8221;</title>
+    <link href="http://redmine.teracode.com/issues/11115" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/11115?journal_id=116166</id>
+    <updated>2010-06-07T07:36:22-03:00</updated>
+    <author>
+      <name>Kim Maesen</name>
+      <email>Kim.Maesen@vsko.be</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;File&lt;/strong&gt; &lt;a href="/attachments/8839/7-06-2010_12-31-50.png"&gt;7-06-2010_12-31-50.png&lt;/a&gt; added&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Feature #11115: Edison message &#8220;presence small children&#8221;</title>
+    <link href="http://redmine.teracode.com/issues/11115" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/11115?journal_id=116669</id>
+    <updated>2010-06-08T10:30:54-03:00</updated>
+    <author>
+      <name>Ezequiel Bertran</name>
+      <email>ezequiel.bertran@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Target version&lt;/strong&gt; changed from &lt;i&gt;1.27.1&lt;/i&gt; to &lt;i&gt;1.27.2&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Feature #11115: Edison message &#8220;presence small children&#8221;</title>
+    <link href="http://redmine.teracode.com/issues/11115" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/11115?journal_id=116848</id>
+    <updated>2010-06-08T16:11:01-03:00</updated>
+    <author>
+      <name>Ezequiel Bertran</name>
+      <email>ezequiel.bertran@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;ReOpen&lt;/i&gt; to &lt;i&gt;Resolved&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Applied in changeset &lt;a href="http://redmine.teracode.com/projects/pupils/repository/revisions/41825" class="changeset" title="fixes #11115, resolved some layout problems and removed the 'month' drop down"&gt;r41825&lt;/a&gt;.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Feature #11115: Edison message &#8220;presence small children&#8221;</title>
+    <link href="http://redmine.teracode.com/issues/11115" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/11115?journal_id=119563</id>
+    <updated>2010-06-17T09:20:11-03:00</updated>
+    <author>
+      <name>Kim Maesen</name>
+      <email>Kim.Maesen@vsko.be</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;Resolved&lt;/i&gt; to &lt;i&gt;Closed&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+</feed>

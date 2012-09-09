@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title></title>
+  <link href="http://redmine.teracode.com/issues/11646.atom?key=4aa574c9e059cb38d85a8c5ac783b54345358b7b" rel="self"/>
+  <link href="http://redmine.teracode.com/" rel="alternate"/>
+  <id>http://redmine.teracode.com/</id>
+  <updated>2009-11-20T12:07:46-03:00</updated>
+  <author>
+    <name>TeraCode Project Management Tool</name>
+  </author>
+  <entry>
+    <title>Pupils - Bug #11646: Problems with oldest child: </title>
+    <link href="http://redmine.teracode.com/issues/11646" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/11646?journal_id=61661</id>
+    <updated>2009-11-20T12:07:46-03:00</updated>
+    <author>
+      <name>Kim Maesen</name>
+      <email>Kim.Maesen@vsko.be</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;File&lt;/strong&gt; &lt;a href="/attachments/4483/Gezinsoudsten-groep.odt"&gt;Gezinsoudsten-groep.odt&lt;/a&gt; added&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;can you also make this screen printable? See odt attached. offcourse add the report to the reportpage.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Bug #11646: Problems with oldest child: </title>
+    <link href="http://redmine.teracode.com/issues/11646" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/11646?journal_id=117038</id>
+    <updated>2010-06-09T10:21:16-03:00</updated>
+    <author>
+      <name>Kim Maesen</name>
+      <email>Kim.Maesen@vsko.be</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;File&lt;/strong&gt; &lt;a href="/attachments/8925/Gezinsoudsten.odt"&gt;Gezinsoudsten.odt&lt;/a&gt; added&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Bug #11646: Problems with oldest child: </title>
+    <link href="http://redmine.teracode.com/issues/11646" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/11646?journal_id=117053</id>
+    <updated>2010-06-09T10:33:36-03:00</updated>
+    <author>
+      <name>Ezequiel Bertran</name>
+      <email>ezequiel.bertran@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Category&lt;/strong&gt; set to &lt;i&gt;Development&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Assigned to&lt;/strong&gt; set to &lt;i&gt;Ezequiel Bertran&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Target version&lt;/strong&gt; set to &lt;i&gt;1.28.0&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Bug #11646: Problems with oldest child: </title>
+    <link href="http://redmine.teracode.com/issues/11646" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/11646?journal_id=118075</id>
+    <updated>2010-06-11T17:32:50-03:00</updated>
+    <author>
+      <name>Ezequiel Bertran</name>
+      <email>ezequiel.bertran@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;New&lt;/i&gt; to &lt;i&gt;Resolved&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;% Done&lt;/strong&gt; changed from &lt;i&gt;0&lt;/i&gt; to &lt;i&gt;100&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Applied in changeset &lt;a href="http://redmine.teracode.com/projects/pupils/repository/revisions/41870" class="changeset" title="fixes #11646, added new report option to show the address link groups of an institution, and crea..."&gt;r41870&lt;/a&gt;.&lt;/p&gt;
+
+
+	&lt;p&gt;Added new report option to show the address link groups of an institution, and created script to resolve db oldest child problems.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Bug #11646: Problems with oldest child: </title>
+    <link href="http://redmine.teracode.com/issues/11646" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/11646?journal_id=118081</id>
+    <updated>2010-06-11T17:42:36-03:00</updated>
+    <author>
+      <name>Ezequiel Bertran</name>
+      <email>ezequiel.bertran@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;File&lt;/strong&gt; &lt;a href="/attachments/9032/groups.odt"&gt;groups.odt&lt;/a&gt; added&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;to resolve the problem with the students that are not marked as oldest child the script 'upgrade-1.28.0-002-bug11646.sql' should be run.&lt;/p&gt;
+
+
+	&lt;p&gt;for the address link groups report, the odt that i'm attaching is needed and it should be placed in a &lt;strong&gt;new&lt;/strong&gt; folder in pincette, this folder is defined in a &lt;strong&gt;new property&lt;/strong&gt; in the local.properties file, and it is called &lt;strong&gt;'documentReportAccess.groupDirectory'&lt;/strong&gt;&lt;/p&gt;
+
+
+	&lt;p&gt;in the reports page you will find a new report type called &lt;strong&gt;groups&lt;/strong&gt; from where you can create the report. Also you can fill there some parameters as location, mainStructure, class..&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Bug #11646: Problems with oldest child: </title>
+    <link href="http://redmine.teracode.com/issues/11646" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/11646?journal_id=119634</id>
+    <updated>2010-06-17T11:28:36-03:00</updated>
+    <author>
+      <name>Kim Maesen</name>
+      <email>Kim.Maesen@vsko.be</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;Resolved&lt;/i&gt; to &lt;i&gt;Closed&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+</feed>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title></title>
+  <link href="http://redmine.teracode.com/issues/10154.atom?key=4aa574c9e059cb38d85a8c5ac783b54345358b7b" rel="self"/>
+  <link href="http://redmine.teracode.com/" rel="alternate"/>
+  <id>http://redmine.teracode.com/</id>
+  <updated>2009-09-01T11:10:59-03:00</updated>
+  <author>
+    <name>TeraCode Project Management Tool</name>
+  </author>
+  <entry>
+    <title>Pupils - Bug #10154: MS GON</title>
+    <link href="http://redmine.teracode.com/issues/10154" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/10154?journal_id=41521</id>
+    <updated>2009-09-01T11:10:59-03:00</updated>
+    <author>
+      <name>Andr&#233;s Ferrari</name>
+      <email>andres.ferrari@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Assigned to&lt;/strong&gt; set to &lt;i&gt;Lionel Ferder&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Target version&lt;/strong&gt; set to &lt;i&gt;1.23.0&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Bug #10154: MS GON</title>
+    <link href="http://redmine.teracode.com/issues/10154" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/10154?journal_id=46376</id>
+    <updated>2009-09-18T11:10:57-03:00</updated>
+    <author>
+      <name>Lionel Ferder</name>
+      <email>lionel.ferder@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;New&lt;/i&gt; to &lt;i&gt;Resolved&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;% Done&lt;/strong&gt; changed from &lt;i&gt;0&lt;/i&gt; to &lt;i&gt;100&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Applied in changeset &lt;a href="http://redmine.teracode.com/projects/pupils/repository/revisions/38898" class="changeset" title="fixes #10154"&gt;r38898&lt;/a&gt;.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Bug #10154: MS GON</title>
+    <link href="http://redmine.teracode.com/issues/10154" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/10154?journal_id=48350</id>
+    <updated>2009-09-28T09:30:23-03:00</updated>
+    <author>
+      <name>Kim Maesen</name>
+      <email>Kim.Maesen@vsko.be</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;Resolved&lt;/i&gt; to &lt;i&gt;Closed&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Ok branche 1.23&lt;/p&gt;    </content>
+  </entry>
+</feed>
