@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title></title>
+  <link href="http://redmine.teracode.com/issues/36707.atom?key=4aa574c9e059cb38d85a8c5ac783b54345358b7b" rel="self"/>
+  <link href="http://redmine.teracode.com/" rel="alternate"/>
+  <id>http://redmine.teracode.com/</id>
+  <updated>2010-08-18T10:54:44-03:00</updated>
+  <author>
+    <name>TeraCode Project Management Tool</name>
+  </author>
+  <entry>
+    <title>Pupils - Improvement #36707: Add to xml</title>
+    <link href="http://redmine.teracode.com/issues/36707" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/36707?journal_id=139150</id>
+    <updated>2010-08-18T10:54:44-03:00</updated>
+    <author>
+      <name>Andr&#233;s Ferrari</name>
+      <email>andres.ferrari@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Tracker&lt;/strong&gt; changed from &lt;i&gt;Bug&lt;/i&gt; to &lt;i&gt;Improvement&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Category&lt;/strong&gt; set to &lt;i&gt;Development&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Improvement #36707: Add to xml</title>
+    <link href="http://redmine.teracode.com/issues/36707" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/36707?journal_id=276252</id>
+    <updated>2011-09-12T04:54:38-03:00</updated>
+    <author>
+      <name>Kim Maesen</name>
+      <email>Kim.Maesen@vsko.be</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Target version&lt;/strong&gt; set to &lt;i&gt;Backlog&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Improvement #36707: Add to xml</title>
+    <link href="http://redmine.teracode.com/issues/36707" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/36707?journal_id=280799</id>
+    <updated>2011-09-23T20:56:02-03:00</updated>
+    <author>
+      <name>Nicolas Tudela</name>
+      <email>nicolas.tudela@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;File&lt;/strong&gt; &lt;a href="/attachments/23148/singleMergeResult__3_.xml"&gt;singleMergeResult__3_.xml&lt;/a&gt; added&lt;/li&gt;&lt;li&gt;&lt;strong&gt;File&lt;/strong&gt; &lt;a href="/attachments/23149/singleMergeResult__4_.xml"&gt;singleMergeResult__4_.xml&lt;/a&gt; added&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;New&lt;/i&gt; to &lt;i&gt;Feedback&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Assigned to&lt;/strong&gt; set to &lt;i&gt;Kim Maesen&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Hi, If the field that should be added is "ASS-pupil " its already added on XML on Student Info, see attached files (singleResult....xml)&lt;/p&gt;
+
+
+&lt;pre&gt;
+&amp;lt;student&amp;gt;
+  &amp;lt;gon&amp;gt;
+     &amp;lt;assPupil/&amp;gt;
+  &amp;lt;gon&amp;gt;
+&amp;lt;student&amp;gt;
+&lt;/pre&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Improvement #36707: Add to xml</title>
+    <link href="http://redmine.teracode.com/issues/36707" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/36707?journal_id=280800</id>
+    <updated>2011-09-24T07:45:02-03:00</updated>
+    <author>
+      <name>Kim Maesen</name>
+      <email>Kim.Maesen@vsko.be</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;Feedback&lt;/i&gt; to &lt;i&gt;Resolved&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Set as resolved ... apparently a duplicated issue.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Improvement #36707: Add to xml</title>
+    <link href="http://redmine.teracode.com/issues/36707" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/36707?journal_id=319326</id>
+    <updated>2012-02-01T05:36:40-03:00</updated>
+    <author>
+      <name>Kim Maesen</name>
+      <email>Kim.Maesen@vsko.be</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;Resolved&lt;/i&gt; to &lt;i&gt;Closed&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+</feed>

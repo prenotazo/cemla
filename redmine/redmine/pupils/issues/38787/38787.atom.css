@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title></title>
+  <link href="http://redmine.teracode.com/issues/38787.atom?key=4aa574c9e059cb38d85a8c5ac783b54345358b7b" rel="self"/>
+  <link href="http://redmine.teracode.com/" rel="alternate"/>
+  <id>http://redmine.teracode.com/</id>
+  <updated>2010-10-21T10:41:01-03:00</updated>
+  <author>
+    <name>TeraCode Project Management Tool</name>
+  </author>
+  <entry>
+    <title>Pupils - Bug #38787: Upgrade students default for course religion</title>
+    <link href="http://redmine.teracode.com/issues/38787" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/38787?journal_id=162859</id>
+    <updated>2010-10-21T10:41:01-03:00</updated>
+    <author>
+      <name>Juan Miguel Diaz Ruiz</name>
+      <email>juan.miguel.diaz.ruiz@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Severity&lt;/strong&gt; changed from &lt;i&gt;normal&lt;/i&gt; to &lt;i&gt;Medium&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Bug #38787: Upgrade students default for course religion</title>
+    <link href="http://redmine.teracode.com/issues/38787" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/38787?journal_id=245562</id>
+    <updated>2011-06-21T13:56:29-03:00</updated>
+    <author>
+      <name>Raul Cardozo</name>
+      <email>raul.guillermo.cardozo@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Category&lt;/strong&gt; set to &lt;i&gt;Development&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Target version&lt;/strong&gt; set to &lt;i&gt;1.38.0&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Estimated time&lt;/strong&gt; set to &lt;i&gt;4.00&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Bug #38787: Upgrade students default for course religion</title>
+    <link href="http://redmine.teracode.com/issues/38787" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/38787?journal_id=245807</id>
+    <updated>2011-06-21T17:25:27-03:00</updated>
+    <author>
+      <name>Raul Cardozo</name>
+      <email>raul.guillermo.cardozo@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Assigned to&lt;/strong&gt; set to &lt;i&gt;Raul Cardozo&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Bug #38787: Upgrade students default for course religion</title>
+    <link href="http://redmine.teracode.com/issues/38787" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/38787?journal_id=247881</id>
+    <updated>2011-06-27T18:46:08-03:00</updated>
+    <author>
+      <name>Raul Cardozo</name>
+      <email>raul.guillermo.cardozo@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;New&lt;/i&gt; to &lt;i&gt;Resolved&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;% Done&lt;/strong&gt; changed from &lt;i&gt;0&lt;/i&gt; to &lt;i&gt;100&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Applied in changeset &lt;a href="http://redmine.teracode.com/projects/pupils/repository/revisions/46104" class="changeset" title="fixes #38787 (Upgrade students default for course religion)"&gt;r46104&lt;/a&gt;.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Bug #38787: Upgrade students default for course religion</title>
+    <link href="http://redmine.teracode.com/issues/38787" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/38787?journal_id=252246</id>
+    <updated>2011-07-08T12:18:59-03:00</updated>
+    <author>
+      <name>Kim Maesen</name>
+      <email>Kim.Maesen@vsko.be</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;Resolved&lt;/i&gt; to &lt;i&gt;ReOpen&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;When I do manually a subscribtion during summer in MS 211 or 221 (student is subscribed now in MS 111 e.g. and I do the upgrade manually) it's not writable to choose 0140&lt;br /&gt;When using the upgrade student page, the same.&lt;br /&gt;I still see 0000 and it's not writable. Maybe because the system thinks the student is still subscribed in MS 111 or 121?&lt;/p&gt;
+
+
+	&lt;p&gt;When adding a whole new student to the db (starting with NEW) and directly subscribe in MS 211 (or 221) than it's default 0140 and writable.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Bug #38787: Upgrade students default for course religion</title>
+    <link href="http://redmine.teracode.com/issues/38787" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/38787?journal_id=252255</id>
+    <updated>2011-07-08T12:30:42-03:00</updated>
+    <author>
+      <name>Kim Maesen</name>
+      <email>Kim.Maesen@vsko.be</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;Testcase:&lt;br /&gt;1) choose a student from MS 121 (current schoolyear subscribed) -&gt; add manually new subscription for MS 221 (using current state) -&gt; save -&gt; check edison details -&gt; course religion still grey and 0000&lt;br /&gt;2) choose a student from MS 111 (current schoolyear subscribed) -&gt; add manually new subscription for MS 211 (using current state) -&gt; save -&gt; check edison details -&gt; course religion still grey and 0000&lt;br /&gt;3) choose a whole class from MS 121 -&gt; use the tab UPGRADE students -&gt; upgrade all to a class in MS 221 -&gt; check course religion -&gt; still grey and 0000&lt;br /&gt;4) same for 111 going to 211&lt;/p&gt;
+
+
+	&lt;p&gt;When is it correct?&lt;br /&gt;Add a complete new student to the DB -&gt; add a subscription for 01/09/2011 to ms 211 or 221 -&gt; go to edison details and it's 0140 and writable.&lt;/p&gt;
+
+
+	&lt;p&gt;PAY ATTENTION!!! Some schools can have done already the upgrade of the students and have now course religion 0000 in MS 211 or 221, change 0000 into 0140 for those MS otherwise it's wrong. 0000 is not valid for MS 211 and 221.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Bug #38787: Upgrade students default for course religion</title>
+    <link href="http://redmine.teracode.com/issues/38787" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/38787?journal_id=253274</id>
+    <updated>2011-07-11T15:11:50-03:00</updated>
+    <author>
+      <name>Ricardo Castiglione</name>
+      <email>ricardo.castiglione@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Assigned to&lt;/strong&gt; changed from &lt;i&gt;Raul Cardozo&lt;/i&gt; to &lt;i&gt;Ricardo Castiglione&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Target version&lt;/strong&gt; changed from &lt;i&gt;1.38.0&lt;/i&gt; to &lt;i&gt;1.39.0&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Estimated time&lt;/strong&gt; changed from &lt;i&gt;4.00&lt;/i&gt; to &lt;i&gt;6.00&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Bug #38787: Upgrade students default for course religion</title>
+    <link href="http://redmine.teracode.com/issues/38787" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/38787?journal_id=254442</id>
+    <updated>2011-07-13T12:13:57-03:00</updated>
+    <author>
+      <name>Ricardo Castiglione</name>
+      <email>ricardo.castiglione@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;File&lt;/strong&gt; &lt;a href="/attachments/20829/01_subscriptions.png"&gt;01_subscriptions.png&lt;/a&gt; added&lt;/li&gt;&lt;li&gt;&lt;strong&gt;File&lt;/strong&gt; &lt;a href="/attachments/20830/02_a_edison_on_13-07-2011.png"&gt;02_a_edison_on_13-07-2011.png&lt;/a&gt; added&lt;/li&gt;&lt;li&gt;&lt;strong&gt;File&lt;/strong&gt; &lt;a href="/attachments/20831/02_b_edison_on_01-09-2011.png"&gt;02_b_edison_on_01-09-2011.png&lt;/a&gt; added&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Kim Maesen wrote:&lt;/p&gt;
+
+
+&lt;blockquote&gt;
+
+	&lt;p&gt;When I do manually a subscribtion during summer in MS 211 or 221 (student is subscribed now in MS 111 e.g. and I do the upgrade manually) it's not writable to choose 0140
+When using the upgrade student page, the same.
+I still see 0000 and it's not writable. Maybe because the system thinks the student is still subscribed in MS 111 or 121?&lt;/p&gt;
+
+
+	&lt;p&gt;When adding a whole new student to the db (starting with NEW) and directly subscribe in MS 211 (or 221) than it's default 0140 and writable.&lt;/p&gt;
+
+
+&lt;/blockquote&gt;
+
+	&lt;p&gt;This is because of the dates. I mean, during summer (from 30/06/2011 to 01/09/2011) the current subscriptions will be the subscriptions of the school year 2010 and on 01/09/2011 the current subscriptions will be the subscriptions of the school year 2011. See the images 01_subscriptions.png, 02_a_edison_on_13-07-2011.png and 02_b_edison_on_01-09-2011.png. I've tested this changing the today date to 01/09/2011.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Bug #38787: Upgrade students default for course religion</title>
+    <link href="http://redmine.teracode.com/issues/38787" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/38787?journal_id=254544</id>
+    <updated>2011-07-13T14:43:57-03:00</updated>
+    <author>
+      <name>Ricardo Castiglione</name>
+      <email>ricardo.castiglione@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;blockquote&gt;
+
+	&lt;p&gt;PAY ATTENTION!!! Some schools can have done already the upgrade of the students and have now course religion 0000 in MS 211 or 221, change 0000 into 0140 for those MS otherwise it's wrong. 0000 is not valid for MS 211 and 221.&lt;/p&gt;
+
+
+&lt;/blockquote&gt;
+
+	&lt;p&gt;run the script: upgrade-1.39.0-002-bug38787.sql&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Bug #38787: Upgrade students default for course religion</title>
+    <link href="http://redmine.teracode.com/issues/38787" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/38787?journal_id=255133</id>
+    <updated>2011-07-14T16:18:08-03:00</updated>
+    <author>
+      <name>Ricardo Castiglione</name>
+      <email>ricardo.castiglione@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;ReOpen&lt;/i&gt; to &lt;i&gt;Resolved&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Applied in changeset &lt;a href="http://redmine.teracode.com/projects/pupils/repository/revisions/46253" class="changeset" title="fixes #38787 (Upgrade students default for course religion)"&gt;r46253&lt;/a&gt;.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Bug #38787: Upgrade students default for course religion</title>
+    <link href="http://redmine.teracode.com/issues/38787" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/38787?journal_id=264730</id>
+    <updated>2011-08-08T07:19:55-03:00</updated>
+    <author>
+      <name>Kim Maesen</name>
+      <email>Kim.Maesen@vsko.be</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;Resolved&lt;/i&gt; to &lt;i&gt;Closed&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+</feed>

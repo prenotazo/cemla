@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title></title>
+  <link href="http://redmine.teracode.com/issues/48752.atom?key=4aa574c9e059cb38d85a8c5ac783b54345358b7b" rel="self"/>
+  <link href="http://redmine.teracode.com/" rel="alternate"/>
+  <id>http://redmine.teracode.com/</id>
+  <updated>2011-01-17T10:52:40-03:00</updated>
+  <author>
+    <name>TeraCode Project Management Tool</name>
+  </author>
+  <entry>
+    <title>Pupils - Bug #48752: Registrationnumbers wrong</title>
+    <link href="http://redmine.teracode.com/issues/48752" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/48752?journal_id=190408</id>
+    <updated>2011-01-17T10:52:40-03:00</updated>
+    <author>
+      <name>Kim Maesen</name>
+      <email>Kim.Maesen@vsko.be</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;other example to test with: 022632 - RN 1000023 &amp;#38; 1000024 should be changed.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Bug #48752: Registrationnumbers wrong</title>
+    <link href="http://redmine.teracode.com/issues/48752" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/48752?journal_id=192574</id>
+    <updated>2011-01-20T12:15:22-03:00</updated>
+    <author>
+      <name>Ricardo Castiglione</name>
+      <email>ricardo.castiglione@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;do you know if that registrations were imported?.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Bug #48752: Registrationnumbers wrong</title>
+    <link href="http://redmine.teracode.com/issues/48752" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/48752?journal_id=193087</id>
+    <updated>2011-01-21T10:18:19-03:00</updated>
+    <author>
+      <name>Kim Maesen</name>
+      <email>Kim.Maesen@vsko.be</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;No they were not.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Bug #48752: Registrationnumbers wrong</title>
+    <link href="http://redmine.teracode.com/issues/48752" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/48752?journal_id=194201</id>
+    <updated>2011-01-25T16:59:58-03:00</updated>
+    <author>
+      <name>Ricardo Castiglione</name>
+      <email>ricardo.castiglione@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;Assigned&lt;/i&gt; to &lt;i&gt;Feedback&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;kim, I see that you can modify the registration number manually when you modify a subscription. do you know why?. If you modify the registration number manually I won't assure the correct alphabetical order.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Bug #48752: Registrationnumbers wrong</title>
+    <link href="http://redmine.teracode.com/issues/48752" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/48752?journal_id=194304</id>
+    <updated>2011-01-26T05:42:42-03:00</updated>
+    <author>
+      <name>Kim Maesen</name>
+      <email>Kim.Maesen@vsko.be</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;Ricardo Castiglione wrote:&lt;/p&gt;
+
+
+&lt;blockquote&gt;
+
+	&lt;p&gt;kim, I see that you can modify the registration number manually when you modify a subscription. do you know why?. If you modify the registration number manually I won't assure the correct alphabetical order.&lt;/p&gt;
+
+
+&lt;/blockquote&gt;
+
+	&lt;p&gt;I know that, normally it's not neccessary but for now we had to modify it because they were wrong. 2 times saving the same number isn't allowed by the application, also it checks if first subscription date and RN matches. Leave this option to modify so we can do it when the system calculates wrong numbers again.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Bug #48752: Registrationnumbers wrong</title>
+    <link href="http://redmine.teracode.com/issues/48752" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/48752?journal_id=195031</id>
+    <updated>2011-01-27T17:26:06-03:00</updated>
+    <author>
+      <name>Ricardo Castiglione</name>
+      <email>ricardo.castiglione@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;There are registrations with wrong registration number (the first 2 digits don't match with the min start date of the their subscriptions) and there are other ones with a fake first date (see SELECT * FROM PP_REGISTRATION WHERE firstDate &gt; STR_TO_DATE('01-01-2013','%d-%m-%Y');). So, when I try to recalculate the registrations number I get error. For solving this I think I could take a min first date for considering the recalculation, for example: since 01/09/2009 and I only would take the registrations with first date &gt; 01/09/2009, what do you think?. Moreover, I should modify the first date of: SELECT * FROM PP_REGISTRATION WHERE firstDate &gt; STR_TO_DATE('01-01-2013','%d-%m-%Y'); when registration number is 04XXXXX I will put in the first date a 01/09/2004.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Bug #48752: Registrationnumbers wrong</title>
+    <link href="http://redmine.teracode.com/issues/48752" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/48752?journal_id=195034</id>
+    <updated>2011-01-27T17:29:07-03:00</updated>
+    <author>
+      <name>Raul Cardozo</name>
+      <email>raul.guillermo.cardozo@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Subject&lt;/strong&gt; changed from &lt;i&gt;egistrationnumbers wrong&lt;/i&gt; to &lt;i&gt;Registrationnumbers wrong&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Bug #48752: Registrationnumbers wrong</title>
+    <link href="http://redmine.teracode.com/issues/48752" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/48752?journal_id=195052</id>
+    <updated>2011-01-27T18:20:53-03:00</updated>
+    <author>
+      <name>Kim Maesen</name>
+      <email>Kim.Maesen@vsko.be</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;IMPORTANT!!!!!!!&lt;/p&gt;
+
+
+	&lt;p&gt;You may only recalculate numbers of subscriptions that are not been in an edison message yet!!!&lt;br /&gt;So this means:&lt;br /&gt;1) there's an edison message on the third of september, this means when the edison message is sent and the third of september is already passed don't thouch that numbers otherwise we get troubles with the government. Even when they should be wrong, don't thouch them.&lt;br /&gt;2) there's an edison message on the 1st of october, this means between the third of september and the first of october you may recalculate the RN of the subscriptions between those dates (and subscriptions after 1st of october off course because they are not included in the edison message). When 1st of october is passed and edison message is sent don't recalculate anymore.&lt;br /&gt;3) there one the 1st of februari, so this means between the 1st of october and the 1st of februari you may recalculate again the new subscriptions between those dates and subscriptions after the 1st of february.&lt;br /&gt;4) last edison message of the school year is 30th of june. Same rule here.&lt;/p&gt;
+
+
+	&lt;p&gt;So basic rule: when edison message is created on a certain date, all RN of subscriptions before that date (the date itself included) are blocked (only manually can be changed when it should be neccessarry, but not by recalculation).&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Bug #48752: Registrationnumbers wrong</title>
+    <link href="http://redmine.teracode.com/issues/48752" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/48752?journal_id=195088</id>
+    <updated>2011-01-28T09:24:46-03:00</updated>
+    <author>
+      <name>Ricardo Castiglione</name>
+      <email>ricardo.castiglione@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;Ok Kim, I was taking care about don't modify the registrations sent to edison. I only recalculate the registrations when there isn't any edison message with esidonMessage.validitydate &gt;= registration.firstDate and when school.importDateLock &lt; registration.firstDate (that's the previous logic for taking care about don't modify registrations in pupils).&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Bug #48752: Registrationnumbers wrong</title>
+    <link href="http://redmine.teracode.com/issues/48752" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/48752?journal_id=195177</id>
+    <updated>2011-01-28T11:34:01-03:00</updated>
+    <author>
+      <name>Ricardo Castiglione</name>
+      <email>ricardo.castiglione@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;Then I chatted with Kim:&lt;/p&gt;
+
+
+	&lt;p&gt;There are 4 dates 03/09/2010, 01/10/2010, 01/02/2011 and 30/06/2011 (If some of that dates is holiday or weekend It should be changed to the next working date) and when I recalculate I never have to modify registrations before that dates (in manually recalculate, when the recalculation is automatically can be recalculated). For example, when you subscribe today a student for 01/02 you recalculate but when it's already 03/02 and you create a subscription for 01/02 you have to recalculate on 01/02 again because the subscription is from that date, but the button "recalculate" shouldn't do that&lt;/p&gt;
+
+
+	&lt;p&gt;can you create a sending on 01/02 and then create a registration on 24/01? yes and you may recalculate, because the school MUST in that case ALWAYS do again an edison sending (and the second one overwrites the first one) they MUST create a new sending in that case&lt;/p&gt;
+
+
+	&lt;p&gt;when you modify manually a registration number I have to check that don't already exist another equal registration number in the same school, but should I check the alphabetical order? no by modifying manually RN you don't have to check that order because it's mostly the helpdesk that does it manually for some reason.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Bug #48752: Registrationnumbers wrong</title>
+    <link href="http://redmine.teracode.com/issues/48752" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/48752?journal_id=196052</id>
+    <updated>2011-02-01T11:26:41-03:00</updated>
+    <author>
+      <name>Ricardo Castiglione</name>
+      <email>ricardo.castiglione@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;Feedback&lt;/i&gt; to &lt;i&gt;Resolved&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;% Done&lt;/strong&gt; changed from &lt;i&gt;0&lt;/i&gt; to &lt;i&gt;100&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Applied in changeset &lt;a href="http://redmine.teracode.com/projects/pupils/repository/revisions/44743" class="changeset" title="fixes #48752 (Registrationnumbers wrong)"&gt;r44743&lt;/a&gt;.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Bug #48752: Registrationnumbers wrong</title>
+    <link href="http://redmine.teracode.com/issues/48752" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/48752?journal_id=197917</id>
+    <updated>2011-02-07T09:16:13-03:00</updated>
+    <author>
+      <name>Kim Maesen</name>
+      <email>Kim.Maesen@vsko.be</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;Resolved&lt;/i&gt; to &lt;i&gt;ReOpen&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;I've tested this. how?&lt;br /&gt;1) I created 2 subscription on 08/02/2011&lt;br /&gt;2) I changed the RN (e.g. the AAA was 39 and BBB was 40 -&gt; AAA becomes 40 and B 39)&lt;br /&gt;3) Because the RN are wrong and not sent by edison, it should be that the recalculationbutton should change them correctly again, no?&lt;br /&gt;4) I'm getting internal error.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Bug #48752: Registrationnumbers wrong</title>
+    <link href="http://redmine.teracode.com/issues/48752" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/48752?journal_id=203511</id>
+    <updated>2011-02-18T15:04:59-03:00</updated>
+    <author>
+      <name>Ricardo Castiglione</name>
+      <email>ricardo.castiglione@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Target version&lt;/strong&gt; changed from &lt;i&gt;1.36.0&lt;/i&gt; to &lt;i&gt;Backlog&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Bug #48752: Registrationnumbers wrong</title>
+    <link href="http://redmine.teracode.com/issues/48752" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/48752?journal_id=203512</id>
+    <updated>2011-02-18T15:05:10-03:00</updated>
+    <author>
+      <name>Ricardo Castiglione</name>
+      <email>ricardo.castiglione@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;ReOpen&lt;/i&gt; to &lt;i&gt;Assigned&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+</feed>

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title></title>
+  <link href="http://redmine.teracode.com/issues/40745.atom?key=4aa574c9e059cb38d85a8c5ac783b54345358b7b" rel="self"/>
+  <link href="http://redmine.teracode.com/" rel="alternate"/>
+  <id>http://redmine.teracode.com/</id>
+  <updated>2010-10-01T12:21:06-03:00</updated>
+  <author>
+    <name>TeraCode Project Management Tool</name>
+  </author>
+  <entry>
+    <title>Pupils - Bug #40745: Internal error - adres link combined with current address</title>
+    <link href="http://redmine.teracode.com/issues/40745" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/40745?journal_id=154746</id>
+    <updated>2010-10-01T12:21:06-03:00</updated>
+    <author>
+      <name>Ricardo Castiglione</name>
+      <email>ricardo.castiglione@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;van de Bongardt, Deam&lt;br /&gt;1000015 &lt;br /&gt;1KBE&lt;/p&gt;
+
+
+	&lt;p&gt;van de Bongardt, Faye&lt;br /&gt;1000016 &lt;br /&gt;2A&lt;/p&gt;
+
+
+	&lt;p&gt;I.N. 008763&lt;/p&gt;
+
+
+	&lt;p&gt;So Deam is the brother and Faye is the siste&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Bug #40745: Internal error - adres link combined with current address</title>
+    <link href="http://redmine.teracode.com/issues/40745" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/40745?journal_id=155174</id>
+    <updated>2010-10-04T11:09:33-03:00</updated>
+    <author>
+      <name>Ricardo Castiglione</name>
+      <email>ricardo.castiglione@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;New&lt;/i&gt; to &lt;i&gt;Feedback&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;I couldn't reproduce it. When I modified the Deam's address, I saw that the Faye's address changes and When I modified the Faye's address, I saw that the Deam's address changes. Could you give me more information?.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Bug #40745: Internal error - adres link combined with current address</title>
+    <link href="http://redmine.teracode.com/issues/40745" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/40745?journal_id=155581</id>
+    <updated>2010-10-05T03:50:44-03:00</updated>
+    <author>
+      <name>Kim Maesen</name>
+      <email>Kim.Maesen@vsko.be</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;1/ select van de Bongardt, Deam&lt;br /&gt;2/ go to student details tab addresses&lt;br /&gt;3/ Check Current address&lt;br /&gt;4/ fill in in the current address: street - street number - zipcode - city and country (never mind which)&lt;br /&gt;5/ save&lt;br /&gt;6/ first you get the warning: Invalid bis number. Save anyway? saelect OK&lt;br /&gt;7/ then you get the warning about link group select OK&lt;br /&gt;8/ internal error.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Bug #40745: Internal error - adres link combined with current address</title>
+    <link href="http://redmine.teracode.com/issues/40745" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/40745?journal_id=162860</id>
+    <updated>2010-10-21T10:41:05-03:00</updated>
+    <author>
+      <name>Juan Miguel Diaz Ruiz</name>
+      <email>juan.miguel.diaz.ruiz@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Severity&lt;/strong&gt; changed from &lt;i&gt;normal&lt;/i&gt; to &lt;i&gt;Medium&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Bug #40745: Internal error - adres link combined with current address</title>
+    <link href="http://redmine.teracode.com/issues/40745" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/40745?journal_id=226531</id>
+    <updated>2011-04-27T07:50:51-03:00</updated>
+    <author>
+      <name>Kim Maesen</name>
+      <email>Kim.Maesen@vsko.be</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;other example: Nicolai Soors (I.N. 026534) has already an official address but adding a current address results in an error:  Nieuwpoortlaan 73, 8660 De Panne.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Bug #40745: Internal error - adres link combined with current address</title>
+    <link href="http://redmine.teracode.com/issues/40745" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/40745?journal_id=228979</id>
+    <updated>2011-05-04T06:22:43-03:00</updated>
+    <author>
+      <name>Kim Maesen</name>
+      <email>Kim.Maesen@vsko.be</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Priority&lt;/strong&gt; changed from &lt;i&gt;Normal&lt;/i&gt; to &lt;i&gt;High&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Changing address gives always error.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Bug #40745: Internal error - adres link combined with current address</title>
+    <link href="http://redmine.teracode.com/issues/40745" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/40745?journal_id=245551</id>
+    <updated>2011-06-21T13:53:38-03:00</updated>
+    <author>
+      <name>Raul Cardozo</name>
+      <email>raul.guillermo.cardozo@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Category&lt;/strong&gt; set to &lt;i&gt;Development&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Target version&lt;/strong&gt; set to &lt;i&gt;1.38.0&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Estimated time&lt;/strong&gt; set to &lt;i&gt;6.00&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Bug #40745: Internal error - adres link combined with current address</title>
+    <link href="http://redmine.teracode.com/issues/40745" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/40745?journal_id=245810</id>
+    <updated>2011-06-21T17:26:53-03:00</updated>
+    <author>
+      <name>Raul Cardozo</name>
+      <email>raul.guillermo.cardozo@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Assigned to&lt;/strong&gt; set to &lt;i&gt;Raul Cardozo&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Bug #40745: Internal error - adres link combined with current address</title>
+    <link href="http://redmine.teracode.com/issues/40745" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/40745?journal_id=245815</id>
+    <updated>2011-06-21T17:28:23-03:00</updated>
+    <author>
+      <name>Raul Cardozo</name>
+      <email>raul.guillermo.cardozo@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;Feedback&lt;/i&gt; to &lt;i&gt;New&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Bug #40745: Internal error - adres link combined with current address</title>
+    <link href="http://redmine.teracode.com/issues/40745" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/40745?journal_id=246202</id>
+    <updated>2011-06-22T15:17:30-03:00</updated>
+    <author>
+      <name>Raul Cardozo</name>
+      <email>raul.guillermo.cardozo@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;New&lt;/i&gt; to &lt;i&gt;Resolved&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;% Done&lt;/strong&gt; changed from &lt;i&gt;0&lt;/i&gt; to &lt;i&gt;100&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Applied in changeset &lt;a href="http://redmine.teracode.com/projects/pupils/repository/revisions/46045" class="changeset" title="fixes #40745 (Internal error - adres link combined with current address)"&gt;r46045&lt;/a&gt;.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Bug #40745: Internal error - adres link combined with current address</title>
+    <link href="http://redmine.teracode.com/issues/40745" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/40745?journal_id=252205</id>
+    <updated>2011-07-08T11:57:36-03:00</updated>
+    <author>
+      <name>Kim Maesen</name>
+      <email>Kim.Maesen@vsko.be</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;Resolved&lt;/i&gt; to &lt;i&gt;Closed&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+</feed>

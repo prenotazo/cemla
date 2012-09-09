@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title></title>
+  <link href="http://redmine.teracode.com/issues/21412.atom?key=4aa574c9e059cb38d85a8c5ac783b54345358b7b" rel="self"/>
+  <link href="http://redmine.teracode.com/" rel="alternate"/>
+  <id>http://redmine.teracode.com/</id>
+  <updated>2010-02-19T11:13:22-03:00</updated>
+  <author>
+    <name>TeraCode Project Management Tool</name>
+  </author>
+  <entry>
+    <title>Pupils - Bug #21412: administration edison: import</title>
+    <link href="http://redmine.teracode.com/issues/21412" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/21412?journal_id=82295</id>
+    <updated>2010-02-19T11:13:22-03:00</updated>
+    <author>
+      <name>Andr&#233;s Ferrari</name>
+      <email>andres.ferrari@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Category&lt;/strong&gt; set to &lt;i&gt;Development&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Assigned to&lt;/strong&gt; set to &lt;i&gt;Andr&#233;s Ferrari&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Bug #21412: administration edison: import</title>
+    <link href="http://redmine.teracode.com/issues/21412" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/21412?journal_id=83595</id>
+    <updated>2010-02-23T12:59:15-03:00</updated>
+    <author>
+      <name>Andr&#233;s Ferrari</name>
+      <email>andres.ferrari@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Assigned to&lt;/strong&gt; changed from &lt;i&gt;Andr&#233;s Ferrari&lt;/i&gt; to &lt;i&gt;Lionel Ferder&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Bug #21412: administration edison: import</title>
+    <link href="http://redmine.teracode.com/issues/21412" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/21412?journal_id=85455</id>
+    <updated>2010-03-01T12:59:54-03:00</updated>
+    <author>
+      <name>Andr&#233;s Ferrari</name>
+      <email>andres.ferrari@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Target version&lt;/strong&gt; set to &lt;i&gt;1.25.1&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Bug #21412: administration edison: import</title>
+    <link href="http://redmine.teracode.com/issues/21412" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/21412?journal_id=85645</id>
+    <updated>2010-03-01T17:12:11-03:00</updated>
+    <author>
+      <name>Lionel Ferder</name>
+      <email>lionel.ferder@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;New&lt;/i&gt; to &lt;i&gt;In Progress&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Few questions about this bug:&lt;/p&gt;
+
+
+	&lt;p&gt;1. Apparently a jar is created with the import process for some other stand alone application. Is this jar still being used?&lt;/p&gt;
+
+
+	&lt;p&gt;2. When a xls file has more then one student, and the import of one of them fails, currently, the whole process is rolled back. Is this the expected behaviour? The other option would be not saving the wrong record and continuing with the next one (this will require some work)&lt;/p&gt;
+
+
+	&lt;p&gt;3. Im getting some problems when saving the edison information. This could be because the data model changed after the import process was done and it was never changed. Im missing some information, Im not sure if its something that comes in the excel or I should set default values:&lt;br /&gt;Presence:&lt;br /&gt;   Absence first day&lt;br /&gt;   Absence second day&lt;br /&gt;   Absence third day&lt;br /&gt;   Presence first day&lt;br /&gt;   Presence second day&lt;br /&gt;   Presence third day&lt;br /&gt;GOK:&lt;br /&gt;   Homeless&lt;br /&gt;   Available&lt;br /&gt;   TravellingPerson&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Bug #21412: administration edison: import</title>
+    <link href="http://redmine.teracode.com/issues/21412" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/21412?journal_id=85824</id>
+    <updated>2010-03-02T08:55:02-03:00</updated>
+    <author>
+      <name>Michael De Groeve</name>
+      <email>michaeldegroeve@lemonade.be</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;hi lionel, &lt;br /&gt;1. i'm not sure but it seems you are looking at the wrong place? the standalone jar is long gone, we use a web upload. &lt;br /&gt;2. this normally works, a log is created but the import is not stopped. i guess you are looking at the wrong code?&lt;br /&gt;3. Edison info below is never mandatory, this normally works&lt;/p&gt;
+
+
+	&lt;p&gt;the only thing not working is this nullpointer, the rest should work&lt;/p&gt;
+
+
+	&lt;p&gt;let's chat if you don't find your way&lt;/p&gt;
+
+
+	&lt;p&gt;Lionel Ferder wrote:&lt;/p&gt;
+
+
+&lt;blockquote&gt;
+
+	&lt;p&gt;Few questions about this bug:&lt;/p&gt;
+
+
+	&lt;p&gt;1. Apparently a jar is created with the import process for some other stand alone application. Is this jar still being used?&lt;/p&gt;
+
+
+	&lt;p&gt;2. When a xls file has more then one student, and the import of one of them fails, currently, the whole process is rolled back. Is this the expected behaviour? The other option would be not saving the wrong record and continuing with the next one (this will require some work)&lt;/p&gt;
+
+
+	&lt;p&gt;3. Im getting some problems when saving the edison information. This could be because the data model changed after the import process was done and it was never changed. Im missing some information, Im not sure if its something that comes in the excel or I should set default values:
+Presence:
+Absence first day
+Absence second day
+Absence third day
+Presence first day
+Presence second day
+Presence third day
+GOK:
+Homeless
+Available
+TravellingPerson&lt;/p&gt;
+
+
+&lt;/blockquote&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Bug #21412: administration edison: import</title>
+    <link href="http://redmine.teracode.com/issues/21412" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/21412?journal_id=87938</id>
+    <updated>2010-03-08T10:52:34-03:00</updated>
+    <author>
+      <name>Lionel Ferder</name>
+      <email>lionel.ferder@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;In Progress&lt;/i&gt; to &lt;i&gt;Resolved&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Though there are still improvements that can be done to the process, it is possible to imports files now.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Bug #21412: administration edison: import</title>
+    <link href="http://redmine.teracode.com/issues/21412" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/21412?journal_id=88852</id>
+    <updated>2010-03-10T06:24:55-03:00</updated>
+    <author>
+      <name>Ken Van de Poel</name>
+      <email>ken@kvdp.be</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;Resolved&lt;/i&gt; to &lt;i&gt;Closed&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+</feed>
