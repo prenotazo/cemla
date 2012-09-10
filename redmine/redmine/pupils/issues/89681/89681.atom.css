@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title></title>
+  <link href="http://redmine.teracode.com/issues/89681.atom?key=4aa574c9e059cb38d85a8c5ac783b54345358b7b" rel="self"/>
+  <link href="http://redmine.teracode.com/" rel="alternate"/>
+  <id>http://redmine.teracode.com/</id>
+  <updated>2012-08-29T22:36:28-03:00</updated>
+  <author>
+    <name>TeraCode Project Management Tool</name>
+  </author>
+  <entry>
+    <title>Pupils - Bug #89681: Purge old records from PP_DISCIMUSMESSAGE</title>
+    <link href="http://redmine.teracode.com/issues/89681" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/89681?journal_id=366013</id>
+    <updated>2012-08-29T22:36:28-03:00</updated>
+    <author>
+      <name>Ricardo Castiglione</name>
+      <email>ricardo.castiglione@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Category&lt;/strong&gt; set to &lt;i&gt;Performance&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Target version&lt;/strong&gt; set to &lt;i&gt;Backlog&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+</feed>

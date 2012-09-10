@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title></title>
+  <link href="http://redmine.teracode.com/issues/86700.atom?key=4aa574c9e059cb38d85a8c5ac783b54345358b7b" rel="self"/>
+  <link href="http://redmine.teracode.com/" rel="alternate"/>
+  <id>http://redmine.teracode.com/</id>
+  <updated>2012-06-05T09:11:41-03:00</updated>
+  <author>
+    <name>TeraCode Project Management Tool</name>
+  </author>
+  <entry>
+    <title>Pupils - Bug #86700: Discimus: new part raadpleegDubbeleInschrijvingen</title>
+    <link href="http://redmine.teracode.com/issues/86700" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/86700?journal_id=350887</id>
+    <updated>2012-06-05T09:11:41-03:00</updated>
+    <author>
+      <name>Kim Maesen</name>
+      <email>Kim.Maesen@vsko.be</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Assigned to&lt;/strong&gt; set to &lt;i&gt;Javier Posado&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Bug #86700: Discimus: new part raadpleegDubbeleInschrijvingen</title>
+    <link href="http://redmine.teracode.com/issues/86700" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/86700?journal_id=351792</id>
+    <updated>2012-06-08T16:19:15-03:00</updated>
+    <author>
+      <name>Javier Posado</name>
+      <email>javier.posado@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;Move to 2.0.3&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Bug #86700: Discimus: new part raadpleegDubbeleInschrijvingen</title>
+    <link href="http://redmine.teracode.com/issues/86700" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/86700?journal_id=351814</id>
+    <updated>2012-06-08T16:20:40-03:00</updated>
+    <author>
+      <name>Javier Posado</name>
+      <email>javier.posado@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Target version&lt;/strong&gt; changed from &lt;i&gt;2.0.2&lt;/i&gt; to &lt;i&gt;2.0.3&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Bug #86700: Discimus: new part raadpleegDubbeleInschrijvingen</title>
+    <link href="http://redmine.teracode.com/issues/86700" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/86700?journal_id=352500</id>
+    <updated>2012-06-12T12:05:10-03:00</updated>
+    <author>
+      <name>Javier Posado</name>
+      <email>javier.posado@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;This will be done:&lt;br /&gt;1) Add the new tab, &#8220;Double Subscription&#8221; in edison.&lt;br /&gt;2) Add the filters: &lt;br /&gt;Institutionnumber(required), School year(required, Default = current schoolyear), From date(not required), Untill date(not required),&lt;br /&gt;Mainstructure(not required  can be blanc), AdmGroup(not required so can be blanc), Birth &lt;acronym title="not required"&gt;YEAR&lt;/acronym&gt;, ID-GRP)(not required) &lt;br /&gt;3) Show the result as list with the columns: "Date of the answer", "Institutionnumber", "AantalLeerlingenInDoelgroep" and "AantalLeerlingenDubbelIngeschreven".&lt;br /&gt;4) When click on a row show another page or a popup with the subscriptions of the institution. Will be another list with the columns:&lt;br /&gt;"First name", "last name" of the student, "Institution" where he/she has duplicated subs, "MS", "Start date", "End Date".&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Bug #86700: Discimus: new part raadpleegDubbeleInschrijvingen</title>
+    <link href="http://redmine.teracode.com/issues/86700" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/86700?journal_id=352501</id>
+    <updated>2012-06-12T12:08:21-03:00</updated>
+    <author>
+      <name>Javier Posado</name>
+      <email>javier.posado@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Estimated time&lt;/strong&gt; set to &lt;i&gt;32.00&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Bug #86700: Discimus: new part raadpleegDubbeleInschrijvingen</title>
+    <link href="http://redmine.teracode.com/issues/86700" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/86700?journal_id=352668</id>
+    <updated>2012-06-13T09:40:49-03:00</updated>
+    <author>
+      <name>Javier Posado</name>
+      <email>javier.posado@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;New&lt;/i&gt; to &lt;i&gt;Assigned&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Target version&lt;/strong&gt; changed from &lt;i&gt;2.0.3&lt;/i&gt; to &lt;i&gt;2.0.4&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Affected Version&lt;/strong&gt; set to &lt;i&gt;2.0.3&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Bug #86700: Discimus: new part raadpleegDubbeleInschrijvingen</title>
+    <link href="http://redmine.teracode.com/issues/86700" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/86700?journal_id=354269</id>
+    <updated>2012-06-25T09:20:03-03:00</updated>
+    <author>
+      <name>Javier Posado</name>
+      <email>javier.posado@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;Assigned&lt;/i&gt; to &lt;i&gt;In Progress&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Bug #86700: Discimus: new part raadpleegDubbeleInschrijvingen</title>
+    <link href="http://redmine.teracode.com/issues/86700" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/86700?journal_id=355535</id>
+    <updated>2012-06-29T17:34:49-03:00</updated>
+    <author>
+      <name>Javier Posado</name>
+      <email>javier.posado@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;% Done&lt;/strong&gt; changed from &lt;i&gt;0&lt;/i&gt; to &lt;i&gt;100&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;In Progress&lt;/i&gt; to &lt;i&gt;Resolved&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Applied in changeset &lt;a href="http://redmine.teracode.com/projects/pupils/repository/revisions/48877" class="changeset" title="fixes #86700"&gt;r48877&lt;/a&gt;.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Bug #86700: Discimus: new part raadpleegDubbeleInschrijvingen</title>
+    <link href="http://redmine.teracode.com/issues/86700" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/86700?journal_id=355536</id>
+    <updated>2012-06-29T17:38:51-03:00</updated>
+    <author>
+      <name>Javier Posado</name>
+      <email>javier.posado@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;Need to run upgrade-2.0.4-001-bug86700.sql&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Bug #86700: Discimus: new part raadpleegDubbeleInschrijvingen</title>
+    <link href="http://redmine.teracode.com/issues/86700" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/86700?journal_id=356224</id>
+    <updated>2012-07-03T04:59:46-03:00</updated>
+    <author>
+      <name>Kim Maesen</name>
+      <email>Kim.Maesen@vsko.be</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;Resolved&lt;/i&gt; to &lt;i&gt;Closed&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+</feed>

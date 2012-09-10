@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title></title>
+  <link href="http://redmine.teracode.com/issues/89548.atom?key=4aa574c9e059cb38d85a8c5ac783b54345358b7b" rel="self"/>
+  <link href="http://redmine.teracode.com/" rel="alternate"/>
+  <id>http://redmine.teracode.com/</id>
+  <updated>2012-08-27T10:05:50-03:00</updated>
+  <author>
+    <name>TeraCode Project Management Tool</name>
+  </author>
+  <entry>
+    <title>Pupils - Bug #89548: discimus: wrong encoding</title>
+    <link href="http://redmine.teracode.com/issues/89548" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/89548?journal_id=365556</id>
+    <updated>2012-08-27T10:05:50-03:00</updated>
+    <author>
+      <name>Michael De Groeve</name>
+      <email>michaeldegroeve@lemonade.be</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;New&lt;/i&gt; to &lt;i&gt;In Progress&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Assigned to&lt;/strong&gt; set to &lt;i&gt;Javier Posado&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;i've corrected the name of the pupil, deleted the pending messages, and will ask Kim to re-save the pupil subscription, this should trigger a resend of the messages&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Bug #89548: discimus: wrong encoding</title>
+    <link href="http://redmine.teracode.com/issues/89548" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/89548?journal_id=365557</id>
+    <updated>2012-08-27T10:08:09-03:00</updated>
+    <author>
+      <name>Michael De Groeve</name>
+      <email>michaeldegroeve@lemonade.be</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;javier, didn't we strip illegal characters before sending them? if not, best if you create an issue for this&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Bug #89548: discimus: wrong encoding</title>
+    <link href="http://redmine.teracode.com/issues/89548" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/89548?journal_id=365588</id>
+    <updated>2012-08-27T11:45:14-03:00</updated>
+    <author>
+      <name>Javier Posado</name>
+      <email>javier.posado@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Target version&lt;/strong&gt; set to &lt;i&gt;2.0.7&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Bug #89548: discimus: wrong encoding</title>
+    <link href="http://redmine.teracode.com/issues/89548" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/89548?journal_id=366341</id>
+    <updated>2012-08-31T09:58:28-03:00</updated>
+    <author>
+      <name>Javier Posado</name>
+      <email>javier.posado@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;There were two characters null in the lastname of the user "De Pauw, Koen". It is the unique case and it is fixed with the script upgrade-2.0.7-001-bug89548.sql.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Bug #89548: discimus: wrong encoding</title>
+    <link href="http://redmine.teracode.com/issues/89548" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/89548?journal_id=366350</id>
+    <updated>2012-08-31T10:24:46-03:00</updated>
+    <author>
+      <name>Javier Posado</name>
+      <email>javier.posado@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;In Progress&lt;/i&gt; to &lt;i&gt;Resolved&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;% Done&lt;/strong&gt; changed from &lt;i&gt;0&lt;/i&gt; to &lt;i&gt;100&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Applied in changeset &lt;a href="http://redmine.teracode.com/projects/pupils/repository/revisions/49220" class="changeset" title="fixes #89548, discimus: wrong encoding"&gt;r49220&lt;/a&gt;.&lt;/p&gt;    </content>
+  </entry>
+</feed>

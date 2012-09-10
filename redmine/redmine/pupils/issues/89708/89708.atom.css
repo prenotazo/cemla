@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title></title>
+  <link href="http://redmine.teracode.com/issues/89708.atom?key=4aa574c9e059cb38d85a8c5ac783b54345358b7b" rel="self"/>
+  <link href="http://redmine.teracode.com/" rel="alternate"/>
+  <id>http://redmine.teracode.com/</id>
+  <updated>2012-08-30T15:11:26-03:00</updated>
+  <author>
+    <name>TeraCode Project Management Tool</name>
+  </author>
+  <entry>
+    <title>Pupils - Bug #89708: Another slow query (subscriptions search)</title>
+    <link href="http://redmine.teracode.com/issues/89708" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/89708?journal_id=366178</id>
+    <updated>2012-08-30T15:11:26-03:00</updated>
+    <author>
+      <name>Ricardo Castiglione</name>
+      <email>ricardo.castiglione@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Subject&lt;/strong&gt; changed from &lt;i&gt;Another slow query&lt;/i&gt; to &lt;i&gt;Another slow query (subscriptions search)&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Bug #89708: Another slow query (subscriptions search)</title>
+    <link href="http://redmine.teracode.com/issues/89708" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/89708?journal_id=366326</id>
+    <updated>2012-08-30T21:38:47-03:00</updated>
+    <author>
+      <name>Ricardo Castiglione</name>
+      <email>ricardo.castiglione@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;In Progress&lt;/i&gt; to &lt;i&gt;Resolved&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;% Done&lt;/strong&gt; changed from &lt;i&gt;0&lt;/i&gt; to &lt;i&gt;100&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Applied in changeset &lt;a href="http://redmine.teracode.com/projects/pupils/repository/revisions/49214" class="changeset" title="fixes #89708 (Another slow query (subscriptions search))"&gt;r49214&lt;/a&gt;.&lt;/p&gt;    </content>
+  </entry>
+</feed>

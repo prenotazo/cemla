@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title></title>
+  <link href="http://redmine.teracode.com/issues/86923.atom?key=4aa574c9e059cb38d85a8c5ac783b54345358b7b" rel="self"/>
+  <link href="http://redmine.teracode.com/" rel="alternate"/>
+  <id>http://redmine.teracode.com/</id>
+  <updated>2012-06-07T18:19:49-03:00</updated>
+  <author>
+    <name>TeraCode Project Management Tool</name>
+  </author>
+  <entry>
+    <title>Pupils - Bug #86923: Validatation on GRP fields</title>
+    <link href="http://redmine.teracode.com/issues/86923" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/86923?journal_id=351627</id>
+    <updated>2012-06-07T18:19:49-03:00</updated>
+    <author>
+      <name>Javier Posado</name>
+      <email>javier.posado@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;New&lt;/i&gt; to &lt;i&gt;Feedback&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Assigned to&lt;/strong&gt; set to &lt;i&gt;Javier Posado&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Target version&lt;/strong&gt; set to &lt;i&gt;2.0.2&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;% Done&lt;/strong&gt; changed from &lt;i&gt;0&lt;/i&gt; to &lt;i&gt;100&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Added validation of street numbers.&lt;br /&gt;Need to upgrade-2.0.2-006-bug86923.sql to set streetnumber to "0" for null cases&lt;/p&gt;
+
+
+	&lt;p&gt;Added validation of NIN using NationalIdentityNumber.validate() method. &lt;br /&gt;In DiscimusTestDossier the student with &lt;acronym title="InszNummer"&gt;NIN&lt;/acronym&gt;="04052330922", birthday="23/5/2004", nationality="Spaans" and country = "Belgi&#235;" is getting error for InszNummer with&lt;br /&gt;this validation. Is ok that or the validator need a review?&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Bug #86923: Validatation on GRP fields</title>
+    <link href="http://redmine.teracode.com/issues/86923" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/86923?journal_id=351628</id>
+    <updated>2012-06-07T18:20:00-03:00</updated>
+    <author>
+      <name>Javier Posado</name>
+      <email>javier.posado@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Assigned to&lt;/strong&gt; changed from &lt;i&gt;Javier Posado&lt;/i&gt; to &lt;i&gt;Kim Maesen&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Bug #86923: Validatation on GRP fields</title>
+    <link href="http://redmine.teracode.com/issues/86923" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/86923?journal_id=351641</id>
+    <updated>2012-06-08T05:03:45-03:00</updated>
+    <author>
+      <name>Kim Maesen</name>
+      <email>Kim.Maesen@vsko.be</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;Feedback&lt;/i&gt; to &lt;i&gt;Assigned&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Assigned to&lt;/strong&gt; changed from &lt;i&gt;Kim Maesen&lt;/i&gt; to &lt;i&gt;Javier Posado&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;you need to correct the validator. There are "wrong" NiN, that exists. So you may add a validation, but don't block.&lt;/p&gt;
+
+
+	&lt;p&gt;So as possible option: give warning saying it but they can choose OK to sent anyway.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Bug #86923: Validatation on GRP fields</title>
+    <link href="http://redmine.teracode.com/issues/86923" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/86923?journal_id=351662</id>
+    <updated>2012-06-08T10:02:59-03:00</updated>
+    <author>
+      <name>Javier Posado</name>
+      <email>javier.posado@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Assigned to&lt;/strong&gt; changed from &lt;i&gt;Javier Posado&lt;/i&gt; to &lt;i&gt;Kim Maesen&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Before, Pupils was checking in the student page the NIN with a validator code (it validates the birthday considering the country and validates the control digits). If the NIN was invalid it show a warning and can continue and save the wrong NIN. &lt;br /&gt;Now there is a second check in the Discimus code, Pupils is checking the NIN before sent the message, using the same validator and doen't sent it if it has an invalid NIN (to prevent the code 30109)&lt;br /&gt;1)Is ok that last change?&lt;br /&gt;2)Can you check if  NIN="04052330922", birthday="23/5/2004", nationality="Spaans" and country = "Belgi&#235;" has an invalid NIN? This example come from test dossier.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Bug #86923: Validatation on GRP fields</title>
+    <link href="http://redmine.teracode.com/issues/86923" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/86923?journal_id=351665</id>
+    <updated>2012-06-08T10:24:08-03:00</updated>
+    <author>
+      <name>Javier Posado</name>
+      <email>javier.posado@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;Assigned&lt;/i&gt; to &lt;i&gt;Feedback&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Bug #86923: Validatation on GRP fields</title>
+    <link href="http://redmine.teracode.com/issues/86923" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/86923?journal_id=351768</id>
+    <updated>2012-06-08T15:52:42-03:00</updated>
+    <author>
+      <name>Javier Posado</name>
+      <email>javier.posado@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;Feedback&lt;/i&gt; to &lt;i&gt;Rejected&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Assigned to&lt;/strong&gt; changed from &lt;i&gt;Kim Maesen&lt;/i&gt; to &lt;i&gt;Javier Posado&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;This issue is rejected and continued in &lt;a href="http://redmine.teracode.com/issues/86993" class="issue status-9 priority-3 closed" title="Discimus:validation of street number (Closed)"&gt;#86993&lt;/a&gt; and &lt;a href="http://redmine.teracode.com/issues/86994" class="issue status-6 priority-3" title="Discimus: validation of NIN before to send  (Feedback)"&gt;#86994&lt;/a&gt; to can do the release 2.0.2&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Bug #86923: Validatation on GRP fields</title>
+    <link href="http://redmine.teracode.com/issues/86923" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/86923?journal_id=351769</id>
+    <updated>2012-06-08T15:53:37-03:00</updated>
+    <author>
+      <name>Javier Posado</name>
+      <email>javier.posado@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Target version&lt;/strong&gt; changed from &lt;i&gt;2.0.2&lt;/i&gt; to &lt;i&gt;Trash&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+</feed>

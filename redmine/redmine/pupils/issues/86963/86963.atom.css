@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title></title>
+  <link href="http://redmine.teracode.com/issues/86963.atom?key=4aa574c9e059cb38d85a8c5ac783b54345358b7b" rel="self"/>
+  <link href="http://redmine.teracode.com/" rel="alternate"/>
+  <id>http://redmine.teracode.com/</id>
+  <updated>2012-06-08T16:19:42-03:00</updated>
+  <author>
+    <name>TeraCode Project Management Tool</name>
+  </author>
+  <entry>
+    <title>Pupils - Bug #86963: Discimus: GON may not be sent</title>
+    <link href="http://redmine.teracode.com/issues/86963" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/86963?journal_id=351802</id>
+    <updated>2012-06-08T16:19:42-03:00</updated>
+    <author>
+      <name>Javier Posado</name>
+      <email>javier.posado@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;Move to 2.0.3&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Bug #86963: Discimus: GON may not be sent</title>
+    <link href="http://redmine.teracode.com/issues/86963" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/86963?journal_id=351826</id>
+    <updated>2012-06-08T16:21:08-03:00</updated>
+    <author>
+      <name>Javier Posado</name>
+      <email>javier.posado@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Target version&lt;/strong&gt; changed from &lt;i&gt;2.0.2&lt;/i&gt; to &lt;i&gt;2.0.3&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Bug #86963: Discimus: GON may not be sent</title>
+    <link href="http://redmine.teracode.com/issues/86963" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/86963?journal_id=352127</id>
+    <updated>2012-06-11T10:38:02-03:00</updated>
+    <author>
+      <name>Javier Posado</name>
+      <email>javier.posado@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;New&lt;/i&gt; to &lt;i&gt;Assigned&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Assigned to&lt;/strong&gt; set to &lt;i&gt;Javier Posado&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Estimated time&lt;/strong&gt; set to &lt;i&gt;2.00&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Affected Version&lt;/strong&gt; set to &lt;i&gt;2.0.2&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Bug #86963: Discimus: GON may not be sent</title>
+    <link href="http://redmine.teracode.com/issues/86963" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/86963?journal_id=352135</id>
+    <updated>2012-06-11T10:54:17-03:00</updated>
+    <author>
+      <name>Javier Posado</name>
+      <email>javier.posado@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;Assigned&lt;/i&gt; to &lt;i&gt;Feedback&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Assigned to&lt;/strong&gt; changed from &lt;i&gt;Javier Posado&lt;/i&gt; to &lt;i&gt;Kim Maesen&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;When the student is created the first time (GON is not set). After this, we are redirected to subscription page (when we save, we send GRP, INS and INS_ADM) and then we are redirected to Student-edison page with the warning to check some fields. After that we can set the student as GON but  we  sent before some messages. How can we resolve this case?&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Bug #86963: Discimus: GON may not be sent</title>
+    <link href="http://redmine.teracode.com/issues/86963" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/86963?journal_id=352139</id>
+    <updated>2012-06-11T10:58:20-03:00</updated>
+    <author>
+      <name>Kim Maesen</name>
+      <email>Kim.Maesen@vsko.be</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;Feedback&lt;/i&gt; to &lt;i&gt;Assigned&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Assigned to&lt;/strong&gt; changed from &lt;i&gt;Kim Maesen&lt;/i&gt; to &lt;i&gt;Javier Posado&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;no you set as gone when you're redirected to subscription page so before done a sending. In the screen of subscription page you can mark a student as GON.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Bug #86963: Discimus: GON may not be sent</title>
+    <link href="http://redmine.teracode.com/issues/86963" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/86963?journal_id=353017</id>
+    <updated>2012-06-14T15:38:49-03:00</updated>
+    <author>
+      <name>Javier Posado</name>
+      <email>javier.posado@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;Assigned&lt;/i&gt; to &lt;i&gt;In Progress&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Bug #86963: Discimus: GON may not be sent</title>
+    <link href="http://redmine.teracode.com/issues/86963" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/86963?journal_id=353117</id>
+    <updated>2012-06-14T23:36:38-03:00</updated>
+    <author>
+      <name>Javier Posado</name>
+      <email>javier.posado@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;In Progress&lt;/i&gt; to &lt;i&gt;Feedback&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Assigned to&lt;/strong&gt; changed from &lt;i&gt;Javier Posado&lt;/i&gt; to &lt;i&gt;Kim Maesen&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Some question:&lt;br /&gt;1)Which messages don't have to be sent when the subscription is marked as gon? Only INS_ADM? Or we don't sent GRP, INS nor INS_ADM?&lt;br /&gt;2)Is it possible that a student for a school has one subscription marked as gon and other not in the same school? I guess not but I ask just in case.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Bug #86963: Discimus: GON may not be sent</title>
+    <link href="http://redmine.teracode.com/issues/86963" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/86963?journal_id=353118</id>
+    <updated>2012-06-15T06:46:55-03:00</updated>
+    <author>
+      <name>Kim Maesen</name>
+      <email>Kim.Maesen@vsko.be</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;Feedback&lt;/i&gt; to &lt;i&gt;Assigned&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Assigned to&lt;/strong&gt; changed from &lt;i&gt;Kim Maesen&lt;/i&gt; to &lt;i&gt;Javier Posado&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;1) No message&lt;br /&gt;2) yes it's possible, that's what's gon is about, in 1 school a subscription not marked as gon and in another school marked as gon. That's why 1 school will sent and the other not otherwise it's sent twice.&lt;/p&gt;
+
+
+	&lt;p&gt;FYI - what are gon-students?&lt;br /&gt;A gon-student is a student who has some troubles at school like e.g. when a student is autistic. But it's not because a student is autistic that he/she is stupid. Therefore this student goes to a "normal" school = subscribed in MS 111 or 211 and not marked as GON. Because the student is autistic he/she can go to a normal school but he/she still needs some extra help, some extra support. That support will be given by a school of special education, therefore this student also will be subscribed in a school with MS 121/221 but is marked as GON. This means the student goes to a normal school, but just for support he/she can count on the school of special education.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Bug #86963: Discimus: GON may not be sent</title>
+    <link href="http://redmine.teracode.com/issues/86963" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/86963?journal_id=353246</id>
+    <updated>2012-06-15T18:03:49-03:00</updated>
+    <author>
+      <name>Javier Posado</name>
+      <email>javier.posado@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;Assigned&lt;/i&gt; to &lt;i&gt;Resolved&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;% Done&lt;/strong&gt; changed from &lt;i&gt;0&lt;/i&gt; to &lt;i&gt;100&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;This is done: No send messages(GRP, INS, INS_ADM) for student with subscription marked as GON&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Bug #86963: Discimus: GON may not be sent</title>
+    <link href="http://redmine.teracode.com/issues/86963" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/86963?journal_id=356228</id>
+    <updated>2012-07-03T05:09:31-03:00</updated>
+    <author>
+      <name>Kim Maesen</name>
+      <email>Kim.Maesen@vsko.be</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;Resolved&lt;/i&gt; to &lt;i&gt;Closed&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+</feed>
