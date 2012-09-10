@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title></title>
+  <link href="http://redmine.teracode.com/issues/47860.atom?key=4aa574c9e059cb38d85a8c5ac783b54345358b7b" rel="self"/>
+  <link href="http://redmine.teracode.com/" rel="alternate"/>
+  <id>http://redmine.teracode.com/</id>
+  <updated>2010-12-29T19:00:50-03:00</updated>
+  <author>
+    <name>TeraCode Project Management Tool</name>
+  </author>
+  <entry>
+    <title>Jobsite - Feature #47860: Question about rule between Supplement and Proof of Competence</title>
+    <link href="http://redmine.teracode.com/issues/47860" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/47860?journal_id=185021</id>
+    <updated>2010-12-29T19:00:50-03:00</updated>
+    <author>
+      <name>Raul Cardozo</name>
+      <email>raul.guillermo.cardozo@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Category&lt;/strong&gt; set to &lt;i&gt;Development&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Assigned to&lt;/strong&gt; set to &lt;i&gt;Raul Cardozo&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>Jobsite - Feature #47860: Question about rule between Supplement and Proof of Competence</title>
+    <link href="http://redmine.teracode.com/issues/47860" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/47860?journal_id=186677</id>
+    <updated>2011-01-05T09:52:51-03:00</updated>
+    <author>
+      <name>Kim Maesen</name>
+      <email>Kim.Maesen@vsko.be</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;It means: the check should be done if any degree is filled in. has nothing to do with start or end date or ...&lt;br /&gt;the idea is: an application can never be saved without proof of competences filled in.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Jobsite - Feature #47860: Question about rule between Supplement and Proof of Competence</title>
+    <link href="http://redmine.teracode.com/issues/47860" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/47860?journal_id=186965</id>
+    <updated>2011-01-05T18:26:22-03:00</updated>
+    <author>
+      <name>Jos&#233; Ignacio  Constenla</name>
+      <email>ignacio.constenla@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Subject&lt;/strong&gt; changed from &lt;i&gt;doubt about rule between Supplement and Proof of Competence&lt;/i&gt; to &lt;i&gt;Question about rule between Supplement and Proof of Competence&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>Jobsite - Feature #47860: Question about rule between Supplement and Proof of Competence</title>
+    <link href="http://redmine.teracode.com/issues/47860" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/47860?journal_id=191936</id>
+    <updated>2011-01-19T10:55:13-03:00</updated>
+    <author>
+      <name>Kim Maesen</name>
+      <email>Kim.Maesen@vsko.be</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;Proof of competence includes the experiences and didactic competence. It&#8217;s best that this is devided into 2 parts (change also for the directors part)
+	&lt;ul&gt;
+	&lt;li&gt;Part 1: proof of competence that has next fields: Type &#8211; Title &#8211; Date - organisation&lt;/li&gt;
+		&lt;li&gt;Part 2 that includes the experiences and has next fields: Type: Didactic competence &amp;#38; usefull experience (so those 2 are not in the list of proof of competence) &#8211; title &#8211; Education level &#8211; from &#8211; to &#8211; organisation &#8211; The to date can be empty (translate in db as 31/12/2999)&lt;/li&gt;
+	&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>Jobsite - Feature #47860: Question about rule between Supplement and Proof of Competence</title>
+    <link href="http://redmine.teracode.com/issues/47860" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/47860?journal_id=192533</id>
+    <updated>2011-01-20T11:15:22-03:00</updated>
+    <author>
+      <name>Raul Cardozo</name>
+      <email>raul.guillermo.cardozo@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Target version&lt;/strong&gt; set to &lt;i&gt;0.4.1&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>Jobsite - Feature #47860: Question about rule between Supplement and Proof of Competence</title>
+    <link href="http://redmine.teracode.com/issues/47860" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/47860?journal_id=205332</id>
+    <updated>2011-02-23T16:29:07-03:00</updated>
+    <author>
+      <name>Raul Cardozo</name>
+      <email>raul.guillermo.cardozo@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;Feedback&lt;/i&gt; to &lt;i&gt;Assigned&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Target version&lt;/strong&gt; changed from &lt;i&gt;0.4.1&lt;/i&gt; to &lt;i&gt;0.4.0&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>Jobsite - Feature #47860: Question about rule between Supplement and Proof of Competence</title>
+    <link href="http://redmine.teracode.com/issues/47860" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/47860?journal_id=209120</id>
+    <updated>2011-03-06T23:15:06-03:00</updated>
+    <author>
+      <name>Raul Cardozo</name>
+      <email>raul.guillermo.cardozo@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;Assigned&lt;/i&gt; to &lt;i&gt;Resolved&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;% Done&lt;/strong&gt; changed from &lt;i&gt;0&lt;/i&gt; to &lt;i&gt;100&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>Jobsite - Feature #47860: Question about rule between Supplement and Proof of Competence</title>
+    <link href="http://redmine.teracode.com/issues/47860" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/47860?journal_id=218065</id>
+    <updated>2011-04-04T07:28:10-03:00</updated>
+    <author>
+      <name>Kim Maesen</name>
+      <email>Kim.Maesen@vsko.be</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;Resolved&lt;/i&gt; to &lt;i&gt;Closed&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+</feed>

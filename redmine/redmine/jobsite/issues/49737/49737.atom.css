@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title></title>
+  <link href="http://redmine.teracode.com/issues/49737.atom?key=4aa574c9e059cb38d85a8c5ac783b54345358b7b" rel="self"/>
+  <link href="http://redmine.teracode.com/" rel="alternate"/>
+  <id>http://redmine.teracode.com/</id>
+  <updated>2011-01-20T11:20:00-03:00</updated>
+  <author>
+    <name>TeraCode Project Management Tool</name>
+  </author>
+  <entry>
+    <title>Jobsite - Feature #49737: Integrate jobsite with authorisation of SSO</title>
+    <link href="http://redmine.teracode.com/issues/49737" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/49737?journal_id=192538</id>
+    <updated>2011-01-20T11:20:00-03:00</updated>
+    <author>
+      <name>Raul Cardozo</name>
+      <email>raul.guillermo.cardozo@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Tracker&lt;/strong&gt; changed from &lt;i&gt;Bug&lt;/i&gt; to &lt;i&gt;Feature&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>Jobsite - Feature #49737: Integrate jobsite with authorisation of SSO</title>
+    <link href="http://redmine.teracode.com/issues/49737" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/49737?journal_id=216496</id>
+    <updated>2011-03-30T09:52:50-03:00</updated>
+    <author>
+      <name>Michael De Groeve</name>
+      <email>michaeldegroeve@lemonade.be</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Subject&lt;/strong&gt; changed from &lt;i&gt;groups/roles - jobsite&lt;/i&gt; to &lt;i&gt;Integrate jobsite with authorisation of SSO&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>Jobsite - Feature #49737: Integrate jobsite with authorisation of SSO</title>
+    <link href="http://redmine.teracode.com/issues/49737" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/49737?journal_id=226363</id>
+    <updated>2011-04-26T17:08:05-03:00</updated>
+    <author>
+      <name>Ricardo Castiglione</name>
+      <email>ricardo.castiglione@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;New&lt;/i&gt; to &lt;i&gt;Feedback&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;I have to show a director name in the school data. where can I find the director name?. Is it unique?.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Jobsite - Feature #49737: Integrate jobsite with authorisation of SSO</title>
+    <link href="http://redmine.teracode.com/issues/49737" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/49737?journal_id=226523</id>
+    <updated>2011-04-27T05:40:25-03:00</updated>
+    <author>
+      <name>Kim Maesen</name>
+      <email>Kim.Maesen@vsko.be</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;At this moment we have all directors (can be max. 2 active the same time - office 13) in "the schoolbus" for MS 311 (it are those users: Organisaties/Instellingen/Scholen/Ambten/311/directeur)&lt;br /&gt;For MS 312 will be added this May.&lt;br /&gt;MS 111, 211, 121, 221, 321 will be added this summer to the schoolbus.&lt;br /&gt;When you don't find any director now (e.g. MS 321) leave blanc.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Jobsite - Feature #49737: Integrate jobsite with authorisation of SSO</title>
+    <link href="http://redmine.teracode.com/issues/49737" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/49737?journal_id=226882</id>
+    <updated>2011-04-27T17:26:30-03:00</updated>
+    <author>
+      <name>Ricardo Castiglione</name>
+      <email>ricardo.castiglione@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;1)&lt;/p&gt;
+
+
+&lt;blockquote&gt;
+
+	&lt;p&gt;Everybody who is a user in the table of PLATO/Schoolbus has access to the applicants part of jobsite. No group is necessary for these users.&lt;/p&gt;
+
+
+&lt;/blockquote&gt;
+
+	&lt;p&gt;What does it mean?. If you have a headmaster user, so He/She will be able to create a profile (like a candidate). I understood that you said that the users in B3S_USER (plato) have to have access to the applicant part (I think candidate profile) never mind the groups. So, is one headmaster always a candidate?.&lt;/p&gt;
+
+
+	&lt;p&gt;2) What's the difference between Admin and Headmaster/Director?. I mean, what can do an Admin that can't do a Headmaster/Director?.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Jobsite - Feature #49737: Integrate jobsite with authorisation of SSO</title>
+    <link href="http://redmine.teracode.com/issues/49737" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/49737?journal_id=226983</id>
+    <updated>2011-04-28T05:02:37-03:00</updated>
+    <author>
+      <name>Kim Maesen</name>
+      <email>Kim.Maesen@vsko.be</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;A1: Everybody is a candidate. Everybody who is in de db, every employee, headmaster, superadmin, teacher, director etc... because everybody can possible fill in an application and look for another job.&lt;br /&gt;A2: The difference is that an admin = superadmin. e.g. &lt;br /&gt;A headmaster/director can search for candidates with activated applications, a superadmin can search for everybody. &lt;br /&gt;A headmaster/director can read (see details) of the applicants and a superadmin can edit them also. &lt;br /&gt;A headmaster/director can add a vacancy for his/her school. A superadmin for each school.&lt;/p&gt;
+
+
+	&lt;p&gt;I think for the superadmin new issues should be added.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Jobsite - Feature #49737: Integrate jobsite with authorisation of SSO</title>
+    <link href="http://redmine.teracode.com/issues/49737" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/49737?journal_id=226995</id>
+    <updated>2011-04-28T09:36:59-03:00</updated>
+    <author>
+      <name>Ricardo Castiglione</name>
+      <email>ricardo.castiglione@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;Feedback&lt;/i&gt; to &lt;i&gt;New&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>Jobsite - Feature #49737: Integrate jobsite with authorisation of SSO</title>
+    <link href="http://redmine.teracode.com/issues/49737" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/49737?journal_id=227002</id>
+    <updated>2011-04-28T09:43:58-03:00</updated>
+    <author>
+      <name>Ricardo Castiglione</name>
+      <email>ricardo.castiglione@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Estimated time&lt;/strong&gt; set to &lt;i&gt;80.00&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>Jobsite - Feature #49737: Integrate jobsite with authorisation of SSO</title>
+    <link href="http://redmine.teracode.com/issues/49737" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/49737?journal_id=227156</id>
+    <updated>2011-04-28T12:25:00-03:00</updated>
+    <author>
+      <name>Ricardo Castiglione</name>
+      <email>ricardo.castiglione@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;New&lt;/i&gt; to &lt;i&gt;Feedback&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;&lt;blockquote&gt;
+
+	&lt;p&gt;A headmaster/director can add a vacancy for his/her school. A superadmin for each school.&lt;/p&gt;
+
+
+&lt;/blockquote&gt;
+
+	&lt;p&gt;The model is user -&gt; accounts (each one has a domain) -&gt; groups. When the user has the group "Functionele groepen/School Applicaties/VSKO Administratie/Jobsite/Admin", so He/She's an admin, but for one domain. So, If a user is admin only in one domain, is it ok that the user can create vacancies in all domains/schools?.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Jobsite - Feature #49737: Integrate jobsite with authorisation of SSO</title>
+    <link href="http://redmine.teracode.com/issues/49737" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/49737?journal_id=227528</id>
+    <updated>2011-04-29T05:28:07-03:00</updated>
+    <author>
+      <name>Kim Maesen</name>
+      <email>Kim.Maesen@vsko.be</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;It's ok because we (VSKO development) is only admin.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Jobsite - Feature #49737: Integrate jobsite with authorisation of SSO</title>
+    <link href="http://redmine.teracode.com/issues/49737" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/49737?journal_id=227534</id>
+    <updated>2011-04-29T09:07:59-03:00</updated>
+    <author>
+      <name>Ricardo Castiglione</name>
+      <email>ricardo.castiglione@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;Feedback&lt;/i&gt; to &lt;i&gt;New&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>Jobsite - Feature #49737: Integrate jobsite with authorisation of SSO</title>
+    <link href="http://redmine.teracode.com/issues/49737" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/49737?journal_id=232509</id>
+    <updated>2011-05-13T15:58:39-03:00</updated>
+    <author>
+      <name>Javier Posado</name>
+      <email>javier.posado@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;New&lt;/i&gt; to &lt;i&gt;Assigned&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Assigned to&lt;/strong&gt; set to &lt;i&gt;Javier Posado&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Target version&lt;/strong&gt; set to &lt;i&gt;0.7.0&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>Jobsite - Feature #49737: Integrate jobsite with authorisation of SSO</title>
+    <link href="http://redmine.teracode.com/issues/49737" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/49737?journal_id=233363</id>
+    <updated>2011-05-17T11:17:52-03:00</updated>
+    <author>
+      <name>Javier Posado</name>
+      <email>javier.posado@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Category&lt;/strong&gt; set to &lt;i&gt;Development&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Target version&lt;/strong&gt; changed from &lt;i&gt;0.7.0&lt;/i&gt; to &lt;i&gt;0.8.0&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>Jobsite - Feature #49737: Integrate jobsite with authorisation of SSO</title>
+    <link href="http://redmine.teracode.com/issues/49737" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/49737?journal_id=234877</id>
+    <updated>2011-05-20T17:47:38-03:00</updated>
+    <author>
+      <name>Javier Posado</name>
+      <email>javier.posado@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;Assigned&lt;/i&gt; to &lt;i&gt;In Progress&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;% Done&lt;/strong&gt; changed from &lt;i&gt;0&lt;/i&gt; to &lt;i&gt;60&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>Jobsite - Feature #49737: Integrate jobsite with authorisation of SSO</title>
+    <link href="http://redmine.teracode.com/issues/49737" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/49737?journal_id=235648</id>
+    <updated>2011-05-24T12:27:27-03:00</updated>
+    <author>
+      <name>Javier Posado</name>
+      <email>javier.posado@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;In Progress&lt;/i&gt; to &lt;i&gt;Feedback&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Assigned to&lt;/strong&gt; changed from &lt;i&gt;Javier Posado&lt;/i&gt; to &lt;i&gt;Michael De Groeve&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Michael, we can't implement the authentication with Josso like other applications because the login page in Jobsite has  the sign up and the forgot password buttons.&lt;br /&gt;We think two solutions:&lt;br /&gt;1. Add those two bottons in the login page of josso&lt;br /&gt;2. Do something like pincette client that use the Josso api.&lt;br /&gt;We prefer the option 1.&lt;/p&gt;
+
+
+	&lt;p&gt;Please let me know what you think.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Jobsite - Feature #49737: Integrate jobsite with authorisation of SSO</title>
+    <link href="http://redmine.teracode.com/issues/49737" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/49737?journal_id=235683</id>
+    <updated>2011-05-24T13:03:04-03:00</updated>
+    <author>
+      <name>Ken Van de Poel</name>
+      <email>ken@kvdp.be</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;we already did option 1 for the forgot password on production, check: &lt;a class="external" href="http://login.vsko.be/josso/signon/login.do"&gt;http://login.vsko.be/josso/signon/login.do&lt;/a&gt;?&lt;br /&gt;We added the button 'Wachtwoord vergeten'(forgot password)&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Jobsite - Feature #49737: Integrate jobsite with authorisation of SSO</title>
+    <link href="http://redmine.teracode.com/issues/49737" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/49737?journal_id=235696</id>
+    <updated>2011-05-24T13:50:54-03:00</updated>
+    <author>
+      <name>Javier Posado</name>
+      <email>javier.posado@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;Can you add the sign up button link too?&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Jobsite - Feature #49737: Integrate jobsite with authorisation of SSO</title>
+    <link href="http://redmine.teracode.com/issues/49737" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/49737?journal_id=235703</id>
+    <updated>2011-05-24T14:12:13-03:00</updated>
+    <author>
+      <name>Ken Van de Poel</name>
+      <email>ken@kvdp.be</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;Yes sure, its just a text line and with a hyperlink that we added, so we create a new text line with the link to the plato sign up page.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Jobsite - Feature #49737: Integrate jobsite with authorisation of SSO</title>
+    <link href="http://redmine.teracode.com/issues/49737" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/49737?journal_id=235811</id>
+    <updated>2011-05-24T16:06:32-03:00</updated>
+    <author>
+      <name>Raul Cardozo</name>
+      <email>raul.guillermo.cardozo@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;Kim Maesen wrote:&lt;/p&gt;
+
+
+&lt;blockquote&gt;
+
+	&lt;ul&gt;
+	&lt;li&gt;&#8220;Directeur&#8221;
+Add to Groups -&gt; Functionele groepen/School Applicaties/VSKO Administratie -&gt; Jobsite -&gt; Directeur&lt;/li&gt;
+	&lt;/ul&gt;
+
+
+	&lt;p&gt;Default members: The system groups: 
+Organisaties/Instellingen/CLB/Ambten/directeur (DIR)
+Organisaties/Instellingen/Scholen/Ambten/111/directeur
+Organisaties/Instellingen/Scholen/Ambten/211/directeur
+Organisaties/Instellingen/Scholen/Ambten/121/directeur
+Organisaties/Instellingen/Scholen/Ambten/221/directeur
+Organisaties/Instellingen/Scholen/Ambten/311/directeur
+Organisaties/Instellingen/Scholen/Ambten/321/directeur&lt;/p&gt;
+
+
+&lt;/blockquote&gt;
+
+	&lt;p&gt;This part of the issue has to be managed in plato side, we created the issue &lt;a class="external" href="http://redmine.teracode.com/issues/60363"&gt;http://redmine.teracode.com/issues/60363&lt;/a&gt; in order to do that.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Jobsite - Feature #49737: Integrate jobsite with authorisation of SSO</title>
+    <link href="http://redmine.teracode.com/issues/49737" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/49737?journal_id=237139</id>
+    <updated>2011-05-27T16:49:38-03:00</updated>
+    <author>
+      <name>Raul Cardozo</name>
+      <email>raul.guillermo.cardozo@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;Feedback&lt;/i&gt; to &lt;i&gt;In Progress&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>Jobsite - Feature #49737: Integrate jobsite with authorisation of SSO</title>
+    <link href="http://redmine.teracode.com/issues/49737" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/49737?journal_id=237160</id>
+    <updated>2011-05-27T16:56:08-03:00</updated>
+    <author>
+      <name>Javier Posado</name>
+      <email>javier.posado@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;In Progress&lt;/i&gt; to &lt;i&gt;Resolved&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;% Done&lt;/strong&gt; changed from &lt;i&gt;60&lt;/i&gt; to &lt;i&gt;100&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Applied in changeset &lt;a href="http://redmine.teracode.com/projects/jobsite/repository/revisions/45809" class="changeset" title="fixes 49737."&gt;r45809&lt;/a&gt;.&lt;/p&gt;
+
+
+	&lt;p&gt;Added integration with Josso. Please see &lt;a class="external" href="http://redmine.teracode.com/projects/personnel/wiki/SSO_Configuration"&gt;http://redmine.teracode.com/projects/personnel/wiki/SSO_Configuration&lt;/a&gt; if you need to add Josso in tomcat.&lt;/p&gt;
+
+
+	&lt;p&gt;Added group memberships of user accounts that are updated by notifications or synchronization (there is a sync page only for Admin users).&lt;br /&gt;Please execute the script upgrade-0.8.0-001-bug49737.sql before try the application.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Jobsite - Feature #49737: Integrate jobsite with authorisation of SSO</title>
+    <link href="http://redmine.teracode.com/issues/49737" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/49737?journal_id=237360</id>
+    <updated>2011-05-27T19:34:34-03:00</updated>
+    <author>
+      <name>Raul Cardozo</name>
+      <email>raul.guillermo.cardozo@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;Resolved&lt;/i&gt; to &lt;i&gt;New&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;The following property was added to the jobsite.local.properties&lt;/p&gt;
+
+
+	&lt;ul&gt;
+	&lt;li&gt;usersServiceFactory.address = [&lt;a class="external" href="http://host:port/plato/employment-remoting/userWebService_v2_0"&gt;http://host:port/plato/employment-remoting/userWebService_v2_0&lt;/a&gt;]&lt;/li&gt;
+	&lt;/ul&gt;
+
+
+	&lt;p&gt;You has to use the user "administrator" in order to test the Candidates and Users synchronization.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Jobsite - Feature #49737: Integrate jobsite with authorisation of SSO</title>
+    <link href="http://redmine.teracode.com/issues/49737" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/49737?journal_id=237370</id>
+    <updated>2011-05-27T19:57:02-03:00</updated>
+    <author>
+      <name>Raul Cardozo</name>
+      <email>raul.guillermo.cardozo@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;New&lt;/i&gt; to &lt;i&gt;Resolved&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Applied in changeset &lt;a href="http://redmine.teracode.com/projects/jobsite/repository/revisions/45822" class="changeset" title="fixes #49737"&gt;r45822&lt;/a&gt;.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Jobsite - Feature #49737: Integrate jobsite with authorisation of SSO</title>
+    <link href="http://redmine.teracode.com/issues/49737" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/49737?journal_id=239803</id>
+    <updated>2011-06-05T10:08:48-03:00</updated>
+    <author>
+      <name>Kim Maesen</name>
+      <email>Kim.Maesen@vsko.be</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;Resolved&lt;/i&gt; to &lt;i&gt;Closed&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+</feed>
