@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title></title>
+  <link href="http://redmine.teracode.com/issues/10161.atom?key=4aa574c9e059cb38d85a8c5ac783b54345358b7b" rel="self"/>
+  <link href="http://redmine.teracode.com/" rel="alternate"/>
+  <id>http://redmine.teracode.com/</id>
+  <updated>2009-08-20T11:09:31-03:00</updated>
+  <author>
+    <name>TeraCode Project Management Tool</name>
+  </author>
+  <entry>
+    <title>Diary - Improvement #10161: no creation of coretask, subject possible when no function chosen</title>
+    <link href="http://redmine.teracode.com/issues/10161" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/10161?journal_id=38250</id>
+    <updated>2009-08-20T11:09:31-03:00</updated>
+    <author>
+      <name>Bianca Mullie</name>
+      <email>Bianca.Mullie@vsko.be</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Target version&lt;/strong&gt; deleted (&lt;strike&gt;&lt;i&gt;0.1.1&lt;/i&gt;&lt;/strike&gt;)&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>Diary - Improvement #10161: no creation of coretask, subject possible when no function chosen</title>
+    <link href="http://redmine.teracode.com/issues/10161" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/10161?journal_id=49417</id>
+    <updated>2009-10-01T14:01:34-03:00</updated>
+    <author>
+      <name>Raul Cardozo</name>
+      <email>raul.guillermo.cardozo@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;New&lt;/i&gt; to &lt;i&gt;Resolved&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Target version&lt;/strong&gt; set to &lt;i&gt;0.3.0&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;% Done&lt;/strong&gt; changed from &lt;i&gt;0&lt;/i&gt; to &lt;i&gt;100&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;It's done. And extra condition is working here too: the Activity's date must be selected before select core task and subject. &lt;br /&gt;I added this restriction because both Core Task and subject have a validity period.&lt;/p&gt;    </content>
+  </entry>
+</feed>

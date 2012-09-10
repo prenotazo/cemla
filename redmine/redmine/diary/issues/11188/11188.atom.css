@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title></title>
+  <link href="http://redmine.teracode.com/issues/11188.atom?key=4aa574c9e059cb38d85a8c5ac783b54345358b7b" rel="self"/>
+  <link href="http://redmine.teracode.com/" rel="alternate"/>
+  <id>http://redmine.teracode.com/</id>
+  <updated>2009-09-14T10:43:40-03:00</updated>
+  <author>
+    <name>TeraCode Project Management Tool</name>
+  </author>
+  <entry>
+    <title>Diary - Improvement #11188: Changes the Function Type Codes.</title>
+    <link href="http://redmine.teracode.com/issues/11188" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/11188?journal_id=45061</id>
+    <updated>2009-09-14T10:43:40-03:00</updated>
+    <author>
+      <name>Raul Cardozo</name>
+      <email>raul.guillermo.cardozo@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Target version&lt;/strong&gt; set to &lt;i&gt;0.2.1&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>Diary - Improvement #11188: Changes the Function Type Codes.</title>
+    <link href="http://redmine.teracode.com/issues/11188" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/11188?journal_id=46567</id>
+    <updated>2009-09-18T16:27:05-03:00</updated>
+    <author>
+      <name>Raul Cardozo</name>
+      <email>raul.guillermo.cardozo@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;Assigned&lt;/i&gt; to &lt;i&gt;Resolved&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;% Done&lt;/strong&gt; changed from &lt;i&gt;0&lt;/i&gt; to &lt;i&gt;100&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Applied in changeset &lt;a href="http://redmine.teracode.com/projects/diary/repository/revisions/38908" class="changeset" title="refs #9142 (PLATO Personnel integration). fixes #11188 (Changes the Function Type Codes)."&gt;r38908&lt;/a&gt;.&lt;/p&gt;    </content>
+  </entry>
+</feed>

@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title></title>
+  <link href="http://redmine.teracode.com/issues/17300.atom?key=4aa574c9e059cb38d85a8c5ac783b54345358b7b" rel="self"/>
+  <link href="http://redmine.teracode.com/" rel="alternate"/>
+  <id>http://redmine.teracode.com/</id>
+  <updated>2009-12-16T15:17:23-03:00</updated>
+  <author>
+    <name>TeraCode Project Management Tool</name>
+  </author>
+  <entry>
+    <title>Diary - Improvement #17300: CVO : new addressType</title>
+    <link href="http://redmine.teracode.com/issues/17300" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/17300?journal_id=67370</id>
+    <updated>2009-12-16T15:17:23-03:00</updated>
+    <author>
+      <name>Andr&#233;s Ferrari</name>
+      <email>andres.ferrari@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Tracker&lt;/strong&gt; changed from &lt;i&gt;Bug&lt;/i&gt; to &lt;i&gt;Improvement&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>Diary - Improvement #17300: CVO : new addressType</title>
+    <link href="http://redmine.teracode.com/issues/17300" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/17300?journal_id=67884</id>
+    <updated>2009-12-18T12:36:03-03:00</updated>
+    <author>
+      <name>Bianca Mullie</name>
+      <email>Bianca.Mullie@vsko.be</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;File&lt;/strong&gt; &lt;a href="/attachments/4998/CVOLocations.ods"&gt;CVOLocations.ods&lt;/a&gt; added&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>Diary - Improvement #17300: CVO : new addressType</title>
+    <link href="http://redmine.teracode.com/issues/17300" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/17300?journal_id=67888</id>
+    <updated>2009-12-18T12:46:05-03:00</updated>
+    <author>
+      <name>Bianca Mullie</name>
+      <email>Bianca.Mullie@vsko.be</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;1 column : name&lt;br /&gt;2 column : street&lt;br /&gt;3 column : zipcode&lt;br /&gt;4 column : cityname &lt;br /&gt;5 column : uuid&lt;br /&gt;date from and date to can be defaulted to null&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Diary - Improvement #17300: CVO : new addressType</title>
+    <link href="http://redmine.teracode.com/issues/17300" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/17300?journal_id=68900</id>
+    <updated>2009-12-22T12:10:47-03:00</updated>
+    <author>
+      <name>Raul Cardozo</name>
+      <email>raul.guillermo.cardozo@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;Bianca Mullie wrote:&lt;/p&gt;
+
+
+&lt;blockquote&gt;
+
+	&lt;p&gt;1 column : name
+2 column : street
+3 column : zipcode
+4 column : cityname 
+5 column : uuid
+date from and date to can be defaulted to null&lt;/p&gt;
+
+
+&lt;/blockquote&gt;
+
+	&lt;p&gt;the CVOLocations.ods file contains some entries without name, and some names are repeated. Is this file wrong?&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Diary - Improvement #17300: CVO : new addressType</title>
+    <link href="http://redmine.teracode.com/issues/17300" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/17300?journal_id=68948</id>
+    <updated>2009-12-22T13:32:54-03:00</updated>
+    <author>
+      <name>Raul Cardozo</name>
+      <email>raul.guillermo.cardozo@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;New&lt;/i&gt; to &lt;i&gt;Assigned&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Target version&lt;/strong&gt; set to &lt;i&gt;0.7.0&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>Diary - Improvement #17300: CVO : new addressType</title>
+    <link href="http://redmine.teracode.com/issues/17300" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/17300?journal_id=68958</id>
+    <updated>2009-12-22T13:44:14-03:00</updated>
+    <author>
+      <name>Bianca Mullie</name>
+      <email>Bianca.Mullie@vsko.be</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;Raul Cardozo wrote:&lt;/p&gt;
+
+
+&lt;blockquote&gt;
+
+	&lt;p&gt;Bianca Mullie wrote:&lt;/p&gt;
+
+
+&lt;blockquote&gt;
+
+	&lt;p&gt;1 column : name
+2 column : street
+3 column : zipcode
+4 column : cityname 
+5 column : uuid
+date from and date to can be defaulted to null&lt;/p&gt;
+
+
+&lt;/blockquote&gt;
+
+	&lt;p&gt;the CVOLocations.ods file contains some entries without name, and some names are repeated. Is this file wrong?&lt;/p&gt;
+
+
+&lt;/blockquote&gt;
+
+	&lt;p&gt;The file is correct, names can be null or be duplicate, it's the combination of name and address that has to be unique&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Diary - Improvement #17300: CVO : new addressType</title>
+    <link href="http://redmine.teracode.com/issues/17300" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/17300?journal_id=68995</id>
+    <updated>2009-12-22T15:16:00-03:00</updated>
+    <author>
+      <name>Raul Cardozo</name>
+      <email>raul.guillermo.cardozo@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;Bianca Mullie wrote:&lt;/p&gt;
+
+
+&lt;blockquote&gt;
+
+	&lt;p&gt;The file is correct, names can be null or be duplicate, it's the combination of name and address that has to be unique&lt;/p&gt;
+
+
+&lt;/blockquote&gt;
+
+	&lt;p&gt;ok, so i think the UI should be like:&lt;/p&gt;
+
+
+	&lt;table&gt;
+		&lt;tr&gt;
+			&lt;th&gt;Address Type&lt;/th&gt;
+			&lt;th&gt;Address&lt;/th&gt;
+			&lt;th&gt;Value&lt;/th&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;CVO&lt;/td&gt;
+			&lt;td&gt;names(list without repeat names)&lt;/td&gt;
+			&lt;td&gt;direction (list of directions according the selected name)&lt;/td&gt;
+		&lt;/tr&gt;
+	&lt;/table&gt;
+
+
+
+
+	&lt;p&gt;If there is only a direction for the selected name, the field value must be automatically filled.&lt;/p&gt;
+
+
+	&lt;p&gt;what do you think?&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Diary - Improvement #17300: CVO : new addressType</title>
+    <link href="http://redmine.teracode.com/issues/17300" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/17300?journal_id=69132</id>
+    <updated>2009-12-23T07:00:54-03:00</updated>
+    <author>
+      <name>Bianca Mullie</name>
+      <email>Bianca.Mullie@vsko.be</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;File&lt;/strong&gt; &lt;a href="/attachments/5048/list_schoollocations.odt"&gt;list_schoollocations.odt&lt;/a&gt; added&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Raul Cardozo wrote:&lt;/p&gt;
+
+
+&lt;blockquote&gt;
+
+	&lt;p&gt;Bianca Mullie wrote:&lt;/p&gt;
+
+
+&lt;blockquote&gt;
+
+	&lt;p&gt;The file is correct, names can be null or be duplicate, it's the combination of name and address that has to be unique&lt;/p&gt;
+
+
+&lt;/blockquote&gt;
+
+	&lt;p&gt;ok, so i think the UI should be like:&lt;/p&gt;
+
+
+	&lt;table&gt;
+		&lt;tr&gt;
+			&lt;th&gt;Address Type&lt;/th&gt;
+			&lt;th&gt;Address&lt;/th&gt;
+			&lt;th&gt;Value&lt;/th&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;CVO&lt;/td&gt;
+			&lt;td&gt;names(list without repeat names)&lt;/td&gt;
+			&lt;td&gt;direction (list of directions according the selected name)&lt;/td&gt;
+		&lt;/tr&gt;
+	&lt;/table&gt;
+
+
+
+
+	&lt;p&gt;If there is only a direction for the selected name, the field value must be automatically filled.&lt;/p&gt;
+
+
+	&lt;p&gt;what do you think?&lt;/p&gt;
+
+
+&lt;/blockquote&gt;
+
+	&lt;table&gt;
+		&lt;tr&gt;
+			&lt;th&gt;Address Type&lt;/th&gt;
+			&lt;th&gt;Address&lt;/th&gt;
+			&lt;th&gt;Value&lt;/th&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;CVO&lt;/td&gt;
+			&lt;td&gt;should be a list of combinations school.name + schoollocation.name + schoollocation.address where user can easily search by typing zipcode or city or part of street or name &lt;/td&gt;
+			&lt;td&gt;address of selected schoollocation &lt;/td&gt;
+		&lt;/tr&gt;
+	&lt;/table&gt;
+
+
+
+
+	&lt;p&gt;Width of the address-field can stay the same as it is now, not all info will be visible on screen but user has to enter in the list to search and select location and in this list all info should be visible. when an address is selected, value can be put in value.&lt;/p&gt;
+
+
+	&lt;p&gt;In attach an example of how it is implemented in the current apppliction, if you could do something similar that would be nice.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Diary - Improvement #17300: CVO : new addressType</title>
+    <link href="http://redmine.teracode.com/issues/17300" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/17300?journal_id=70337</id>
+    <updated>2010-01-02T19:40:30-03:00</updated>
+    <author>
+      <name>Raul Cardozo</name>
+      <email>raul.guillermo.cardozo@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;Assigned&lt;/i&gt; to &lt;i&gt;Resolved&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;% Done&lt;/strong&gt; changed from &lt;i&gt;0&lt;/i&gt; to &lt;i&gt;100&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+</feed>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title></title>
+  <link href="http://redmine.teracode.com/issues/17301.atom?key=4aa574c9e059cb38d85a8c5ac783b54345358b7b" rel="self"/>
+  <link href="http://redmine.teracode.com/" rel="alternate"/>
+  <id>http://redmine.teracode.com/</id>
+  <updated>2010-01-20T12:37:03-03:00</updated>
+  <author>
+    <name>TeraCode Project Management Tool</name>
+  </author>
+  <entry>
+    <title>Diary - Feature #17301: help-button to add help-file to a page</title>
+    <link href="http://redmine.teracode.com/issues/17301" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/17301?journal_id=74310</id>
+    <updated>2010-01-20T12:37:03-03:00</updated>
+    <author>
+      <name>Raul Cardozo</name>
+      <email>raul.guillermo.cardozo@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;New&lt;/i&gt; to &lt;i&gt;Resolved&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Target version&lt;/strong&gt; set to &lt;i&gt;0.8.0&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;% Done&lt;/strong&gt; changed from &lt;i&gt;0&lt;/i&gt; to &lt;i&gt;100&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;a help button  was added for each page.&lt;/p&gt;
+
+
+	&lt;p&gt;The next are the page which you should edit to add the help information:&lt;/p&gt;
+
+
+- Manage Activities 
+	&lt;ul&gt;
+	&lt;li&gt;ActivityListHelpPanel.html : Activities List Page&lt;/li&gt;
+		&lt;li&gt;ActivityCalendarHelpPanel.html : Calendar Page&lt;/li&gt;
+		&lt;li&gt;ActivitySearchHelpPanel.html : Activity Search Page&lt;/li&gt;
+		&lt;li&gt;&lt;br /&gt;- Consult Activities&lt;/li&gt;
+		&lt;li&gt;ActivitiesConsultHelpPanel.html : Consult Activities Page&lt;/li&gt;
+	&lt;/ul&gt;
+
+
+- Manage Expense
+	&lt;ul&gt;
+	&lt;li&gt;ExpenseListHelpPanel.html : Expenses List Page&lt;/li&gt;
+		&lt;li&gt;ExpenseSearchHelpPanel.html : Expenses Search Page&lt;/li&gt;
+	&lt;/ul&gt;
+
+
+- Consult Expenses
+	&lt;ul&gt;
+	&lt;li&gt;ExpensesConsultHelpPanel.html : Consult Expenses Page&lt;/li&gt;
+	&lt;/ul&gt;
+
+
+- Employee Defaults
+	&lt;ul&gt;
+	&lt;li&gt;EmployeeDefaultsHelpPanel.html : Employee Defaults Page&lt;/li&gt;
+	&lt;/ul&gt;
+
+
+-Admin
+	&lt;ul&gt;
+	&lt;li&gt;ManageSupervisorRightsHelpPanel.html : Manage Supervisor Rights Page&lt;/li&gt;
+		&lt;li&gt;SearchSupervisorRightsHelpPanel.html : Search Supervisor Rights Page&lt;/li&gt;
+		&lt;li&gt;SyncHelpPanel.html : Sync. Page&lt;/li&gt;
+	&lt;/ul&gt;    </content>
+  </entry>
+</feed>

@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title></title>
+  <link href="http://redmine.teracode.com/issues/16246.atom?key=4aa574c9e059cb38d85a8c5ac783b54345358b7b" rel="self"/>
+  <link href="http://redmine.teracode.com/" rel="alternate"/>
+  <id>http://redmine.teracode.com/</id>
+  <updated>2009-11-25T10:56:59-03:00</updated>
+  <author>
+    <name>TeraCode Project Management Tool</name>
+  </author>
+  <entry>
+    <title>Diary - Feature #16246: read school information from webservice</title>
+    <link href="http://redmine.teracode.com/issues/16246" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/16246?journal_id=62893</id>
+    <updated>2009-11-25T10:56:59-03:00</updated>
+    <author>
+      <name>Bianca Mullie</name>
+      <email>Bianca.Mullie@vsko.be</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Assigned to&lt;/strong&gt; changed from &lt;i&gt;Raul Cardozo&lt;/i&gt; to &lt;i&gt;Javier Posado&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>Diary - Feature #16246: read school information from webservice</title>
+    <link href="http://redmine.teracode.com/issues/16246" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/16246?journal_id=63093</id>
+    <updated>2009-11-26T10:32:14-03:00</updated>
+    <author>
+      <name>Javier Posado</name>
+      <email>javier.posado@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;New&lt;/i&gt; to &lt;i&gt;In Progress&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>Diary - Feature #16246: read school information from webservice</title>
+    <link href="http://redmine.teracode.com/issues/16246" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/16246?journal_id=63332</id>
+    <updated>2009-11-27T10:06:02-03:00</updated>
+    <author>
+      <name>Javier Posado</name>
+      <email>javier.posado@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;hi Bianca,&lt;/p&gt;
+
+
+	&lt;p&gt;some doubts:&lt;/p&gt;
+
+
+	&lt;p&gt;1/ first of all, need to confirm what i need from ikon model: institutionDetail, schoolDetail, Inclinations, SchoolNet, Federation, Affiliation, EducationSort, EducationLevel ( not the same in diary) and LocationSchoolMainstractureRel? anything else?&lt;/p&gt;
+
+
+	&lt;p&gt;2/ are we going to implement enums for Inclinations, SchoolNet, Federation,  Affiliation and EducationSort like in other applications?&lt;/p&gt;
+
+
+	&lt;p&gt;3/ about EducationSort, EducationLevel from ikon, do i add them in school and mainstracture of diary? In diary EducationLevel  is different to EducationLevel from ikon, how do i manage this part?&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Diary - Feature #16246: read school information from webservice</title>
+    <link href="http://redmine.teracode.com/issues/16246" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/16246?journal_id=63354</id>
+    <updated>2009-11-27T11:43:28-03:00</updated>
+    <author>
+      <name>Bianca Mullie</name>
+      <email>Bianca.Mullie@vsko.be</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;File&lt;/strong&gt; &lt;a href="/attachments/4651/data_model_ikon.odt"&gt;data_model_ikon.odt&lt;/a&gt; added&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;1) Federation doesn't need to be imported (see document in attach for all needed objects). Except for ZipCodeDioceseRel and Diocese, they all have to be inserted/updated by the webservice.&lt;/p&gt;
+
+
+	&lt;p&gt;2) Yes, you an use enums for these&lt;/p&gt;
+
+
+	&lt;p&gt;3) In fact the educationLevel allready used in diary is indeed different from the one used in ikon and other projects. I propose to rename the existing EducationLevel in diary (+link with mainstructure)  to DiaryEducationLevel&lt;br /&gt;By this you can create EducationLevel, educationSort like in the other projects. The Mainstructure-object already used in diary is the same as mainstructure in ikon&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Diary - Feature #16246: read school information from webservice</title>
+    <link href="http://redmine.teracode.com/issues/16246" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/16246?journal_id=63364</id>
+    <updated>2009-11-27T12:04:27-03:00</updated>
+    <author>
+      <name>Javier Posado</name>
+      <email>javier.posado@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;more questions,&lt;/p&gt;
+
+
+	&lt;p&gt;when and where are we going to execute this process? are going to use quartz and/or a page to do it?&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Diary - Feature #16246: read school information from webservice</title>
+    <link href="http://redmine.teracode.com/issues/16246" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/16246?journal_id=63367</id>
+    <updated>2009-11-27T12:13:31-03:00</updated>
+    <author>
+      <name>Bianca Mullie</name>
+      <email>Bianca.Mullie@vsko.be</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;Javier Posado wrote:&lt;/p&gt;
+
+
+&lt;blockquote&gt;
+
+	&lt;p&gt;more questions,&lt;/p&gt;
+
+
+	&lt;p&gt;when and where are we going to execute this process? are going to use quartz and/or a page to do it?&lt;/p&gt;
+
+
+&lt;/blockquote&gt;
+
+	&lt;p&gt;This data doesn't change often, you can do it by a button on a page. Raul, allready has a admin-page for the sync of users, you can put in on the same page( =only visible for admin-rights)&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Diary - Feature #16246: read school information from webservice</title>
+    <link href="http://redmine.teracode.com/issues/16246" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/16246?journal_id=63950</id>
+    <updated>2009-12-01T11:28:20-03:00</updated>
+    <author>
+      <name>Javier Posado</name>
+      <email>javier.posado@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;diary is only working with institution 053751 (PBDKO), are we going to synchronize only it or there will be others?&lt;br /&gt;for last case, how do i know which institution is PBDKO in the web service? or just i use a hardcoded list?&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Diary - Feature #16246: read school information from webservice</title>
+    <link href="http://redmine.teracode.com/issues/16246" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/16246?journal_id=63965</id>
+    <updated>2009-12-01T11:53:37-03:00</updated>
+    <author>
+      <name>Bianca Mullie</name>
+      <email>Bianca.Mullie@vsko.be</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;Javier Posado wrote:&lt;/p&gt;
+
+
+&lt;blockquote&gt;
+
+	&lt;p&gt;diary is only working with institution 053751 (PBDKO), are we going to synchronize only it or there will be others?
+for last case, how do i know which institution is PBDKO in the web service? or just i use a hardcoded list?&lt;/p&gt;
+
+
+&lt;/blockquote&gt;
+
+	&lt;p&gt;Diary is indeed working with institution 053751 but this is only important for the personnel-diary interface (namely only persons with assignments for PBDKO are imported in diary&lt;br /&gt;This ticket is about the interface ikon(Ost)-diary. In diary we need all schools, so all SCHOOLS from webservice that koen mentioned above should be insered/updated in diary (see data_model_ikon.odt)&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Diary - Feature #16246: read school information from webservice</title>
+    <link href="http://redmine.teracode.com/issues/16246" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/16246?journal_id=65893</id>
+    <updated>2009-12-10T16:15:56-03:00</updated>
+    <author>
+      <name>Javier Posado</name>
+      <email>javier.posado@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;In Progress&lt;/i&gt; to &lt;i&gt;Resolved&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;% Done&lt;/strong&gt; changed from &lt;i&gt;0&lt;/i&gt; to &lt;i&gt;100&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Applied in changeset &lt;a href="http://redmine.teracode.com/projects/diary/repository/revisions/39807" class="changeset" title="fixes #16246 added interface with IKON to synchronize schools"&gt;r39807&lt;/a&gt;.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Diary - Feature #16246: read school information from webservice</title>
+    <link href="http://redmine.teracode.com/issues/16246" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/16246?journal_id=72427</id>
+    <updated>2010-01-12T14:10:42-03:00</updated>
+    <author>
+      <name>Raul Cardozo</name>
+      <email>raul.guillermo.cardozo@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Target version&lt;/strong&gt; set to &lt;i&gt;0.6.0&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+</feed>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title></title>
+  <link href="http://redmine.teracode.com/issues/15996.atom?key=4aa574c9e059cb38d85a8c5ac783b54345358b7b" rel="self"/>
+  <link href="http://redmine.teracode.com/" rel="alternate"/>
+  <id>http://redmine.teracode.com/</id>
+  <updated>2009-12-09T18:58:06-03:00</updated>
+  <author>
+    <name>TeraCode Project Management Tool</name>
+  </author>
+  <entry>
+    <title>Diary - Feature #15996: Report : expensesReport</title>
+    <link href="http://redmine.teracode.com/issues/15996" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/15996?journal_id=65718</id>
+    <updated>2009-12-09T18:58:06-03:00</updated>
+    <author>
+      <name>Raul Cardozo</name>
+      <email>raul.guillermo.cardozo@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;blockquote&gt;
+
+	&lt;p&gt;Another query needed for the second page with an overview of all activities of the user for het input-month and input- 
+payingorganisation.
+fields (see file in attach), special field to know the starting-point of the activity = when first activity of the day = home-address  
+of the user, when not first activity of the day = address of the previous activity (=&lt;&amp;lt;activity.priorAddress&amp;gt;&gt;)&lt;/p&gt;
+
+
+&lt;/blockquote&gt;
+
+	&lt;p&gt;I don't understand this point. can you explain it again?&lt;br /&gt;thx.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Diary - Feature #15996: Report : expensesReport</title>
+    <link href="http://redmine.teracode.com/issues/15996" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/15996?journal_id=65757</id>
+    <updated>2009-12-10T10:34:28-03:00</updated>
+    <author>
+      <name>Raul Cardozo</name>
+      <email>raul.guillermo.cardozo@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Target version&lt;/strong&gt; set to &lt;i&gt;0.6.0&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>Diary - Feature #15996: Report : expensesReport</title>
+    <link href="http://redmine.teracode.com/issues/15996" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/15996?journal_id=65817</id>
+    <updated>2009-12-10T12:47:59-03:00</updated>
+    <author>
+      <name>Bianca Mullie</name>
+      <email>Bianca.Mullie@vsko.be</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;Raul Cardozo wrote:&lt;/p&gt;
+
+
+&lt;blockquote&gt;&lt;blockquote&gt;
+
+	&lt;p&gt;Another query needed for the second page with an overview of all activities of the user for het input-month and input- 
+payingorganisation.
+fields (see file in attach), special field to know the starting-point of the activity = when first activity of the day = home-address  
+of the user, when not first activity of the day = address of the previous activity (=&lt;&amp;lt;activity.priorAddress&amp;gt;&gt;)&lt;/p&gt;
+
+
+&lt;/blockquote&gt;
+
+	&lt;p&gt;I don't understand this point. can you explain it again?
+thx.&lt;/p&gt;
+
+
+&lt;/blockquote&gt;
+
+	&lt;p&gt;In fact it's a document with at least 2 pages. First page is an overview of all the expenses of the user per category. The second (and if necessary more pages behind) contains an overview of all transfers the user made. &lt;br /&gt;So it's an overview of all addresses the user went. But since the user only tells where he goes and doesn't tell were he came from we need to find the address he came from ourselves. So when you have the first activity of the day (you know that by ordering the activities by day and hour) the address the user came from is his home-address. when it is not the first activity of the day, the address the user came from is the address of the previous activity because we suppose he goes from one place to another.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Diary - Feature #15996: Report : expensesReport</title>
+    <link href="http://redmine.teracode.com/issues/15996" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/15996?journal_id=68857</id>
+    <updated>2009-12-21T19:43:01-03:00</updated>
+    <author>
+      <name>Raul Cardozo</name>
+      <email>raul.guillermo.cardozo@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;File&lt;/strong&gt; &lt;a href="/attachments/5026/ExpensesReport.odt"&gt;ExpensesReport.odt&lt;/a&gt; added&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;New&lt;/i&gt; to &lt;i&gt;Resolved&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;% Done&lt;/strong&gt; changed from &lt;i&gt;0&lt;/i&gt; to &lt;i&gt;100&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>Diary - Feature #15996: Report : expensesReport</title>
+    <link href="http://redmine.teracode.com/issues/15996" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/15996?journal_id=68944</id>
+    <updated>2009-12-22T13:28:47-03:00</updated>
+    <author>
+      <name>Raul Cardozo</name>
+      <email>raul.guillermo.cardozo@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;The property "documentReportAccess.expensesReportPath" was added to diary.local.properties .It must contains the path to the ExpensesReport.odt in pincette repo.&lt;/p&gt;    </content>
+  </entry>
+</feed>
