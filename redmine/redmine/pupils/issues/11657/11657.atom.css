@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title></title>
+  <link href="http://redmine.teracode.com/issues/11657.atom?key=4aa574c9e059cb38d85a8c5ac783b54345358b7b" rel="self"/>
+  <link href="http://redmine.teracode.com/" rel="alternate"/>
+  <id>http://redmine.teracode.com/</id>
+  <updated>2009-09-23T05:28:38-03:00</updated>
+  <author>
+    <name>TeraCode Project Management Tool</name>
+  </author>
+  <entry>
+    <title>Pupils - Bug #11657: New Application for Student: changing the schoolyear resets the Location</title>
+    <link href="http://redmine.teracode.com/issues/11657" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/11657?journal_id=47514</id>
+    <updated>2009-09-23T05:28:38-03:00</updated>
+    <author>
+      <name>Kim Maesen</name>
+      <email>Kim.Maesen@vsko.be</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Subject&lt;/strong&gt; changed from &lt;i&gt;New Application for Student: changing the schoolyear resets the Location&lt;/i&gt; to &lt;i&gt;improvements application&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;2) Details -&gt; application. No feedback after saving. Add this.&lt;br /&gt;3) search application -&gt; should show default current school year based on the selected school year in the application details. &lt;br /&gt;4) add the application periods: next school year, now, previous school year to the + search. (now = application day = today)&lt;br /&gt;5) administrative group that can be chosen must be linked to the selected school off course. Also not possible to choose 999999&lt;br /&gt;6) Select search -&gt; application -&gt; see the layout etc of the list shown -&gt; select an application -&gt; go back -&gt; other list shown, other layout. Also when you create a new application and save you see this layout. The first one when you click on search -&gt; application is the right one.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Bug #11657: New Application for Student: changing the schoolyear resets the Location</title>
+    <link href="http://redmine.teracode.com/issues/11657" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/11657?journal_id=47559</id>
+    <updated>2009-09-23T11:36:12-03:00</updated>
+    <author>
+      <name>Andr&#233;s Ferrari</name>
+      <email>andres.ferrari@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Subject&lt;/strong&gt; changed from &lt;i&gt;improvements application&lt;/i&gt; to &lt;i&gt;New Application for Student: changing the schoolyear resets the Location&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Kim Maesen wrote:&lt;/p&gt;
+
+
+&lt;blockquote&gt;
+
+	&lt;p&gt;2) Details -&gt; application. No feedback after saving. Add this.
+3) search application -&gt; should show default current school year based on the selected school year in the application details. 
+4) add the application periods: next school year, now, previous school year to the + search. (now = application day = today)
+5) administrative group that can be chosen must be linked to the selected school off course. Also not possible to choose 999999
+6) Select search -&gt; application -&gt; see the layout etc of the list shown -&gt; select an application -&gt; go back -&gt; other list shown, other layout. Also when you create a new application and save you see this layout. The first one when you click on search -&gt; application is the right one.&lt;/p&gt;
+
+
+&lt;/blockquote&gt;
+
+	&lt;p&gt;This is an improvement and different from the originally reported issue. I've moved all these items to improvement &lt;a href="http://redmine.teracode.com/issues/12614" class="issue status-1 priority-2" title="Improvements for Application (New)"&gt;#12614&lt;/a&gt;.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Bug #11657: New Application for Student: changing the schoolyear resets the Location</title>
+    <link href="http://redmine.teracode.com/issues/11657" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/11657?journal_id=162835</id>
+    <updated>2010-10-21T10:35:15-03:00</updated>
+    <author>
+      <name>Juan Miguel Diaz Ruiz</name>
+      <email>juan.miguel.diaz.ruiz@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Severity&lt;/strong&gt; changed from &lt;i&gt;trivial&lt;/i&gt; to &lt;i&gt;Minor&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Bug #11657: New Application for Student: changing the schoolyear resets the Location</title>
+    <link href="http://redmine.teracode.com/issues/11657" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/11657?journal_id=276284</id>
+    <updated>2011-09-12T06:06:21-03:00</updated>
+    <author>
+      <name>Kim Maesen</name>
+      <email>Kim.Maesen@vsko.be</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Assigned to&lt;/strong&gt; deleted (&lt;strike&gt;&lt;i&gt;Lionel Ferder&lt;/i&gt;&lt;/strike&gt;)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Target version&lt;/strong&gt; set to &lt;i&gt;Backlog&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+</feed>
