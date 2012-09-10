@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title></title>
+  <link href="http://redmine.teracode.com/issues/49441.atom?key=4aa574c9e059cb38d85a8c5ac783b54345358b7b" rel="self"/>
+  <link href="http://redmine.teracode.com/" rel="alternate"/>
+  <id>http://redmine.teracode.com/</id>
+  <updated>2011-01-26T17:09:01-03:00</updated>
+  <author>
+    <name>TeraCode Project Management Tool</name>
+  </author>
+  <entry>
+    <title>Pupils - Improvement #49441: Put a not null and an unique constraint on PP_LOCATION.GUID</title>
+    <link href="http://redmine.teracode.com/issues/49441" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/49441?journal_id=194551</id>
+    <updated>2011-01-26T17:09:01-03:00</updated>
+    <author>
+      <name>Ricardo Castiglione</name>
+      <email>ricardo.castiglione@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Target version&lt;/strong&gt; changed from &lt;i&gt;Backlog&lt;/i&gt; to &lt;i&gt;1.36.0&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Improvement #49441: Put a not null and an unique constraint on PP_LOCATION.GUID</title>
+    <link href="http://redmine.teracode.com/issues/49441" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/49441?journal_id=194585</id>
+    <updated>2011-01-27T08:27:56-03:00</updated>
+    <author>
+      <name>Ricardo Castiglione</name>
+      <email>ricardo.castiglione@teracode.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;Assigned&lt;/i&gt; to &lt;i&gt;Resolved&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;% Done&lt;/strong&gt; changed from &lt;i&gt;0&lt;/i&gt; to &lt;i&gt;100&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Applied in changeset &lt;a href="http://redmine.teracode.com/projects/pupils/repository/revisions/44679" class="changeset" title="fixes #49441 (Put a not null and an unique constraint on PP_LOCATION.GUID) refs #49438 (Inconsist..."&gt;r44679&lt;/a&gt;.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Pupils - Improvement #49441: Put a not null and an unique constraint on PP_LOCATION.GUID</title>
+    <link href="http://redmine.teracode.com/issues/49441" rel="alternate"/>
+    <id>http://redmine.teracode.com/issues/49441?journal_id=197972</id>
+    <updated>2011-02-07T11:10:22-03:00</updated>
+    <author>
+      <name>Kim Maesen</name>
+      <email>Kim.Maesen@vsko.be</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;Resolved&lt;/i&gt; to &lt;i&gt;Closed&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+</feed>
