@@ -1,0 +1,1614 @@
+<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>
+Pupils - Bug #88324: Internal error for saving address of relation - TeraCode Project Management Tool    </title>
+    <meta name="description" content="Redmine"/>
+    <meta name="keywords" content="issue,bug,tracker"/>
+    <link rel="shortcut icon" href="88324/favicon.ico.css"/>
+    <link rel="stylesheet" type="text/css" media="all" href="88324/application.css"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="88324/jstoolbar.css"/>
+    <style type="text/css">
+* html body{ width: expression( document.documentElement.clientWidth < 900 ? '900px' : '100%' ); } body {behavior: url(/stylesheets/csshover.htc?1293099743);}    </style>
+<!-- page specific tags -->    <link rel="stylesheet" type="text/css" media="screen" href="88324/calendar.css"/>
+    <link title="Pupils - Bug #88324: Internal error for saving address of relation" rel="alternate" type="application/atom+xml" href="88324/88324.atom.css"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="88324/scm.css"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="88324/context_menu.css"/>
+  </head>
+  <body class="controller-issues action-show">
+    <div id="wrapper">
+      <div id="wrapper2">
+        <div id="top-menu">
+          <div id="account">
+            <ul>
+              <li>
+                <a href="/my/account" class="my-account">
+My account                </a>
+              </li>
+              <li>
+                <a href="/logout" class="logout">
+Sign out                </a>
+              </li>
+            </ul>
+          </div>
+          <div id="loggedas">
+Logged in as            <a href="/users/490">
+ricardo.castiglione            </a>
+          </div>
+          <ul>
+            <li>
+              <a href="/" class="home">
+Home              </a>
+            </li>
+            <li>
+              <a href="/my/page" class="my-page">
+My page              </a>
+            </li>
+            <li>
+              <a href="/projects" class="projects">
+Projects              </a>
+            </li>
+            <li>
+              <a href="http://www.redmine.org/guide" class="help">
+Help              </a>
+            </li>
+          </ul>
+        </div>
+        <div id="header">
+          <div id="quick-search">
+            <form action="/search/index/pupils" method="get">
+              <input name="issues" type="hidden" value="1"/>
+              <a href="/search/index/pupils" accesskey="4">
+Search              </a>
+:              <input accesskey="f" class="small" id="q" name="q" size="20" type="text"/>
+            </form>
+            <select onchange="if (this.value != '') { window.location = this.value; }">
+              <option value="">
+Jump to a project...              </option>
+              <option value="" disabled="disabled">
+---              </option>
+              <option value="/projects/lemonade?jump=issues">
+Lemonade              </option>
+              <option value="/projects/lemonadearchitecture?jump=issues">
+  » Architecture              </option>
+              <option value="/projects/diary?jump=issues">
+  » Diary              </option>
+              <option value="/projects/jobsite?jump=issues">
+  » Jobsite              </option>
+              <option value="/projects/personnel?jump=issues">
+  » Personnel              </option>
+              <option selected="selected" value="/projects/pupils?jump=issues">
+  » Pupils              </option>
+              <option value="/projects/intranet?jump=issues">
+Intranet              </option>
+              <option value="/projects/its?jump=issues">
+IT - Technical Support              </option>
+              <option value="/projects/processes?jump=issues">
+TeraCode Processes              </option>
+            </select>
+          </div>
+          <h1>
+            <a href="/projects/lemonade?jump=issues" class="root">
+Lemonade            </a>
+» Pupils          </h1>
+          <div id="main-menu">
+            <ul>
+              <li>
+                <a href="/projects/pupils" class="overview">
+Overview                </a>
+              </li>
+              <li>
+                <a href="/projects/pupils/activity" class="activity">
+Activity                </a>
+              </li>
+              <li>
+                <a href="/projects/pupils/roadmap" class="roadmap">
+Roadmap                </a>
+              </li>
+              <li>
+                <a href="/projects/pupils/issues" class="issues selected">
+Issues                </a>
+              </li>
+              <li>
+                <a href="/projects/pupils/issues/new" accesskey="7" class="new-issue">
+New issue                </a>
+              </li>
+              <li>
+                <a href="/projects/pupils/issues/gantt" class="gantt">
+Gantt                </a>
+              </li>
+              <li>
+                <a href="/projects/pupils/issues/calendar" class="calendar">
+Calendar                </a>
+              </li>
+              <li>
+                <a href="/projects/pupils/news" class="news">
+News                </a>
+              </li>
+              <li>
+                <a href="/projects/pupils/documents" class="documents">
+Documents                </a>
+              </li>
+              <li>
+                <a href="/projects/pupils/wiki" class="wiki">
+Wiki                </a>
+              </li>
+              <li>
+                <a href="/projects/pupils/files" class="files">
+Files                </a>
+              </li>
+              <li>
+                <a href="/projects/pupils/repository" class="repository">
+Repository                </a>
+              </li>
+              <li>
+                <a href="/simple_ci/show/pupils" class="simple-ci">
+Integration                </a>
+              </li>
+              <li>
+                <a href="/projects/pupils/settings" class="settings">
+Settings                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="" id="main">
+          <div id="sidebar">
+            <h3>
+Issues            </h3>
+            <a href="/projects/pupils/issues?set_filter=1">
+View all issues            </a>
+            <br/>
+            <a href="/projects/pupils/issues/report">
+Summary            </a>
+            <br/>
+            <h3>
+Graphs            </h3>
+            <a href="/graphs/old_issues?project_id=pupils">
+Open aging issues            </a>
+            <br/>
+            <a href="/graphs/issue_growth?project_id=pupils">
+Total issues over time            </a>
+            <br/>
+            <a href="/projects/pupils/issues/calendar">
+Calendar            </a>
+            <br/>
+            <a href="/projects/pupils/issues/gantt">
+Gantt            </a>
+            <br/>
+            <div id="watchers">
+              <div class="contextual">
+                <a href="#" onclick="new Ajax.Request('/watchers/new?object_id=88324&amp;object_type=issue', {asynchronous:true, evalScripts:true, parameters:'authenticity_token=' + encodeURIComponent('8WDpo2mBaCI6mC+JK3X+PoxZeJD7pe23YZSxc2oxySE=')}); return false;">
+Add                </a>
+              </div>
+              <h3>
+Watchers (0)              </h3>
+            </div>
+          </div>
+          <div id="content">
+            <div class="contextual">
+              <a href="/issues/88324/edit" accesskey="e" class="icon icon-edit" onclick="showAndScrollTo(&quot;update&quot;, &quot;notes&quot;); return false;">
+Update              </a>
+              <a href="/issues/88324/time_entries/new" class="icon icon-time-add">
+Log time              </a>
+              <span id="watcher">
+                <a class="icon icon-fav-off" href="/watchers/watch?object_id=88324&amp;object_type=issue&amp;replace%5B%5D=watcher&amp;replace%5B%5D=watcher2" onclick="new Ajax.Request('/watchers/watch?object_id=88324&amp;object_type=issue&amp;replace%5B%5D=watcher&amp;replace%5B%5D=watcher2', {asynchronous:true, evalScripts:true, parameters:'authenticity_token=' + encodeURIComponent('8WDpo2mBaCI6mC+JK3X+PoxZeJD7pe23YZSxc2oxySE=')}); return false;">
+Watch                </a>
+              </span>
+              <a href="/projects/pupils/issues/88324/copy" class="icon icon-duplicate">
+Duplicate              </a>
+              <a href="/issue_moves/new/88324?copy_options%5Bcopy%5D=t" class="icon icon-copy">
+Copy              </a>
+              <a href="/issue_moves/new/88324" class="icon icon-move">
+Move              </a>
+              <a href="/issues/88324/destroy" class="icon icon-del" onclick="if (confirm('Are you sure ?')) { var f = document.createElement('form'); f.style.display = 'none'; this.parentNode.appendChild(f); f.method = 'POST'; f.action = this.href;var s = document.createElement('input'); s.setAttribute('type', 'hidden'); s.setAttribute('name', 'authenticity_token'); s.setAttribute('value', '8WDpo2mBaCI6mC+JK3X+PoxZeJD7pe23YZSxc2oxySE='); f.appendChild(s);f.submit(); };return false;">
+Delete              </a>
+            </div>
+            <h2>
+Bug #88324            </h2>
+            <div class="issue status-5 priority-3 closed assigned-to-me details">
+              <div class="subject">
+                <div>
+                  <h3>
+Internal error for saving address of relation                  </h3>
+                </div>
+              </div>
+              <p class="author">
+Added by                <a href="/users/274">
+Kim Maesen                </a>
+                <a href="/projects/pupils/activity?from=2012-07-16" title="07/16/2012 05:10 am">
+about 1 month                </a>
+ago. Updated                <a href="/projects/pupils/activity?from=2012-08-30" title="08/30/2012 03:06 pm">
+9 days                </a>
+ago.              </p>
+              <table class="attributes">
+                <tbody>
+                  <tr>
+                    <th class="status">
+Status:                    </th>
+                    <td class="status">
+Resolved                    </td>
+                    <th class="start-date">
+Start Date:                    </th>
+                    <td class="start-date">
+07/16/2012                    </td>
+                  </tr>
+                  <tr>
+                    <th class="priority">
+Priority:                    </th>
+                    <td class="priority">
+Normal                    </td>
+                    <th class="due-date">
+Due date:                    </th>
+                    <td class="due-date"/>
+                  </tr>
+                  <tr>
+                    <th class="assigned-to">
+Assigned to:                    </th>
+                    <td class="assigned-to">
+                      <a href="/users/490">
+Ricardo Castiglione                      </a>
+                    </td>
+                    <th class="progress">
+% Done:                    </th>
+                    <td class="progress">
+                      <table class="progress" style="width: 80px;">
+                        <tbody>
+                          <tr>
+                            <td class="closed" style="width: 100%;"/>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <p class="pourcent">
+100%                      </p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th class="category">
+Category:                    </th>
+                    <td class="category">
+-                    </td>
+                    <th class="spent-time">
+Spent time:                    </th>
+                    <td class="spent-time">
+-                    </td>
+                  </tr>
+                  <tr>
+                    <th class="fixed-version">
+Target version:                    </th>
+                    <td class="fixed-version">
+                      <a href="/versions/show/4679">
+2.0.7                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>
+Severity:                    </th>
+                    <td/>
+                    <th>
+Affected Version:                    </th>
+                    <td/>
+                  </tr>
+                </tbody>
+              </table>
+              <hr/>
+              <div class="contextual">
+                <a class="icon icon-comment" href="#" onclick="new Ajax.Request('/issues/88324/quoted', {asynchronous:true, evalScripts:true, parameters:'authenticity_token=' + encodeURIComponent('8WDpo2mBaCI6mC+JK3X+PoxZeJD7pe23YZSxc2oxySE=')}); return false;">
+Quote                </a>
+              </div>
+              <p>
+                <strong>
+Description                </strong>
+              </p>
+              <div class="wiki">
+                <p>
+Student details -> tab relation _> add or change a relation -> chech the checkbox Address -> fill in -> save -> error                </p>
+                <p>
+Log: ------=_Part_27_593395243.1342425974754                  <br/>
+Content-Type: text/plain; charset=us-ascii                  <br/>
+Content-Transfer-Encoding: 7bit                </p>
+                <p>
+2012-07-16 10:06:14,753 ERROR [be.platopupils.ui.PlatoPupilsApplication] PLATO-PUPILS ERROR                  <br/>
+java.lang.NullPointerException                  <br/>
+at be.platopupils.core.presenter.student.list.StudentSearchPresenter.makeFilter(StudentSearchPresenter.java:319)                  <br/>
+at be.platopupils.core.presenter.student.list.StudentSearchPresenter.count(StudentSearchPresenter.java:162)                  <br/>
+at sun.reflect.GeneratedMethodAccessor1082.invoke(Unknown Source)                  <br/>
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)                  <br/>
+at java.lang.reflect.Method.invoke(Method.java:597)                  <br/>
+at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:296)                  <br/>
+at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:177)                  <br/>
+at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:144)                  <br/>
+at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:107)                  <br/>
+at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:166)                  <br/>
+at be.platopupils.core.monitor.PlatoPupilsMonitor.invoke(PlatoPupilsMonitor.java:43)                  <br/>
+at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:166)                  <br/>
+at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:204)                  <br/>
+at $Proxy105.count(Unknown Source)                  <br/>
+at sun.reflect.GeneratedMethodAccessor1082.invoke(Unknown Source)                  <br/>
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)                  <br/>
+at java.lang.reflect.Method.invoke(Method.java:597)                  <br/>
+at wicket.proxy.LazyInitProxyFactory$JdkHandler.invoke(LazyInitProxyFactory.java:377)                  <br/>
+at wicket.proxy.$Proxy106.count(Unknown Source)                  <br/>
+at be.platopupils.ui.list.student.StudentSearchPage$StudentDataProvider.size(StudentSearchPage.java:346)                  <br/>
+at wicket.extensions.markup.html.repeater.data.DataViewBase.internalGetItemCount(DataViewBase.java:135)                  <br/>
+at wicket.extensions.markup.html.repeater.pageable.AbstractPageableView.getRowCount(AbstractPageableView.java:231)                  <br/>
+at wicket.extensions.markup.html.repeater.pageable.AbstractPageableView.getPageCount(AbstractPageableView.java:302)                  <br/>
+at wicket.extensions.markup.html.repeater.pageable.AbstractPageableView.setCurrentPage(AbstractPageableView.java:265)                  <br/>
+at wicket.extensions.markup.html.repeater.pageable.AbstractPageableView.internalSetRowsPerPage(AbstractPageableView.java:208)                  <br/>
+at wicket.extensions.markup.html.repeater.data.grid.DataGridView.setRowsPerPage(DataGridView.java:123)                  <br/>
+at wicket.extensions.markup.html.repeater.data.table.DataTable.<init>(DataTable.java:117)                  <br/>
+at be.platopupils.ui.components.PlatoAjaxFallbackDefaultDataTable.<init>(PlatoAjaxFallbackDefaultDataTable.java:43)                  <br/>
+at be.platopupils.ui.list.student.StudentSearchPage$4.<init>(StudentSearchPage.java:288)                  <br/>
+at be.platopupils.ui.list.student.StudentSearchPage.createStudentTable(StudentSearchPage.java:288)                  <br/>
+at be.platopupils.ui.list.student.StudentSearchPage.<init>(StudentSearchPage.java:169)                  <br/>
+at be.platopupils.ui.list.student.StudentSearchPage$2.onClose(StudentSearchPage.java:204)                  <br/>
+at wicket.extensions.ajax.markup.html.modal.ModalWindow$WindowClosedBehavior.respond(ModalWindow.java:795)                  <br/>
+at wicket.ajax.AbstractDefaultAjaxBehavior.onRequest(AbstractDefaultAjaxBehavior.java:236)                  <br/>
+at wicket.request.target.component.listener.BehaviorRequestTarget.processEvents(BehaviorRequestTarget.java:98)                  <br/>
+at wicket.request.compound.DefaultEventProcessorStrategy.processEvents(DefaultEventProcessorStrategy.java:65)                  <br/>
+at wicket.request.compound.AbstractCompoundRequestCycleProcessor.processEvents(AbstractCompoundRequestCycleProcessor.java:57)                  <br/>
+at wicket.RequestCycle.doProcessEventsAndRespond(RequestCycle.java:896)                  <br/>
+at wicket.RequestCycle.processEventsAndRespond(RequestCycle.java:934)                  <br/>
+at wicket.RequestCycle.step(RequestCycle.java:1010)                  <br/>
+at wicket.RequestCycle.steps(RequestCycle.java:1084)                  <br/>
+at wicket.RequestCycle.request(RequestCycle.java:454)                  <br/>
+at wicket.protocol.http.WicketServlet.doGet(WicketServlet.java:219)                  <br/>
+at javax.servlet.http.HttpServlet.service(HttpServlet.java:627)                  <br/>
+at javax.servlet.http.HttpServlet.service(HttpServlet.java:729)                  <br/>
+at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:269)                  <br/>
+at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:188)                  <br/>
+at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:213)                  <br/>
+at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:172)                  <br/>
+at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:563)                  <br/>
+at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)                  <br/>
+at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:117)                  <br/>
+at org.josso.tc55.agent.SSOAgentValve.invoke(SSOAgentValve.java:689)                  <br/>
+at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:108)                  <br/>
+at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:174)                  <br/>
+at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:879)                  <br/>
+at org.apache.coyote.http11.Http11BaseProtocol$Http11ConnectionHandler.processConnection(Http11BaseProtocol.java:665)                  <br/>
+at org.apache.tomcat.util.net.PoolTcpEndpoint.processSocket(PoolTcpEndpoint.java:528)                  <br/>
+at org.apache.tomcat.util.net.LeaderFollowerWorkerThread.runIt(LeaderFollowerWorkerThread.java:81)                  <br/>
+at org.apache.tomcat.util.threads.ThreadPool$ControlRunnable.run(ThreadPool.java:689)                  <br/>
+at java.lang.Thread.run(Thread.java:662)                </p>
+              </div>
+              <div class="attachments">
+                <p>
+                  <a href="attachments/29190/16-07-2012_10-09-22.png" class="icon icon-attachment">
+16-07-2012_10-09-22.png                  </a>
+                  <span class="size">
+(20.6 kB)                  </span>
+                  <a href="attachments/destroy/29190" class="delete" onclick="if (confirm('Are you sure ?')) { var f = document.createElement('form'); f.style.display = 'none'; this.parentNode.appendChild(f); f.method = 'POST'; f.action = this.href;var s = document.createElement('input'); s.setAttribute('type', 'hidden'); s.setAttribute('name', 'authenticity_token'); s.setAttribute('value', '8WDpo2mBaCI6mC+JK3X+PoxZeJD7pe23YZSxc2oxySE='); f.appendChild(s);f.submit(); };return false;" title="Delete">
+                    <img alt="Delete" src="88324/delete.png"/>
+                  </a>
+                  <span class="author">
+Kim Maesen, 07/16/2012 05:10 am                  </span>
+                </p>
+                <p>
+                  <a href="attachments/29911/Relation-123116.png" class="icon icon-attachment">
+Relation-123116.png                  </a>
+                  <span class="size">
+(184.4 kB)                  </span>
+                  <a href="attachments/destroy/29911" class="delete" onclick="if (confirm('Are you sure ?')) { var f = document.createElement('form'); f.style.display = 'none'; this.parentNode.appendChild(f); f.method = 'POST'; f.action = this.href;var s = document.createElement('input'); s.setAttribute('type', 'hidden'); s.setAttribute('name', 'authenticity_token'); s.setAttribute('value', '8WDpo2mBaCI6mC+JK3X+PoxZeJD7pe23YZSxc2oxySE='); f.appendChild(s);f.submit(); };return false;" title="Delete">
+                    <img alt="Delete" src="88324/delete_1.png"/>
+                  </a>
+                  <span class="author">
+Ricardo Castiglione, 08/23/2012 12:47 pm                  </span>
+                </p>
+                <p>
+                  <a href="attachments/29924/24-08-2012_8-48-01.png" class="icon icon-attachment">
+24-08-2012_8-48-01.png                  </a>
+                  <span class="size">
+(39.1 kB)                  </span>
+                  <a href="attachments/destroy/29924" class="delete" onclick="if (confirm('Are you sure ?')) { var f = document.createElement('form'); f.style.display = 'none'; this.parentNode.appendChild(f); f.method = 'POST'; f.action = this.href;var s = document.createElement('input'); s.setAttribute('type', 'hidden'); s.setAttribute('name', 'authenticity_token'); s.setAttribute('value', '8WDpo2mBaCI6mC+JK3X+PoxZeJD7pe23YZSxc2oxySE='); f.appendChild(s);f.submit(); };return false;" title="Delete">
+                    <img alt="Delete" src="88324/delete_2.png"/>
+                  </a>
+                  <span class="author">
+Kim Maesen, 08/24/2012 03:55 am                  </span>
+                </p>
+                <p>
+                  <a href="attachments/30013/29-08-2012_9-33-10.png" class="icon icon-attachment">
+29-08-2012_9-33-10.png                  </a>
+                  <span class="size">
+(52.3 kB)                  </span>
+                  <a href="attachments/destroy/30013" class="delete" onclick="if (confirm('Are you sure ?')) { var f = document.createElement('form'); f.style.display = 'none'; this.parentNode.appendChild(f); f.method = 'POST'; f.action = this.href;var s = document.createElement('input'); s.setAttribute('type', 'hidden'); s.setAttribute('name', 'authenticity_token'); s.setAttribute('value', '8WDpo2mBaCI6mC+JK3X+PoxZeJD7pe23YZSxc2oxySE='); f.appendChild(s);f.submit(); };return false;" title="Delete">
+                    <img alt="Delete" src="88324/delete_3.png"/>
+                  </a>
+                  <span class="author">
+Kim Maesen, 08/29/2012 04:34 am                  </span>
+                </p>
+              </div>
+              <hr/>
+              <div id="issue_tree">
+                <div class="contextual">
+                  <a href="/projects/pupils/issues/new?issue%5Bparent_issue_id%5D=88324">
+Add                  </a>
+                </div>
+                <p>
+                  <strong>
+Subtasks                  </strong>
+                </p>
+              </div>
+              <hr/>
+              <div id="relations">
+                <div class="contextual">
+                  <a href="#" onclick="Element.toggle('new-relation-form'); Form.Element.focus('relation_issue_to_id'); return false;">
+Add                  </a>
+                </div>
+                <p>
+                  <strong>
+Related issues                  </strong>
+                </p>
+                <form action="/issues/88324/relations/88324" id="new-relation-form" method="post" onsubmit="new Ajax.Request('/issues/88324/relations/88324', {asynchronous:true, evalScripts:true, method:'post', onComplete:function(request){Form.Element.focus('relation_issue_to_id');}, parameters:Form.serialize(this)}); return false;" style="display: none;">
+                  <div style="margin:0;padding:0;display:inline">
+                    <input name="authenticity_token" type="hidden" value="8WDpo2mBaCI6mC+JK3X+PoxZeJD7pe23YZSxc2oxySE="/>
+                  </div>
+                  <p>
+                    <select id="relation_relation_type" name="relation[relation_type]" onchange="setPredecessorFieldsVisibility();">
+                      <option selected="selected" value="relates">
+                      </option>
+                      <option value="duplicates">
+                      </option>
+                      <option value="duplicated">
+                      </option>
+                      <option value="blocks">
+                      </option>
+                      <option value="blocked">
+                      </option>
+                      <option value="precedes">
+                      </option>
+                      <option value="follows">
+                      </option>
+                    </select>
+                    <input id="relation_issue_to_id" name="relation[issue_to_id]" size="6" type="text"/>
+                    <span id="predecessor_fields" style="display: none;">
+                      <input id="relation_delay" name="relation[delay]" size="3" type="text"/>
+                    </span>
+                    <input name="commit" type="submit" value="Add"/>
+                    <a href="#" onclick="Element.toggle('new-relation-form'); this.blur(); return false;">
+                    </a>
+                  </p>
+                </form>
+              </div>
+            </div>
+            <div id="issue-changesets">
+              <h3>
+Associated revisions              </h3>
+              <div class="changeset odd">
+                <p>
+                  <a href="/projects/pupils/repository/revisions/49211">
+Revision 49211                  </a>
+                  <br/>
+                  <span class="author">
+Added by                    <a href="/users/490">
+Ricardo Castiglione                    </a>
+                    <a href="/projects/pupils/activity?from=2012-08-30" title="08/30/2012 03:04 pm">
+9 days                    </a>
+ago                  </span>
+                </p>
+                <div class="changeset-changes">
+                  <p>
+fixes                    <a href="88324.html" class="issue status-5 priority-3 closed assigned-to-me" title="Internal error for saving address of relation (Resolved)">
+#88324                    </a>
+(Internal error for saving address of relation)                  </p>
+                </div>
+              </div>
+            </div>
+            <div id="history">
+              <h3>
+History              </h3>
+              <div id="change-364544" class="journal has-notes">
+                <h4>
+                  <div class="journal-link">
+                    <a href="/issues/88324#note-1">
+#1                    </a>
+                  </div>
+                  <a name="note-1"/>
+Updated by                  <a href="/users/274">
+Kim Maesen                  </a>
+                  <a href="/projects/pupils/activity?from=2012-08-22" title="08/22/2012 10:45 am">
+18 days                  </a>
+ago                </h4>
+                <div class="wiki editable" id="journal-364544-notes">
+                  <div class="contextual">
+                    <a href="#" onclick="new Ajax.Request('/issues/88324/quoted?journal_id=364544', {asynchronous:true, evalScripts:true, parameters:'authenticity_token=' + encodeURIComponent('8WDpo2mBaCI6mC+JK3X+PoxZeJD7pe23YZSxc2oxySE=')}); return false;" title="Quote">
+                      <img alt="Comment" src="88324/comment.png"/>
+                    </a>
+                    <a href="#" onclick="new Ajax.Request('/journals/edit/364544', {asynchronous:true, evalScripts:true, method:'get'}); return false;" title="Edit">
+                      <img alt="Edit" src="88324/edit.png"/>
+                    </a>
+                  </div>
+                  <p>
+same for relation link and address link.                  </p>
+                </div>
+              </div>
+              <div id="change-364741" class="journal has-details">
+                <h4>
+                  <div class="journal-link">
+                    <a href="/issues/88324#note-2">
+#2                    </a>
+                  </div>
+                  <a name="note-2"/>
+Updated by                  <a href="/users/490">
+Ricardo Castiglione                  </a>
+                  <a href="/projects/pupils/activity?from=2012-08-23" title="08/23/2012 10:21 am">
+17 days                  </a>
+ago                </h4>
+                <ul class="details">
+                  <li>
+                    <strong>
+Target version                    </strong>
+set to                    <i>
+2.0.7                    </i>
+                  </li>
+                </ul>
+              </div>
+              <div id="change-364788" class="journal has-notes has-details">
+                <h4>
+                  <div class="journal-link">
+                    <a href="/issues/88324#note-3">
+#3                    </a>
+                  </div>
+                  <a name="note-3"/>
+Updated by                  <a href="/users/490">
+Ricardo Castiglione                  </a>
+                  <a href="/projects/pupils/activity?from=2012-08-23" title="08/23/2012 12:47 pm">
+17 days                  </a>
+ago                </h4>
+                <ul class="details">
+                  <li>
+                    <strong>
+Status                    </strong>
+changed from                    <i>
+New                    </i>
+to                    <i>
+Feedback                    </i>
+                  </li>
+                  <li>
+                    <strong>
+File                    </strong>
+                    <a href="attachments/29911/Relation-123116.png">
+Relation-123116.png                    </a>
+added                  </li>
+                </ul>
+                <div class="wiki editable" id="journal-364788-notes">
+                  <div class="contextual">
+                    <a href="#" onclick="new Ajax.Request('/issues/88324/quoted?journal_id=364788', {asynchronous:true, evalScripts:true, parameters:'authenticity_token=' + encodeURIComponent('8WDpo2mBaCI6mC+JK3X+PoxZeJD7pe23YZSxc2oxySE=')}); return false;" title="Quote">
+                      <img alt="Comment" src="88324/comment_1.png"/>
+                    </a>
+                    <a href="#" onclick="new Ajax.Request('/journals/edit/364788', {asynchronous:true, evalScripts:true, method:'get'}); return false;" title="Edit">
+                      <img alt="Edit" src="88324/edit_1.png"/>
+                    </a>
+                  </div>
+                  <p>
+I couldn't reproduce this error. I've done what you said and everything worked fine. See the image                    <a class="external" href="http://redmine.teracode.comattachments/29911/Relation-123116.png">
+http://redmine.teracode.comattachments/29911/Relation-123116.png                    </a>
+. Despite that, the exception (log) is not consistent with the page and steps you sent, because the log is about the Student Search Page and not about the Relation Page. I've also checked the Student Search Page and I couldn't find any error either.                  </p>
+                  <p>
+Could you please check if you are still getting this error?. If so, could you please give me more information so I can reproduce it. If not so, could you please mark as rejected this ticket?. Thanks!.                  </p>
+                </div>
+              </div>
+              <div id="change-364891" class="journal has-notes has-details">
+                <h4>
+                  <div class="journal-link">
+                    <a href="/issues/88324#note-4">
+#4                    </a>
+                  </div>
+                  <a name="note-4"/>
+Updated by                  <a href="/users/274">
+Kim Maesen                  </a>
+                  <a href="/projects/pupils/activity?from=2012-08-24" title="08/24/2012 03:55 am">
+16 days                  </a>
+ago                </h4>
+                <ul class="details">
+                  <li>
+                    <strong>
+File                    </strong>
+                    <a href="attachments/29924/24-08-2012_8-48-01.png">
+24-08-2012_8-48-01.png                    </a>
+added                  </li>
+                  <li>
+                    <strong>
+Status                    </strong>
+changed from                    <i>
+Feedback                    </i>
+to                    <i>
+Assigned                    </i>
+                  </li>
+                  <li>
+                    <strong>
+Assigned to                    </strong>
+set to                    <i>
+Ricardo Castiglione                    </i>
+                  </li>
+                </ul>
+                <div class="wiki editable" id="journal-364891-notes">
+                  <div class="contextual">
+                    <a href="#" onclick="new Ajax.Request('/issues/88324/quoted?journal_id=364891', {asynchronous:true, evalScripts:true, parameters:'authenticity_token=' + encodeURIComponent('8WDpo2mBaCI6mC+JK3X+PoxZeJD7pe23YZSxc2oxySE=')}); return false;" title="Quote">
+                      <img alt="Comment" src="88324/comment_2.png"/>
+                    </a>
+                    <a href="#" onclick="new Ajax.Request('/journals/edit/364891', {asynchronous:true, evalScripts:true, method:'get'}); return false;" title="Edit">
+                      <img alt="Edit" src="88324/edit_2.png"/>
+                    </a>
+                  </div>
+007419 - you want to add an addresslink and relationlink between:                  <ul>
+                    <li>
+Vandeweghe Ben                    </li>
+                    <li>
+Vandeweghe Lauren                    </li>
+                    <li>
+Vandeweghe Ruben                      <br/>
+007807 - ALKAN EMRE - see image, check that checkbox - save = error                      <br/>
+045237 - you want to add an addresslink and relationlink between:                    </li>
+                    <li>
+Dullaers Ben                    </li>
+                    <li>
+Dullaers Laura                      <br/>
+007526 - Jacobs Jules                    </li>
+                    <li>
+Add a new relation grandmother Hertogs Rina telephone 0494 44 43 62 mobile phone 014 63 12 23 and lives on another address                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div id="change-365877" class="journal has-notes has-details">
+                <h4>
+                  <div class="journal-link">
+                    <a href="/issues/88324#note-5">
+#5                    </a>
+                  </div>
+                  <a name="note-5"/>
+Updated by                  <a href="/users/490">
+Ricardo Castiglione                  </a>
+                  <a href="/projects/pupils/activity?from=2012-08-28" title="08/28/2012 06:53 pm">
+11 days                  </a>
+ago                </h4>
+                <ul class="details">
+                  <li>
+                    <strong>
+Status                    </strong>
+changed from                    <i>
+Assigned                    </i>
+to                    <i>
+Feedback                    </i>
+                  </li>
+                </ul>
+                <div class="wiki editable" id="journal-365877-notes">
+                  <div class="contextual">
+                    <a href="#" onclick="new Ajax.Request('/issues/88324/quoted?journal_id=365877', {asynchronous:true, evalScripts:true, parameters:'authenticity_token=' + encodeURIComponent('8WDpo2mBaCI6mC+JK3X+PoxZeJD7pe23YZSxc2oxySE=')}); return false;" title="Quote">
+                      <img alt="Comment" src="88324/comment_3.png"/>
+                    </a>
+                    <a href="#" onclick="new Ajax.Request('/journals/edit/365877', {asynchronous:true, evalScripts:true, method:'get'}); return false;" title="Edit">
+                      <img alt="Edit" src="88324/edit_3.png"/>
+                    </a>
+                  </div>
+                  <p>
+So there are 4 test cases here:                    <br/>
+1) 007419 - you want to add an addresslink and relationlink between: Vandeweghe Ben, Vandeweghe Lauren and Vandeweghe Ruben                    <br/>
+2) 007807 - ALKAN EMRE (NIN=07071806508) - see image, check that checkbox - save = error                    <br/>
+3) 045237 - you want to add an addresslink and relationlink between: Dullaers Ben and Dullaers Laura                    <br/>
+4) 007526 - Jacobs Jules: Add a new relation grandmother Hertogs Rina telephone 0494 44 43 62 mobile phone 014 63 12 23 and lives on another address                  </p>
+                  <p>
+Can you please send me a print screen for 1), 3) and 4) like you did for 2)?. The image you see before saving and getting the error will be really useful to me to reproduce these errors. Thanks!.                  </p>
+                </div>
+              </div>
+              <div id="change-365883" class="journal has-notes">
+                <h4>
+                  <div class="journal-link">
+                    <a href="/issues/88324#note-6">
+#6                    </a>
+                  </div>
+                  <a name="note-6"/>
+Updated by                  <a href="/users/274">
+Kim Maesen                  </a>
+                  <a href="/projects/pupils/activity?from=2012-08-29" title="08/29/2012 04:04 am">
+11 days                  </a>
+ago                </h4>
+                <div class="wiki editable" id="journal-365883-notes">
+                  <div class="contextual">
+                    <a href="#" onclick="new Ajax.Request('/issues/88324/quoted?journal_id=365883', {asynchronous:true, evalScripts:true, parameters:'authenticity_token=' + encodeURIComponent('8WDpo2mBaCI6mC+JK3X+PoxZeJD7pe23YZSxc2oxySE=')}); return false;" title="Quote">
+                      <img alt="Comment" src="88324/comment_4.png"/>
+                    </a>
+                    <a href="#" onclick="new Ajax.Request('/journals/edit/365883', {asynchronous:true, evalScripts:true, method:'get'}); return false;" title="Edit">
+                      <img alt="Edit" src="88324/edit_4.png"/>
+                    </a>
+                  </div>
+                  <p>
+Ricardo Castiglione wrote:                  </p>
+                  <blockquote>
+                    <p>
+So there are 4 test cases here: 1) 007419 - you want to add an addresslink and relationlink between: Vandeweghe Ben, Vandeweghe Lauren and Vandeweghe Ruben                    </p>
+                  </blockquote>
+                  <p>
+ignore for now because I've asked the info to the helpdesk.                  </p>
+                  <blockquote>
+                    <p>
+2) 007807 - ALKAN EMRE (NIN=07071806508) - see image, check that checkbox - save = error                    </p>
+                    <p>
+3) 045237 - you want to add an addresslink and relationlink between: Dullaers Ben and Dullaers Laura                    </p>
+                    <p>
+4) 007526 - Jacobs Jules: Add a new relation grandmother Hertogs Rina telephone 0494 44 43 62 mobile phone 014 63 12 23 and lives on another address                    </p>
+                    <p>
+Can you please send me a print screen for 1), 3) and 4) like you did for 2)?. The image you see before saving and getting the error will be really useful to me to reproduce these errors. Thanks!.                    </p>
+                  </blockquote>
+                </div>
+              </div>
+              <div id="change-365884" class="journal has-notes">
+                <h4>
+                  <div class="journal-link">
+                    <a href="/issues/88324#note-7">
+#7                    </a>
+                  </div>
+                  <a name="note-7"/>
+Updated by                  <a href="/users/274">
+Kim Maesen                  </a>
+                  <a href="/projects/pupils/activity?from=2012-08-29" title="08/29/2012 04:30 am">
+11 days                  </a>
+ago                </h4>
+                <div class="wiki editable" id="journal-365884-notes">
+                  <div class="contextual">
+                    <a href="#" onclick="new Ajax.Request('/issues/88324/quoted?journal_id=365884', {asynchronous:true, evalScripts:true, parameters:'authenticity_token=' + encodeURIComponent('8WDpo2mBaCI6mC+JK3X+PoxZeJD7pe23YZSxc2oxySE=')}); return false;" title="Quote">
+                      <img alt="Comment" src="88324/comment_5.png"/>
+                    </a>
+                    <a href="#" onclick="new Ajax.Request('/journals/edit/365884', {asynchronous:true, evalScripts:true, method:'get'}); return false;" title="Edit">
+                      <img alt="Edit" src="88324/edit_5.png"/>
+                    </a>
+                  </div>
+                  <p>
+Kim Maesen wrote:                  </p>
+                  <blockquote>
+                    <p>
+Ricardo Castiglione wrote:                    </p>
+                    <blockquote>
+                      <p>
+So there are 4 test cases here:                      </p>
+                      <blockquote>
+                        <ul>
+                          <li>
+1) 007419 - you want to add an addresslink and relationlink between: Vandeweghe Ben, Vandeweghe Lauren and Vandeweghe Ruben                          </li>
+                        </ul>
+                      </blockquote>
+                    </blockquote>
+                  </blockquote>
+                  <p>
+ignore for now because I've asked the info to the helpdesk.                  </p>
+                  <blockquote>
+                    <blockquote>
+                      <blockquote>
+                        <ul>
+                          <li>
+2) 007807 - ALKAN EMRE (NIN=07071806508) - see image, check that checkbox - save = error                          </li>
+                        </ul>
+                        <ul>
+                          <li>
+3) 045237 - you want to add an addresslink and relationlink between: Dullaers Ben and Dullaers Laura                          </li>
+                        </ul>
+                      </blockquote>
+                    </blockquote>
+                  </blockquote>
+                  <p>
+ignore it's ok                  </p>
+                  <blockquote>
+                    <blockquote>
+                      <blockquote>
+                        <ul>
+                          <li>
+4) 007526 - Jacobs Jules: Add a new relation grandmother Hertogs Rina telephone 0494 44 43 62 mobile phone 014 63 12 23 and lives on another address                          </li>
+                        </ul>
+                      </blockquote>
+                      <p>
+Can you please send me a print screen for 1), 3) and 4) like you did for 2)?. The image you see before saving and getting the error will be really useful to me to reproduce these errors. Thanks!.                      </p>
+                    </blockquote>
+                  </blockquote>
+                </div>
+              </div>
+              <div id="change-365885" class="journal has-details">
+                <h4>
+                  <div class="journal-link">
+                    <a href="/issues/88324#note-8">
+#8                    </a>
+                  </div>
+                  <a name="note-8"/>
+Updated by                  <a href="/users/274">
+Kim Maesen                  </a>
+                  <a href="/projects/pupils/activity?from=2012-08-29" title="08/29/2012 04:34 am">
+11 days                  </a>
+ago                </h4>
+                <ul class="details">
+                  <li>
+                    <strong>
+File                    </strong>
+                    <a href="attachments/30013/29-08-2012_9-33-10.png">
+29-08-2012_9-33-10.png                    </a>
+added                  </li>
+                </ul>
+              </div>
+              <div id="change-365886" class="journal has-notes">
+                <h4>
+                  <div class="journal-link">
+                    <a href="/issues/88324#note-9">
+#9                    </a>
+                  </div>
+                  <a name="note-9"/>
+Updated by                  <a href="/users/274">
+Kim Maesen                  </a>
+                  <a href="/projects/pupils/activity?from=2012-08-29" title="08/29/2012 04:34 am">
+11 days                  </a>
+ago                </h4>
+                <div class="wiki editable" id="journal-365886-notes">
+                  <div class="contextual">
+                    <a href="#" onclick="new Ajax.Request('/issues/88324/quoted?journal_id=365886', {asynchronous:true, evalScripts:true, parameters:'authenticity_token=' + encodeURIComponent('8WDpo2mBaCI6mC+JK3X+PoxZeJD7pe23YZSxc2oxySE=')}); return false;" title="Quote">
+                      <img alt="Comment" src="88324/comment_6.png"/>
+                    </a>
+                    <a href="#" onclick="new Ajax.Request('/journals/edit/365886', {asynchronous:true, evalScripts:true, method:'get'}); return false;" title="Edit">
+                      <img alt="Edit" src="88324/edit_6.png"/>
+                    </a>
+                  </div>
+                  <p>
+Kim Maesen wrote:                  </p>
+                  <blockquote>
+                    <p>
+Kim Maesen wrote:                    </p>
+                    <blockquote>
+                      <p>
+Ricardo Castiglione wrote:                      </p>
+                      <blockquote>
+                        <p>
+So there are 4 test cases here:                        </p>
+                        <blockquote>
+                          <ul>
+                            <li>
+1) 007419 - you want to add an addresslink and relationlink between: Vandeweghe Ben, Vandeweghe Lauren and Vandeweghe Ruben                            </li>
+                          </ul>
+                        </blockquote>
+                      </blockquote>
+                    </blockquote>
+                  </blockquote>
+                  <p>
+ignore for now because I've asked the info to the helpdesk.                  </p>
+                  <blockquote>
+                    <blockquote>
+                      <blockquote>
+                        <blockquote>
+                          <ul>
+                            <li>
+2) 007807 - ALKAN EMRE (NIN=07071806508) - see image, check that checkbox - save = error                            </li>
+                          </ul>
+                          <ul>
+                            <li>
+3) 045237 - you want to add an addresslink and relationlink between: Dullaers Ben and Dullaers Laura                            </li>
+                          </ul>
+                        </blockquote>
+                      </blockquote>
+                    </blockquote>
+                  </blockquote>
+                  <p>
+ignore it's ok                  </p>
+                  <blockquote>
+                    <blockquote>
+                      <blockquote>
+                        <blockquote>
+                          <ul>
+                            <li>
+4) 007526 - Jacobs Jules: Add a new relation grandmother Hertogs Rina telephone 0494 44 43 62 mobile phone 014 63 12 23 and lives on another address                            </li>
+                          </ul>
+                        </blockquote>
+                      </blockquote>
+                    </blockquote>
+                  </blockquote>
+                  <p>
+29-08-2012 9-33-10 added (I think same problem as 2)                  </p>
+                  <blockquote>
+                    <blockquote>
+                      <blockquote>
+                        <p>
+Can you please send me a print screen for 1), 3) and 4) like you did for 2)?. The image you see before saving and getting the error will be really useful to me to reproduce these errors. Thanks!.                        </p>
+                      </blockquote>
+                    </blockquote>
+                  </blockquote>
+                </div>
+              </div>
+              <div id="change-365887" class="journal has-details">
+                <h4>
+                  <div class="journal-link">
+                    <a href="/issues/88324#note-10">
+#10                    </a>
+                  </div>
+                  <a name="note-10"/>
+Updated by                  <a href="/users/274">
+Kim Maesen                  </a>
+                  <a href="/projects/pupils/activity?from=2012-08-29" title="08/29/2012 04:35 am">
+11 days                  </a>
+ago                </h4>
+                <ul class="details">
+                  <li>
+                    <strong>
+Status                    </strong>
+changed from                    <i>
+Feedback                    </i>
+to                    <i>
+Assigned                    </i>
+                  </li>
+                </ul>
+              </div>
+              <div id="change-365889" class="journal has-details">
+                <h4>
+                  <div class="journal-link">
+                    <a href="/issues/88324#note-11">
+#11                    </a>
+                  </div>
+                  <a name="note-11"/>
+Updated by                  <a href="/users/490">
+Ricardo Castiglione                  </a>
+                  <a href="/projects/pupils/activity?from=2012-08-29" title="08/29/2012 08:33 am">
+11 days                  </a>
+ago                </h4>
+                <ul class="details">
+                  <li>
+                    <strong>
+Status                    </strong>
+changed from                    <i>
+Assigned                    </i>
+to                    <i>
+In Progress                    </i>
+                  </li>
+                </ul>
+              </div>
+              <div id="change-365890" class="journal has-notes has-details">
+                <h4>
+                  <div class="journal-link">
+                    <a href="/issues/88324#note-12">
+#12                    </a>
+                  </div>
+                  <a name="note-12"/>
+Updated by                  <a href="/users/490">
+Ricardo Castiglione                  </a>
+                  <a href="/projects/pupils/activity?from=2012-08-29" title="08/29/2012 09:18 am">
+11 days                  </a>
+ago                </h4>
+                <ul class="details">
+                  <li>
+                    <strong>
+Status                    </strong>
+changed from                    <i>
+In Progress                    </i>
+to                    <i>
+Feedback                    </i>
+                  </li>
+                </ul>
+                <div class="wiki editable" id="journal-365890-notes">
+                  <div class="contextual">
+                    <a href="#" onclick="new Ajax.Request('/issues/88324/quoted?journal_id=365890', {asynchronous:true, evalScripts:true, parameters:'authenticity_token=' + encodeURIComponent('8WDpo2mBaCI6mC+JK3X+PoxZeJD7pe23YZSxc2oxySE=')}); return false;" title="Quote">
+                      <img alt="Comment" src="88324/comment_7.png"/>
+                    </a>
+                    <a href="#" onclick="new Ajax.Request('/journals/edit/365890', {asynchronous:true, evalScripts:true, method:'get'}); return false;" title="Edit">
+                      <img alt="Edit" src="88324/edit_7.png"/>
+                    </a>
+                  </div>
+                  <p>
+the problem is that the street number is empty and there is a rule that avoid that, so:                    <br/>
+1) should I allow empty street number?                    <br/>
+2) should I show an error message?                  </p>
+                  <p>
+Info to myself:                    <br/>
+- InvalidStreetNumberException                  </p>
+                </div>
+              </div>
+              <div id="change-365910" class="journal has-notes">
+                <h4>
+                  <div class="journal-link">
+                    <a href="/issues/88324#note-13">
+#13                    </a>
+                  </div>
+                  <a name="note-13"/>
+Updated by                  <a href="/users/274">
+Kim Maesen                  </a>
+                  <a href="/projects/pupils/activity?from=2012-08-29" title="08/29/2012 11:19 am">
+11 days                  </a>
+ago                </h4>
+                <div class="wiki editable" id="journal-365910-notes">
+                  <div class="contextual">
+                    <a href="#" onclick="new Ajax.Request('/issues/88324/quoted?journal_id=365910', {asynchronous:true, evalScripts:true, parameters:'authenticity_token=' + encodeURIComponent('8WDpo2mBaCI6mC+JK3X+PoxZeJD7pe23YZSxc2oxySE=')}); return false;" title="Quote">
+                      <img alt="Comment" src="88324/comment_8.png"/>
+                    </a>
+                    <a href="#" onclick="new Ajax.Request('/journals/edit/365910', {asynchronous:true, evalScripts:true, method:'get'}); return false;" title="Edit">
+                      <img alt="Edit" src="88324/edit_8.png"/>
+                    </a>
+                  </div>
+                  <p>
+streetnumber can be empty for relations.                  </p>
+                </div>
+              </div>
+              <div id="change-366015" class="journal has-details">
+                <h4>
+                  <div class="journal-link">
+                    <a href="/issues/88324#note-14">
+#14                    </a>
+                  </div>
+                  <a name="note-14"/>
+Updated by                  <a href="/users/490">
+Ricardo Castiglione                  </a>
+                  <a href="/projects/pupils/activity?from=2012-08-29" title="08/29/2012 11:03 pm">
+10 days                  </a>
+ago                </h4>
+                <ul class="details">
+                  <li>
+                    <strong>
+Status                    </strong>
+changed from                    <i>
+Feedback                    </i>
+to                    <i>
+In Progress                    </i>
+                  </li>
+                </ul>
+              </div>
+              <div id="change-366175" class="journal has-notes has-details">
+                <h4>
+                  <div class="journal-link">
+                    <a href="/issues/88324#note-15">
+#15                    </a>
+                  </div>
+                  <a name="note-15"/>
+Updated by                  <a href="/users/490">
+Ricardo Castiglione                  </a>
+                  <a href="/projects/pupils/activity?from=2012-08-30" title="08/30/2012 03:06 pm">
+9 days                  </a>
+ago                </h4>
+                <ul class="details">
+                  <li>
+                    <strong>
+Status                    </strong>
+changed from                    <i>
+In Progress                    </i>
+to                    <i>
+Resolved                    </i>
+                  </li>
+                  <li>
+                    <strong>
+% Done                    </strong>
+changed from                    <i>
+0                    </i>
+to                    <i>
+100                    </i>
+                  </li>
+                </ul>
+                <div class="wiki editable" id="journal-366175-notes">
+                  <div class="contextual">
+                    <a href="#" onclick="new Ajax.Request('/issues/88324/quoted?journal_id=366175', {asynchronous:true, evalScripts:true, parameters:'authenticity_token=' + encodeURIComponent('8WDpo2mBaCI6mC+JK3X+PoxZeJD7pe23YZSxc2oxySE=')}); return false;" title="Quote">
+                      <img alt="Comment" src="88324/comment_9.png"/>
+                    </a>
+                    <a href="#" onclick="new Ajax.Request('/journals/edit/366175', {asynchronous:true, evalScripts:true, method:'get'}); return false;" title="Edit">
+                      <img alt="Edit" src="88324/edit_9.png"/>
+                    </a>
+                  </div>
+                  <p>
+Applied in changeset                    <a href="/projects/pupils/repository/revisions/49211" class="changeset" title="fixes #88324 (Internal error for saving address of relation)">
+r49211                    </a>
+.                  </p>
+                </div>
+              </div>
+            </div>
+            <div style="clear: both;">
+            </div>
+            <div class="contextual">
+              <a href="/issues/88324/edit" accesskey="e" class="icon icon-edit" onclick="showAndScrollTo(&quot;update&quot;, &quot;notes&quot;); return false;">
+Update              </a>
+              <a href="/issues/88324/time_entries/new" class="icon icon-time-add">
+Log time              </a>
+              <span id="watcher2">
+                <a class="icon icon-fav-off" href="/watchers/watch?object_id=88324&amp;object_type=issue&amp;replace%5B%5D=watcher&amp;replace%5B%5D=watcher2" onclick="new Ajax.Request('/watchers/watch?object_id=88324&amp;object_type=issue&amp;replace%5B%5D=watcher&amp;replace%5B%5D=watcher2', {asynchronous:true, evalScripts:true, parameters:'authenticity_token=' + encodeURIComponent('8WDpo2mBaCI6mC+JK3X+PoxZeJD7pe23YZSxc2oxySE=')}); return false;">
+Watch                </a>
+              </span>
+              <a href="/projects/pupils/issues/88324/copy" class="icon icon-duplicate">
+Duplicate              </a>
+              <a href="/issue_moves/new/88324?copy_options%5Bcopy%5D=t" class="icon icon-copy">
+Copy              </a>
+              <a href="/issue_moves/new/88324" class="icon icon-move">
+Move              </a>
+              <a href="/issues/88324/destroy" class="icon icon-del" onclick="if (confirm('Are you sure ?')) { var f = document.createElement('form'); f.style.display = 'none'; this.parentNode.appendChild(f); f.method = 'POST'; f.action = this.href;var s = document.createElement('input'); s.setAttribute('type', 'hidden'); s.setAttribute('name', 'authenticity_token'); s.setAttribute('value', '8WDpo2mBaCI6mC+JK3X+PoxZeJD7pe23YZSxc2oxySE='); f.appendChild(s);f.submit(); };return false;">
+Delete              </a>
+            </div>
+            <div style="clear: both;">
+            </div>
+            <div id="update" style="display:none;">
+              <h3>
+              </h3>
+              <form action="/issues/88324/edit" enctype="multipart/form-data" id="issue-form" method="post">
+                <div style="margin:0;padding:0;display:inline">
+                  <input name="_method" type="hidden" value="put"/>
+                  <input name="authenticity_token" type="hidden" value="8WDpo2mBaCI6mC+JK3X+PoxZeJD7pe23YZSxc2oxySE="/>
+                </div>
+                <div class="box">
+                  <fieldset class="tabular">
+                    <legend>
+                      <small>
+                        <a href="88324.html" onclick="Effect.toggle(&quot;issue_descr_fields&quot;, &quot;appear&quot;, {duration:0.3}); return false;">
+                        </a>
+                      </small>
+                    </legend>
+                    <div id="issue_descr_fields" style="display:none">
+                      <p>
+                        <label for="issue_tracker_id">
+                          <span class="required">
+                          </span>
+                        </label>
+                        <select id="issue_tracker_id" name="issue[tracker_id]">
+                          <option selected="selected" value="1">
+                          </option>
+                          <option value="2">
+                          </option>
+                          <option value="6">
+                          </option>
+                          <option value="4">
+                          </option>
+                        </select>
+                      </p>
+                      <p>
+                        <label for="issue_subject">
+                          <span class="required">
+                          </span>
+                        </label>
+                        <input id="issue_subject" name="issue[subject]" size="80" type="text" value="Internal error for saving address of relation"/>
+                      </p>
+                      <p id="parent_issue">
+                        <label for="issue_parent_issue_id">
+                        </label>
+                        <input id="issue_parent_issue_id" name="issue[parent_issue_id]" size="10" type="text" autocomplete="off"/>
+                      </p>
+                      <div id="parent_issue_candidates" class="autocomplete" style="display: none;">
+                      </div>
+                      <p>
+                        <label for="issue_description">
+                        </label>
+                        <div class="jstElements">
+                          <div class="help">
+                            <a href="/help/wiki_syntax.html" onclick="window.open(&quot;/help/wiki_syntax.html&quot;, &quot;&quot;, &quot;resizable=yes, location=no, width=300, height=640, menubar=no, status=no, scrollbars=yes&quot;); return false;">
+                            </a>
+                          </div>
+                          <button type="button" tabindex="200" class="jstb_strong" title="Strong">
+                            <span>
+                            </span>
+                          </button>
+                          <button type="button" tabindex="200" class="jstb_em" title="Italic">
+                            <span>
+                            </span>
+                          </button>
+                          <button type="button" tabindex="200" class="jstb_ins" title="Underline">
+                            <span>
+                            </span>
+                          </button>
+                          <button type="button" tabindex="200" class="jstb_del" title="Deleted">
+                            <span>
+                            </span>
+                          </button>
+                          <button type="button" tabindex="200" class="jstb_code" title="Inline Code">
+                            <span>
+                            </span>
+                          </button>
+                          <span id="space1" class="jstSpacer">
+                          </span>
+                          <button type="button" tabindex="200" class="jstb_h1" title="Heading 1">
+                            <span>
+                            </span>
+                          </button>
+                          <button type="button" tabindex="200" class="jstb_h2" title="Heading 2">
+                            <span>
+                            </span>
+                          </button>
+                          <button type="button" tabindex="200" class="jstb_h3" title="Heading 3">
+                            <span>
+                            </span>
+                          </button>
+                          <span id="space2" class="jstSpacer">
+                          </span>
+                          <button type="button" tabindex="200" class="jstb_ul" title="Unordered list">
+                            <span>
+                            </span>
+                          </button>
+                          <button type="button" tabindex="200" class="jstb_ol" title="Ordered list">
+                            <span>
+                            </span>
+                          </button>
+                          <span id="space3" class="jstSpacer">
+                          </span>
+                          <button type="button" tabindex="200" class="jstb_bq" title="Quote">
+                            <span>
+                            </span>
+                          </button>
+                          <button type="button" tabindex="200" class="jstb_unbq" title="Remove Quote">
+                            <span>
+                            </span>
+                          </button>
+                          <button type="button" tabindex="200" class="jstb_pre" title="Preformatted text">
+                            <span>
+                            </span>
+                          </button>
+                          <span id="space4" class="jstSpacer">
+                          </span>
+                          <button type="button" tabindex="200" class="jstb_link" title="Link to a Wiki page">
+                            <span>
+                            </span>
+                          </button>
+                          <button type="button" tabindex="200" class="jstb_img" title="Image">
+                            <span>
+                            </span>
+                          </button>
+                        </div>
+                        <div class="jstEditor">
+                          <textarea accesskey="e" class="wiki-edit" cols="60" id="issue_description" name="issue[description]" rows="100">
+                          </textarea>
+                        </div>
+                      </p>
+                    </div>
+                    <div id="attributes" class="attributes">
+                      <div class="splitcontentleft">
+                        <p>
+                          <label for="issue_status_id">
+                            <span class="required">
+                            </span>
+                          </label>
+                          <select id="issue_status_id" name="issue[status_id]">
+                            <option value="1">
+                            </option>
+                            <option value="2">
+                            </option>
+                            <option value="8">
+                            </option>
+                            <option selected="selected" value="3">
+                            </option>
+                            <option value="4">
+                            </option>
+                            <option value="9">
+                            </option>
+                            <option value="10">
+                            </option>
+                            <option value="5">
+                            </option>
+                            <option value="6">
+                            </option>
+                            <option value="7">
+                            </option>
+                            <option value="20">
+                            </option>
+                          </select>
+                        </p>
+                        <p>
+                          <label for="issue_priority_id">
+                            <span class="required">
+                            </span>
+                          </label>
+                          <select id="issue_priority_id" name="issue[priority_id]">
+                            <option value="15">
+                            </option>
+                            <option value="3">
+                            </option>
+                            <option selected="selected" value="4">
+                            </option>
+                            <option value="5">
+                            </option>
+                            <option value="6">
+                            </option>
+                            <option value="7">
+                            </option>
+                          </select>
+                        </p>
+                        <p>
+                          <label for="issue_assigned_to_id">
+                          </label>
+                          <select id="issue_assigned_to_id" name="issue[assigned_to_id]">
+                            <option value=""/>
+                            <option value="630">
+                            </option>
+                            <option value="14">
+                            </option>
+                            <option value="306">
+                            </option>
+                            <option value="683">
+                            </option>
+                            <option value="47">
+                            </option>
+                            <option value="274">
+                            </option>
+                            <option value="270">
+                            </option>
+                            <option value="102">
+                            </option>
+                            <option selected="selected" value="490">
+                            </option>
+                            <option value="946">
+                            </option>
+                          </select>
+                        </p>
+                        <p>
+                          <label for="issue_category_id">
+                          </label>
+                          <select id="issue_category_id" name="issue[category_id]">
+                            <option selected="selected" value=""/>
+                            <option value="231">
+                            </option>
+                            <option value="508">
+                            </option>
+                            <option value="380">
+                            </option>
+                          </select>
+                          <a href="88324.html" onclick="promptToRemote('New category', 'category[name]', '/projects/pupils/issue_categories/new'); return false;" tabindex="199" title="New category">
+                            <img style="vertical-align: middle;" alt="Add" src="88324/add.png"/>
+                          </a>
+                        </p>
+                        <p>
+                          <label for="issue_fixed_version_id">
+                          </label>
+                          <select id="issue_fixed_version_id" name="issue[fixed_version_id]">
+                            <option value=""/>
+                            <option selected="selected" value="4679">
+                            </option>
+                            <option value="4704">
+                            </option>
+                            <option value="1263">
+                            </option>
+                            <option value="4607">
+                            </option>
+                          </select>
+                          <a href="88324.html" onclick="promptToRemote('New version', 'version[name]', '/projects/pupils/versions'); return false;" tabindex="200" title="New version">
+                            <img style="vertical-align: middle;" alt="Add" src="88324/add_1.png"/>
+                          </a>
+                        </p>
+                      </div>
+                      <div class="splitcontentright">
+                        <p>
+                          <label for="issue_start_date">
+                          </label>
+                          <input id="issue_start_date" name="issue[start_date]" size="10" type="text" value="2012-07-16"/>
+                          <img id="issue_start_date_trigger" alt="Calendar" class="calendar-trigger" src="88324/calendar.png"/>
+                        </p>
+                        <p>
+                          <label for="issue_due_date">
+                          </label>
+                          <input id="issue_due_date" name="issue[due_date]" size="10" type="text"/>
+                          <img id="issue_due_date_trigger" alt="Calendar" class="calendar-trigger" src="88324/calendar_1.png"/>
+                        </p>
+                        <p>
+                          <label for="issue_estimated_hours">
+                          </label>
+                          <input id="issue_estimated_hours" name="issue[estimated_hours]" size="3" type="text"/>
+                        </p>
+                        <p>
+                          <label for="issue_done_ratio">
+                          </label>
+                          <select id="issue_done_ratio" name="issue[done_ratio]">
+                            <option value="0">
+                            </option>
+                            <option value="10">
+                            </option>
+                            <option value="20">
+                            </option>
+                            <option value="30">
+                            </option>
+                            <option value="40">
+                            </option>
+                            <option value="50">
+                            </option>
+                            <option value="60">
+                            </option>
+                            <option value="70">
+                            </option>
+                            <option value="80">
+                            </option>
+                            <option value="90">
+                            </option>
+                            <option selected="selected" value="100">
+                            </option>
+                          </select>
+                        </p>
+                      </div>
+                      <div style="clear:both;">
+                      </div>
+                      <div class="splitcontentleft">
+                        <p>
+                          <label for="issue_custom_field_values_4">
+                          </label>
+                          <select id="issue_custom_field_values_4" name="issue[custom_field_values][4]">
+                            <option selected="selected"/>
+                            <option value="Blocker">
+                            </option>
+                            <option value="Major">
+                            </option>
+                            <option value="Medium">
+                            </option>
+                            <option value="Minor">
+                            </option>
+                          </select>
+                        </p>
+                      </div>
+                      <div class="splitcontentright">
+                        <p>
+                          <label for="issue_custom_field_values_12">
+                          </label>
+                          <input id="issue_custom_field_values_12" name="issue[custom_field_values][12]" type="text" value=""/>
+                        </p>
+                      </div>
+                      <div style="clear:both;">
+                      </div>
+                    </div>
+                  </fieldset>
+                  <fieldset class="tabular">
+                    <legend>
+                    </legend>
+                    <div class="splitcontentleft">
+                      <p>
+                        <label for="time_entry_hours">
+                        </label>
+                        <input id="time_entry_hours" label="label_spent_time" name="time_entry[hours]" size="6" type="text"/>
+                      </p>
+                    </div>
+                    <div class="splitcontentright">
+                      <p>
+                        <label for="time_entry_activity_id">
+                        </label>
+                        <select id="time_entry_activity_id" name="time_entry[activity_id]">
+                          <option selected="selected" value="">
+                          </option>
+                          <option value="8">
+                          </option>
+                          <option value="9">
+                          </option>
+                          <option value="11">
+                          </option>
+                          <option value="13">
+                          </option>
+                          <option value="18">
+                          </option>
+                          <option value="19">
+                          </option>
+                          <option value="20">
+                          </option>
+                          <option value="22">
+                          </option>
+                        </select>
+                      </p>
+                    </div>
+                    <p>
+                      <label for="time_entry_comments">
+                      </label>
+                      <input id="time_entry_comments" name="time_entry[comments]" size="60" type="text"/>
+                    </p>
+                  </fieldset>
+                  <fieldset>
+                    <legend>
+                    </legend>
+                    <div class="jstElements">
+                      <div class="help">
+                        <a href="/help/wiki_syntax.html" onclick="window.open(&quot;/help/wiki_syntax.html&quot;, &quot;&quot;, &quot;resizable=yes, location=no, width=300, height=640, menubar=no, status=no, scrollbars=yes&quot;); return false;">
+                        </a>
+                      </div>
+                      <button type="button" tabindex="200" class="jstb_strong" title="Strong">
+                        <span>
+                        </span>
+                      </button>
+                      <button type="button" tabindex="200" class="jstb_em" title="Italic">
+                        <span>
+                        </span>
+                      </button>
+                      <button type="button" tabindex="200" class="jstb_ins" title="Underline">
+                        <span>
+                        </span>
+                      </button>
+                      <button type="button" tabindex="200" class="jstb_del" title="Deleted">
+                        <span>
+                        </span>
+                      </button>
+                      <button type="button" tabindex="200" class="jstb_code" title="Inline Code">
+                        <span>
+                        </span>
+                      </button>
+                      <span id="space1" class="jstSpacer">
+                      </span>
+                      <button type="button" tabindex="200" class="jstb_h1" title="Heading 1">
+                        <span>
+                        </span>
+                      </button>
+                      <button type="button" tabindex="200" class="jstb_h2" title="Heading 2">
+                        <span>
+                        </span>
+                      </button>
+                      <button type="button" tabindex="200" class="jstb_h3" title="Heading 3">
+                        <span>
+                        </span>
+                      </button>
+                      <span id="space2" class="jstSpacer">
+                      </span>
+                      <button type="button" tabindex="200" class="jstb_ul" title="Unordered list">
+                        <span>
+                        </span>
+                      </button>
+                      <button type="button" tabindex="200" class="jstb_ol" title="Ordered list">
+                        <span>
+                        </span>
+                      </button>
+                      <span id="space3" class="jstSpacer">
+                      </span>
+                      <button type="button" tabindex="200" class="jstb_bq" title="Quote">
+                        <span>
+                        </span>
+                      </button>
+                      <button type="button" tabindex="200" class="jstb_unbq" title="Remove Quote">
+                        <span>
+                        </span>
+                      </button>
+                      <button type="button" tabindex="200" class="jstb_pre" title="Preformatted text">
+                        <span>
+                        </span>
+                      </button>
+                      <span id="space4" class="jstSpacer">
+                      </span>
+                      <button type="button" tabindex="200" class="jstb_link" title="Link to a Wiki page">
+                        <span>
+                        </span>
+                      </button>
+                      <button type="button" tabindex="200" class="jstb_img" title="Image">
+                        <span>
+                        </span>
+                      </button>
+                    </div>
+                    <div class="jstEditor">
+                      <textarea class="wiki-edit" cols="60" id="notes" name="notes" rows="10">
+                      </textarea>
+                    </div>
+                    <p>
+                      <br/>
+                      <span id="attachments_fields">
+                        <input name="attachments[1][file]" size="30" type="file" value=""/>
+                        <label class="inline">
+                          <span id="attachment_description_label_content">
+                          </span>
+                          <input name="attachments[1][description]" size="60" type="text" value=""/>
+                        </label>
+                      </span>
+                      <br/>
+                      <small>
+                        <a href="#" onclick="addFileField(); return false;">
+                        </a>
+                      </small>
+                    </p>
+                  </fieldset>
+                </div>
+                <input id="issue_lock_version" name="issue[lock_version]" type="hidden" value="16"/>
+                <input name="commit" type="submit" value="Submit"/>
+                <a accesskey="r" href="#" onclick="new Ajax.Updater('preview', '/issues/preview/88324?project_id=pupils', {asynchronous:true, evalScripts:true, method:'post', onComplete:function(request){Element.scrollTo('preview')}, parameters:Form.serialize(&quot;issue-form&quot;) + '&amp;authenticity_token=' + encodeURIComponent('8WDpo2mBaCI6mC+JK3X+PoxZeJD7pe23YZSxc2oxySE=')}); return false;">
+                </a>
+              </form>
+              <div id="preview" class="wiki">
+              </div>
+            </div>
+            <p class="other-formats">
+Also available in:              <span>
+                <a href="/issues/88324.atom?key=4aa574c9e059cb38d85a8c5ac783b54345358b7b" class="atom" rel="nofollow">
+Atom                </a>
+              </span>
+              <span>
+                <a href="/issues/88324.pdf" class="pdf" rel="nofollow">
+PDF                </a>
+              </span>
+            </p>
+            <div id="context-menu" style="display: none;">
+            </div>
+            <div style="clear:both;">
+            </div>
+          </div>
+        </div>
+        <div id="ajax-indicator" style="display:none;">
+          <span>
+          </span>
+        </div>
+        <div id="footer">
+          <div class="bgl">
+            <div class="bgr">
+Powered by              <a href="http://www.redmine.org/">
+Redmine              </a>
+© 2006-2010 Jean-Philippe Lang            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

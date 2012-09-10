@@ -1,0 +1,1511 @@
+<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>
+Pupils - Bug #86921: discimu: reason end of subscription - TeraCode Project Management Tool    </title>
+    <meta name="description" content="Redmine"/>
+    <meta name="keywords" content="issue,bug,tracker"/>
+    <link rel="shortcut icon" href="86921/favicon.ico.css"/>
+    <link rel="stylesheet" type="text/css" media="all" href="86921/application.css"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="86921/jstoolbar.css"/>
+    <style type="text/css">
+* html body{ width: expression( document.documentElement.clientWidth < 900 ? '900px' : '100%' ); } body {behavior: url(/stylesheets/csshover.htc?1293099743);}    </style>
+<!-- page specific tags -->    <link rel="stylesheet" type="text/css" media="screen" href="86921/calendar.css"/>
+    <link title="Pupils - Bug #86921: discimu: reason end of subscription" rel="alternate" type="application/atom+xml" href="86921/86921.atom.css"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="86921/scm.css"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="86921/context_menu.css"/>
+  </head>
+  <body class="controller-issues action-show">
+    <div id="wrapper">
+      <div id="wrapper2">
+        <div id="top-menu">
+          <div id="account">
+            <ul>
+              <li>
+                <a href="/my/account" class="my-account">
+My account                </a>
+              </li>
+              <li>
+                <a href="/logout" class="logout">
+Sign out                </a>
+              </li>
+            </ul>
+          </div>
+          <div id="loggedas">
+Logged in as            <a href="/users/490">
+ricardo.castiglione            </a>
+          </div>
+          <ul>
+            <li>
+              <a href="/" class="home">
+Home              </a>
+            </li>
+            <li>
+              <a href="/my/page" class="my-page">
+My page              </a>
+            </li>
+            <li>
+              <a href="/projects" class="projects">
+Projects              </a>
+            </li>
+            <li>
+              <a href="http://www.redmine.org/guide" class="help">
+Help              </a>
+            </li>
+          </ul>
+        </div>
+        <div id="header">
+          <div id="quick-search">
+            <form action="/search/index/pupils" method="get">
+              <input name="issues" type="hidden" value="1"/>
+              <a href="/search/index/pupils" accesskey="4">
+Search              </a>
+:              <input accesskey="f" class="small" id="q" name="q" size="20" type="text"/>
+            </form>
+            <select onchange="if (this.value != '') { window.location = this.value; }">
+              <option value="">
+Jump to a project...              </option>
+              <option value="" disabled="disabled">
+---              </option>
+              <option value="/projects/lemonade?jump=issues">
+Lemonade              </option>
+              <option value="/projects/lemonadearchitecture?jump=issues">
+  » Architecture              </option>
+              <option value="/projects/diary?jump=issues">
+  » Diary              </option>
+              <option value="/projects/jobsite?jump=issues">
+  » Jobsite              </option>
+              <option value="/projects/personnel?jump=issues">
+  » Personnel              </option>
+              <option selected="selected" value="/projects/pupils?jump=issues">
+  » Pupils              </option>
+              <option value="/projects/intranet?jump=issues">
+Intranet              </option>
+              <option value="/projects/its?jump=issues">
+IT - Technical Support              </option>
+              <option value="/projects/processes?jump=issues">
+TeraCode Processes              </option>
+            </select>
+          </div>
+          <h1>
+            <a href="/projects/lemonade?jump=issues" class="root">
+Lemonade            </a>
+» Pupils          </h1>
+          <div id="main-menu">
+            <ul>
+              <li>
+                <a href="/projects/pupils" class="overview">
+Overview                </a>
+              </li>
+              <li>
+                <a href="/projects/pupils/activity" class="activity">
+Activity                </a>
+              </li>
+              <li>
+                <a href="/projects/pupils/roadmap" class="roadmap">
+Roadmap                </a>
+              </li>
+              <li>
+                <a href="/projects/pupils/issues" class="issues selected">
+Issues                </a>
+              </li>
+              <li>
+                <a href="/projects/pupils/issues/new" accesskey="7" class="new-issue">
+New issue                </a>
+              </li>
+              <li>
+                <a href="/projects/pupils/issues/gantt" class="gantt">
+Gantt                </a>
+              </li>
+              <li>
+                <a href="/projects/pupils/issues/calendar" class="calendar">
+Calendar                </a>
+              </li>
+              <li>
+                <a href="/projects/pupils/news" class="news">
+News                </a>
+              </li>
+              <li>
+                <a href="/projects/pupils/documents" class="documents">
+Documents                </a>
+              </li>
+              <li>
+                <a href="/projects/pupils/wiki" class="wiki">
+Wiki                </a>
+              </li>
+              <li>
+                <a href="/projects/pupils/files" class="files">
+Files                </a>
+              </li>
+              <li>
+                <a href="/projects/pupils/repository" class="repository">
+Repository                </a>
+              </li>
+              <li>
+                <a href="/simple_ci/show/pupils" class="simple-ci">
+Integration                </a>
+              </li>
+              <li>
+                <a href="/projects/pupils/settings" class="settings">
+Settings                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="" id="main">
+          <div id="sidebar">
+            <h3>
+Issues            </h3>
+            <a href="/projects/pupils/issues?set_filter=1">
+View all issues            </a>
+            <br/>
+            <a href="/projects/pupils/issues/report">
+Summary            </a>
+            <br/>
+            <h3>
+Graphs            </h3>
+            <a href="/graphs/old_issues?project_id=pupils">
+Open aging issues            </a>
+            <br/>
+            <a href="/graphs/issue_growth?project_id=pupils">
+Total issues over time            </a>
+            <br/>
+            <a href="/projects/pupils/issues/calendar">
+Calendar            </a>
+            <br/>
+            <a href="/projects/pupils/issues/gantt">
+Gantt            </a>
+            <br/>
+            <div id="watchers">
+              <div class="contextual">
+                <a href="#" onclick="new Ajax.Request('/watchers/new?object_id=86921&amp;object_type=issue', {asynchronous:true, evalScripts:true, parameters:'authenticity_token=' + encodeURIComponent('8WDpo2mBaCI6mC+JK3X+PoxZeJD7pe23YZSxc2oxySE=')}); return false;">
+Add                </a>
+              </div>
+              <h3>
+Watchers (0)              </h3>
+            </div>
+          </div>
+          <div id="content">
+            <div class="contextual">
+              <a href="/issues/86921/edit" accesskey="e" class="icon icon-edit" onclick="showAndScrollTo(&quot;update&quot;, &quot;notes&quot;); return false;">
+Update              </a>
+              <a href="/issues/86921/time_entries/new" class="icon icon-time-add">
+Log time              </a>
+              <span id="watcher">
+                <a class="icon icon-fav-off" href="/watchers/watch?object_id=86921&amp;object_type=issue&amp;replace%5B%5D=watcher&amp;replace%5B%5D=watcher2" onclick="new Ajax.Request('/watchers/watch?object_id=86921&amp;object_type=issue&amp;replace%5B%5D=watcher&amp;replace%5B%5D=watcher2', {asynchronous:true, evalScripts:true, parameters:'authenticity_token=' + encodeURIComponent('8WDpo2mBaCI6mC+JK3X+PoxZeJD7pe23YZSxc2oxySE=')}); return false;">
+Watch                </a>
+              </span>
+              <a href="/projects/pupils/issues/86921/copy" class="icon icon-duplicate">
+Duplicate              </a>
+              <a href="/issue_moves/new/86921?copy_options%5Bcopy%5D=t" class="icon icon-copy">
+Copy              </a>
+              <a href="/issue_moves/new/86921" class="icon icon-move">
+Move              </a>
+              <a href="/issues/86921/destroy" class="icon icon-del" onclick="if (confirm('Are you sure ?')) { var f = document.createElement('form'); f.style.display = 'none'; this.parentNode.appendChild(f); f.method = 'POST'; f.action = this.href;var s = document.createElement('input'); s.setAttribute('type', 'hidden'); s.setAttribute('name', 'authenticity_token'); s.setAttribute('value', '8WDpo2mBaCI6mC+JK3X+PoxZeJD7pe23YZSxc2oxySE='); f.appendChild(s);f.submit(); };return false;">
+Delete              </a>
+            </div>
+            <h2>
+Bug #86921            </h2>
+            <div class="issue status-9 priority-3 closed details">
+              <div class="subject">
+                <div>
+                  <h3>
+discimu: reason end of subscription                  </h3>
+                </div>
+              </div>
+              <p class="author">
+Added by                <a href="/users/274">
+Kim Maesen                </a>
+                <a href="/projects/pupils/activity?from=2012-06-07" title="06/07/2012 03:52 am">
+3 months                </a>
+ago. Updated                <a href="/projects/pupils/activity?from=2012-07-04" title="07/04/2012 04:45 pm">
+2 months                </a>
+ago.              </p>
+              <table class="attributes">
+                <tbody>
+                  <tr>
+                    <th class="status">
+Status:                    </th>
+                    <td class="status">
+Closed                    </td>
+                    <th class="start-date">
+Start Date:                    </th>
+                    <td class="start-date">
+06/07/2012                    </td>
+                  </tr>
+                  <tr>
+                    <th class="priority">
+Priority:                    </th>
+                    <td class="priority">
+Normal                    </td>
+                    <th class="due-date">
+Due date:                    </th>
+                    <td class="due-date"/>
+                  </tr>
+                  <tr>
+                    <th class="assigned-to">
+Assigned to:                    </th>
+                    <td class="assigned-to">
+                      <a href="/users/47">
+Javier Posado                      </a>
+                    </td>
+                    <th class="progress">
+% Done:                    </th>
+                    <td class="progress">
+                      <table class="progress" style="width: 80px;">
+                        <tbody>
+                          <tr>
+                            <td class="closed" style="width: 100%;"/>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <p class="pourcent">
+100%                      </p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th class="category">
+Category:                    </th>
+                    <td class="category">
+-                    </td>
+                    <th class="spent-time">
+Spent time:                    </th>
+                    <td class="spent-time">
+-                    </td>
+                  </tr>
+                  <tr>
+                    <th class="fixed-version">
+Target version:                    </th>
+                    <td class="fixed-version">
+                      <a href="/versions/show/4606">
+2.0.3                      </a>
+                    </td>
+                    <th class="estimated-hours">
+Estimated time:                    </th>
+                    <td class="estimated-hours">
+6.00 hours                    </td>
+                  </tr>
+                  <tr>
+                    <th>
+Severity:                    </th>
+                    <td/>
+                    <th>
+Affected Version:                    </th>
+                    <td>
+2.0.2                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <hr/>
+              <div class="contextual">
+                <a class="icon icon-comment" href="#" onclick="new Ajax.Request('/issues/86921/quoted', {asynchronous:true, evalScripts:true, parameters:'authenticity_token=' + encodeURIComponent('8WDpo2mBaCI6mC+JK3X+PoxZeJD7pe23YZSxc2oxySE=')}); return false;">
+Quote                </a>
+              </div>
+              <p>
+                <strong>
+Description                </strong>
+              </p>
+              <div class="wiki">
+                <p>
+reason end of subscription: “X ” Normaal einde schooljaar of module                  <br/>
+can only be combined with end date 31/08 in other cases the default is: “E” Initiatief van leerling of ouders                </p>
+              </div>
+              <hr/>
+              <div id="issue_tree">
+                <div class="contextual">
+                  <a href="/projects/pupils/issues/new?issue%5Bparent_issue_id%5D=86921">
+Add                  </a>
+                </div>
+                <p>
+                  <strong>
+Subtasks                  </strong>
+                </p>
+              </div>
+              <hr/>
+              <div id="relations">
+                <div class="contextual">
+                  <a href="#" onclick="Element.toggle('new-relation-form'); Form.Element.focus('relation_issue_to_id'); return false;">
+Add                  </a>
+                </div>
+                <p>
+                  <strong>
+Related issues                  </strong>
+                </p>
+                <table style="width:100%">
+                  <tbody>
+                    <tr>
+                      <td>
+related to Pupils -                        <a href="86692.html" class="issue status-3 priority-3">
+Bug #86692                        </a>
+: discimus: end of subscription date                      </td>
+                      <td>
+Assigned                      </td>
+                      <td>
+06/01/2012                      </td>
+                      <td/>
+                      <td>
+                        <a href="#" onclick="new Ajax.Request('/issues/86921/relations/7578/destroy', {asynchronous:true, evalScripts:true, method:'post', parameters:'authenticity_token=' + encodeURIComponent('8WDpo2mBaCI6mC+JK3X+PoxZeJD7pe23YZSxc2oxySE=')}); return false;" title="Delete relation">
+                          <img alt="Delete" src="86921/delete.png"/>
+                        </a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <form action="/issues/86921/relations/86921" id="new-relation-form" method="post" onsubmit="new Ajax.Request('/issues/86921/relations/86921', {asynchronous:true, evalScripts:true, method:'post', onComplete:function(request){Form.Element.focus('relation_issue_to_id');}, parameters:Form.serialize(this)}); return false;" style="display: none;">
+                  <div style="margin:0;padding:0;display:inline">
+                    <input name="authenticity_token" type="hidden" value="8WDpo2mBaCI6mC+JK3X+PoxZeJD7pe23YZSxc2oxySE="/>
+                  </div>
+                  <p>
+                    <select id="relation_relation_type" name="relation[relation_type]" onchange="setPredecessorFieldsVisibility();">
+                      <option selected="selected" value="relates">
+                      </option>
+                      <option value="duplicates">
+                      </option>
+                      <option value="duplicated">
+                      </option>
+                      <option value="blocks">
+                      </option>
+                      <option value="blocked">
+                      </option>
+                      <option value="precedes">
+                      </option>
+                      <option value="follows">
+                      </option>
+                    </select>
+                    <input id="relation_issue_to_id" name="relation[issue_to_id]" size="6" type="text"/>
+                    <span id="predecessor_fields" style="display: none;">
+                      <input id="relation_delay" name="relation[delay]" size="3" type="text"/>
+                    </span>
+                    <input name="commit" type="submit" value="Add"/>
+                    <a href="#" onclick="Element.toggle('new-relation-form'); this.blur(); return false;">
+                    </a>
+                  </p>
+                </form>
+              </div>
+            </div>
+            <div id="issue-changesets">
+              <h3>
+Associated revisions              </h3>
+              <div class="changeset odd">
+                <p>
+                  <a href="/projects/pupils/repository/revisions/48821">
+Revision 48821                  </a>
+                  <br/>
+                  <span class="author">
+Added by                    <a href="/users/47">
+Javier Posado                    </a>
+                    <a href="/projects/pupils/activity?from=2012-06-19" title="06/19/2012 10:29 am">
+3 months                    </a>
+ago                  </span>
+                </p>
+                <div class="changeset-changes">
+                  <p>
+fixes                    <a href="86921.html" class="issue status-9 priority-3 closed" title="discimu: reason end of subscription (Closed)">
+#86921                    </a>
+                  </p>
+                </div>
+              </div>
+              <div class="changeset even">
+                <p>
+                  <a href="/projects/pupils/repository/revisions/48831">
+Revision 48831                  </a>
+                  <br/>
+                  <span class="author">
+Added by                    <a href="/users/47">
+Javier Posado                    </a>
+                    <a href="/projects/pupils/activity?from=2012-06-22" title="06/22/2012 04:22 pm">
+3 months                    </a>
+ago                  </span>
+                </p>
+                <div class="changeset-changes">
+                  <p>
+fixes                    <a href="86921.html" class="issue status-9 priority-3 closed" title="discimu: reason end of subscription (Closed)">
+#86921                    </a>
+, reason end of subscription                  </p>
+                </div>
+              </div>
+              <div class="changeset odd">
+                <p>
+                  <a href="/projects/pupils/repository/revisions/48832">
+Revision 48832                  </a>
+                  <br/>
+                  <span class="author">
+Added by                    <a href="/users/47">
+Javier Posado                    </a>
+                    <a href="/projects/pupils/activity?from=2012-06-22" title="06/22/2012 04:38 pm">
+3 months                    </a>
+ago                  </span>
+                </p>
+                <div class="changeset-changes">
+                  <p>
+fixes                    <a href="86921.html" class="issue status-9 priority-3 closed" title="discimu: reason end of subscription (Closed)">
+#86921                    </a>
+                  </p>
+                </div>
+              </div>
+              <div class="changeset even">
+                <p>
+                  <a href="/projects/pupils/repository/revisions/48889">
+Revision 48889                  </a>
+                  <br/>
+                  <span class="author">
+Added by                    <a href="/users/490">
+Ricardo Castiglione                    </a>
+                    <a href="/projects/pupils/activity?from=2012-07-03" title="07/03/2012 09:11 am">
+2 months                    </a>
+ago                  </span>
+                </p>
+                <div class="changeset-changes">
+                  <p>
+fixes                    <a href="86921.html" class="issue status-9 priority-3 closed" title="discimu: reason end of subscription (Closed)">
+#86921                    </a>
+just to mark as resolved the ticket because it couldn't be done from redmine                  </p>
+                </div>
+              </div>
+            </div>
+            <div id="history">
+              <h3>
+History              </h3>
+              <div id="change-351800" class="journal has-notes">
+                <h4>
+                  <div class="journal-link">
+                    <a href="/issues/86921#note-1">
+#1                    </a>
+                  </div>
+                  <a name="note-1"/>
+Updated by                  <a href="/users/47">
+Javier Posado                  </a>
+                  <a href="/projects/pupils/activity?from=2012-06-08" title="06/08/2012 04:19 pm">
+3 months                  </a>
+ago                </h4>
+                <div class="wiki editable" id="journal-351800-notes">
+                  <div class="contextual">
+                    <a href="#" onclick="new Ajax.Request('/issues/86921/quoted?journal_id=351800', {asynchronous:true, evalScripts:true, parameters:'authenticity_token=' + encodeURIComponent('8WDpo2mBaCI6mC+JK3X+PoxZeJD7pe23YZSxc2oxySE=')}); return false;" title="Quote">
+                      <img alt="Comment" src="86921/comment.png"/>
+                    </a>
+                    <a href="#" onclick="new Ajax.Request('/journals/edit/351800', {asynchronous:true, evalScripts:true, method:'get'}); return false;" title="Edit">
+                      <img alt="Edit" src="86921/edit.png"/>
+                    </a>
+                  </div>
+                  <p>
+Move to 2.0.3                  </p>
+                </div>
+              </div>
+              <div id="change-351824" class="journal has-details">
+                <h4>
+                  <div class="journal-link">
+                    <a href="/issues/86921#note-2">
+#2                    </a>
+                  </div>
+                  <a name="note-2"/>
+Updated by                  <a href="/users/47">
+Javier Posado                  </a>
+                  <a href="/projects/pupils/activity?from=2012-06-08" title="06/08/2012 04:21 pm">
+3 months                  </a>
+ago                </h4>
+                <ul class="details">
+                  <li>
+                    <strong>
+Target version                    </strong>
+changed from                    <i>
+2.0.2                    </i>
+to                    <i>
+2.0.3                    </i>
+                  </li>
+                </ul>
+              </div>
+              <div id="change-352217" class="journal has-details">
+                <h4>
+                  <div class="journal-link">
+                    <a href="/issues/86921#note-3">
+#3                    </a>
+                  </div>
+                  <a name="note-3"/>
+Updated by                  <a href="/users/47">
+Javier Posado                  </a>
+                  <a href="/projects/pupils/activity?from=2012-06-11" title="06/11/2012 01:30 pm">
+3 months                  </a>
+ago                </h4>
+                <ul class="details">
+                  <li>
+                    <strong>
+Assigned to                    </strong>
+set to                    <i>
+Javier Posado                    </i>
+                  </li>
+                  <li>
+                    <strong>
+Estimated time                    </strong>
+set to                    <i>
+6.00                    </i>
+                  </li>
+                  <li>
+                    <strong>
+Affected Version                    </strong>
+set to                    <i>
+2.0.2                    </i>
+                  </li>
+                </ul>
+              </div>
+              <div id="change-353012" class="journal has-details">
+                <h4>
+                  <div class="journal-link">
+                    <a href="/issues/86921#note-4">
+#4                    </a>
+                  </div>
+                  <a name="note-4"/>
+Updated by                  <a href="/users/47">
+Javier Posado                  </a>
+                  <a href="/projects/pupils/activity?from=2012-06-14" title="06/14/2012 03:28 pm">
+3 months                  </a>
+ago                </h4>
+                <ul class="details">
+                  <li>
+                    <strong>
+Status                    </strong>
+changed from                    <i>
+New                    </i>
+to                    <i>
+In Progress                    </i>
+                  </li>
+                </ul>
+              </div>
+              <div id="change-353537" class="journal has-notes has-details">
+                <h4>
+                  <div class="journal-link">
+                    <a href="/issues/86921#note-5">
+#5                    </a>
+                  </div>
+                  <a name="note-5"/>
+Updated by                  <a href="/users/47">
+Javier Posado                  </a>
+                  <a href="/projects/pupils/activity?from=2012-06-19" title="06/19/2012 10:29 am">
+3 months                  </a>
+ago                </h4>
+                <ul class="details">
+                  <li>
+                    <strong>
+Status                    </strong>
+changed from                    <i>
+In Progress                    </i>
+to                    <i>
+Resolved                    </i>
+                  </li>
+                  <li>
+                    <strong>
+% Done                    </strong>
+changed from                    <i>
+0                    </i>
+to                    <i>
+100                    </i>
+                  </li>
+                </ul>
+                <div class="wiki editable" id="journal-353537-notes">
+                  <div class="contextual">
+                    <a href="#" onclick="new Ajax.Request('/issues/86921/quoted?journal_id=353537', {asynchronous:true, evalScripts:true, parameters:'authenticity_token=' + encodeURIComponent('8WDpo2mBaCI6mC+JK3X+PoxZeJD7pe23YZSxc2oxySE=')}); return false;" title="Quote">
+                      <img alt="Comment" src="86921/comment_1.png"/>
+                    </a>
+                    <a href="#" onclick="new Ajax.Request('/journals/edit/353537', {asynchronous:true, evalScripts:true, method:'get'}); return false;" title="Edit">
+                      <img alt="Edit" src="86921/edit_1.png"/>
+                    </a>
+                  </div>
+                  <p>
+Applied in changeset                    <a href="/projects/pupils/repository/revisions/48821" class="changeset" title="fixes #86921">
+r48821                    </a>
+.                  </p>
+                </div>
+              </div>
+              <div id="change-353540" class="journal has-notes has-details">
+                <h4>
+                  <div class="journal-link">
+                    <a href="/issues/86921#note-6">
+#6                    </a>
+                  </div>
+                  <a name="note-6"/>
+Updated by                  <a href="/users/47">
+Javier Posado                  </a>
+                  <a href="/projects/pupils/activity?from=2012-06-19" title="06/19/2012 10:35 am">
+3 months                  </a>
+ago                </h4>
+                <ul class="details">
+                  <li>
+                    <strong>
+Status                    </strong>
+changed from                    <i>
+Resolved                    </i>
+to                    <i>
+New                    </i>
+                  </li>
+                  <li>
+                    <strong>
+% Done                    </strong>
+changed from                    <i>
+100                    </i>
+to                    <i>
+0                    </i>
+                  </li>
+                </ul>
+                <div class="wiki editable" id="journal-353540-notes">
+                  <div class="contextual">
+                    <a href="#" onclick="new Ajax.Request('/issues/86921/quoted?journal_id=353540', {asynchronous:true, evalScripts:true, parameters:'authenticity_token=' + encodeURIComponent('8WDpo2mBaCI6mC+JK3X+PoxZeJD7pe23YZSxc2oxySE=')}); return false;" title="Quote">
+                      <img alt="Comment" src="86921/comment_2.png"/>
+                    </a>
+                    <a href="#" onclick="new Ajax.Request('/journals/edit/353540', {asynchronous:true, evalScripts:true, method:'get'}); return false;" title="Edit">
+                      <img alt="Edit" src="86921/edit_2.png"/>
+                    </a>
+                  </div>
+                  <p>
+wrong number of fixes, the revision 48821 is for the issue 86964                  </p>
+                </div>
+              </div>
+              <div id="change-353865" class="journal has-details">
+                <h4>
+                  <div class="journal-link">
+                    <a href="/issues/86921#note-7">
+#7                    </a>
+                  </div>
+                  <a name="note-7"/>
+Updated by                  <a href="/users/47">
+Javier Posado                  </a>
+                  <a href="/projects/pupils/activity?from=2012-06-21" title="06/21/2012 03:24 pm">
+3 months                  </a>
+ago                </h4>
+                <ul class="details">
+                  <li>
+                    <strong>
+Status                    </strong>
+changed from                    <i>
+New                    </i>
+to                    <i>
+In Progress                    </i>
+                  </li>
+                </ul>
+              </div>
+              <div id="change-354125" class="journal has-notes has-details">
+                <h4>
+                  <div class="journal-link">
+                    <a href="/issues/86921#note-8">
+#8                    </a>
+                  </div>
+                  <a name="note-8"/>
+Updated by                  <a href="/users/47">
+Javier Posado                  </a>
+                  <a href="/projects/pupils/activity?from=2012-06-22" title="06/22/2012 04:22 pm">
+3 months                  </a>
+ago                </h4>
+                <ul class="details">
+                  <li>
+                    <strong>
+Status                    </strong>
+changed from                    <i>
+In Progress                    </i>
+to                    <i>
+Resolved                    </i>
+                  </li>
+                  <li>
+                    <strong>
+% Done                    </strong>
+changed from                    <i>
+0                    </i>
+to                    <i>
+100                    </i>
+                  </li>
+                </ul>
+                <div class="wiki editable" id="journal-354125-notes">
+                  <div class="contextual">
+                    <a href="#" onclick="new Ajax.Request('/issues/86921/quoted?journal_id=354125', {asynchronous:true, evalScripts:true, parameters:'authenticity_token=' + encodeURIComponent('8WDpo2mBaCI6mC+JK3X+PoxZeJD7pe23YZSxc2oxySE=')}); return false;" title="Quote">
+                      <img alt="Comment" src="86921/comment_3.png"/>
+                    </a>
+                    <a href="#" onclick="new Ajax.Request('/journals/edit/354125', {asynchronous:true, evalScripts:true, method:'get'}); return false;" title="Edit">
+                      <img alt="Edit" src="86921/edit_3.png"/>
+                    </a>
+                  </div>
+                  <p>
+Applied in changeset                    <a href="/projects/pupils/repository/revisions/48831" class="changeset" title="fixes #86921, reason end of subscription">
+r48831                    </a>
+.                  </p>
+                </div>
+              </div>
+              <div id="change-354136" class="journal has-notes has-details">
+                <h4>
+                  <div class="journal-link">
+                    <a href="/issues/86921#note-9">
+#9                    </a>
+                  </div>
+                  <a name="note-9"/>
+Updated by                  <a href="/users/47">
+Javier Posado                  </a>
+                  <a href="/projects/pupils/activity?from=2012-06-22" title="06/22/2012 04:37 pm">
+3 months                  </a>
+ago                </h4>
+                <ul class="details">
+                  <li>
+                    <strong>
+Status                    </strong>
+changed from                    <i>
+Resolved                    </i>
+to                    <i>
+Feedback                    </i>
+                  </li>
+                </ul>
+                <div class="wiki editable" id="journal-354136-notes">
+                  <div class="contextual">
+                    <a href="#" onclick="new Ajax.Request('/issues/86921/quoted?journal_id=354136', {asynchronous:true, evalScripts:true, parameters:'authenticity_token=' + encodeURIComponent('8WDpo2mBaCI6mC+JK3X+PoxZeJD7pe23YZSxc2oxySE=')}); return false;" title="Quote">
+                      <img alt="Comment" src="86921/comment_4.png"/>
+                    </a>
+                    <a href="#" onclick="new Ajax.Request('/journals/edit/354136', {asynchronous:true, evalScripts:true, method:'get'}); return false;" title="Edit">
+                      <img alt="Edit" src="86921/edit_4.png"/>
+                    </a>
+                  </div>
+                  <p>
+It was done the next:                    <br/>
+- Set the reason end of subscription = “E” (Initiatief van leerling of ouders) as suggested (or default) value in the page when the end date is changed to a value "different" to end date of the year school.                    <br/>
+- Set the reason end of subscription = “X” (Normaal einde schooljaar of module) as suggested (or default) value in the page when the end date is changed to a value "equal" to end date of the year school.                    <br/>
+- Added the validation in subscription to check that "reason end of subscription = “X”" is invalid when the end date is "different" to end date of the year school.                  </p>
+                  <p>
+All changes are working with the calculated end date of year school (currently is 30/6, after issue                    <a href="86692.html" class="issue status-3 priority-3" title="discimus: end of subscription date (Assigned)">
+#86692                    </a>
+it will be 31/08).                  </p>
+                  <p>
+Please run upgrade-2.0.3-002-bug86921.sql and edit "InvalidUnsubscriptionReasonException" in SubscriptionPage_nl.properties.                  </p>
+                </div>
+              </div>
+              <div id="change-354137" class="journal has-notes has-details">
+                <h4>
+                  <div class="journal-link">
+                    <a href="/issues/86921#note-10">
+#10                    </a>
+                  </div>
+                  <a name="note-10"/>
+Updated by                  <a href="/users/47">
+Javier Posado                  </a>
+                  <a href="/projects/pupils/activity?from=2012-06-22" title="06/22/2012 04:38 pm">
+3 months                  </a>
+ago                </h4>
+                <ul class="details">
+                  <li>
+                    <strong>
+Status                    </strong>
+changed from                    <i>
+Feedback                    </i>
+to                    <i>
+Resolved                    </i>
+                  </li>
+                </ul>
+                <div class="wiki editable" id="journal-354137-notes">
+                  <div class="contextual">
+                    <a href="#" onclick="new Ajax.Request('/issues/86921/quoted?journal_id=354137', {asynchronous:true, evalScripts:true, parameters:'authenticity_token=' + encodeURIComponent('8WDpo2mBaCI6mC+JK3X+PoxZeJD7pe23YZSxc2oxySE=')}); return false;" title="Quote">
+                      <img alt="Comment" src="86921/comment_5.png"/>
+                    </a>
+                    <a href="#" onclick="new Ajax.Request('/journals/edit/354137', {asynchronous:true, evalScripts:true, method:'get'}); return false;" title="Edit">
+                      <img alt="Edit" src="86921/edit_5.png"/>
+                    </a>
+                  </div>
+                  <p>
+Applied in changeset                    <a href="/projects/pupils/repository/revisions/48832" class="changeset" title="fixes #86921">
+r48832                    </a>
+.                  </p>
+                </div>
+              </div>
+              <div id="change-356237" class="journal has-details">
+                <h4>
+                  <div class="journal-link">
+                    <a href="/issues/86921#note-11">
+#11                    </a>
+                  </div>
+                  <a name="note-11"/>
+Updated by                  <a href="/users/274">
+Kim Maesen                  </a>
+                  <a href="/projects/pupils/activity?from=2012-07-03" title="07/03/2012 08:53 am">
+2 months                  </a>
+ago                </h4>
+                <ul class="details">
+                  <li>
+                    <strong>
+Status                    </strong>
+changed from                    <i>
+Resolved                    </i>
+to                    <i>
+Feedback                    </i>
+                  </li>
+                </ul>
+              </div>
+              <div id="change-356238" class="journal has-details">
+                <h4>
+                  <div class="journal-link">
+                    <a href="/issues/86921#note-12">
+#12                    </a>
+                  </div>
+                  <a name="note-12"/>
+Updated by                  <a href="/users/274">
+Kim Maesen                  </a>
+                  <a href="/projects/pupils/activity?from=2012-07-03" title="07/03/2012 08:54 am">
+2 months                  </a>
+ago                </h4>
+                <ul class="details">
+                  <li>
+                    <strong>
+Status                    </strong>
+changed from                    <i>
+Feedback                    </i>
+to                    <i>
+Assigned                    </i>
+                  </li>
+                </ul>
+              </div>
+              <div id="change-356240" class="journal has-notes has-details">
+                <h4>
+                  <div class="journal-link">
+                    <a href="/issues/86921#note-13">
+#13                    </a>
+                  </div>
+                  <a name="note-13"/>
+Updated by                  <a href="/users/490">
+Ricardo Castiglione                  </a>
+                  <a href="/projects/pupils/activity?from=2012-07-03" title="07/03/2012 09:11 am">
+2 months                  </a>
+ago                </h4>
+                <ul class="details">
+                  <li>
+                    <strong>
+Status                    </strong>
+changed from                    <i>
+Assigned                    </i>
+to                    <i>
+Resolved                    </i>
+                  </li>
+                </ul>
+                <div class="wiki editable" id="journal-356240-notes">
+                  <div class="contextual">
+                    <a href="#" onclick="new Ajax.Request('/issues/86921/quoted?journal_id=356240', {asynchronous:true, evalScripts:true, parameters:'authenticity_token=' + encodeURIComponent('8WDpo2mBaCI6mC+JK3X+PoxZeJD7pe23YZSxc2oxySE=')}); return false;" title="Quote">
+                      <img alt="Comment" src="86921/comment_6.png"/>
+                    </a>
+                    <a href="#" onclick="new Ajax.Request('/journals/edit/356240', {asynchronous:true, evalScripts:true, method:'get'}); return false;" title="Edit">
+                      <img alt="Edit" src="86921/edit_6.png"/>
+                    </a>
+                  </div>
+                  <p>
+Applied in changeset                    <a href="/projects/pupils/repository/revisions/48889" class="changeset" title="fixes #86921 just to mark as resolved the ticket because it couldn't be done from redmine">
+r48889                    </a>
+.                  </p>
+                </div>
+              </div>
+              <div id="change-356909" class="journal has-notes has-details">
+                <h4>
+                  <div class="journal-link">
+                    <a href="/issues/86921#note-14">
+#14                    </a>
+                  </div>
+                  <a name="note-14"/>
+Updated by                  <a href="/users/477">
+Miguel Medina                  </a>
+                  <a href="/projects/pupils/activity?from=2012-07-04" title="07/04/2012 04:20 pm">
+2 months                  </a>
+ago                </h4>
+                <ul class="details">
+                  <li>
+                    <strong>
+Status                    </strong>
+changed from                    <i>
+Resolved                    </i>
+to                    <i>
+In Progress                    </i>
+                  </li>
+                </ul>
+                <div class="wiki editable" id="journal-356909-notes">
+                  <div class="contextual">
+                    <a href="#" onclick="new Ajax.Request('/issues/86921/quoted?journal_id=356909', {asynchronous:true, evalScripts:true, parameters:'authenticity_token=' + encodeURIComponent('8WDpo2mBaCI6mC+JK3X+PoxZeJD7pe23YZSxc2oxySE=')}); return false;" title="Quote">
+                      <img alt="Comment" src="86921/comment_7.png"/>
+                    </a>
+                    <a href="#" onclick="new Ajax.Request('/journals/edit/356909', {asynchronous:true, evalScripts:true, method:'get'}); return false;" title="Edit">
+                      <img alt="Edit" src="86921/edit_7.png"/>
+                    </a>
+                  </div>
+                  <p>
+Fixing status on this Redmine issue.                  </p>
+                </div>
+              </div>
+              <div id="change-356916" class="journal has-notes has-details">
+                <h4>
+                  <div class="journal-link">
+                    <a href="/issues/86921#note-15">
+#15                    </a>
+                  </div>
+                  <a name="note-15"/>
+Updated by                  <a href="/users/477">
+Miguel Medina                  </a>
+                  <a href="/projects/pupils/activity?from=2012-07-04" title="07/04/2012 04:22 pm">
+2 months                  </a>
+ago                </h4>
+                <ul class="details">
+                  <li>
+                    <strong>
+Status                    </strong>
+changed from                    <i>
+In Progress                    </i>
+to                    <i>
+New                    </i>
+                  </li>
+                </ul>
+                <div class="wiki editable" id="journal-356916-notes">
+                  <div class="contextual">
+                    <a href="#" onclick="new Ajax.Request('/issues/86921/quoted?journal_id=356916', {asynchronous:true, evalScripts:true, parameters:'authenticity_token=' + encodeURIComponent('8WDpo2mBaCI6mC+JK3X+PoxZeJD7pe23YZSxc2oxySE=')}); return false;" title="Quote">
+                      <img alt="Comment" src="86921/comment_8.png"/>
+                    </a>
+                    <a href="#" onclick="new Ajax.Request('/journals/edit/356916', {asynchronous:true, evalScripts:true, method:'get'}); return false;" title="Edit">
+                      <img alt="Edit" src="86921/edit_8.png"/>
+                    </a>
+                  </div>
+                  <p>
+Fixing status on this Redmine issue.                  </p>
+                </div>
+              </div>
+              <div id="change-356934" class="journal has-details">
+                <h4>
+                  <div class="journal-link">
+                    <a href="/issues/86921#note-16">
+#16                    </a>
+                  </div>
+                  <a name="note-16"/>
+Updated by                  <a href="/users/490">
+Ricardo Castiglione                  </a>
+                  <a href="/projects/pupils/activity?from=2012-07-04" title="07/04/2012 04:45 pm">
+2 months                  </a>
+ago                </h4>
+                <ul class="details">
+                  <li>
+                    <strong>
+Status                    </strong>
+changed from                    <i>
+New                    </i>
+to                    <i>
+Closed                    </i>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div style="clear: both;">
+            </div>
+            <div class="contextual">
+              <a href="/issues/86921/edit" accesskey="e" class="icon icon-edit" onclick="showAndScrollTo(&quot;update&quot;, &quot;notes&quot;); return false;">
+Update              </a>
+              <a href="/issues/86921/time_entries/new" class="icon icon-time-add">
+Log time              </a>
+              <span id="watcher2">
+                <a class="icon icon-fav-off" href="/watchers/watch?object_id=86921&amp;object_type=issue&amp;replace%5B%5D=watcher&amp;replace%5B%5D=watcher2" onclick="new Ajax.Request('/watchers/watch?object_id=86921&amp;object_type=issue&amp;replace%5B%5D=watcher&amp;replace%5B%5D=watcher2', {asynchronous:true, evalScripts:true, parameters:'authenticity_token=' + encodeURIComponent('8WDpo2mBaCI6mC+JK3X+PoxZeJD7pe23YZSxc2oxySE=')}); return false;">
+Watch                </a>
+              </span>
+              <a href="/projects/pupils/issues/86921/copy" class="icon icon-duplicate">
+Duplicate              </a>
+              <a href="/issue_moves/new/86921?copy_options%5Bcopy%5D=t" class="icon icon-copy">
+Copy              </a>
+              <a href="/issue_moves/new/86921" class="icon icon-move">
+Move              </a>
+              <a href="/issues/86921/destroy" class="icon icon-del" onclick="if (confirm('Are you sure ?')) { var f = document.createElement('form'); f.style.display = 'none'; this.parentNode.appendChild(f); f.method = 'POST'; f.action = this.href;var s = document.createElement('input'); s.setAttribute('type', 'hidden'); s.setAttribute('name', 'authenticity_token'); s.setAttribute('value', '8WDpo2mBaCI6mC+JK3X+PoxZeJD7pe23YZSxc2oxySE='); f.appendChild(s);f.submit(); };return false;">
+Delete              </a>
+            </div>
+            <div style="clear: both;">
+            </div>
+            <div id="update" style="display:none;">
+              <h3>
+              </h3>
+              <form action="/issues/86921/edit" enctype="multipart/form-data" id="issue-form" method="post">
+                <div style="margin:0;padding:0;display:inline">
+                  <input name="_method" type="hidden" value="put"/>
+                  <input name="authenticity_token" type="hidden" value="8WDpo2mBaCI6mC+JK3X+PoxZeJD7pe23YZSxc2oxySE="/>
+                </div>
+                <div class="box">
+                  <fieldset class="tabular">
+                    <legend>
+                      <small>
+                        <a href="86921.html" onclick="Effect.toggle(&quot;issue_descr_fields&quot;, &quot;appear&quot;, {duration:0.3}); return false;">
+                        </a>
+                      </small>
+                    </legend>
+                    <div id="issue_descr_fields" style="display:none">
+                      <p>
+                        <label for="issue_tracker_id">
+                          <span class="required">
+                          </span>
+                        </label>
+                        <select id="issue_tracker_id" name="issue[tracker_id]">
+                          <option selected="selected" value="1">
+                          </option>
+                          <option value="2">
+                          </option>
+                          <option value="6">
+                          </option>
+                          <option value="4">
+                          </option>
+                        </select>
+                      </p>
+                      <p>
+                        <label for="issue_subject">
+                          <span class="required">
+                          </span>
+                        </label>
+                        <input id="issue_subject" name="issue[subject]" size="80" type="text" value="discimu: reason end of subscription"/>
+                      </p>
+                      <p id="parent_issue">
+                        <label for="issue_parent_issue_id">
+                        </label>
+                        <input id="issue_parent_issue_id" name="issue[parent_issue_id]" size="10" type="text" autocomplete="off"/>
+                      </p>
+                      <div id="parent_issue_candidates" class="autocomplete" style="display: none;">
+                      </div>
+                      <p>
+                        <label for="issue_description">
+                        </label>
+                        <div class="jstElements">
+                          <div class="help">
+                            <a href="/help/wiki_syntax.html" onclick="window.open(&quot;/help/wiki_syntax.html&quot;, &quot;&quot;, &quot;resizable=yes, location=no, width=300, height=640, menubar=no, status=no, scrollbars=yes&quot;); return false;">
+                            </a>
+                          </div>
+                          <button type="button" tabindex="200" class="jstb_strong" title="Strong">
+                            <span>
+                            </span>
+                          </button>
+                          <button type="button" tabindex="200" class="jstb_em" title="Italic">
+                            <span>
+                            </span>
+                          </button>
+                          <button type="button" tabindex="200" class="jstb_ins" title="Underline">
+                            <span>
+                            </span>
+                          </button>
+                          <button type="button" tabindex="200" class="jstb_del" title="Deleted">
+                            <span>
+                            </span>
+                          </button>
+                          <button type="button" tabindex="200" class="jstb_code" title="Inline Code">
+                            <span>
+                            </span>
+                          </button>
+                          <span id="space1" class="jstSpacer">
+                          </span>
+                          <button type="button" tabindex="200" class="jstb_h1" title="Heading 1">
+                            <span>
+                            </span>
+                          </button>
+                          <button type="button" tabindex="200" class="jstb_h2" title="Heading 2">
+                            <span>
+                            </span>
+                          </button>
+                          <button type="button" tabindex="200" class="jstb_h3" title="Heading 3">
+                            <span>
+                            </span>
+                          </button>
+                          <span id="space2" class="jstSpacer">
+                          </span>
+                          <button type="button" tabindex="200" class="jstb_ul" title="Unordered list">
+                            <span>
+                            </span>
+                          </button>
+                          <button type="button" tabindex="200" class="jstb_ol" title="Ordered list">
+                            <span>
+                            </span>
+                          </button>
+                          <span id="space3" class="jstSpacer">
+                          </span>
+                          <button type="button" tabindex="200" class="jstb_bq" title="Quote">
+                            <span>
+                            </span>
+                          </button>
+                          <button type="button" tabindex="200" class="jstb_unbq" title="Remove Quote">
+                            <span>
+                            </span>
+                          </button>
+                          <button type="button" tabindex="200" class="jstb_pre" title="Preformatted text">
+                            <span>
+                            </span>
+                          </button>
+                          <span id="space4" class="jstSpacer">
+                          </span>
+                          <button type="button" tabindex="200" class="jstb_link" title="Link to a Wiki page">
+                            <span>
+                            </span>
+                          </button>
+                          <button type="button" tabindex="200" class="jstb_img" title="Image">
+                            <span>
+                            </span>
+                          </button>
+                        </div>
+                        <div class="jstEditor">
+                          <textarea accesskey="e" class="wiki-edit" cols="60" id="issue_description" name="issue[description]" rows="10">
+                          </textarea>
+                        </div>
+                      </p>
+                    </div>
+                    <div id="attributes" class="attributes">
+                      <div class="splitcontentleft">
+                        <p>
+                          <label for="issue_status_id">
+                            <span class="required">
+                            </span>
+                          </label>
+                          <select id="issue_status_id" name="issue[status_id]">
+                            <option value="1">
+                            </option>
+                            <option value="2">
+                            </option>
+                            <option value="8">
+                            </option>
+                            <option value="3">
+                            </option>
+                            <option value="4">
+                            </option>
+                            <option value="10">
+                            </option>
+                            <option selected="selected" value="5">
+                            </option>
+                            <option value="6">
+                            </option>
+                            <option value="7">
+                            </option>
+                            <option value="20">
+                            </option>
+                          </select>
+                        </p>
+                        <p>
+                          <label for="issue_priority_id">
+                            <span class="required">
+                            </span>
+                          </label>
+                          <select id="issue_priority_id" name="issue[priority_id]">
+                            <option value="15">
+                            </option>
+                            <option value="3">
+                            </option>
+                            <option selected="selected" value="4">
+                            </option>
+                            <option value="5">
+                            </option>
+                            <option value="6">
+                            </option>
+                            <option value="7">
+                            </option>
+                          </select>
+                        </p>
+                        <p>
+                          <label for="issue_assigned_to_id">
+                          </label>
+                          <select id="issue_assigned_to_id" name="issue[assigned_to_id]">
+                            <option value=""/>
+                            <option value="630">
+                            </option>
+                            <option value="14">
+                            </option>
+                            <option value="306">
+                            </option>
+                            <option value="683">
+                            </option>
+                            <option selected="selected" value="47">
+                            </option>
+                            <option value="274">
+                            </option>
+                            <option value="270">
+                            </option>
+                            <option value="102">
+                            </option>
+                            <option value="490">
+                            </option>
+                            <option value="946">
+                            </option>
+                          </select>
+                        </p>
+                        <p>
+                          <label for="issue_category_id">
+                          </label>
+                          <select id="issue_category_id" name="issue[category_id]">
+                            <option selected="selected" value=""/>
+                            <option value="231">
+                            </option>
+                            <option value="508">
+                            </option>
+                            <option value="380">
+                            </option>
+                          </select>
+                          <a href="86921.html" onclick="promptToRemote('New category', 'category[name]', '/projects/pupils/issue_categories/new'); return false;" tabindex="199" title="New category">
+                            <img style="vertical-align: middle;" alt="Add" src="86921/add.png"/>
+                          </a>
+                        </p>
+                        <p>
+                          <label for="issue_fixed_version_id">
+                          </label>
+                          <select id="issue_fixed_version_id" name="issue[fixed_version_id]">
+                            <option value=""/>
+                            <option selected="selected" value="4606">
+                            </option>
+                            <option value="4679">
+                            </option>
+                            <option value="4704">
+                            </option>
+                            <option value="1263">
+                            </option>
+                            <option value="4607">
+                            </option>
+                          </select>
+                          <a href="86921.html" onclick="promptToRemote('New version', 'version[name]', '/projects/pupils/versions'); return false;" tabindex="200" title="New version">
+                            <img style="vertical-align: middle;" alt="Add" src="86921/add_1.png"/>
+                          </a>
+                        </p>
+                      </div>
+                      <div class="splitcontentright">
+                        <p>
+                          <label for="issue_start_date">
+                          </label>
+                          <input id="issue_start_date" name="issue[start_date]" size="10" type="text" value="2012-06-07"/>
+                          <img id="issue_start_date_trigger" alt="Calendar" class="calendar-trigger" src="86921/calendar.png"/>
+                        </p>
+                        <p>
+                          <label for="issue_due_date">
+                          </label>
+                          <input id="issue_due_date" name="issue[due_date]" size="10" type="text"/>
+                          <img id="issue_due_date_trigger" alt="Calendar" class="calendar-trigger" src="86921/calendar_1.png"/>
+                        </p>
+                        <p>
+                          <label for="issue_estimated_hours">
+                          </label>
+                          <input id="issue_estimated_hours" name="issue[estimated_hours]" size="3" type="text" value="6"/>
+                        </p>
+                        <p>
+                          <label for="issue_done_ratio">
+                          </label>
+                          <select id="issue_done_ratio" name="issue[done_ratio]">
+                            <option value="0">
+                            </option>
+                            <option value="10">
+                            </option>
+                            <option value="20">
+                            </option>
+                            <option value="30">
+                            </option>
+                            <option value="40">
+                            </option>
+                            <option value="50">
+                            </option>
+                            <option value="60">
+                            </option>
+                            <option value="70">
+                            </option>
+                            <option value="80">
+                            </option>
+                            <option value="90">
+                            </option>
+                            <option selected="selected" value="100">
+                            </option>
+                          </select>
+                        </p>
+                      </div>
+                      <div style="clear:both;">
+                      </div>
+                      <div class="splitcontentleft">
+                        <p>
+                          <label for="issue_custom_field_values_4">
+                          </label>
+                          <select id="issue_custom_field_values_4" name="issue[custom_field_values][4]">
+                            <option selected="selected"/>
+                            <option value="Blocker">
+                            </option>
+                            <option value="Major">
+                            </option>
+                            <option value="Medium">
+                            </option>
+                            <option value="Minor">
+                            </option>
+                          </select>
+                        </p>
+                      </div>
+                      <div class="splitcontentright">
+                        <p>
+                          <label for="issue_custom_field_values_12">
+                          </label>
+                          <input id="issue_custom_field_values_12" name="issue[custom_field_values][12]" type="text" value="2.0.2"/>
+                        </p>
+                      </div>
+                      <div style="clear:both;">
+                      </div>
+                    </div>
+                  </fieldset>
+                  <fieldset class="tabular">
+                    <legend>
+                    </legend>
+                    <div class="splitcontentleft">
+                      <p>
+                        <label for="time_entry_hours">
+                        </label>
+                        <input id="time_entry_hours" label="label_spent_time" name="time_entry[hours]" size="6" type="text"/>
+                      </p>
+                    </div>
+                    <div class="splitcontentright">
+                      <p>
+                        <label for="time_entry_activity_id">
+                        </label>
+                        <select id="time_entry_activity_id" name="time_entry[activity_id]">
+                          <option selected="selected" value="">
+                          </option>
+                          <option value="8">
+                          </option>
+                          <option value="9">
+                          </option>
+                          <option value="11">
+                          </option>
+                          <option value="13">
+                          </option>
+                          <option value="18">
+                          </option>
+                          <option value="19">
+                          </option>
+                          <option value="20">
+                          </option>
+                          <option value="22">
+                          </option>
+                        </select>
+                      </p>
+                    </div>
+                    <p>
+                      <label for="time_entry_comments">
+                      </label>
+                      <input id="time_entry_comments" name="time_entry[comments]" size="60" type="text"/>
+                    </p>
+                  </fieldset>
+                  <fieldset>
+                    <legend>
+                    </legend>
+                    <div class="jstElements">
+                      <div class="help">
+                        <a href="/help/wiki_syntax.html" onclick="window.open(&quot;/help/wiki_syntax.html&quot;, &quot;&quot;, &quot;resizable=yes, location=no, width=300, height=640, menubar=no, status=no, scrollbars=yes&quot;); return false;">
+                        </a>
+                      </div>
+                      <button type="button" tabindex="200" class="jstb_strong" title="Strong">
+                        <span>
+                        </span>
+                      </button>
+                      <button type="button" tabindex="200" class="jstb_em" title="Italic">
+                        <span>
+                        </span>
+                      </button>
+                      <button type="button" tabindex="200" class="jstb_ins" title="Underline">
+                        <span>
+                        </span>
+                      </button>
+                      <button type="button" tabindex="200" class="jstb_del" title="Deleted">
+                        <span>
+                        </span>
+                      </button>
+                      <button type="button" tabindex="200" class="jstb_code" title="Inline Code">
+                        <span>
+                        </span>
+                      </button>
+                      <span id="space1" class="jstSpacer">
+                      </span>
+                      <button type="button" tabindex="200" class="jstb_h1" title="Heading 1">
+                        <span>
+                        </span>
+                      </button>
+                      <button type="button" tabindex="200" class="jstb_h2" title="Heading 2">
+                        <span>
+                        </span>
+                      </button>
+                      <button type="button" tabindex="200" class="jstb_h3" title="Heading 3">
+                        <span>
+                        </span>
+                      </button>
+                      <span id="space2" class="jstSpacer">
+                      </span>
+                      <button type="button" tabindex="200" class="jstb_ul" title="Unordered list">
+                        <span>
+                        </span>
+                      </button>
+                      <button type="button" tabindex="200" class="jstb_ol" title="Ordered list">
+                        <span>
+                        </span>
+                      </button>
+                      <span id="space3" class="jstSpacer">
+                      </span>
+                      <button type="button" tabindex="200" class="jstb_bq" title="Quote">
+                        <span>
+                        </span>
+                      </button>
+                      <button type="button" tabindex="200" class="jstb_unbq" title="Remove Quote">
+                        <span>
+                        </span>
+                      </button>
+                      <button type="button" tabindex="200" class="jstb_pre" title="Preformatted text">
+                        <span>
+                        </span>
+                      </button>
+                      <span id="space4" class="jstSpacer">
+                      </span>
+                      <button type="button" tabindex="200" class="jstb_link" title="Link to a Wiki page">
+                        <span>
+                        </span>
+                      </button>
+                      <button type="button" tabindex="200" class="jstb_img" title="Image">
+                        <span>
+                        </span>
+                      </button>
+                    </div>
+                    <div class="jstEditor">
+                      <textarea class="wiki-edit" cols="60" id="notes" name="notes" rows="10">
+                      </textarea>
+                    </div>
+                    <p>
+                      <br/>
+                      <span id="attachments_fields">
+                        <input name="attachments[1][file]" size="30" type="file" value=""/>
+                        <label class="inline">
+                          <span id="attachment_description_label_content">
+                          </span>
+                          <input name="attachments[1][description]" size="60" type="text" value=""/>
+                        </label>
+                      </span>
+                      <br/>
+                      <small>
+                        <a href="#" onclick="addFileField(); return false;">
+                        </a>
+                      </small>
+                    </p>
+                  </fieldset>
+                </div>
+                <input id="issue_lock_version" name="issue[lock_version]" type="hidden" value="16"/>
+                <input name="commit" type="submit" value="Submit"/>
+                <a accesskey="r" href="#" onclick="new Ajax.Updater('preview', '/issues/preview/86921?project_id=pupils', {asynchronous:true, evalScripts:true, method:'post', onComplete:function(request){Element.scrollTo('preview')}, parameters:Form.serialize(&quot;issue-form&quot;) + '&amp;authenticity_token=' + encodeURIComponent('8WDpo2mBaCI6mC+JK3X+PoxZeJD7pe23YZSxc2oxySE=')}); return false;">
+                </a>
+              </form>
+              <div id="preview" class="wiki">
+              </div>
+            </div>
+            <p class="other-formats">
+Also available in:              <span>
+                <a href="/issues/86921.atom?key=4aa574c9e059cb38d85a8c5ac783b54345358b7b" class="atom" rel="nofollow">
+Atom                </a>
+              </span>
+              <span>
+                <a href="/issues/86921.pdf" class="pdf" rel="nofollow">
+PDF                </a>
+              </span>
+            </p>
+            <div id="context-menu" style="display: none;">
+            </div>
+            <div style="clear:both;">
+            </div>
+          </div>
+        </div>
+        <div id="ajax-indicator" style="display:none;">
+          <span>
+          </span>
+        </div>
+        <div id="footer">
+          <div class="bgl">
+            <div class="bgr">
+Powered by              <a href="http://www.redmine.org/">
+Redmine              </a>
+© 2006-2010 Jean-Philippe Lang            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
