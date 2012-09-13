@@ -9,6 +9,7 @@ import java.io.FileWriter;
 import java.io.InputStream;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -38,12 +39,13 @@ public class HtmlUnit {
 	private static final String MAIN_URL = "http://redmine.teracode.com";
 
 	private static final String MAIN_FOLDER = "redmine";
-	private static final String PROJECT_FOLDER = MAIN_FOLDER + "/" + "lemonadearchitecture";
+	private static final String PROJECT_FOLDER = MAIN_FOLDER + "/" + "care";
 	private static final String ISSUES_FOLDER = PROJECT_FOLDER + "/" + "issues";
 
 	public static void main(final String[] args) throws Exception {
 		// LOGIN
-		final WebClient webClient = login(MAIN_URL + "/login", "ricardo.castiglione", "r1c@rd0.");
+		final WebClient webClient = login(MAIN_URL + "/login", "michaeldegroeve@lemonade.be", "michael");
+		//		final WebClient webClient = login(MAIN_URL + "/login", "ricardo.castiglione", "r1c@rd0.");
 
 		createFolders();
 
@@ -108,12 +110,12 @@ public class HtmlUnit {
 		final int total = issueNumbers.size();
 		int counter = 0;
 		for (final String issueNumber : issueNumbers) {
-			System.out.println("Issue " + ++counter + " of " + total + " -> " + issueNumber);
+			System.out.println(new Date() + " - Issue " + ++counter + " of " + total + " -> " + issueNumber);
 
 			final File issuePageFile = new File(ISSUES_FOLDER + "/" + issueNumber + ".html");
 			if (issuePageFile.exists()) {
-				//				continue;
-				issuePageFile.delete();
+				continue;
+				//				issuePageFile.delete();
 			}
 			final HtmlPage issuePage = webClient.getPage(MAIN_URL + "/issues/" + issueNumber);
 			issuePage.save(issuePageFile);
@@ -136,8 +138,8 @@ public class HtmlUnit {
 
 						final File attachmentFile = new File(ISSUES_FOLDER + href);
 						if (attachmentFile.exists()) {
-							//							continue;
-							attachmentFile.delete();
+							continue;
+							//							attachmentFile.delete();
 						} else {
 							attachmentFile.getParentFile().mkdirs();
 						}
