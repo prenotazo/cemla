@@ -39,7 +39,7 @@ public class HtmlUnit {
 	private static final String MAIN_URL = "http://redmine.teracode.com";
 
 	private static final String MAIN_FOLDER = "redmine";
-	private static final String PROJECT_FOLDER = MAIN_FOLDER + "/" + "care";
+	private static final String PROJECT_FOLDER = MAIN_FOLDER + "/" + "jobsite";
 	private static final String ISSUES_FOLDER = PROJECT_FOLDER + "/" + "issues";
 
 	public static void main(final String[] args) throws Exception {
@@ -90,9 +90,9 @@ public class HtmlUnit {
 			issueNumbers.add(issueNumber);
 		}
 
-		//				issueNumbers.clear();
-		//		issueNumbers.add("87799");
-		//		issueNumbers.add("87770");
+		//		issueNumbers.clear();
+		//		issueNumbers.add("90088");
+		//		issueNumbers.add("90080");
 		//		issueNumbers.add("87421");
 		//		issueNumbers.add("88656");
 		//		issueNumbers.add("61439");
