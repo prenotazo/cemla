@@ -39,7 +39,7 @@ public class HtmlUnit {
 	private static final String MAIN_URL = "http://redmine.teracode.com";
 
 	private static final String MAIN_FOLDER = "redmine";
-	private static final String PROJECT_FOLDER = MAIN_FOLDER + "/" + "personnel";
+	private static final String PROJECT_FOLDER = MAIN_FOLDER + "/" + "pupils";
 	private static final String ISSUES_FOLDER = PROJECT_FOLDER + "/" + "issues";
 
 	public static void main(final String[] args) throws Exception {
