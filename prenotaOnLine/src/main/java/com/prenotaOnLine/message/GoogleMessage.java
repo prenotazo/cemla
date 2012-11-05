@@ -11,13 +11,9 @@ import javax.mail.internet.MimeMessage;
 
 import com.sun.mail.smtp.SMTPTransport;
 
-/**
- *
- * @author doraemon
- */
-public class GoogleMail {
+public class GoogleMessage {
 
-	private GoogleMail() {
+	private GoogleMessage() {
 
 	}
 
@@ -78,8 +74,8 @@ public class GoogleMail {
 
 	public static void main(final String[] args) {
 		try {
-			GoogleMail.sendEmail("titleEmail", "messageEmail");
-			GoogleMail.sendSms("titleSms", "messageSms");
+			GoogleMessage.sendEmail("titleEmail", "messageEmail");
+			GoogleMessage.sendSms("titleSms", "messageSms");
 		} catch (final Exception e) {
 			e.printStackTrace();
 		}
