@@ -1,14 +1,5 @@
 package com.prenotaOnLine;
 
-import java.util.Date;
-import java.util.Properties;
-
-import javax.mail.Message;
-import javax.mail.Session;
-import javax.mail.Transport;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeMessage;
-
 import com.gargoylesoftware.htmlunit.WebClient;
 import com.gargoylesoftware.htmlunit.html.HtmlElement;
 import com.gargoylesoftware.htmlunit.html.HtmlForm;
@@ -20,8 +11,6 @@ import com.gargoylesoftware.htmlunit.html.HtmlTextInput;
 public class Main {
 
 	public static void main(final String[] args) throws Exception {
-		sendEmail();
-
 		// LOGIN PAGE
 		final WebClient webClient = login("https://prenotaonline.esteri.it/login.aspx?cidsede=100064&ReturnUrl=%2f", "ricardo.castiglione@gmail.com", "030386rdc");
 
@@ -134,45 +123,5 @@ public class Main {
 		button.click();
 
 		return webClient;
-	}
-
-	private static void sendEmail() {
-		try {
-			final String host = "smtp.gmail.com";
-			final String from = "brainfields@gmail.com";
-			final String pass = "grupo403";
-			final Properties props = System.getProperties();
-			props.put("mail.smtp.starttls.enable", "true"); // added this line
-			props.put("mail.smtp.host", host);
-			props.put("mail.smtp.user", from);
-			props.put("mail.smtp.password", pass);
-			props.put("mail.smtp.port", "587");
-			props.put("mail.smtp.auth", "true");
-
-			final String[] to = {"ricardo.castiglione@gmail.com"}; // added this line
-
-			final Session session = Session.getDefaultInstance(props, null);
-			final MimeMessage message = new MimeMessage(session);
-			message.setFrom(new InternetAddress(from));
-
-			final InternetAddress[] toAddress = new InternetAddress[to.length];
-
-			// To get the array of addresses
-			for( int i=0; i < to.length; i++ ) { // changed from a while loop
-				toAddress[i] = new InternetAddress(to[i]);
-			}
-
-			for( int i=0; i < toAddress.length; i++) { // changed from a while loop
-				message.addRecipient(Message.RecipientType.TO, toAddress[i]);
-			}
-			message.setSubject("TURNO CONSULADO -> " + new Date() + "!!!");
-			message.setText("Welcome to JavaMail");
-			final Transport transport = session.getTransport("smtp");
-			transport.connect(host, from, pass);
-			transport.sendMessage(message, message.getAllRecipients());
-			transport.close();
-		} catch (final Exception ex) {
-			ex.printStackTrace();
-		}
 	}
 }
