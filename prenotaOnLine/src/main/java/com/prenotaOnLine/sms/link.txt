@@ -1,3 +1,8 @@
 http://www.ipipi.com/help/send_text_message_using_java.htm
 
 http://www.ipipi.com/
+
+Movistar SMS email Gateway 
+Movistar Argentina SMS email gateway: NUMBER@sms.movistar.net.ar 
+The number must NOT include the country code. 
+Please add it to your list.
