@@ -1,5 +1,7 @@
 package com.prenotaOnLine;
 
+import java.util.Date;
+
 import com.gargoylesoftware.htmlunit.WebClient;
 import com.gargoylesoftware.htmlunit.html.HtmlElement;
 import com.gargoylesoftware.htmlunit.html.HtmlForm;
@@ -7,54 +9,68 @@ import com.gargoylesoftware.htmlunit.html.HtmlPage;
 import com.gargoylesoftware.htmlunit.html.HtmlPasswordInput;
 import com.gargoylesoftware.htmlunit.html.HtmlSubmitInput;
 import com.gargoylesoftware.htmlunit.html.HtmlTextInput;
+import com.prenotaOnLine.message.GoogleMessage;
 
 public class Main {
 
 	public static void main(final String[] args) throws Exception {
-		// LOGIN PAGE
-		final WebClient webClient = login("https://prenotaonline.esteri.it/login.aspx?cidsede=100064&ReturnUrl=%2f", "ricardo.castiglione@gmail.com", "030386rdc");
+		int counter = 0;
+		while (true) {
+			Thread.sleep(60000 * 5); // 5 minutes
 
-		// HOME PAGE
-		final HtmlPage prenotaOnLinePage = webClient.getPage("https://prenotaonline.esteri.it/");
-		final HtmlElement prenotaOnLineMenuItem = prenotaOnLinePage.getElementById("ctl00_repFunzioni_ctl00_btnMenuItem");
+			GoogleMessage.sendEmail("PrenotaOnLine - Check", "Attempt number: " + ++counter + " at " + new Date());
 
-		// LISTA DI SERVIZI PAGE
-		final HtmlPage listaDiServiziPage = prenotaOnLineMenuItem.click();
-		final HtmlElement cittadinanzaMenuItem = listaDiServiziPage.getElementById("ctl00_ContentPlaceHolder1_rpServizi_ctl01_btnNomeServizio");
+			// LOGIN PAGE
+			final WebClient webClient = login("https://prenotaonline.esteri.it/login.aspx?cidsede=100064&ReturnUrl=%2f", "ricardo.castiglione@gmail.com", "030386rdc");
 
-		// CITTADINANZA PAGE
-		final HtmlPage cittadinanzaPage = cittadinanzaMenuItem.click();
-		final HtmlElement primoAppuntamentoMenuItem = cittadinanzaPage.getElementById("ctl00_ContentPlaceHolder1_rpServizi_ctl02_btnNomeServizio");
+			// HOME PAGE
+			final HtmlPage prenotaOnLinePage = webClient.getPage("https://prenotaonline.esteri.it/");
+			final HtmlElement prenotaOnLineMenuItem = prenotaOnLinePage.getElementById("ctl00_repFunzioni_ctl00_btnMenuItem");
 
-		// PRIMO APPUNTAMENTO PAGE
-		final HtmlPage primoAppuntamentoPage = primoAppuntamentoMenuItem.click();
-		final HtmlElement primoAppuntamentoConfermaButton = primoAppuntamentoPage.getElementById("ctl00_ContentPlaceHolder1_acc_datiAddizionali1_btnContinua");
+			// LISTA DI SERVIZI PAGE
+			final HtmlPage listaDiServiziPage = prenotaOnLineMenuItem.click();
+			final HtmlElement cittadinanzaMenuItem = listaDiServiziPage.getElementById("ctl00_ContentPlaceHolder1_rpServizi_ctl01_btnNomeServizio");
 
-		// FIRST MONTH PAGE
-		final HtmlPage firstMonthPage = primoAppuntamentoConfermaButton.click();
-		final HtmlElement firstMonthComponent = firstMonthPage.getElementById("calendar");
-		if (hasAvailable(firstMonthComponent)) {
-			System.out.println(firstMonthComponent.asXml());
+			// CITTADINANZA PAGE
+			final HtmlPage cittadinanzaPage = cittadinanzaMenuItem.click();
+			final HtmlElement primoAppuntamentoMenuItem = cittadinanzaPage.getElementById("ctl00_ContentPlaceHolder1_rpServizi_ctl02_btnNomeServizio");
+
+			// PRIMO APPUNTAMENTO PAGE
+			final HtmlPage primoAppuntamentoPage = primoAppuntamentoMenuItem.click();
+			final HtmlElement primoAppuntamentoConfermaButton = primoAppuntamentoPage.getElementById("ctl00_ContentPlaceHolder1_acc_datiAddizionali1_btnContinua");
+
+			// FIRST MONTH PAGE
+			final HtmlPage firstMonthPage = primoAppuntamentoConfermaButton.click();
+			final HtmlElement firstMonthComponent = firstMonthPage.getElementById("calendar");
+			if (hasAvailable(firstMonthComponent)) {
+				GoogleMessage.sendEmail("PrenotaOnLine - Availability", firstMonthComponent.asXml());
+				GoogleMessage.sendSms("PrenotaOnLine", "make an appointment");
+				System.out.println(firstMonthComponent.asXml());
+			}
+
+			// SECOND MONTH PAGE
+			final HtmlElement secondMonthNextButton = firstMonthPage.getElementByName("ctl00$ContentPlaceHolder1$acc_Calendario1$myCalendario1$ctl03");
+			final HtmlPage secondMonthPage = secondMonthNextButton.click();
+			final HtmlElement secondMonthComponent = secondMonthPage.getElementById("calendar");
+			if (hasAvailable(secondMonthComponent)) {
+				GoogleMessage.sendEmail("PrenotaOnLine - Availability", secondMonthComponent.asXml());
+				GoogleMessage.sendSms("PrenotaOnLine", "make an appointment");
+				System.out.println(secondMonthComponent.asXml());
+			}
+
+			// THIRD MONTH PAGE
+			final HtmlElement thirdMonthNextButton = secondMonthPage.getElementByName("ctl00$ContentPlaceHolder1$acc_Calendario1$myCalendario1$ctl03");
+			final HtmlPage thirdMonthPage = thirdMonthNextButton.click();
+			final HtmlElement thirdMonthComponent = thirdMonthPage.getElementById("calendar");
+			if (hasAvailable(thirdMonthComponent)) {
+				GoogleMessage.sendEmail("PrenotaOnLine - Availability", thirdMonthComponent.asXml());
+				GoogleMessage.sendSms("PrenotaOnLine", "make an appointment");
+				System.out.println(thirdMonthComponent.asXml());
+			}
+
+			// CLOSE ALL WINDOWS
+			webClient.closeAllWindows();
 		}
-
-		// SECOND MONTH PAGE
-		final HtmlElement secondMonthNextButton = firstMonthPage.getElementByName("ctl00$ContentPlaceHolder1$acc_Calendario1$myCalendario1$ctl03");
-		final HtmlPage secondMonthPage = secondMonthNextButton.click();
-		final HtmlElement secondMonthComponent = secondMonthPage.getElementById("calendar");
-		if (hasAvailable(secondMonthComponent)) {
-			System.out.println(secondMonthComponent.asXml());
-		}
-
-		// THIRD MONTH PAGE
-		final HtmlElement thirdMonthNextButton = secondMonthPage.getElementByName("ctl00$ContentPlaceHolder1$acc_Calendario1$myCalendario1$ctl03");
-		final HtmlPage thirdMonthPage = thirdMonthNextButton.click();
-		final HtmlElement thirdMonthComponent = thirdMonthPage.getElementById("calendar");
-		if (hasAvailable(thirdMonthComponent)) {
-			System.out.println(thirdMonthComponent.asXml());
-		}
-
-		// CLOSE ALL WINDOWS
-		webClient.closeAllWindows();
 	}
 
 	private static boolean hasAvailable(final HtmlElement monthComponent) {
