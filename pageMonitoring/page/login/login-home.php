@@ -1,5 +1,5 @@
 <?PHP
-require_once("./include/membersite_config.php");
+require_once("./../../include/membersite_config.php");
 
 if(!$fgmembersite->CheckLogin())
 {
@@ -13,18 +13,18 @@ if(!$fgmembersite->CheckLogin())
 <head>
       <meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
       <title>Home page</title>
-      <link rel="STYLESHEET" type="text/css" href="style/fg_membersite.css">
+      <link rel="STYLESHEET" type="text/css" href="./../../style/fg_membersite.css">
 </head>
 <body>
 <div id='fg_membersite_content'>
 <h2>Home Page</h2>
 Welcome back <?= $fgmembersite->UserFullName(); ?>!
 
-<p><a href='change-pwd.php'>Change password</a></p>
+<p><a href='./../resetPwd/change-pwd.php'>Change password</a></p>
 
-<p><a href='access-controlled.php'>A sample 'members-only' page</a></p>
+<p><a href='./../accessControlled/access-controlled.php'>A sample 'members-only' page</a></p>
 <br><br><br>
-<p><a href='logout.php'>Logout</a></p>
+<p><a href='./../logout/logout.php'>Logout</a></p>
 </div>
 </body>
 </html>

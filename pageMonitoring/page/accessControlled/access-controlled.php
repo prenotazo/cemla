@@ -1,5 +1,5 @@
 <?PHP
-require_once("./include/membersite_config.php");
+require_once("./../../include/membersite_config.php");
 
 if(!$fgmembersite->CheckLogin())
 {
@@ -23,7 +23,7 @@ copy paste the code between &lt;?php and ?&gt; to the page and name the page to 
 Logged in as: <?= $fgmembersite->UserFullName() ?>
 </p>
 <p>
-<a href='login-home.php'>Home</a>
+<a href='./../login/login-home.php'>Home</a>
 </p>
 </div>
 </body>

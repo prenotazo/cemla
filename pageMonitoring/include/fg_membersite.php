@@ -18,11 +18,10 @@ http://www.html-form-guide.com/php-form/php-registration-form.html
 http://www.html-form-guide.com/php-form/php-login-form.html
 
 */
-require_once("./library/PHPMailer_v5.1/class.phpmailer.php");
-require_once("./library/formvalidator.php");
+require_once("./../../library/PHPMailer_v5.1/class.phpmailer.php");
+require_once("./../../library/formvalidator.php");
 
-class FGMembersite
-{
+class FGMembersite {
     var $admin_email;
     var $from_address;
     
@@ -36,14 +35,12 @@ class FGMembersite
     var $error_message;
     
     //-----Initialization -------
-    function FGMembersite()
-    {
+    function FGMembersite() {
         $this->sitename = 'ricardocastiglione.com.ar';
         $this->rand_key = '0iQx5oBk66oVZep';
     }
     
-    function InitDB($host,$uname,$pwd,$database,$tablename)
-    {
+    function InitDB($host,$uname,$pwd,$database,$tablename) {
         $this->db_host  = $host;
         $this->username = $uname;
         $this->pwd  = $pwd;
@@ -52,45 +49,42 @@ class FGMembersite
         
     }
     
-    function SetAdminEmail($email)
-    {
+    function SetAdminEmail($email) {
         $this->admin_email = $email;
     }
     
-    function SetWebsiteName($sitename)
-    {
+    function SetWebsiteName($sitename) {
         $this->sitename = $sitename;
     }
     
-    function SetRandomKey($key)
-    {
+    function SetRandomKey($key) {
         $this->rand_key = $key;
     }
     
     //-------Main Operations ----------------------
-    function RegisterUser()
-    {
-        if(!isset($_POST['submitted']))
-        {
+    function RegisterUser() {
+        if(!isset($_POST['submitted'])) {
            return false;
+        }
+        
+        if (strcmp($this->Sanitize($_POST['email']), "ricardo.castiglione@gmail.com") != 0) {
+        	$this->HandleError("That email can't be registered");
+        	return false;
         }
         
         $formvars = array();
         
-        if(!$this->ValidateRegistrationSubmission())
-        {
+        if(!$this->ValidateRegistrationSubmission()) {
             return false;
         }
         
         $this->CollectRegistrationSubmission($formvars);
         
-        if(!$this->SaveToDatabase($formvars))
-        {
+        if(!$this->SaveToDatabase($formvars)) {
             return false;
         }
         
-        if(!$this->SendUserConfirmationEmail($formvars))
-        {
+        if(!$this->SendUserConfirmationEmail($formvars)) {
             return false;
         }
 
@@ -101,14 +95,12 @@ class FGMembersite
 
     function ConfirmUser()
     {
-        if(empty($_GET['code'])||strlen($_GET['code'])<=10)
-        {
+        if(empty($_GET['code'])||strlen($_GET['code'])<=10) {
             $this->HandleError("Please provide the confirm code");
             return false;
         }
         $user_rec = array();
-        if(!$this->UpdateDBRecForConfirmation($user_rec))
-        {
+        if(!$this->UpdateDBRecForConfirmation($user_rec)) {
             return false;
         }
         
@@ -119,16 +111,13 @@ class FGMembersite
         return true;
     }    
     
-    function Login()
-    {
-        if(empty($_POST['username']))
-        {
+    function Login() {
+        if(empty($_POST['username'])) {
             $this->HandleError("UserName is empty!");
             return false;
         }
         
-        if(empty($_POST['password']))
-        {
+        if(empty($_POST['password'])) {
             $this->HandleError("Password is empty!");
             return false;
         }
@@ -137,8 +126,7 @@ class FGMembersite
         $password = trim($_POST['password']);
         
         if(!isset($_SESSION)){ session_start(); }
-        if(!$this->CheckLoginInDB($username,$password))
-        {
+        if(!$this->CheckLoginInDB($username,$password)) {
             return false;
         }
         
@@ -147,31 +135,26 @@ class FGMembersite
         return true;
     }
     
-    function CheckLogin()
-    {
+    function CheckLogin() {
          if(!isset($_SESSION)){ session_start(); }
 
          $sessionvar = $this->GetLoginSessionVar();
          
-         if(empty($_SESSION[$sessionvar]))
-         {
+         if(empty($_SESSION[$sessionvar])) {
             return false;
          }
          return true;
     }
     
-    function UserFullName()
-    {
+    function UserFullName() {
         return isset($_SESSION['name_of_user'])?$_SESSION['name_of_user']:'';
     }
     
-    function UserEmail()
-    {
+    function UserEmail() {
         return isset($_SESSION['email_of_user'])?$_SESSION['email_of_user']:'';
     }
     
-    function LogOut()
-    {
+    function LogOut() {
         session_start();
         
         $sessionvar = $this->GetLoginSessionVar();
@@ -181,29 +164,23 @@ class FGMembersite
         unset($_SESSION[$sessionvar]);
     }
     
-    function EmailResetPasswordLink()
-    {
-        if(empty($_POST['email']))
-        {
+    function EmailResetPasswordLink() {
+        if(empty($_POST['email'])) {
             $this->HandleError("Email is empty!");
             return false;
         }
         $user_rec = array();
-        if(false === $this->GetUserFromEmail($_POST['email'], $user_rec))
-        {
+        if(false === $this->GetUserFromEmail($_POST['email'], $user_rec)) {
             return false;
         }
-        if(false === $this->SendResetPasswordLink($user_rec))
-        {
+        if(false === $this->SendResetPasswordLink($user_rec)) {
             return false;
         }
         return true;
     }
     
-    function ResetPassword()
-    {
-        if(empty($_GET['email']))
-        {
+    function ResetPassword() {
+        if(empty($_GET['email'])) {
             $this->HandleError("Email is empty!");
             return false;
         }
@@ -418,24 +395,21 @@ class FGMembersite
         return $new_password;
     }
     
-    function ChangePasswordInDB($user_rec, $newpwd)
-    {
+    function ChangePasswordInDB($user_rec, $newpwd) {
         $newpwd = $this->SanitizeForSQL($newpwd);
         
-        $qry = "Update $this->tablename Set password='".md5($newpwd)."' Where  id_user=".$user_rec['id_user']."";
+        $qry = "Update $this->tablename Set password='".md5($newpwd)."' Where  id=".$user_rec['id']."";
         
-        if(!mysql_query( $qry ,$this->connection))
-        {
+        if(!mysql_query( $qry ,$this->connection)) {
             $this->HandleDBError("Error updating the password \nquery:$qry");
             return false;
         }     
+        
         return true;
     }
     
-    function GetUserFromEmail($email,&$user_rec)
-    {
-        if(!$this->DBLogin())
-        {
+    function GetUserFromEmail($email,&$user_rec) {
+        if(!$this->DBLogin()) {
             $this->HandleError("Database login failed!");
             return false;
         }   
@@ -443,14 +417,12 @@ class FGMembersite
         
         $result = mysql_query("Select * from $this->tablename where email='$email'",$this->connection);  
 
-        if(!$result || mysql_num_rows($result) <= 0)
-        {
+        if(!$result || mysql_num_rows($result) <= 0) {
             $this->HandleError("There is no user with email: $email");
             return false;
         }
         $user_rec = mysql_fetch_assoc($result);
 
-        
         return true;
     }
     
@@ -525,9 +497,9 @@ class FGMembersite
     	$subject = "Your reset password request at ".$this->sitename;
 
         $link = $this->GetAbsoluteURLFolder().
-                '/resetpwd.php?email='.
-                urlencode($email).'&code='.
-                urlencode($this->GetResetPasswordCode($email));
+                '/pageMonitoring/page/resetPwd/resetpwd.php?email='.
+                urlencode($to).'&code='.
+                urlencode($this->GetResetPasswordCode($to));
 
         $body = "Hello ".$user_rec['name']."\r\n\r\n".
         "There was a request to reset your password at ".$this->sitename."\r\n".
@@ -553,7 +525,7 @@ class FGMembersite
         "username:".$user_rec['username']."\r\n".
         "password:$new_password\r\n".
         "\r\n".
-        "Login here: ".$this->GetAbsoluteURLFolder()."/login.php\r\n".
+        "Login here: ".$this->GetAbsoluteURLFolder()."/pageMonitoring/page/login/login.php\r\n".
         "\r\n".
         "Regards,\r\n".
         "Webmaster\r\n".
@@ -566,11 +538,9 @@ class FGMembersite
         return true;
     }    
     
-    function ValidateRegistrationSubmission()
-    {
+    function ValidateRegistrationSubmission() {
         //This is a hidden input field. Humans won't fill this field.
-        if(!empty($_POST[$this->GetSpamTrapInputName()]) )
-        {
+        if(!empty($_POST[$this->GetSpamTrapInputName()])) {
             //The proper error is not given intentionally
             $this->HandleError("Automated submission prevention: case 2 failed");
             return false;
@@ -583,9 +553,7 @@ class FGMembersite
         $validator->addValidation("username","req","Please fill in UserName");
         $validator->addValidation("password","req","Please fill in Password");
 
-    
-        if(!$validator->ValidateForm())
-        {
+        if(!$validator->ValidateForm()) {
             $error='';
             $error_hash = $validator->GetErrors();
             foreach($error_hash as $inpname => $inp_err)
@@ -595,6 +563,7 @@ class FGMembersite
             $this->HandleError($error);
             return false;
         }        
+
         return true;
     }
     
@@ -612,7 +581,7 @@ class FGMembersite
     	$subject = "Your registration with ".$this->sitename;
     	
         $confirmcode = $formvars['confirmcode'];
-        $confirm_url = $this->GetAbsoluteURLFolder().'/confirmreg.php?code='.$confirmcode;
+        $confirm_url = $this->GetAbsoluteURLFolder().'/pageMonitoring/page/register/confirmreg.php?code='.$confirmcode;
      
         $body = "Hello ".$formvars['name']."\r\n\r\n".
         "Thanks for your registration with ".$this->sitename."\r\n".
@@ -634,7 +603,8 @@ class FGMembersite
     function GetAbsoluteURLFolder()
     {
         $scriptFolder = (isset($_SERVER['HTTPS']) && ($_SERVER['HTTPS'] == 'on')) ? 'https://' : 'http://';
-        $scriptFolder .= $_SERVER['HTTP_HOST'] . dirname($_SERVER['REQUEST_URI']);
+        $scriptFolder .= $_SERVER['HTTP_HOST'];
+//          . dirname($_SERVER['REQUEST_URI']);
         return $scriptFolder;
     }
     
@@ -659,33 +629,27 @@ class FGMembersite
         return true;
     }
     
-    function SaveToDatabase(&$formvars)
-    {
-        if(!$this->DBLogin())
-        {
+    function SaveToDatabase(&$formvars) {
+        if(!$this->DBLogin()) {
             $this->HandleError("Database login failed!");
             return false;
         }
-        if(!$this->Ensuretable())
-        {
-            return false;
-        }
-        if(!$this->IsFieldUnique($formvars,'email'))
-        {
+        
+        if(!$this->IsFieldUnique($formvars,'email')) {
             $this->HandleError("This email is already registered");
             return false;
         }
         
-        if(!$this->IsFieldUnique($formvars,'username'))
-        {
+        if(!$this->IsFieldUnique($formvars,'username')) {
             $this->HandleError("This UserName is already used. Please try another username");
             return false;
         }        
-        if(!$this->InsertIntoDB($formvars))
-        {
+        
+        if(!$this->InsertIntoDB($formvars)) {
             $this->HandleError("Inserting to Database failed!");
             return false;
         }
+        
         return true;
     }
     
@@ -723,37 +687,6 @@ class FGMembersite
         }
         return true;
     }    
-    
-    function Ensuretable()
-    {
-        $result = mysql_query("SHOW COLUMNS FROM $this->tablename");   
-        if(!$result || mysql_num_rows($result) <= 0)
-        {
-            return $this->CreateTable();
-        }
-        return true;
-    }
-    
-    function CreateTable()
-    {
-        $qry = "Create Table $this->tablename (".
-                "id_user INT NOT NULL AUTO_INCREMENT ,".
-                "name VARCHAR( 128 ) NOT NULL ,".
-                "email VARCHAR( 64 ) NOT NULL ,".
-                "phone_number VARCHAR( 16 ) NOT NULL ,".
-                "username VARCHAR( 16 ) NOT NULL ,".
-                "password VARCHAR( 32 ) NOT NULL ,".
-                "confirmcode VARCHAR(32) ,".
-                "PRIMARY KEY ( id_user )".
-                ")";
-                
-        if(!mysql_query($qry,$this->connection))
-        {
-            $this->HandleDBError("Error creating the table \nquery was\n $qry");
-            return false;
-        }
-        return true;
-    }
     
     function InsertIntoDB(&$formvars)
     {

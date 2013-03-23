@@ -1,5 +1,5 @@
 <?PHP
-require_once("./include/membersite_config.php");
+require_once("./../../include/membersite_config.php");
 
 if(isset($_POST['submitted']))
 {
@@ -15,10 +15,10 @@ if(isset($_POST['submitted']))
 <head>
     <meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
     <title>Contact us</title>
-    <link rel="STYLESHEET" type="text/css" href="style/fg_membersite.css" />
-    <script type='text/javascript' src='scripts/gen_validatorv31.js'></script>
-    <link rel="STYLESHEET" type="text/css" href="style/pwdwidget.css" />
-    <script src="scripts/pwdwidget.js" type="text/javascript"></script>      
+    <link rel="STYLESHEET" type="text/css" href="./../../style/fg_membersite.css" />
+    <script type='text/javascript' src='./../../scripts/gen_validatorv31.js'></script>
+    <link rel="STYLESHEET" type="text/css" href="./../../style/pwdwidget.css" />
+    <script src="./../../scripts/pwdwidget.js" type="text/javascript"></script>      
 </head>
 <body>
 

@@ -1,0 +1,9 @@
+CREATE TABLE PM_USER (
+    id INT NOT NULL AUTO_INCREMENT,
+    name VARCHAR(128) NOT NULL,
+    email VARCHAR(64) NOT NULL,
+    username VARCHAR(16) NOT NULL,
+    password VARCHAR(32) NOT NULL,
+    confirmcode VARCHAR(32),
+PRIMARY KEY (id)
+);
