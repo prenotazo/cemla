@@ -18,8 +18,8 @@ http://www.html-form-guide.com/php-form/php-registration-form.html
 http://www.html-form-guide.com/php-form/php-login-form.html
 
 */
-require_once("class.phpmailer.php");
-require_once("formvalidator.php");
+require_once("./library/PHPMailer_v5.1/class.phpmailer.php");
+require_once("./library/formvalidator.php");
 
 class FGMembersite
 {
@@ -51,6 +51,7 @@ class FGMembersite
         $this->tablename = $tablename;
         
     }
+    
     function SetAdminEmail($email)
     {
         $this->admin_email = $email;
@@ -453,26 +454,39 @@ class FGMembersite
         return true;
     }
     
+    function smtpmailer($to, $subject, $body) {
+    	$mailer = new PHPMailer();  // create a new object
+    	 
+    	$mailer->CharSet = 'utf-8';
+    	$mailer->IsSMTP(); // enable SMTP
+    	$mailer->SMTPDebug = 0;  // debugging: 1 = errors and messages, 2 = messages only
+    	$mailer->SMTPAuth = true;  // authentication enabled
+    	$mailer->SMTPSecure = 'ssl'; // secure transfer enabled REQUIRED for GMail
+    	$mailer->Host = 'smtp.gmail.com';
+    	$mailer->Port = 465;
+    	$mailer->Username = 'brainfields@gmail.com';
+    	$mailer->Password = 'grupo403';
+    	$mailer->FromName = "Page Monitoring";
+    	$mailer->From = $this->GetFromAddress();
+    	$mailer->Subject = $subject;
+    	$mailer->Body = $body;
+    	$mailer->AddAddress($to);
+    
+    	return $mailer->Send();
+    }
+    
     function SendUserWelcomeEmail(&$user_rec)
     {
-        $mailer = new PHPMailer();
-        
-        $mailer->CharSet = 'utf-8';
-        
-        $mailer->AddAddress($user_rec['email'],$user_rec['name']);
-        
-        $mailer->Subject = "Welcome to ".$this->sitename;
-
-        $mailer->From = $this->GetFromAddress();        
-        
-        $mailer->Body ="Hello ".$user_rec['name']."\r\n\r\n".
+    	$to = $user_rec['email']; 
+    	$subject = "Welcome to ".$this->sitename; 
+    	$body = "Hello ".$user_rec['name']."\r\n\r\n".
         "Welcome! Your registration  with ".$this->sitename." is completed.\r\n".
         "\r\n".
         "Regards,\r\n".
         "Webmaster\r\n".
         $this->sitename;
-
-        if(!$mailer->Send())
+        
+        if(!$this->smtpmailer($to, $subject, $body))
         {
             $this->HandleError("Failed sending user welcome email.");
             return false;
@@ -486,21 +500,14 @@ class FGMembersite
         {
             return false;
         }
-        $mailer = new PHPMailer();
         
-        $mailer->CharSet = 'utf-8';
-        
-        $mailer->AddAddress($this->admin_email);
-        
-        $mailer->Subject = "Registration Completed: ".$user_rec['name'];
-
-        $mailer->From = $this->GetFromAddress();         
-        
-        $mailer->Body ="A new user registered at ".$this->sitename."\r\n".
+        $to = $this->admin_email; 
+        $subject = "Registration Completed: ".$user_rec['name']; 
+        $body = "A new user registered at ".$this->sitename."\r\n".
         "Name: ".$user_rec['name']."\r\n".
         "Email address: ".$user_rec['email']."\r\n";
         
-        if(!$mailer->Send())
+        if(!$this->smtpmailer($to, $subject, $body))
         {
             return false;
         }
@@ -514,31 +521,22 @@ class FGMembersite
     
     function SendResetPasswordLink($user_rec)
     {
-        $email = $user_rec['email'];
-        
-        $mailer = new PHPMailer();
-        
-        $mailer->CharSet = 'utf-8';
-        
-        $mailer->AddAddress($email,$user_rec['name']);
-        
-        $mailer->Subject = "Your reset password request at ".$this->sitename;
+    	$to = $user_rec['email']; 
+    	$subject = "Your reset password request at ".$this->sitename;
 
-        $mailer->From = $this->GetFromAddress();
-        
         $link = $this->GetAbsoluteURLFolder().
                 '/resetpwd.php?email='.
                 urlencode($email).'&code='.
                 urlencode($this->GetResetPasswordCode($email));
 
-        $mailer->Body ="Hello ".$user_rec['name']."\r\n\r\n".
+        $body = "Hello ".$user_rec['name']."\r\n\r\n".
         "There was a request to reset your password at ".$this->sitename."\r\n".
         "Please click the link below to complete the request: \r\n".$link."\r\n".
         "Regards,\r\n".
         "Webmaster\r\n".
         $this->sitename;
         
-        if(!$mailer->Send())
+        if(!$this->smtpmailer($to, $subject, $body))
         {
             return false;
         }
@@ -547,19 +545,9 @@ class FGMembersite
     
     function SendNewPassword($user_rec, $new_password)
     {
-        $email = $user_rec['email'];
-        
-        $mailer = new PHPMailer();
-        
-        $mailer->CharSet = 'utf-8';
-        
-        $mailer->AddAddress($email,$user_rec['name']);
-        
-        $mailer->Subject = "Your new password for ".$this->sitename;
-
-        $mailer->From = $this->GetFromAddress();
-        
-        $mailer->Body ="Hello ".$user_rec['name']."\r\n\r\n".
+    	$to = $user_rec['email'];
+    	$subject = "Your new password for ".$this->sitename;
+    	$body = "Hello ".$user_rec['name']."\r\n\r\n".
         "Your password is reset successfully. ".
         "Here is your updated login:\r\n".
         "username:".$user_rec['username']."\r\n".
@@ -571,7 +559,7 @@ class FGMembersite
         "Webmaster\r\n".
         $this->sitename;
         
-        if(!$mailer->Send())
+        if(!$this->smtpmailer($to, $subject, $body))
         {
             return false;
         }
@@ -595,7 +583,7 @@ class FGMembersite
         $validator->addValidation("username","req","Please fill in UserName");
         $validator->addValidation("password","req","Please fill in Password");
 
-        
+    
         if(!$validator->ValidateForm())
         {
             $error='';
@@ -620,36 +608,29 @@ class FGMembersite
     
     function SendUserConfirmationEmail(&$formvars)
     {
-        $mailer = new PHPMailer();
-        
-        $mailer->CharSet = 'utf-8';
-        
-        $mailer->AddAddress($formvars['email'],$formvars['name']);
-        
-        $mailer->Subject = "Your registration with ".$this->sitename;
-
-        $mailer->From = $this->GetFromAddress();        
-        
+    	$to = $formvars['email']; 
+    	$subject = "Your registration with ".$this->sitename;
+    	
         $confirmcode = $formvars['confirmcode'];
-        
         $confirm_url = $this->GetAbsoluteURLFolder().'/confirmreg.php?code='.$confirmcode;
-        
-        $mailer->Body ="Hello ".$formvars['name']."\r\n\r\n".
+     
+        $body = "Hello ".$formvars['name']."\r\n\r\n".
         "Thanks for your registration with ".$this->sitename."\r\n".
         "Please click the link below to confirm your registration.\r\n".
         "$confirm_url\r\n".
         "\r\n".
         "Regards,\r\n".
         "Webmaster\r\n".
-        $this->sitename;
+        $this->sitename;;
 
-        if(!$mailer->Send())
+        if(!$this->smtpmailer($to, $subject, $body))
         {
             $this->HandleError("Failed sending registration confirmation email.");
             return false;
         }
         return true;
     }
+    
     function GetAbsoluteURLFolder()
     {
         $scriptFolder = (isset($_SERVER['HTTPS']) && ($_SERVER['HTTPS'] == 'on')) ? 'https://' : 'http://';
@@ -663,22 +644,15 @@ class FGMembersite
         {
             return false;
         }
-        $mailer = new PHPMailer();
         
-        $mailer->CharSet = 'utf-8';
-        
-        $mailer->AddAddress($this->admin_email);
-        
-        $mailer->Subject = "New registration: ".$formvars['name'];
-
-        $mailer->From = $this->GetFromAddress();         
-        
-        $mailer->Body ="A new user registered at ".$this->sitename."\r\n".
+        $to = $this->admin_email; 
+        $subject = "New registration: ".$formvars['name']; 
+        $body = "A new user registered at ".$this->sitename."\r\n".
         "Name: ".$formvars['name']."\r\n".
         "Email address: ".$formvars['email']."\r\n".
         "UserName: ".$formvars['username'];
         
-        if(!$mailer->Send())
+        if(!$this->smtpmailer($to, $subject, $body))
         {
             return false;
         }
@@ -783,7 +757,6 @@ class FGMembersite
     
     function InsertIntoDB(&$formvars)
     {
-    
         $confirmcode = $this->MakeConfirmationMd5($formvars['email']);
         
         $formvars['confirmcode'] = $confirmcode;
@@ -810,12 +783,14 @@ class FGMembersite
         }        
         return true;
     }
+    
     function MakeConfirmationMd5($email)
     {
         $randno1 = rand();
         $randno2 = rand();
         return md5($email.$this->rand_key.$randno1.''.$randno2);
     }
+    
     function SanitizeForSQL($str)
     {
         if( function_exists( "mysql_real_escape_string" ) )
@@ -852,7 +827,8 @@ class FGMembersite
         }
 
         return $str;
-    }    
+    }
+        
     function StripSlashes($str)
     {
         if(get_magic_quotes_gpc())
@@ -860,6 +836,6 @@ class FGMembersite
             $str = stripslashes($str);
         }
         return $str;
-    }    
+    }
 }
 ?>
