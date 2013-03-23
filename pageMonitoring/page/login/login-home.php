@@ -22,7 +22,7 @@ Welcome back <?= $fgmembersite->UserFullName(); ?>!
 
 <p><a href='./../resetPwd/change-pwd.php'>Change password</a></p>
 
-<p><a href='./../accessControlled/access-controlled.php'>A sample 'members-only' page</a></p>
+<p><a href='./../pageMonitored/page-monitored.php'>Page Monitored</a></p>
 <br><br><br>
 <p><a href='./../logout/logout.php'>Logout</a></p>
 </div>
