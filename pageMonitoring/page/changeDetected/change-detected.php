@@ -8,7 +8,7 @@ if(!$fgmembersite->CheckLogin()) {
 
 if(isset($_POST['submitted'])) {
 	if($fgmembersite->RegisterPageMonitored()) {
-		$fgmembersite->RedirectToURL("./../changeDetected/change-detected.php");
+		$fgmembersite->RedirectToURL("change-detected.php");
 	}
 }
 

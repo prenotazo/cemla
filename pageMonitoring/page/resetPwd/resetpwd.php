@@ -2,8 +2,7 @@
 require_once("./../../include/membersite_config.php");
 
 $success = false;
-if($fgmembersite->ResetPassword())
-{
+if($fgmembersite->ResetPassword()) {
     $success=true;
 }
 

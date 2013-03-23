@@ -62,6 +62,14 @@ class FGMembersite {
     }
     
     //-------Main Operations ----------------------
+    function RegisterPageMonitored() {
+    	if(!isset($_POST['submitted'])) {
+    		return false;
+    	}
+    	
+    	return true;
+    }
+    
     function RegisterUser() {
         if(!isset($_POST['submitted'])) {
            return false;
@@ -72,15 +80,13 @@ class FGMembersite {
         	return false;
         }
         
-        $formvars = array();
-        
         if(!$this->ValidateRegistrationSubmission()) {
             return false;
         }
         
-        $this->CollectRegistrationSubmission($formvars);
+        $formvars = $this->CollectRegistrationSubmission();
         
-        if(!$this->SaveToDatabase($formvars)) {
+        if(!$this->SaveUserToDatabase($formvars)) {
             return false;
         }
         
@@ -93,8 +99,7 @@ class FGMembersite {
         return true;
     }
 
-    function ConfirmUser()
-    {
+    function ConfirmUser() {
         if(empty($_GET['code'])||strlen($_GET['code'])<=10) {
             $this->HandleError("Please provide the confirm code");
             return false;
@@ -261,35 +266,28 @@ class FGMembersite {
     }
     
     //-------Public Helper functions -------------
-    function GetSelfScript()
-    {
+    function GetSelfScript() {
         return htmlentities($_SERVER['PHP_SELF']);
     }    
     
-    function SafeDisplay($value_name)
-    {
-        if(empty($_POST[$value_name]))
-        {
+    function SafeDisplay($value_name) {
+        if(empty($_POST[$value_name])) {
             return'';
         }
         return htmlentities($_POST[$value_name]);
     }
     
-    function RedirectToURL($url)
-    {
+    function RedirectToURL($url) {
         header("Location: $url");
         exit;
     }
     
-    function GetSpamTrapInputName()
-    {
+    function GetSpamTrapInputName() {
         return 'sp'.md5('KHGdnbvsgst'.$this->rand_key);
     }
     
-    function GetErrorMessage()
-    {
-        if(empty($this->error_message))
-        {
+    function GetErrorMessage() {
+        if(empty($this->error_message)) {
             return '';
         }
         $errormsg = nl2br(htmlentities($this->error_message));
@@ -297,20 +295,16 @@ class FGMembersite {
     }    
     //-------Private Helper functions-----------
     
-    function HandleError($err)
-    {
+    function HandleError($err) {
         $this->error_message .= $err."\r\n";
     }
     
-    function HandleDBError($err)
-    {
+    function HandleDBError($err) {
         $this->HandleError($err."\r\n mysqlerror:".mysql_error());
     }
     
-    function GetFromAddress()
-    {
-        if(!empty($this->from_address))
-        {
+    function GetFromAddress() {
+        if(!empty($this->from_address)) {
             return $this->from_address;
         }
 
@@ -320,17 +314,14 @@ class FGMembersite {
         return $from;
     } 
     
-    function GetLoginSessionVar()
-    {
+    function GetLoginSessionVar() {
         $retvar = md5($this->rand_key);
         $retvar = 'usr_'.substr($retvar,0,10);
         return $retvar;
     }
     
-    function CheckLoginInDB($username,$password)
-    {
-        if(!$this->DBLogin())
-        {
+    function CheckLoginInDB($username,$password) {
+        if(!$this->DBLogin()) {
             $this->HandleError("Database login failed!");
             return false;
         }          
@@ -340,8 +331,7 @@ class FGMembersite {
         
         $result = mysql_query($qry,$this->connection);
         
-        if(!$result || mysql_num_rows($result) <= 0)
-        {
+        if(!$result || mysql_num_rows($result) <= 0) { 
             $this->HandleError("Error logging in. The username or password does not match");
             return false;
         }
@@ -355,18 +345,15 @@ class FGMembersite {
         return true;
     }
     
-    function UpdateDBRecForConfirmation(&$user_rec)
-    {
-        if(!$this->DBLogin())
-        {
+    function UpdateDBRecForConfirmation(&$user_rec) {
+        if(!$this->DBLogin()) {
             $this->HandleError("Database login failed!");
             return false;
         }   
         $confirmcode = $this->SanitizeForSQL($_GET['code']);
         
         $result = mysql_query("Select name, email from $this->tablename where confirmcode='$confirmcode'",$this->connection);   
-        if(!$result || mysql_num_rows($result) <= 0)
-        {
+        if(!$result || mysql_num_rows($result) <= 0) {
             $this->HandleError("Wrong confirm code.");
             return false;
         }
@@ -376,20 +363,17 @@ class FGMembersite {
         
         $qry = "Update $this->tablename Set confirmcode='y' Where  confirmcode='$confirmcode'";
         
-        if(!mysql_query( $qry ,$this->connection))
-        {
+        if(!mysql_query( $qry ,$this->connection)) {
             $this->HandleDBError("Error inserting data to the table\nquery:$qry");
             return false;
         }      
         return true;
     }
     
-    function ResetUserPasswordInDB($user_rec)
-    {
+    function ResetUserPasswordInDB($user_rec) {
         $new_password = substr(md5(uniqid()),0,10);
         
-        if(false == $this->ChangePasswordInDB($user_rec,$new_password))
-        {
+        if(false == $this->ChangePasswordInDB($user_rec,$new_password)) {
             return false;
         }
         return $new_password;
@@ -515,8 +499,7 @@ class FGMembersite {
         return true;
     }
     
-    function SendNewPassword($user_rec, $new_password)
-    {
+    function SendNewPassword($user_rec, $new_password) {
     	$to = $user_rec['email'];
     	$subject = "Your new password for ".$this->sitename;
     	$body = "Hello ".$user_rec['name']."\r\n\r\n".
@@ -531,8 +514,7 @@ class FGMembersite {
         "Webmaster\r\n".
         $this->sitename;
         
-        if(!$this->smtpmailer($to, $subject, $body))
-        {
+        if(!$this->smtpmailer($to, $subject, $body)) {
             return false;
         }
         return true;
@@ -567,12 +549,15 @@ class FGMembersite {
         return true;
     }
     
-    function CollectRegistrationSubmission(&$formvars)
-    {
+    function CollectRegistrationSubmission(&$formvars) {
+    	$formvars = array();
+    	
         $formvars['name'] = $this->Sanitize($_POST['name']);
         $formvars['email'] = $this->Sanitize($_POST['email']);
         $formvars['username'] = $this->Sanitize($_POST['username']);
         $formvars['password'] = $this->Sanitize($_POST['password']);
+        
+        return $formvars;
     }
     
     function SendUserConfirmationEmail(&$formvars)
@@ -629,23 +614,23 @@ class FGMembersite {
         return true;
     }
     
-    function SaveToDatabase(&$formvars) {
+    function SaveUserToDatabase(&$formvars) {
         if(!$this->DBLogin()) {
             $this->HandleError("Database login failed!");
             return false;
         }
         
-        if(!$this->IsFieldUnique($formvars,'email')) {
+        if(!$this->IsUserFieldUnique($formvars,'email')) {
             $this->HandleError("This email is already registered");
             return false;
         }
         
-        if(!$this->IsFieldUnique($formvars,'username')) {
+        if(!$this->IsUserFieldUnique($formvars,'username')) {
             $this->HandleError("This UserName is already used. Please try another username");
             return false;
         }        
         
-        if(!$this->InsertIntoDB($formvars)) {
+        if(!$this->InsertUserIntoDB($formvars)) {
             $this->HandleError("Inserting to Database failed!");
             return false;
         }
@@ -653,43 +638,38 @@ class FGMembersite {
         return true;
     }
     
-    function IsFieldUnique($formvars,$fieldname)
-    {
+    function IsUserFieldUnique($formvars,$fieldname) {
         $field_val = $this->SanitizeForSQL($formvars[$fieldname]);
         $qry = "select username from $this->tablename where $fieldname='".$field_val."'";
         $result = mysql_query($qry,$this->connection);   
-        if($result && mysql_num_rows($result) > 0)
-        {
+        if($result && mysql_num_rows($result) > 0) {
             return false;
         }
         return true;
     }
     
-    function DBLogin()
-    {
-
+    function DBLogin() {
         $this->connection = mysql_connect($this->db_host,$this->username,$this->pwd);
 
-        if(!$this->connection)
-        {   
+        if(!$this->connection) {   
             $this->HandleDBError("Database Login failed! Please make sure that the DB login credentials provided are correct");
             return false;
         }
-        if(!mysql_select_db($this->database, $this->connection))
-        {
+        
+        if(!mysql_select_db($this->database, $this->connection)) {
             $this->HandleDBError('Failed to select database: '.$this->database.' Please make sure that the database name provided is correct');
             return false;
         }
-        if(!mysql_query("SET NAMES 'UTF8'",$this->connection))
-        {
+        
+        if(!mysql_query("SET NAMES 'UTF8'",$this->connection)) {
             $this->HandleDBError('Error setting utf8 encoding');
             return false;
         }
+        
         return true;
     }    
     
-    function InsertIntoDB(&$formvars)
-    {
+    function InsertUserIntoDB(&$formvars) {
         $confirmcode = $this->MakeConfirmationMd5($formvars['email']);
         
         $formvars['confirmcode'] = $confirmcode;
@@ -709,29 +689,23 @@ class FGMembersite {
                 "' . md5($formvars['password']) . '",
                 "' . $confirmcode . '"
                 )';      
-        if(!mysql_query( $insert_query ,$this->connection))
-        {
+        if(!mysql_query( $insert_query ,$this->connection)) {
             $this->HandleDBError("Error inserting data to the table\nquery:$insert_query");
             return false;
         }        
         return true;
     }
     
-    function MakeConfirmationMd5($email)
-    {
+    function MakeConfirmationMd5($email) {
         $randno1 = rand();
         $randno2 = rand();
         return md5($email.$this->rand_key.$randno1.''.$randno2);
     }
     
-    function SanitizeForSQL($str)
-    {
-        if( function_exists( "mysql_real_escape_string" ) )
-        {
+    function SanitizeForSQL($str) {
+        if( function_exists( "mysql_real_escape_string" ) ) {
               $ret_str = mysql_real_escape_string( $str );
-        }
-        else
-        {
+        } else {
               $ret_str = addslashes( $str );
         }
         return $ret_str;
@@ -742,12 +716,10 @@ class FGMembersite {
     data submitted. Prevents email injections or any other hacker attempts.
     if $remove_nl is true, newline chracters are removed from the input.
     */
-    function Sanitize($str,$remove_nl=true)
-    {
+    function Sanitize($str,$remove_nl=true) {
         $str = $this->StripSlashes($str);
 
-        if($remove_nl)
-        {
+        if($remove_nl) {
             $injections = array('/(\n+)/i',
                 '/(\r+)/i',
                 '/(\t+)/i',
@@ -762,10 +734,8 @@ class FGMembersite {
         return $str;
     }
         
-    function StripSlashes($str)
-    {
-        if(get_magic_quotes_gpc())
-        {
+    function StripSlashes($str) {
+        if(get_magic_quotes_gpc()) {
             $str = stripslashes($str);
         }
         return $str;

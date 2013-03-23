@@ -13,8 +13,8 @@ $fgmembersite->SetAdminEmail('ricardo.castiglione@gmail.com');
 //hostname, user name, password, database name and table name
 //note that the script will create the table (for example, fgusers in this case)
 //by itself on submitting register.php for the first time
-$fgmembersite->InitDB(/*dev hostname*/'localhost',
-					  /*prod hostname*'mysql8.000webhost.com',*/
+$fgmembersite->InitDB(/*dev hostname'localhost',*/
+					  /*prod hostname*/'mysql8.000webhost.com',
                       /*username*/'a1351436_pm',
                       /*password*/'pm2013',
                       /*database name*/'a1351436_pm',

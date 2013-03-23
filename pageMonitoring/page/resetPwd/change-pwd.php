@@ -1,16 +1,13 @@
 <?PHP
 require_once("./../../include/membersite_config.php");
 
-if(!$fgmembersite->CheckLogin())
-{
-    $fgmembersite->RedirectToURL("login.php");
+if(!$fgmembersite->CheckLogin()) {
+    $fgmembersite->RedirectToURL("./../login/login.php");
     exit;
 }
 
-if(isset($_POST['submitted']))
-{
-   if($fgmembersite->ChangePassword())
-   {
+if(isset($_POST['submitted'])) {
+   if($fgmembersite->ChangePassword()) {
         $fgmembersite->RedirectToURL("changed-pwd.html");
    }
 }
