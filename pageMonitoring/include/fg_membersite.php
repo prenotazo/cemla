@@ -549,7 +549,7 @@ class FGMembersite {
         return true;
     }
     
-    function CollectRegistrationSubmission(&$formvars) {
+    function CollectRegistrationSubmission() {
     	$formvars = array();
     	
         $formvars['name'] = $this->Sanitize($_POST['name']);
