@@ -16,15 +16,12 @@ $changesDetected = $fgmembersite->getChangesDetected();
 $display_block = '';
 if (!empty($changesDetected)) {
 	foreach ($changesDetected as $value) {
-		$shortHtml = substr($value['html'], 0, 50) ;
 		$display_block .= "
 		<tr>
 			<td>".$value['id']."</td>
 			<td>".$value['dateChangeDetected']."</td>
-			<td>$shortHtml...<a href=\"http://localhost/detail.php?annid=1\"><em>read more</em></a></td>
+			<td><button type='button' onclick='showHtmlDetailPopup(".$value['id'].")'>see</button></a></td>
 		</tr>";
-// 			<td width=\"25%\"><a href=\"http://$url/detail.php?annid=$id\"><strong>$ad_title</strong></a></td>
-// 			<td width=\"75%\">$short_desc ....<a href=\"http://$url/detail.php?annid=$id\"><em>read more</em></a></td>
 	}
 }
 
@@ -34,7 +31,36 @@ if (!empty($changesDetected)) {
 <head>
       <meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
       <title>Change Detected</title>
-      <link rel="STYLESHEET" type="text/css" href="./../../style/fg_membersite.css">
+      <link rel="STYLESHEET" type="text/css" href="./../../style/fg_membersite.css">      
+	  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css"/>
+	  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+	  <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+	  <script>
+		  function showHtmlDetailPopup(changeDetectedId) {
+		  	if (changeDetectedId == "") {
+		    	document.getElementById("htmlDetailPopup").innerHTML = "";
+		    	return;
+		    } 
+		    
+		  	if (window.XMLHttpRequest) {
+			  	// code for IE7+, Firefox, Chrome, Opera, Safari
+		    	xmlhttp = new XMLHttpRequest();
+		    } else {
+			    // code for IE6, IE5
+		    	xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+		    }
+		    
+		  	xmlhttp.onreadystatechange = function() {
+			  	if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+				  	document.getElementById("htmlDetailPopup").innerHTML = xmlhttp.responseText;
+				  	$("#htmlDetailPopup").dialog({height: 700, width: 1000, modal: true});
+				}
+		    };
+
+		  	xmlhttp.open("GET", "getChangeDetectedHtml.php?changeDetectedId=" + changeDetectedId, true);
+			xmlhttp.send();
+	    }		  
+	  </script>
 </head>
 <body>
 <div id='fg_membersite'>
@@ -44,6 +70,9 @@ if (!empty($changesDetected)) {
 	Logged in as: <?= $fgmembersite->UserFullName() ?>
 	</p>
 
+	<div id="htmlDetailPopup" style="display: none; overflow: hidden;" title="Html Detail">
+	</div>
+	
 	<!-- Form Code Start -->
 	<form id='registerChangeDetected' action='<?php echo $fgmembersite->GetSelfScript(); ?>' method='post' accept-charset='UTF-8'>
 		<fieldset style="width: 90%;">
@@ -73,7 +102,6 @@ if (!empty($changesDetected)) {
 	<!--
 	Form Code End (see html-form-guide.com for more info.)
 	-->
-
 	
 	<p>
 	<a href='./../login/login-home.php'>Home</a>

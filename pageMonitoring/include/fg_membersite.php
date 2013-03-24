@@ -61,6 +61,27 @@ class FGMembersite {
     }
     
     //-------Main Operations ----------------------
+    function getChangeDetected($changeDetectedId) {
+    	if(!$this->checkLogin()) {
+    		$this->HandleError("Not logged in!");
+    		return false;
+    	}
+    	 
+    	if(!$this->DBLogin()) {
+    		$this->HandleError("Database login failed!");
+    		return false;
+    	}
+    	 
+    	$qry = "SELECT CD.* FROM PM_CHANGEDETECTED CD WHERE CD.id = ".$changeDetectedId."";
+    	$result = mysql_query($qry, $this->connection);
+    	if((!$result) || (mysql_num_rows($result) == 0)) {
+    		return null;
+    	}
+    	 
+    	$row = mysql_fetch_assoc($result);
+    	return $row;
+    }
+    
     function getChangesDetected() {
     	if(!$this->checkLogin()) {
     		$this->HandleError("Not logged in!");
@@ -122,7 +143,9 @@ class FGMembersite {
     		return false;
     	}
     	
-    	$html = '!!!!!TEST!!!!!';
+    	$pageMonitored = $this->getPageMonitored($email);
+    	$url = $pageMonitored['url'];
+    	$html = file_get_contents($url);
     	
     	if (!$this->registerChangeDetectedToDatabase($email, $html)) {
     		$this->HandleError("Problem registering change detected on the database!");
@@ -186,9 +209,9 @@ class FGMembersite {
 	               									    HTML)
 	               		 VALUES ("'.$pageMonitoredId.'",
                 				 now(),
-	               		 		 "'.$html.'")';
+	               		 		 "'.mysql_real_escape_string($html, $this->connection).'")';
     
-    	if(!mysql_query($insert_query ,$this->connection)) {
+    	if(!mysql_query($insert_query, $this->connection)) {
     		$this->HandleDBError("Error inserting data to the table\nquery:$insert_query");
     		return false;
     	}
