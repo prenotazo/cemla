@@ -417,9 +417,9 @@ class FGMembersite {
     	$mailer->IsSMTP(); // enable SMTP
     	$mailer->SMTPDebug = 0;  // debugging: 1 = errors and messages, 2 = messages only
     	$mailer->SMTPAuth = true;  // authentication enabled
-    	$mailer->SMTPSecure = 'ssl'; // secure transfer enabled REQUIRED for GMail
+    	$mailer->SMTPSecure = 'tls'; // secure transfer enabled REQUIRED for GMail
     	$mailer->Host = 'smtp.gmail.com';
-    	$mailer->Port = 465;
+    	$mailer->Port = 587;
     	$mailer->Username = 'brainfields@gmail.com';
     	$mailer->Password = 'grupo403';
     	$mailer->FromName = "Page Monitoring";
