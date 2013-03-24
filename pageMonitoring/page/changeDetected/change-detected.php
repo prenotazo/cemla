@@ -13,6 +13,20 @@ if(isset($_POST['submitted'])) {
 }
 
 $changesDetected = $fgmembersite->getChangesDetected();
+$display_block = '';
+if (!empty($changesDetected)) {
+	foreach ($changesDetected as $value) {
+		$shortHtml = substr($value['html'], 0, 50) ;
+		$display_block .= "
+		<tr>
+			<td>".$value['id']."</td>
+			<td>".$value['dateChangeDetected']."</td>
+			<td>$shortHtml...<a href=\"http://localhost/detail.php?annid=1\"><em>read more</em></a></td>
+		</tr>";
+// 			<td width=\"25%\"><a href=\"http://$url/detail.php?annid=$id\"><strong>$ad_title</strong></a></td>
+// 			<td width=\"75%\">$short_desc ....<a href=\"http://$url/detail.php?annid=$id\"><em>read more</em></a></td>
+	}
+}
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -32,7 +46,7 @@ $changesDetected = $fgmembersite->getChangesDetected();
 
 	<!-- Form Code Start -->
 	<form id='registerChangeDetected' action='<?php echo $fgmembersite->GetSelfScript(); ?>' method='post' accept-charset='UTF-8'>
-		<fieldset>
+		<fieldset style="width: 90%;">
 			<legend>Change Detected Log</legend>
 			
 			<input type='hidden' name='submitted' id='submitted' value='1'/>
@@ -43,17 +57,24 @@ $changesDetected = $fgmembersite->getChangesDetected();
 			<div class='container'>
 			    <input type='submit' name='Check' value='Check' />
 			</div>
-
-			<div class='container'>
-			    <label for='lastChangeDetected' >Last Change Detected:</label><br/>
-			    <input type='text' disabled="disabled" name='lastChangeDetected' id='lastChangeDetected' value='<?php echo $fgmembersite->safeDisplay('lastChangeDetected') ?>' maxlength="50"/><br/>
-			</div>
+			<table border="1" align="center">
+				<tr>
+					<td><strong>ID</strong></td>
+					<td><strong>DATE CHANGE DETECTED</strong></td>
+					<td><strong>HTML</strong></td>
+				</tr>
+				<? //open a php block to populate the table
+					echo $display_block;
+				   //close the php block and then the table
+				?>
+			</table>
 		</fieldset>
 	</form>
 	<!--
 	Form Code End (see html-form-guide.com for more info.)
 	-->
 
+	
 	<p>
 	<a href='./../login/login-home.php'>Home</a>
 	</p>

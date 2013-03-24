@@ -76,7 +76,7 @@ class FGMembersite {
     	
     	$pageMonitoredId = $this->getPageMonitoredId($email);
     	
-    	$qry = "SELECT CD.* FROM PM_CHANGEDETECTED CD WHERE CD.pageMonitoredId = ".$pageMonitoredId." ORDER BY dateChangeDetected DESC";
+    	$qry = "SELECT CD.* FROM PM_CHANGEDETECTED CD WHERE CD.pageMonitoredId = ".$pageMonitoredId." ORDER BY dateChangeDetected DESC, id DESC";
     	$result = mysql_query($qry, $this->connection);
     	if((!$result) || (mysql_num_rows($result) == 0)) {
     		return null;
@@ -114,14 +114,57 @@ class FGMembersite {
     		$this->HandleError("Not logged in!");
     		return false;
     	}
-    	
+
     	$email = $this->getUserEmail();
+    	
+    	if (!$this->updateLastCheckDone($email)) {    		
+    		$this->HandleError("Problem updating las check done on the database!");
+    		return false;
+    	}
+    	
     	$html = '!!!!!TEST!!!!!';
     	
     	if (!$this->registerChangeDetectedToDatabase($email, $html)) {
     		$this->HandleError("Problem registering change detected on the database!");
     		return false;
-    	}    	
+    	}
+    	
+    	if (!$this->updateLastChangeDetected($email)) {    		
+    		$this->HandleError("Problem updating las check detected on the database!");
+    		return false;
+    	}
+    	
+    	return true;
+    }
+    
+    function updateLastCheckDone($email) {
+    	$pageMonitoredId = $this->getPageMonitoredId($email);
+    	if (empty($pageMonitoredId)) {
+    		return false;
+    	}
+    	
+    	// update
+    	$update_query = 'UPDATE PM_PAGEMONITORED SET LASTCHECKDONE = now() WHERE ID = "'.$pageMonitoredId.'"';
+    	if(!mysql_query($update_query ,$this->connection)) {
+    		$this->HandleDBError("Error updating data to the table\nquery:$update_query");
+    		return false;
+    	}
+    	
+    	return true;
+    }
+
+    function updateLastChangeDetected($email) {
+    	$pageMonitoredId = $this->getPageMonitoredId($email);
+    	if (empty($pageMonitoredId)) {
+    		return false;
+    	}
+    	
+    	// update
+    	$update_query = 'UPDATE PM_PAGEMONITORED SET LASTCHANGEDETECTED = now() WHERE ID = "'.$pageMonitoredId.'"';
+    	if(!mysql_query($update_query ,$this->connection)) {
+    		$this->HandleDBError("Error updating data to the table\nquery:$update_query");
+    		return false;
+    	}
     	
     	return true;
     }
