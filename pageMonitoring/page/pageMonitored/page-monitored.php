@@ -1,14 +1,14 @@
 <?PHP
 require_once("./../../include/membersite_config.php");
 
-if(!$fgmembersite->CheckLogin()) {
-    $fgmembersite->RedirectToURL("./../login/login.php");
+if(!$fgmembersite->checkLogin()) {
+    $fgmembersite->redirectToURL("./../login/login.php");
     exit;
 }
 
 if(isset($_POST['submitted'])) {
-	if($fgmembersite->RegisterPageMonitored()) {
-		$fgmembersite->RedirectToURL("./../changeDetected/change-detected.php");
+	if($fgmembersite->registerPageMonitored()) {
+		$fgmembersite->redirectToURL("./../changeDetected/change-detected.php");
 	}
 }
 

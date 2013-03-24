@@ -16,7 +16,6 @@ PARTICULAR PURPOSE.
 For updates, please visit:
 http://www.html-form-guide.com/php-form/php-registration-form.html
 http://www.html-form-guide.com/php-form/php-login-form.html
-
 */
 require_once("./../../library/PHPMailer_v5.1/class.phpmailer.php");
 require_once("./../../library/formvalidator.php");
@@ -62,12 +61,115 @@ class FGMembersite {
     }
     
     //-------Main Operations ----------------------
-    function RegisterPageMonitored() {
-    	if(!isset($_POST['submitted'])) {
+    function registerPageMonitored() {
+    	if(!$this->checkLogin()) {
+    		$this->HandleError("Not logged in!");
+    		return false;
+    	}
+    	
+    	$email = $this->getUserEmail();
+    	$formvars = $this->collectPageMonitoredSubmission();
+    	
+    	if (!$this->updatePageMonitoredToDatabase($email, $formvars)) {
+    		$this->HandleError("Problem registering page monitored on the database!");
+    		return false;
+    	}
+
+    	return true;
+    }
+    
+    function updatePageMonitoredToDatabase($email, &$formvars) {
+    	if(!$this->DBLogin()) {
+    		$this->HandleError("Database login failed!");
+    		return false;
+    	}
+
+    	if(!$this->IsPageRegisteredFieldUnique($formvars['monitoredUrl'],'url')) {
+    		$this->HandleError("This url is already registered");
+    		return false;
+    	}
+
+    	if(!$this->updatePageMonitoredIntoDB($email, $formvars)) {
+    		$this->HandleError("Inserting to Database failed!");
     		return false;
     	}
     	
     	return true;
+    }
+    
+    function updatePageMonitoredIntoDB($email, &$formvars) {
+    	$pageMonitoredId = $this->getPageMonitoredId($email);
+    	if ($pageMonitoredId == null) {
+    		// insert
+	    	$insert_query = 'INSERT INTO PM_PAGEMONITORED (USERID,
+	                									   URL,
+	                									   LASTCHANGEDETECTED,
+	                									   LASTCHECKDONE,
+	                									   CHECKFREQUENCYMIN)
+	                		 VALUES ("'.$this->getUserId($email).'",
+	                				 "'.$this->SanitizeForSQL($formvars['monitoredUrl']).'",
+	                				 now(),
+	                				 now(),
+	                				 "'.$this->SanitizeForSQL($formvars['checkFrequencyMin']).'")';
+	    	
+	    	if(!mysql_query($insert_query ,$this->connection)) {
+	    		$this->HandleDBError("Error inserting data to the table\nquery:$insert_query");
+	    		return false;
+	    	}
+    	} else {
+    		// update
+    		$update_query = 'UPDATE PM_PAGEMONITORED SET URL = "'.$this->SanitizeForSQL($formvars['monitoredUrl']).'",
+    													 CHECKFREQUENCYMIN = "'.$this->SanitizeForSQL($formvars['checkFrequencyMin']).'"
+	                		 WHERE ID = "'.$pageMonitoredId.'"';
+    		
+    		if(!mysql_query($update_query ,$this->connection)) {
+    			$this->HandleDBError("Error updating data to the table\nquery:$update_query");
+    			return false;
+    		}
+    	}
+    	
+    	return true;
+    }
+
+    function getUserId($email) {
+    	$qry = "SELECT U.ID ID FROM PM_USER U WHERE U.EMAIL = '".$email."'";
+    	$result = mysql_query($qry, $this->connection);
+    	if((!$result) || (mysql_num_rows($result) != 1)) {
+    		return null;
+    	}
+    	$row = mysql_fetch_assoc($result);
+    	return $row['ID'];
+    }
+    
+    function getPageMonitoredId($email) {
+    	$qry = "SELECT PM.ID ID
+    			FROM PM_PAGEMONITORED PM
+    				INNER JOIN PM_USER U ON (U.EMAIL = '".$email."') 
+    			WHERE PM.USERID = U.ID";
+    	$result = mysql_query($qry, $this->connection);
+    	if((!$result) || (mysql_num_rows($result) != 1)) {
+    		return null;
+    	}
+    	$row = mysql_fetch_assoc($result);
+    	return $row['ID'];
+    }
+    
+    function IsPageRegisteredFieldUnique($fieldValue, $fieldName) {
+    	$qry = "select username from PM_PAGEMONITORED where $fieldName='".$fieldValue."'";
+    	$result = mysql_query($qry, $this->connection);
+    	if($result && mysql_num_rows($result) > 0) {
+    		return false;
+    	}
+    	return true;
+    }
+    
+    function collectPageMonitoredSubmission() {
+    	$formvars = array();
+    	 
+    	$formvars['monitoredUrl'] = $this->Sanitize($_POST['monitoredUrl']);
+    	$formvars['checkFrequencyMin'] = $this->Sanitize($_POST['checkFrequencyMin']);
+    	
+    	return $formvars;
     }
     
     function RegisterUser() {
@@ -131,7 +233,7 @@ class FGMembersite {
         $password = trim($_POST['password']);
         
         if(!isset($_SESSION)){ session_start(); }
-        if(!$this->CheckLoginInDB($username,$password)) {
+        if(!$this->checkLoginInDB($username,$password)) {
             return false;
         }
         
@@ -140,7 +242,7 @@ class FGMembersite {
         return true;
     }
     
-    function CheckLogin() {
+    function checkLogin() {
          if(!isset($_SESSION)){ session_start(); }
 
          $sessionvar = $this->GetLoginSessionVar();
@@ -155,7 +257,7 @@ class FGMembersite {
         return isset($_SESSION['name_of_user'])?$_SESSION['name_of_user']:'';
     }
     
-    function UserEmail() {
+    function getUserEmail() {
         return isset($_SESSION['email_of_user'])?$_SESSION['email_of_user']:'';
     }
     
@@ -224,42 +326,36 @@ class FGMembersite {
         return true;
     }
     
-    function ChangePassword()
-    {
-        if(!$this->CheckLogin())
-        {
+    function ChangePassword() {
+        if(!$this->checkLogin()) {
             $this->HandleError("Not logged in!");
             return false;
         }
         
-        if(empty($_POST['oldpwd']))
-        {
+        if(empty($_POST['oldpwd'])) {
             $this->HandleError("Old password is empty!");
             return false;
         }
-        if(empty($_POST['newpwd']))
-        {
+        
+        if(empty($_POST['newpwd'])) {
             $this->HandleError("New password is empty!");
             return false;
         }
         
         $user_rec = array();
-        if(!$this->GetUserFromEmail($this->UserEmail(),$user_rec))
-        {
+        if(!$this->GetUserFromEmail($this->getUserEmail(),$user_rec)) {
             return false;
         }
         
         $pwd = trim($_POST['oldpwd']);
         
-        if($user_rec['password'] != md5($pwd))
-        {
+        if($user_rec['password'] != md5($pwd)) {
             $this->HandleError("The old password does not match!");
             return false;
         }
         $newpwd = trim($_POST['newpwd']);
         
-        if(!$this->ChangePasswordInDB($user_rec, $newpwd))
-        {
+        if(!$this->ChangePasswordInDB($user_rec, $newpwd)) {
             return false;
         }
         return true;
@@ -277,7 +373,7 @@ class FGMembersite {
         return htmlentities($_POST[$value_name]);
     }
     
-    function RedirectToURL($url) {
+    function redirectToURL($url) {
         header("Location: $url");
         exit;
     }
@@ -320,7 +416,7 @@ class FGMembersite {
         return $retvar;
     }
     
-    function CheckLoginInDB($username,$password) {
+    function checkLoginInDB($username,$password) {
         if(!$this->DBLogin()) {
             $this->HandleError("Database login failed!");
             return false;

@@ -2,8 +2,8 @@ CREATE TABLE PM_PAGEMONITORED (
     id INT NOT NULL AUTO_INCREMENT,
     userId INT NOT NULL,
     url VARCHAR(256) NOT NULL,
-    lastChangeDetected DATE NOT NULL,
-    lastCheckDone DATE NOT NULL,
+    lastChangeDetected DATETIME NOT NULL,
+    lastCheckDone DATETIME NOT NULL,
     checkFrequencyMin INT NOT NULL,
 PRIMARY KEY (id)
 );

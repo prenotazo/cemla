@@ -4,7 +4,7 @@ require_once("./../../include/membersite_config.php");
 $emailsent = false;
 if(isset($_POST['submitted'])) {
    if($fgmembersite->EmailResetPasswordLink()) {
-        $fgmembersite->RedirectToURL("reset-pwd-link-sent.html");
+        $fgmembersite->redirectToURL("reset-pwd-link-sent.html");
         exit;
    }
 }
