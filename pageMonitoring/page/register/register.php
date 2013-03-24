@@ -34,17 +34,17 @@ if(isset($_POST['submitted'])) {
 			<div><span class='error'><?php echo $fgmembersite->GetErrorMessage(); ?></span></div>
 			<div class='container'>
 			    <label for='name' >Your Full Name*: </label><br/>
-			    <input type='text' name='name' id='name' value='<?php echo $fgmembersite->SafeDisplay('name') ?>' maxlength="50" /><br/>
+			    <input type='text' name='name' id='name' value='<?php echo $fgmembersite->safeDisplay('name') ?>' maxlength="50" /><br/>
 			    <span id='register_name_errorloc' class='error'></span>
 			</div>
 			<div class='container'>
 			    <label for='email' >Email Address*:</label><br/>
-			    <input type='text' name='email' id='email' value='<?php echo $fgmembersite->SafeDisplay('email') ?>' maxlength="50" /><br/>
+			    <input type='text' name='email' id='email' value='<?php echo $fgmembersite->safeDisplay('email') ?>' maxlength="50" /><br/>
 			    <span id='register_email_errorloc' class='error'></span>
 			</div>
 			<div class='container'>
 			    <label for='username' >UserName*:</label><br/>
-			    <input type='text' name='username' id='username' value='<?php echo $fgmembersite->SafeDisplay('username') ?>' maxlength="50" /><br/>
+			    <input type='text' name='username' id='username' value='<?php echo $fgmembersite->safeDisplay('username') ?>' maxlength="50" /><br/>
 			    <span id='register_username_errorloc' class='error'></span>
 			</div>
 			<div class='container' style='height:80px;'>

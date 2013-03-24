@@ -31,7 +31,7 @@ if(isset($_POST['submitted'])) {
 			<div><span class='error'><?php echo $fgmembersite->GetErrorMessage(); ?></span></div>
 			<div class='container'>
 			    <label for='username' >UserName*:</label><br/>
-			    <input type='text' name='username' id='username' value='<?php echo $fgmembersite->SafeDisplay('username') ?>' maxlength="50" /><br/>
+			    <input type='text' name='username' id='username' value='<?php echo $fgmembersite->safeDisplay('username') ?>' maxlength="50" /><br/>
 			    <span id='login_username_errorloc' class='error'></span>
 			</div>
 			<div class='container'>

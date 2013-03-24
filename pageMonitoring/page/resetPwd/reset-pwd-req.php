@@ -33,7 +33,7 @@ if(isset($_POST['submitted'])) {
 	<div><span class='error'><?php echo $fgmembersite->GetErrorMessage(); ?></span></div>
 	<div class='container'>
 	    <label for='username' >Your Email*:</label><br/>
-	    <input type='text' name='email' id='email' value='<?php echo $fgmembersite->SafeDisplay('email') ?>' maxlength="50" /><br/>
+	    <input type='text' name='email' id='email' value='<?php echo $fgmembersite->safeDisplay('email') ?>' maxlength="50" /><br/>
 	    <span id='resetreq_email_errorloc' class='error'></span>
 	</div>
 	<div class='short_explanation'>A link to reset your password will be sent to the email address</div>

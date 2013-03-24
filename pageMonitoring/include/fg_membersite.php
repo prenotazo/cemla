@@ -61,6 +61,35 @@ class FGMembersite {
     }
     
     //-------Main Operations ----------------------
+    function getChangesDetected() {
+    	if(!$this->checkLogin()) {
+    		$this->HandleError("Not logged in!");
+    		return false;
+    	}
+    	
+    	if(!$this->DBLogin()) {
+    		$this->HandleError("Database login failed!");
+    		return false;
+    	}
+    	
+    	$email = $this->getUserEmail();
+    	
+    	$pageMonitoredId = $this->getPageMonitoredId($email);
+    	
+    	$qry = "SELECT CD.* FROM PM_CHANGEDETECTED CD WHERE CD.pageMonitoredId = ".$pageMonitoredId." ORDER BY dateChangeDetected DESC";
+    	$result = mysql_query($qry, $this->connection);
+    	if((!$result) || (mysql_num_rows($result) == 0)) {
+    		return null;
+    	}
+    	
+    	$rows = array();
+    	while ($row = mysql_fetch_assoc($result)) {
+    		$rows[$row['id']] = $row;
+    	}
+    	
+    	return $rows;    	
+    }
+    
     function registerPageMonitored() {
     	if(!$this->checkLogin()) {
     		$this->HandleError("Not logged in!");
@@ -74,7 +103,53 @@ class FGMembersite {
     		$this->HandleError("Problem registering page monitored on the database!");
     		return false;
     	}
+    	
+    	$this->checkChanges();
 
+    	return true;
+    }
+    
+    function checkChanges() {
+    	if(!$this->checkLogin()) {
+    		$this->HandleError("Not logged in!");
+    		return false;
+    	}
+    	
+    	$email = $this->getUserEmail();
+    	$html = '!!!!!TEST!!!!!';
+    	
+    	if (!$this->registerChangeDetectedToDatabase($email, $html)) {
+    		$this->HandleError("Problem registering change detected on the database!");
+    		return false;
+    	}    	
+    	
+    	return true;
+    }
+    
+    function registerChangeDetectedToDatabase($email, $html) {
+    	if(!$this->DBLogin()) {
+    		$this->HandleError("Database login failed!");
+    		return false;
+    	}
+    
+    	$pageMonitoredId = $this->getPageMonitoredId($email);
+    	if (empty($pageMonitoredId)) {
+    		return false;
+    	}
+    	
+    	// insert
+    	$insert_query = 'INSERT INTO PM_CHANGEDETECTED (PAGEMONITOREDID,
+	               									    DATECHANGEDETECTED,
+	               									    HTML)
+	               		 VALUES ("'.$pageMonitoredId.'",
+                				 now(),
+	               		 		 "'.$html.'")';
+    
+    	if(!mysql_query($insert_query ,$this->connection)) {
+    		$this->HandleDBError("Error inserting data to the table\nquery:$insert_query");
+    		return false;
+    	}
+    	 
     	return true;
     }
     
@@ -142,6 +217,11 @@ class FGMembersite {
     }
     
     function getPageMonitoredId($email) {
+    	if(!$this->DBLogin()) {
+    		$this->HandleError("Database login failed!");
+    		return false;
+    	}
+    	
     	$qry = "SELECT PM.ID ID
     			FROM PM_PAGEMONITORED PM
     				INNER JOIN PM_USER U ON (U.EMAIL = '".$email."') 
@@ -152,6 +232,21 @@ class FGMembersite {
     	}
     	$row = mysql_fetch_assoc($result);
     	return $row['ID'];
+    }
+    
+    function getPageMonitored($email) {
+    	if(!$this->DBLogin()) {
+    		$this->HandleError("Database login failed!");
+    		return false;
+    	}
+    	
+    	$qry = "SELECT PM.* FROM PM_PAGEMONITORED PM WHERE PM.ID = ".$this->getPageMonitoredId($email)."";
+    	$result = mysql_query($qry, $this->connection);
+    	if((!$result) || (mysql_num_rows($result) != 1)) {
+    		return null;
+    	}
+    	$row = mysql_fetch_assoc($result);
+    	return $row;    	
     }
     
     function IsPageRegisteredFieldUnique($fieldValue, $fieldName) {
@@ -366,7 +461,7 @@ class FGMembersite {
         return htmlentities($_SERVER['PHP_SELF']);
     }    
     
-    function SafeDisplay($value_name) {
+    function safeDisplay($value_name) {
         if(empty($_POST[$value_name])) {
             return'';
         }
