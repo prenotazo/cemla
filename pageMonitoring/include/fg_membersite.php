@@ -145,7 +145,7 @@ class FGMembersite {
     	
     	$pageMonitored = $this->getPageMonitored($email);
     	$url = $pageMonitored['url'];
-    	$html = file_get_contents($url);
+    	$html = $this->getHtml($url);
     	
     	if (!$this->registerChangeDetectedToDatabase($email, $html)) {
     		$this->HandleError("Problem registering change detected on the database!");
@@ -158,6 +158,11 @@ class FGMembersite {
     	}
     	
     	return true;
+    }
+    
+    function getHtml($url) {
+    	$urlSource = shell_exec('wget -q -U "Mozilla/5.001" -O - "'.$url.'"');
+		return $urlSource;    	
     }
     
     function updateLastCheckDone($email) {
