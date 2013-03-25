@@ -21,6 +21,7 @@ if (!empty($changesDetected)) {
 			<td>".$value['id']."</td>
 			<td>".$value['dateChangeDetected']."</td>
 			<td><button type='button' onclick='showHtmlDetailPopup(".$value['id'].")'>see</button></a></td>
+			<td><button type='button' onclick='showHtmlDetailPopup(".$value['id'].")'>diff</button></a></td>
 		</tr>";
 	}
 }
@@ -91,6 +92,7 @@ if (!empty($changesDetected)) {
 					<td><strong>ID</strong></td>
 					<td><strong>DATE CHANGE DETECTED</strong></td>
 					<td><strong>HTML</strong></td>
+					<td><strong>DIFF</strong></td>
 				</tr>
 				<? //open a php block to populate the table
 					echo $display_block;

@@ -145,9 +145,16 @@ class FGMembersite {
     	
     	$pageMonitored = $this->getPageMonitored($email);
     	$url = $pageMonitored['url'];
-    	$html = $this->getHtml($url);
+    	$htmlCurrent = preg_replace( '/\s+/', ' ', strip_tags($this->getHtml($url)));
     	
-    	if (!$this->registerChangeDetectedToDatabase($email, $html)) {
+    	$latestChangeDetected = $this->getLatestChangeDetected($email);
+    	$htmlPrevious = preg_replace( '/\s+/', ' ', strip_tags($latestChangeDetected['html']));
+    	
+    	if (strcmp($htmlPrevious, $htmlCurrent) == 0) {
+    		return true;
+    	}
+    	
+    	if (!$this->registerChangeDetectedToDatabase($email, $htmlCurrent)) {
     		$this->HandleError("Problem registering change detected on the database!");
     		return false;
     	}
@@ -160,8 +167,36 @@ class FGMembersite {
     	return true;
     }
     
+    function getLatestChangeDetected($email) {
+    	if(!$this->checkLogin()) {
+    		$this->HandleError("Not logged in!");
+    		return false;
+    	}
+    	 
+    	if(!$this->DBLogin()) {
+    		$this->HandleError("Database login failed!");
+    		return false;
+    	}
+    	 
+    	$qry = "SELECT CD.* 
+				FROM PM_CHANGEDETECTED CD
+					INNER JOIN PM_USER U ON (U.email = '".$email."')
+					INNER JOIN PM_PAGEMONITORED PM ON (PM.userId = U.id)
+				WHERE CD.pageMonitoredId = PM.id
+				ORDER BY CD.dateChangeDetected DESC, CD.id DESC
+				LIMIT 1";
+    	$result = mysql_query($qry, $this->connection);
+    	if((!$result) || (mysql_num_rows($result) == 0)) {
+    		return null;
+    	}
+    	 
+    	$row = mysql_fetch_assoc($result);
+    	return $row;
+    }
+    
     function getHtml($url) {
-    	$urlSource = shell_exec('wget -q -U "Mozilla/5.001" -O - "'.$url.'"');
+    	$urlSource = shell_exec('wget -O - "'.$url.'"');
+//     	$urlSource = shell_exec('wget -q -U "Mozilla/5.001" -O - "'.$url.'"');
 		return $urlSource;    	
     }
     
