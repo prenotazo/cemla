@@ -21,10 +21,12 @@ if (!empty($changesDetected)) {
 			<td>".$value['id']."</td>
 			<td>".$value['dateChangeDetected']."</td>
 			<td><button type='button' onclick='showHtmlDetailPopup(".$value['id'].")'>see</button></a></td>
-			<td><button type='button' onclick='showHtmlDetailPopup(".$value['id'].")'>diff</button></a></td>
+			<td><button type='button' onclick='showDiffWithPreviousPopup(".$value['id'].")'>diff with the previous</button></a></td>
 		</tr>";
 	}
 }
+
+$pageMonitored = $fgmembersite->getPageMonitored($fgmembersite->getUserEmail());
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -61,6 +63,31 @@ if (!empty($changesDetected)) {
 		  	xmlhttp.open("GET", "getChangeDetectedHtml.php?changeDetectedId=" + changeDetectedId, true);
 			xmlhttp.send();
 	    }		  
+
+		function showDiffWithPreviousPopup(changeDetectedId) {
+		  	if (changeDetectedId == "") {
+		    	document.getElementById("diffWithPreviousPopup").innerHTML = "";
+		    	return;
+		    } 
+		    
+		  	if (window.XMLHttpRequest) {
+			  	// code for IE7+, Firefox, Chrome, Opera, Safari
+		    	xmlhttp = new XMLHttpRequest();
+		    } else {
+			    // code for IE6, IE5
+		    	xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+		    }
+		    
+		  	xmlhttp.onreadystatechange = function() {
+			  	if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+				  	document.getElementById("diffWithPreviousPopup").innerHTML = xmlhttp.responseText;
+				  	$("#diffWithPreviousPopup").dialog({height: 700, width: 1000, modal: true});
+				}
+		    };
+
+		  	xmlhttp.open("GET", "getDiffWithPreviousHtml.php?changeDetectedId=" + changeDetectedId, true);
+			xmlhttp.send();
+	    }		  
 	  </script>
 </head>
 <body>
@@ -72,6 +99,8 @@ if (!empty($changesDetected)) {
 	</p>
 
 	<div id="htmlDetailPopup" style="display: none; overflow: hidden;" title="Html Detail">
+	</div>
+	<div id="diffWithPreviousPopup" style="display: none; overflow: hidden; overflow-y: scroll;" title="Diff With Previous">
 	</div>
 	
 	<!-- Form Code Start -->
@@ -85,7 +114,15 @@ if (!empty($changesDetected)) {
 			
 			<div><span class='error'><?php echo $fgmembersite->GetErrorMessage(); ?></span></div>
 			<div class='container'>
-			    <input type='submit' name='Check' value='Check' />
+			    <input type='submit' name='Check' value='Check'/>
+				<span>
+				    <label for='lastCheckDone'>Last Check Done:</label>
+				    <input type='text' disabled="disabled" name='lastCheckDone' id='lastCheckDone' value='<?php echo $pageMonitored['lastCheckDone']; ?>' maxlength="50"/>
+				</span>
+				<span>
+				    <label for='lastChangeDetected' >Last Change Detected:</label>
+				    <input type='text' disabled="disabled" name='lastChangeDetected' id='lastChangeDetected' value='<?php echo $pageMonitored['lastChangeDetected']; ?>' maxlength="50"/>
+				</span>
 			</div>
 			<table border="1" align="center">
 				<tr>

@@ -19,6 +19,7 @@ http://www.html-form-guide.com/php-form/php-login-form.html
 */
 require_once("./../../library/PHPMailer_v5.1/class.phpmailer.php");
 require_once("./../../library/formvalidator.php");
+require_once("./../../include/ColoredDiff.php");
 
 class FGMembersite {
     var $admin_email;
@@ -61,6 +62,38 @@ class FGMembersite {
     }
     
     //-------Main Operations ----------------------
+    function getDiffWithPrevious($changeDetectedId) {
+    	if(!$this->checkLogin()) {
+    		$this->HandleError("Not logged in!");
+    		return false;
+    	}
+    	 
+    	if(!$this->DBLogin()) {
+    		$this->HandleError("Database login failed!");
+    		return false;
+    	}
+    	 
+    	$qry = "SELECT CD.* FROM PM_CHANGEDETECTED CD WHERE CD.id = ".$changeDetectedId."";
+    	$result = mysql_query($qry, $this->connection);
+    	if((!$result) || (mysql_num_rows($result) == 0)) {
+    		return null;
+    	} 
+    	$row = mysql_fetch_assoc($result);
+
+    	$qryPrevious = "SELECT CD.* FROM PM_CHANGEDETECTED CD WHERE CD.id < ".$changeDetectedId." ORDER BY CD.id DESC LIMIT 1";
+    	$resultPrevious = mysql_query($qryPrevious, $this->connection);
+    	if((!$resultPrevious) || (mysql_num_rows($resultPrevious) == 0)) {
+    		return $row['html'];
+    	}
+    	$rowPrevious = mysql_fetch_assoc($resultPrevious);
+    	
+    	$html = $row['html'];
+    	$htmlPrevious = $rowPrevious['html'];
+    	
+    	$diff = new ColoredDiff($htmlPrevious, $html);
+    	return $diff->render();
+    }
+    
     function getChangeDetected($changeDetectedId) {
     	if(!$this->checkLogin()) {
     		$this->HandleError("Not logged in!");
