@@ -196,6 +196,37 @@ class FGMembersite {
     		$this->HandleError("Problem updating las check detected on the database!");
     		return false;
     	}
+
+    	// Send Email When Change is Detected
+    	$newChangeDetected = $this->getLatestChangeDetected($email);
+    	$newChangeDetectedId = $newChangeDetected['id'];
+    	$htmlDiff = $this->getDiffWithPrevious($newChangeDetectedId);
+    	$pageMonitoredLink = $pageMonitored['url']; 
+    	
+    	$this->sendChangeDetectedEmail($email, $newChangeDetected, $pageMonitoredLink, $htmlDiff);
+    	
+    	return true;
+    }
+    
+    function sendChangeDetectedEmail($email, &$newChangeDetected, $pageMonitoredLink, $htmlDiff) {
+    	$to = $email;
+    	$subject = "[ConsuladoItaliano] Cambio Detectado (".$newChangeDetected['dateChangeDetected'].")";
+    	$body = "<!DOCTYPE html>".
+      			"<html>".
+      			"<head>".
+      			"</head>".
+      			"<body>".
+      			"Hola, la pagina ".$pageMonitoredLink." cambio, podes entrar con usuario ricardo.castiglione@gmail.com y clave 337998:".
+      			"</br>".
+      			"</br>".
+    			$htmlDiff.
+      			"</body>".
+    			"</html>";
+    
+    	if(!$this->smtpmailer($to, $subject, $body, true)) {
+    		$this->HandleError("Failed sending user welcome email.");
+    		return false;
+    	}
     	
     	return true;
     }
@@ -264,7 +295,7 @@ class FGMembersite {
     	
     	return true;
     }
-    
+
     function registerChangeDetectedToDatabase($email, $html) {
     	if(!$this->DBLogin()) {
     		$this->HandleError("Database login failed!");
@@ -740,11 +771,12 @@ class FGMembersite {
         return true;
     }
     
-    function smtpmailer($to, $subject, $body) {
+    function smtpmailer($to, $subject, $body, $isHtml) {
     	$mailer = new PHPMailer();  // create a new object
     	 
     	$mailer->CharSet = 'utf-8';
     	$mailer->IsSMTP(); // enable SMTP
+    	$mailer->IsHTML($isHtml); // enable HTML
     	$mailer->SMTPDebug = 0;  // debugging: 1 = errors and messages, 2 = messages only
     	$mailer->SMTPAuth = true;  // authentication enabled
     	$mailer->SMTPSecure = 'tls'; // secure transfer enabled REQUIRED for GMail
@@ -761,8 +793,7 @@ class FGMembersite {
     	return $mailer->Send();
     }
     
-    function SendUserWelcomeEmail(&$user_rec)
-    {
+    function SendUserWelcomeEmail(&$user_rec) {
     	$to = $user_rec['email']; 
     	$subject = "Welcome to ".$this->sitename; 
     	$body = "Hello ".$user_rec['name']."\r\n\r\n".
@@ -772,18 +803,15 @@ class FGMembersite {
         "Webmaster\r\n".
         $this->sitename;
         
-        if(!$this->smtpmailer($to, $subject, $body))
-        {
+        if(!$this->smtpmailer($to, $subject, $body, false)) {
             $this->HandleError("Failed sending user welcome email.");
             return false;
         }
         return true;
     }
     
-    function SendAdminIntimationOnRegComplete(&$user_rec)
-    {
-        if(empty($this->admin_email))
-        {
+    function SendAdminIntimationOnRegComplete(&$user_rec) {
+        if(empty($this->admin_email)) {
             return false;
         }
         
@@ -793,7 +821,7 @@ class FGMembersite {
         "Name: ".$user_rec['name']."\r\n".
         "Email address: ".$user_rec['email']."\r\n";
         
-        if(!$this->smtpmailer($to, $subject, $body))
+        if(!$this->smtpmailer($to, $subject, $body, false))
         {
             return false;
         }
@@ -822,7 +850,7 @@ class FGMembersite {
         "Webmaster\r\n".
         $this->sitename;
         
-        if(!$this->smtpmailer($to, $subject, $body))
+        if(!$this->smtpmailer($to, $subject, $body, false))
         {
             return false;
         }
@@ -844,7 +872,7 @@ class FGMembersite {
         "Webmaster\r\n".
         $this->sitename;
         
-        if(!$this->smtpmailer($to, $subject, $body)) {
+        if(!$this->smtpmailer($to, $subject, $body, false)) {
             return false;
         }
         return true;
@@ -907,7 +935,7 @@ class FGMembersite {
         "Webmaster\r\n".
         $this->sitename;;
 
-        if(!$this->smtpmailer($to, $subject, $body))
+        if(!$this->smtpmailer($to, $subject, $body, false))
         {
             $this->HandleError("Failed sending registration confirmation email.");
             return false;
@@ -937,7 +965,7 @@ class FGMembersite {
         "Email address: ".$formvars['email']."\r\n".
         "UserName: ".$formvars['username'];
         
-        if(!$this->smtpmailer($to, $subject, $body))
+        if(!$this->smtpmailer($to, $subject, $body, false))
         {
             return false;
         }
